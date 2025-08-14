@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Sampling Maps – Zosterops Methods and Results</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-b663525e4b92bb903b2199e2d401bf36.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-95a2ced3787879bf47d026b70c7a7c79.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Zosterops Methods and Results</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">Introduction</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./ZosteropsMaps.html" aria-current="page"> 
+<span class="menu-text">Sampling Maps</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Summary_Sanger.html"> 
+<span class="menu-text">Sanger sequencing summary statistics and trees</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Zosterops_StarBEAST2.html"> 
+<span class="menu-text">StarBEAST2</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./ZosteropsBPP.html"> 
+<span class="menu-text">BPP and GDI based species delimitation</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./ZosteropsSNPs_analysis.html"> 
+<span class="menu-text">Distance trees, PCA, UMAP, and DAPC analyses</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Zosterops_SNPFst.html"> 
+<span class="menu-text">Genetic differentiation and biogeographic breaks</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Zosterops_SVDQ.html"> 
+<span class="menu-text">Species trees and delimitation with SVDQuartets, PICL, and DELINEATE</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./ZosteropsMorphometrics.html"> 
+<span class="menu-text">Linear morphometrics</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#goals" id="toc-goals" class="nav-link active" data-scroll-target="#goals">Goals</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a></li>
+  <li><a href="#data-files" id="toc-data-files" class="nav-link" data-scroll-target="#data-files">Data files</a>
+  <ul class="collapse">
+  <li><a href="#individual-samples-and-collecting-localities-snps" id="toc-individual-samples-and-collecting-localities-snps" class="nav-link" data-scroll-target="#individual-samples-and-collecting-localities-snps">Individual samples and collecting localities: SNPs</a></li>
+  <li><a href="#individual-samples-and-collecting-localities-sanger-sequencing" id="toc-individual-samples-and-collecting-localities-sanger-sequencing" class="nav-link" data-scroll-target="#individual-samples-and-collecting-localities-sanger-sequencing">Individual samples and collecting localities: Sanger sequencing</a></li>
+  </ul></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
+  <li><a href="#read-and-edit-data-snp-sampling" id="toc-read-and-edit-data-snp-sampling" class="nav-link" data-scroll-target="#read-and-edit-data-snp-sampling">Read and edit data: SNP sampling</a></li>
+  <li><a href="#count-individual-samples-per-taxon-snp-sampling" id="toc-count-individual-samples-per-taxon-snp-sampling" class="nav-link" data-scroll-target="#count-individual-samples-per-taxon-snp-sampling">Count individual samples per taxon: SNP sampling</a></li>
+  <li><a href="#read-and-edit-data-sanger-sampling" id="toc-read-and-edit-data-sanger-sampling" class="nav-link" data-scroll-target="#read-and-edit-data-sanger-sampling">Read and edit data: Sanger sampling</a></li>
+  <li><a href="#count-individual-samples-per-taxon-sanger-sampling" id="toc-count-individual-samples-per-taxon-sanger-sampling" class="nav-link" data-scroll-target="#count-individual-samples-per-taxon-sanger-sampling">Count individual samples per taxon: Sanger sampling</a></li>
+  <li><a href="#create-a-sampling-map" id="toc-create-a-sampling-map" class="nav-link" data-scroll-target="#create-a-sampling-map">Create a sampling map</a>
+  <ul class="collapse">
+  <li><a href="#mapping-all-samples" id="toc-mapping-all-samples" class="nav-link" data-scroll-target="#mapping-all-samples">Mapping all samples</a></li>
+  <li><a href="#mapping-ryukyu-island-samples" id="toc-mapping-ryukyu-island-samples" class="nav-link" data-scroll-target="#mapping-ryukyu-island-samples">Mapping Ryukyu Island samples</a></li>
+  <li><a href="#mapping-ogasawara-and-volcano-island-samples" id="toc-mapping-ogasawara-and-volcano-island-samples" class="nav-link" data-scroll-target="#mapping-ogasawara-and-volcano-island-samples">Mapping Ogasawara and Volcano Island samples</a></li>
+  <li><a href="#mapping-philippine-samples" id="toc-mapping-philippine-samples" class="nav-link" data-scroll-target="#mapping-philippine-samples">Mapping Philippine samples</a></li>
+  </ul></li>
+  <li><a href="#close-log" id="toc-close-log" class="nav-link" data-scroll-target="#close-log">Close log</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Sampling Maps</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="goals" class="level2">
+<h2 class="anchored" data-anchor-id="goals">Goals</h2>
+<p>What follows is our workflow for mapping the sampling localities for all the individual samples included in the Zosterops single nucleotide polymorphism (SNP) dataset generated from a double digest restriction-site associated DNA (ddRAD) library (see DeRaad et al.2024 for details on the ddRAD library <span class="citation" data-cites="deraad2024">(<a href="#ref-deraad2024" role="doc-biblioref">DeRaad et al. 2024</a>)</span>.</p>
+</section>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
+<p>We are using R version 4.4.2, RStudio version 2024.09.1 for the analysis. Quarto version 1.6.39 for Mac OS was used to document the workflow. Set the working directory in RStudio to one where the <code>txt</code> file denoting the identity and sampling location of the samples are accessible.</p>
+</section>
+<section id="data-files" class="level2">
+<h2 class="anchored" data-anchor-id="data-files">Data files</h2>
+<p>This analysis requires the following data files.</p>
+<ul>
+<li><p><code>ZosteropsPOPS4_LatLong.txt</code> A text file of individual samples included in the SNP dataset matched with taxon, locale, and latitude and longitude.</p></li>
+<li><p><code>ZosteropsPOPS_SANGER_LatLong.txt</code> A text file of individual samples included in the Sanger sequencing dataset but that do not appear in the SNP dataset matched with taxon, locale, and latitude and longitude.</p></li>
+</ul>
+<section id="individual-samples-and-collecting-localities-snps" class="level3">
+<h3 class="anchored" data-anchor-id="individual-samples-and-collecting-localities-snps">Individual samples and collecting localities: SNPs</h3>
+<p>A tab delimited text file with the individual sample IDs, taxon designations, the name of the sampling locales (designated by island or province), and latitude and longitude was created to generate maps. To reduce the amount of clutter on the maps subspecies were clustered together in shared geographic groups. <em>Zosterops japonicus</em> subspecies were designated as either <em>Z. japonicus alani</em> for the most remote subspecies in the Volcano Islands or grouped within a single <em>Z. japonicus</em> designation for all the remaining subspecies. Subspecies for <em>Z. montanus</em> were clustered into three groups including a Palawan group (montanus PALAWAN) consisting of <em>Z. montanus parkesi</em>, a northern Philippine group (montanus NORTH) for those subspecies on Mindoro and Luzon (<em>Z. montanus halconensis</em> amd <em>Z. montanus whiteheadi</em>), and a southern Philippine group (montanus SOUTH) including the remaining <em>Z. montanus</em> subspecies included in the study (<em>Z. montanus diuatae</em>, <em>Z. montanus montanus</em>, <em>Z. montanus pectoralis</em>, <em>Z. montanus vulcani</em>, and an unnamed but suggested subspecies on Panay). Subspecies within the <em>Z. everetti</em> and <em>Z. nigrorum</em> species were lumped together under a single species designation for each in the sampling maps but distinguished in later analyses. Samples from introduced populations in Hawaii and California are included in this list, but they are excluded from the final figure. The individual samples and their accompanying data from the file <code>ZosteropsPOPS4_LatLong.txt</code> are listed below. All of the samples listed in this file appear in the SNP analyses.</p>
+<pre><code>SAMPLE  TAXON   LOCALE  LAT LONG
+ZJlo012 japonicus   KIKAI   28.317  129.9401
+ZJlo015 japonicus   AMAMI   28.3192 129.2765
+ZJlo016 japonicus   MIYAKOJIMA  24.7916 125.3302
+ZJlo017 japonicus   IRIOMOTE    24.3301 123.8188
+ZJlo021 japonicus   TOKUNOSHIMA 27.7904 128.9668
+ZJlo022 japonicus   TOKUNOSHIMA 27.7904 128.9668
+ZJlo024 japonicus   YONAGUMI    24.4680 123.0045
+ZJlo031 japonicus   KUMEJIMA    26.3504 126.7712
+ZJlo045 japonicus   AMAMI   28.3192 129.2765
+ZJlo046 japonicus   MIYAKOJIMA  24.8218 125.3137
+ZJlo050 japonicus   OKINOERABU  27.5737 128.5737
+ZJlo052 japonicus   OKINOERABU  27.5737 128.5737
+ZJlo055 japonicus   KIKAI   28.317  129.9401
+ZJja001 japonicus   GEOJE   34.8806 128.6211
+ZJja002 japonicus   GEOJE   34.8806 128.6211
+ZJja003 japonicus   JEJU    33.489  126.4983
+ZJja004 japonicus   JEJU    33.489  126.4983
+ZJja005 japonicus   JEJU    33.489  126.4983
+ZJja009 japonicus   HEUKSANDO   34.6707 125.4196
+ZJja010 japonicus   HEUKSANDO   34.6707 125.4196
+ZJja012 japonicus   HONSHU  36.0835 140.0764
+ZJja013 japonicus   HONSHU  36.0835 140.0764
+ZJja014 japonicus   HONSHU  35.9086 139.6248
+ZJja016 japonicus   SHIKOKU 34.3708 133.9198
+ZJja030 japonicus   HEUKSANDO   34.6707 125.4196
+ZJal003 japonicus alani HAHAJIMA    26.6735 142.1541
+Zjal004 japonicus alani HAHAJIMA    26.6735 142.1541
+ZJal005 japonicus alani HAHAJIMA    26.6735 142.1541
+ZJal010 japonicus alani ANEJIMA 26.5506 142.1581
+ZJal011 japonicus alani ANEJIMA 26.5506 142.1581
+ZJal012 japonicus alani ANEJIMA 26.5506 142.1581
+ZJal020 japonicus alani IWOJIMA 24.7876 141.3156
+ZJst007 japonicus   KOZUSHIMA   34.2055 139.1345
+ZJst009 japonicus   KOZUSHIMA   34.2055 139.1345
+ZJst010 japonicus   KOZUSHIMA   34.2055 139.1345
+ZJst012 japonicus   MIYAKEJIMA  34.0788 139.5178
+ZJst014 japonicus   MIYAKEJIMA  34.0788 139.5178
+ZJst015 japonicus   MIYAKEJIMA  34.0788 139.5178
+ZJin001 japonicus   KAGOSHIMA   30.3715 130.6646
+ZJin003 japonicus   KAGOSHIMA   30.3715 130.6646
+ZJsi002 simplex TAIWAN  22.7613 121.1438
+ZJsi017 simplex GUANGXI 22.8152 108.3275
+ZJsi032 simplex GUANGXI 22.8152 108.3275
+ZJsi023 simplex GUANGDONG   23.1317 113.2663
+ZJsi024 simplex GUANGDONG   23.1317 113.2663
+ZJsi027 simplex GUANGXI 22.8152 108.3275
+ZJsi028 simplex GUANGXI 22.8152 108.3275
+ZJsi029 simplex GUANGXI 22.8152 108.3275
+ZJsi031 simplex GUANGXI 22.8152 108.3275
+ZPxx001 simplex SINGAPORE   1.3189  103.8512
+ZPxx002 simplex SINGAPORE   1.3521  103.8198
+ZMxx002 meyeni  BATAN   20.4700 121.9910
+ZMxx003 meyeni  LANYU   22.0811 121.5048
+ZMxx004 meyeni  LANYU   22.0811 121.5048
+ZMxx005 meyeni  LANYU   22.0811 121.5048
+ZMxx006 meyeni  LANYU   22.0093 121.5721
+ZMOxx001    montanus SOUTH  PANAY   11.4062 122.1235
+ZMOxx002    montanus SOUTH  PANAY   11.4062 122.1235
+ZMOxx003    montanus SOUTH  PANAY   11.3936 122.1661
+ZMOxx005    montanus SOUTH  PANAY   11.4062 122.1235
+ZMOha001    montanus NORTH  MINDORO 13.3082 121.0765
+ZMOwh002    montanus NORTH  LUZON   15.5286 119.9608
+ZMOwh003    montanus NORTH  LUZON   17.4670 121.0670
+ZMOwh004    montanus NORTH  LUZON   15.4819 120.1194
+ZMOwh005    montanus NORTH  LUZON   17.0373 121.1010
+ZMOwh006    montanus NORTH  LUZON   16.5976 120.8986
+ZMOvu002    montanus SOUTH  MINDANAO    7.8514  126.0458
+ZMOvu003    montanus SOUTH  MINDANAO    7.8514  126.0458
+ZMOvu004    montanus SOUTH  MINDANAO    7.0189  125.4984
+ZMOvu005    montanus SOUTH  MINDANAO    7.0189  125.4984
+ZMOmo001    montanus SOUTH  SULAWESI    -5.4081 119.8989
+ZMOpa001    montanus PALAWAN    PALAWAN 8.8183  117.6750
+ZMOpa002    montanus PALAWAN    PALAWAN 8.8183  117.6750
+ZNni001 nigrorum    PANAY   11.4062 122.1235
+ZERxx002    erythropleurus  RUSSIAb 46.0200 135.2500
+ZERxx004    erythropleurus  RUSSIAb 44.9200 131.8900
+ZERxx005    erythropleurus  RUSSIAb 44.3674 133.0265
+Zsim23588   simplex VIETNAM 22.3860 102.2380
+Zsim28142   simplex VIETNAM 21.9490 104.2550
+Zsim30897   palpebrosus VIETNAM 15.1100 107.8240
+Zpal23498   palpebrosus VIETNAM 22.3860 102.2380
+Zpal23522   palpebrosus VIETNAM 22.3860 102.2380
+Zmon20893   montanus SOUTH  NEGROS  10.6743 123.1886
+Zmon20892   montanus SOUTH  NEGROS  10.6743 123.1886
+Zmon20902   montanus SOUTH  NEGROS  10.6743 123.1886
+Zmon20909   montanus SOUTH  NEGROS  10.6655 123.1787
+Zsim31166   montanus SOUTH  JAVA    -7.6145 110.7122
+Zsim31159   montanus SOUTH  JAVA    -7.6145 110.7122
+Zmey17876   meyeni  BATAN   20.4700 121.9910
+Zmey17877   meyeni  BATAN   20.4700 121.9910
+Zmey17852   meyeni  BATAN   20.4570 121.9900
+Zmey17922   meyeni  SABTANG 20.2850 121.8710
+Zmey17920   meyeni  SABTANG 20.2850 121.8710    
+Zmey17925   meyeni  SABTANG 20.2850 121.8710
+Zmey17923   meyeni  SABTANG 20.2850 121.8710
+Zery28090   erythropleurus  VIETNAMnb   21.9490 104.2550
+Zery28091   erythropleurus  VIETNAMnb   21.9490 104.2550
+Zery28088   erythropleurus  VIETNAMnb   21.9490 104.2550
+Zni10863    nigrorum    CAMIGUINNORTE   18.9290 121.8990
+Zni14341    nigrorum    CAMIGUINSUR 9.1780  124.7197    
+Zni19650    nigrorum    LUZON   15.6436 121.5149
+Zni17984    nigrorum    LUZON   14.0390 122.7860
+ZjaDOT-10981    palpebrosus VIETNAM 22.7601 104.8805
+ZjaDOT-5235 simplex TAIWAN  23.8280 120.7925
+Z_LA_122866_2   simplex LOSANGELES  33.6966 -118.0183
+Z_LA_122577_2   simplex LOSANGELES  33.6966 -118.0183
+Z_LA_122188_2   simplex LOSANGELES  33.6966 -118.0183
+Zsim13809   simplex GUIZHOU 25.4114 107.8872
+Zsim13773   simplex GUIZHOU 25.4114 107.8872
+Zsim6797    simplex HUNAN   28.4167 114.1167
+Zsim10336   simplex GUANGXI 21.8400 107.8800
+Zsim11362   simplex GUIZHOU 29.1668 107.5750
+Zsim11102   simplex GUIZHOU 28.2261 107.1596
+Zsim11220   simplex GUIZHOU 28.2261 107.1596
+Zmon20899   montanus SOUTH  NEGROS  10.6743 123.1886
+Zmon28375   montanus SOUTH  MINDANAO    9.0790  125.6650
+Zev13949    everetti    CAMIGUINSUR 9.1925  124.7085
+Zev31650    everetti    SAMAR   11.8280 125.2760
+Zev28451    everetti    MINDANAO    9.0740  125.6420
+Z_HI_BRY431 japonicus   HAWAII  19.5660 -155.4530
+Z_HI_NAN290 japonicus   HAWAII  19.5660 -155.4530
+Z_HI_WAI087 japonicus   HAWAII  19.5660 -155.4530
+Z_HI_WAI078 japonicus   HAWAII  19.5660 -155.4530
+Z_HI_SOL783 japonicus   HAWAII  19.5660 -155.4530</code></pre>
+</section>
+<section id="individual-samples-and-collecting-localities-sanger-sequencing" class="level3">
+<h3 class="anchored" data-anchor-id="individual-samples-and-collecting-localities-sanger-sequencing">Individual samples and collecting localities: Sanger sequencing</h3>
+<p>Additional samples appear in the Sanger sequencing dataset that are not included in the SNP dataset. Those samples, their taxon designations, and collecting locality information are in the file <code>ZosteropsPOPS_SANGER_LatLong.txt</code> and listed below.</p>
+<pre><code>SAMPLE  TAXON   LOCALE  LAT LONG
+ZEba001 everetti    MINDANAO    7.0189  125.4984
+ZEba002 everetti    MINDANAO    9.1925  124.7085
+ZEba003 everetti    MINDANAO    9.0740  125.6420
+ZEbo001 everetti    SAMAR   11.8280 125.2760
+ZERxx001    erythropleurus  RUSSIAb 42.9700 132.8900
+ZERxx003    erythropleurus  RUSSIAb 44.7500 132.7700
+ZJal001 japonicus alani HAHAJIMA    26.6735 142.1541
+ZJal002 japonicus alani HAHAJIMA    26.6735 142.1541
+ZJal006 japonicus alani IMOTOJIMA   26.5587 142.2085
+ZJal007 japonicus alani IMOTOJIMA   26.5587 142.2085
+ZJal008 japonicus alani IMOTOJIMA   26.5587 142.2085
+ZJal009 japonicus alani IMOTOJIMA   26.5587 142.2085
+ZJal013 japonicus alani ANEJIMA 26.5506 142.1581
+ZJal014 japonicus alani ANEJIMA 26.5506 142.1581
+ZJal015 japonicus alani IMOTOJIMA   26.5587 142.2085
+ZJal016 japonicus alani IWOJIMA 24.7876 141.3156
+ZJal017 japonicus alani IWOJIMA 24.7876 141.3156
+ZJal018 japonicus alani IWOJIMA 24.7876 141.3156
+ZJal019 japonicus alani IWOJIMA 24.7876 141.3156
+ZJba001 meyeni  LANYU   22.0436 121.5484
+ZJba002 meyeni  LANYU   22.0436 121.5484
+ZJja006 japonicus   JEJU    33.4890 126.4983
+ZJja007 japonicus   JEJU    33.4890 126.4983
+ZJja008 japonicus   HONSHU  35.6388 139.7256
+ZJja011 japonicus   HUEKSANDO   34.6707 125.4196
+ZJja015 japonicus   HONSHU  35.7263 139.7168
+ZJja017 japonicus   HONSHU  36.6024 137.6088
+ZJja018 japonicus   HOKKAIDO    42.9393 143.4477
+ZJja019 japonicus   HONSHU  36.3402 139.4498
+ZJja021 japonicus   HONSHU  35.6388 139.7256
+ZJja022 japonicus   HONSHU  37.2832 138.9816
+ZJja024 japonicus   HONSHU  36.7846 136.8348
+ZJja026 japonicus   HONSHU  33.7030 135.3759
+ZJja031 japonicus   HONSHU  35.7032 139.6975
+ZJja032 japonicus   HONSHU  35.7032 139.6975
+ZJja034 japonicus   TSUSHIMA    34.4081 129.2860
+Zjja035 japonicus   TSUSHIMA    34.4081 129.2860
+ZJlo001 japonicus   CHICHIJIMA  27.0744 142.2178
+ZJlo002 japonicus   CHICHIJIMA  27.0744 142.2178
+ZJlo003 japonicus   CHICHIJIMA  27.0744 142.2178
+ZJlo004 japonicus   CHICHIJIMA  27.0744 142.2178
+ZJlo005 japonicus   CHICHIJIMA  27.0744 142.2178
+ZJlo006 japonicus   IRIOMOTE    24.3301 123.8188
+ZJlo007 japonicus   OKINAWA 26.7456 128.1779
+ZJlo008 japonicus   OKINAWA 26.7456 128.1779
+ZJlo009 japonicus   OKINAWA 26.7456 128.1779
+ZJlo010 japonicus   ISHIGAKI    24.4064 124.1754
+ZJlo011 japonicus   ISHIGAKI    24.4064 124.1754
+ZJlo013 japonicus   KIKAI   28.317  129.9401
+ZJlo014 japonicus   IRIOMOTE    24.3301 123.8188
+ZJlo018 japonicus   IRIOMOTE    24.3301 123.8188
+ZJlo020 japonicus   IRIOMOTE    24.3301 123.8188
+ZJlo023 japonicus   OKINOERABU  27.5737 128.5737
+ZJlo026 japonicus   MIYAKOJIMA  24.8218 125.3137
+ZJlo027 japonicus   YONAGUNI    24.4680 123.0045
+ZJlo032 japonicus   KUMEJIMA    26.3504 126.7712
+ZJlo034 japonicus   MIYAKOJIMA  24.7354 125.3000
+ZJlo035 japonicus   OKINAWA 26.7456 128.1779
+ZJlo038 japonicus   OKINAWA 26.7456 128.1779
+ZJlo039 japonicus   ISHIGAKI    24.4064 124.1754
+ZJlo042 japonicus   AMAMI   28.3192 129.2765
+ZJlo051 japonicus   OKINOERABU  27.5737 128.5737
+ZJsi001 simplex TAIWAN  22.7613 121.1438
+ZJsi003 simplex TAIWAN  22.7613 121.1438
+ZJsi005 simplex TAIWAN  22.7613 121.1438
+ZJsi015 simplex MACAO   22.1987 113.5439
+ZJsi018 simplex SICHUAN 30.6509 104.0757
+ZJsi025 simplex GUANGDONG   23.1317 113.2663
+ZJsi026 simplex YUNNAN  25.0453 102.7097
+ZJst001 japonicus   NIIJIMA 34.3771 139.2569
+ZJst002 japonicus   AOGASHIMA   32.4570 139.7652
+ZJst006 japonicus   AOGASHIMA   32.4570 139.7652
+ZJst008 japonicus   KOZUSHIMA   34.2055 139.1345
+ZJst011 japonicus   KOZUSHIMA   34.2055 139.1345
+ZJst013 japonicus   MIYAKEJIMA  34.0788 139.5178
+ZJst016 japonicus   MIYAKEJIMA  34.0788 139.5178
+ZJst017 japonicus   NIIJIMA 34.3771 139.2569
+ZMOmo004    montanus SOUTH  JAVA    -7.6145 110.7122
+ZMOvu001    montanus SOUTH  MINDANAO    7.0189  125.4984
+ZMOvu006    montanus SOUTH  MINDANAO    6.0234  124.6414
+ZMOvu007    montanus SOUTH  MINDANAO    6.0234  124.6414
+ZMOxx004    montanus SOUTH  PANAY   11.3936 122.1661
+ZMOxx006    montanus SOUTH  PANAY   11.4109 122.2881
+ZMOxx007    montanus SOUTH  PANAY   11.4109 122.2881
+ZMOxx008    montanus SOUTH  PANAY   11.4109 122.2881
+ZMxx007 meyeni  LANYU   22.0093 121.5721
+ZMxx008 meyeni  LANYU   22.0093 121.5721</code></pre>
+</section>
+</section>
+<section id="packages" class="level2">
+<h2 class="anchored" data-anchor-id="packages">Packages</h2>
+<p>Set the working directory to one where the data files <code>ZosteropsPOPS4_LatLong.txt</code> and <code>Zosterops_SANGER_LatLong.txt</code> are accessible. Creating the sampling maps requires the following R packages.</p>
+<ul>
+<li><p>logr <span class="citation" data-cites="logr">(<a href="#ref-logr" role="doc-biblioref">Bosak 2024</a>)</span> Optional if you wish to create a log file for the analysis.</p></li>
+<li><p>ggplot2 <span class="citation" data-cites="ggplot2">(<a href="#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span></p></li>
+<li><p>maps <span class="citation" data-cites="maps">(<a href="#ref-maps" role="doc-biblioref">Becker, Minka, and Deckmyn. 2024</a>)</span></p></li>
+<li><p>sf <span class="citation" data-cites="sf">(<a href="#ref-sf" role="doc-biblioref">Pebesma and Bivand 2023</a>)</span></p></li>
+</ul>
+<p>Install the packages using the Tools/Install Packages selection from the RStudio menu and load the package libraries.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(logr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: common</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log_open</span>(<span class="at">file_name =</span> <span class="st">"ZosteropsMaps.log"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "./log/ZosteropsMaps.log"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#load in each library used for mapping</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) <span class="co">#v3.4.1</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(maps) <span class="co">#v3.4.1</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf) <span class="co">#v1.0-12</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Linking to GEOS 3.11.0, GDAL 3.5.3, PROJ 9.1.0; sf_use_s2() is TRUE</code></pre>
+</div>
+</div>
+</section>
+<section id="read-and-edit-data-snp-sampling" class="level2">
+<h2 class="anchored" data-anchor-id="read-and-edit-data-snp-sampling">Read and edit data: SNP sampling</h2>
+<p>Read the data into a data frame using <code>read.csv</code> and indicate that the fields are tab delimited (<code>sep = "\t"</code>) and contain a header row (<code>header = TRUE</code>). First complete this process for the sampling data for the SNP dataset.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read tab delimited (sep = "\t") file with latitude and longitude</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>ZLocations <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Data/Location files/ZosteropsPOPS4_LatLong.txt"</span>, </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>                       <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Remove the samples from the introduced populations. Those samples are from Los Angeles (<em>Z. simplex</em>) and Hawaii (<em>Z. japonicus</em>) and are included in analyses but will not appear on the sampling maps.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove Los Angeles and Hawaii samples</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>ZLocations_NATIVE <span class="ot">&lt;-</span> ZLocations[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">105</span>,<span class="dv">106</span>,<span class="dv">107</span>,<span class="dv">120</span>,<span class="dv">121</span>,<span class="dv">122</span>,<span class="dv">123</span>,<span class="dv">124</span>),]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="count-individual-samples-per-taxon-snp-sampling" class="level2">
+<h2 class="anchored" data-anchor-id="count-individual-samples-per-taxon-snp-sampling">Count individual samples per taxon: SNP sampling</h2>
+<p>To illustrate the relative number of individual samples from any particular site we will count the number of samples associated with a unique latitude and longitude. First split the data frame by the TAXON column.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Split by TAXON</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>Zlocations_NATIVE_TAXON <span class="ot">&lt;-</span> <span class="fu">split</span>(ZLocations_NATIVE, </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>                                 ZLocations_NATIVE<span class="sc">$</span>TAXON)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Using a loop count samples grouped by LAT and LONG columns and save this as a new data frame called <code>sampling.df</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># init sampling.df which will be a df of samples grouped by unique lat/long</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>sampling.df<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="cn">NULL</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># use a for loop to split the dataframe by species and summarize the number </span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># of individuals sampled at each locality for each species</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">names</span>(Zlocations_NATIVE_TAXON)){</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  samps <span class="ot">&lt;-</span> Zlocations_NATIVE_TAXON[[i]] <span class="sc">%&gt;%</span> </span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">group_by</span>(LAT, LONG) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">summarize</span>(<span class="at">count=</span>dplyr<span class="sc">::</span><span class="fu">n</span>())</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="fu">rep</span>(i, <span class="at">times=</span><span class="fu">nrow</span>(samps)), samps)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  sampling.df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">rbind</span>(sampling.df, df))</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'LAT'. You can override using the `.groups`
+argument.
+New names:
+`summarise()` has grouped output by 'LAT'. You can override using the `.groups`
+argument.
+New names:
+`summarise()` has grouped output by 'LAT'. You can override using the `.groups`
+argument.
+New names:
+`summarise()` has grouped output by 'LAT'. You can override using the `.groups`
+argument.
+New names:
+`summarise()` has grouped output by 'LAT'. You can override using the `.groups`
+argument.
+New names:
+`summarise()` has grouped output by 'LAT'. You can override using the `.groups`
+argument.
+New names:
+`summarise()` has grouped output by 'LAT'. You can override using the `.groups`
+argument.
+New names:
+`summarise()` has grouped output by 'LAT'. You can override using the `.groups`
+argument.
+New names:
+`summarise()` has grouped output by 'LAT'. You can override using the `.groups`
+argument.
+New names:
+`summarise()` has grouped output by 'LAT'. You can override using the `.groups`
+argument.
+New names:
+`summarise()` has grouped output by 'LAT'. You can override using the `.groups`
+argument.
+New names:</code></pre>
+</div>
+</div>
+<p>Edit the column names in the new <code>sampling.df</code> data frame.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#fix colnames</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(sampling.df)<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"Species"</span>,<span class="st">"Latitude"</span>,<span class="st">"Longitude"</span>,<span class="st">"count"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="read-and-edit-data-sanger-sampling" class="level2">
+<h2 class="anchored" data-anchor-id="read-and-edit-data-sanger-sampling">Read and edit data: Sanger sampling</h2>
+<p>Repeat the process above for the file containing the additional samples included in the Sanger sequencing dataset. There are no samples from introduced populations in the Sanger sequencing data so there is no need to follow up with the editing step.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pull location data for samples in the SANGER sequencing dataset </span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># but not in the NSP dataset</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Read tab delimited (sep = "\t") file with latitude and longitude</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>ZLocationsSANGER <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Data/Location files/ZosteropsPOPS_SANGER_LatLong.txt"</span>, </span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>                             <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="count-individual-samples-per-taxon-sanger-sampling" class="level2">
+<h2 class="anchored" data-anchor-id="count-individual-samples-per-taxon-sanger-sampling">Count individual samples per taxon: Sanger sampling</h2>
+<p>Split the data frame for the Sanger sequencing sampling by the TAXON column.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Split by TAXON</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>ZlocationsSANGER_TAXON <span class="ot">&lt;-</span> <span class="fu">split</span>(ZLocationsSANGER, </span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>                                ZLocationsSANGER<span class="sc">$</span>TAXON)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Using a loop count samples grouped by LAT and LONG columns and save this as a new data frame called <code>samplingSANGER.df</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># init samplingSANGER.df which will be a df of samples </span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># grouped by unique lat/long</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>samplingSANGER.df<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="cn">NULL</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co">#use a for loop to split the dataframe by species and </span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co">#summarize the number of individuals sampled at each </span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co">#locality for each species</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">names</span>(ZlocationsSANGER_TAXON)){</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  samps <span class="ot">&lt;-</span> ZlocationsSANGER_TAXON[[i]] <span class="sc">%&gt;%</span> </span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">group_by</span>(LAT, LONG) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">summarize</span>(<span class="at">count=</span>dplyr<span class="sc">::</span><span class="fu">n</span>())</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="fu">rep</span>(i, <span class="at">times=</span><span class="fu">nrow</span>(samps)), samps)</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>  samplingSANGER.df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">rbind</span>(samplingSANGER.df, df))</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'LAT'. You can override using the `.groups`
+argument.
+New names:
+`summarise()` has grouped output by 'LAT'. You can override using the `.groups`
+argument.
+New names:
+`summarise()` has grouped output by 'LAT'. You can override using the `.groups`
+argument.
+New names:
+`summarise()` has grouped output by 'LAT'. You can override using the `.groups`
+argument.
+New names:
+`summarise()` has grouped output by 'LAT'. You can override using the `.groups`
+argument.
+New names:
+`summarise()` has grouped output by 'LAT'. You can override using the `.groups`
+argument.
+New names:
+`summarise()` has grouped output by 'LAT'. You can override using the `.groups`
+argument.
+New names:</code></pre>
+</div>
+</div>
+<p>Edit the column names in the new <code>samplingSANGER.df</code> data frame.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">#fix colnames</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(samplingSANGER.df)<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"Species"</span>,<span class="st">"Latitude"</span>,<span class="st">"Longitude"</span>,<span class="st">"count"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="create-a-sampling-map" class="level2">
+<h2 class="anchored" data-anchor-id="create-a-sampling-map">Create a sampling map</h2>
+<section id="mapping-all-samples" class="level3">
+<h3 class="anchored" data-anchor-id="mapping-all-samples">Mapping all samples</h3>
+<p>Download a world base map.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">#make base world map</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>pac<span class="ot">&lt;-</span><span class="fu">map_data</span>(<span class="st">"world"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>First create a sampling map for all the Zosterops samples in the study (excluding those from introduced populations). Include two lines with the <code>geo_point</code> command. One line will define those points from the SNP sampling data frame (<code>sampling.df</code>) and identify those points as filled circles (<code>pch=21</code>). The next line will define the points using the <code>geo_point</code> command for the additional Sanger sequencing samples (<code>samplingSANGER.df</code>) and identify those points as triangles (<code>pch=24</code>). Because many of the sampling locations are the same for different taxa define <code>position = position_jitter(h=0.5, w=0.5)</code> to offset the points on the map so as they do not perfectly overlap. Also set <code>alpha=0.5</code> to make the points transparent. This will also help in showing those places where sampled taxa overlap in location.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot all native samples</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>()<span class="sc">+</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="at">data =</span> pac, <span class="fu">aes</span>(<span class="at">x=</span>long, <span class="at">y =</span> lat, <span class="at">group =</span> group), </span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">fill=</span><span class="st">"lightgrey"</span>, <span class="at">col=</span><span class="st">"black"</span>, <span class="at">cex=</span>.<span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">90</span>, <span class="dv">145</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="dv">48</span>)) <span class="sc">+</span> </span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> sampling.df, <span class="fu">aes</span>(<span class="at">x =</span> Longitude, <span class="at">y =</span> Latitude, </span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">fill=</span>Species, <span class="at">size=</span>count), </span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">h =</span> <span class="fl">0.5</span>, <span class="at">w =</span> <span class="fl">0.5</span>), <span class="at">pch=</span><span class="dv">21</span>, </span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">color=</span><span class="st">"black"</span>, <span class="at">alpha =</span><span class="fl">0.5</span>, <span class="at">show.legend=</span><span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> samplingSANGER.df, <span class="fu">aes</span>(<span class="at">x =</span> Longitude, <span class="at">y =</span> Latitude, </span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">fill=</span>Species, <span class="at">size=</span>count), </span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">h =</span> <span class="fl">0.5</span>, <span class="at">w =</span> <span class="fl">0.5</span>), <span class="at">pch=</span><span class="dv">24</span>, </span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>             <span class="at">color=</span><span class="st">"black"</span>, <span class="at">alpha =</span><span class="fl">0.5</span>, <span class="at">show.legend=</span><span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"#004949"</span>, <span class="st">"#DB6D00"</span>, <span class="st">"#D82632"</span>, </span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"#290AD8"</span>, <span class="st">"#FED439"</span>, <span class="st">"#B66DFF"</span>, </span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"#006DDB"</span>, <span class="st">"#FA9C88"</span>, <span class="st">"#924900"</span>, </span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"#7BA9CB"</span>, <span class="st">"#008600"</span>))<span class="sc">+</span></span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_size_continuous</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">6</span>))<span class="sc">+</span></span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">override.aes =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">8</span>), <span class="at">order=</span><span class="dv">1</span>, </span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>                             <span class="at">label.theme =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"italic"</span>), </span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>                             <span class="at">position =</span> <span class="st">"left"</span>),</span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>         <span class="at">linewidth =</span> <span class="fu">guide_legend</span>(<span class="at">order =</span> <span class="dv">2</span>))<span class="sc">+</span></span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"left"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+ℹ Please use `linewidth` instead.</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="ZosteropsMaps_files/figure-html/Sampling map for native range Zosterops samples-1.png" class="img-fluid figure-img" width="1344"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Save the sampling map as a <code>png</code> file.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the sampling plot</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"ZosteropsSamplingMapALL.png"</span>, <span class="at">device =</span> <span class="st">"png"</span>, </span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">width =</span> <span class="dv">9</span>, <span class="at">height =</span> <span class="fl">6.5</span>, <span class="at">units =</span> <span class="st">"in"</span>, <span class="at">dpi =</span> <span class="dv">500</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="mapping-ryukyu-island-samples" class="level3">
+<h3 class="anchored" data-anchor-id="mapping-ryukyu-island-samples">Mapping Ryukyu Island samples</h3>
+<p>Because many of the samples were collected on small islands and may appear close together at a large scale, create more geographically focused maps for particular regions with heavy sampling. This may be accomplished by editing the <code>coord_sf</code> command to narrow the latitude and longitude for each map. First create a map that is focused on those samples from the Ryukyu Islands.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot all native samples in the Ryukyu Islands</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>()<span class="sc">+</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="at">data =</span> pac, <span class="fu">aes</span>(<span class="at">x=</span>long, <span class="at">y =</span> lat, <span class="at">group =</span> group), </span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">fill=</span><span class="st">"lightgrey"</span>, <span class="at">col=</span><span class="st">"black"</span>, <span class="at">cex=</span>.<span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">122</span>, <span class="dv">131</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">24</span>, <span class="dv">31</span>)) <span class="sc">+</span> </span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> sampling.df, <span class="fu">aes</span>(<span class="at">x =</span> Longitude, <span class="at">y =</span> Latitude, </span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">fill=</span>Species, <span class="at">size=</span>count), </span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">h =</span> <span class="fl">0.1</span>, <span class="at">w =</span> <span class="fl">0.1</span>), <span class="at">pch=</span><span class="dv">21</span>, </span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">color=</span><span class="st">"black"</span>, <span class="at">alpha =</span><span class="fl">0.5</span>, <span class="at">show.legend=</span><span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> samplingSANGER.df, <span class="fu">aes</span>(<span class="at">x =</span> Longitude, <span class="at">y =</span> Latitude, </span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">fill=</span>Species, <span class="at">size=</span>count), </span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">h =</span> <span class="fl">0.1</span>, <span class="at">w =</span> <span class="fl">0.1</span>), <span class="at">pch=</span><span class="dv">24</span>, </span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>             <span class="at">color=</span><span class="st">"black"</span>, <span class="at">alpha =</span><span class="fl">0.5</span>, <span class="at">show.legend=</span><span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"#004949"</span>, <span class="st">"#DB6D00"</span>, <span class="st">"#D82632"</span>, </span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"#290AD8"</span>, <span class="st">"#FED439"</span>, <span class="st">"#B66DFF"</span>, </span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"#006DDB"</span>, <span class="st">"#FA9C88"</span>, <span class="st">"#924900"</span>, </span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"#7BA9CB"</span>, <span class="st">"#008600"</span>))<span class="sc">+</span></span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_size_continuous</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">6</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="ZosteropsMaps_files/figure-html/Ryukyu islands sampling map-1.png" class="img-fluid figure-img" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Save the Ryukyu Islands sampling map as a <code>png</code> file.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the sampling plot</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"ZosteropsSamplingMapRYUKYU.png"</span>, <span class="at">device =</span> <span class="st">"png"</span>, </span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">width =</span> <span class="dv">9</span>, <span class="at">height =</span> <span class="fl">6.5</span>, <span class="at">units =</span> <span class="st">"in"</span>, <span class="at">dpi =</span> <span class="dv">500</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="mapping-ogasawara-and-volcano-island-samples" class="level3">
+<h3 class="anchored" data-anchor-id="mapping-ogasawara-and-volcano-island-samples">Mapping Ogasawara and Volcano Island samples</h3>
+<p>Because the samples from the Ogasawara and Volcano Islands are isolated geographically and tightly clustered make a separate map for those samples. Many of these islands are tiny and will not show up on the map but rest assured they are there.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot all native samples in the Ogasawara and Volcano Islands</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>()<span class="sc">+</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="at">data =</span> pac, <span class="fu">aes</span>(<span class="at">x=</span>long, <span class="at">y =</span> lat, <span class="at">group =</span> group), </span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">fill=</span><span class="st">"lightgrey"</span>, </span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">col=</span><span class="st">"black"</span>, <span class="at">cex=</span>.<span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">141</span>, <span class="dv">143</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="fl">24.4</span>, <span class="fl">27.2</span>)) <span class="sc">+</span> </span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> sampling.df, <span class="fu">aes</span>(<span class="at">x =</span> Longitude, <span class="at">y =</span> Latitude, </span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">fill=</span>Species, <span class="at">size=</span>count), </span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">h =</span> <span class="fl">0.05</span>, <span class="at">w =</span> <span class="fl">0.05</span>), <span class="at">pch=</span><span class="dv">21</span>, </span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">color=</span><span class="st">"black"</span>, <span class="at">alpha =</span><span class="fl">0.5</span>, <span class="at">show.legend=</span><span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> samplingSANGER.df, <span class="fu">aes</span>(<span class="at">x =</span> Longitude, <span class="at">y =</span> Latitude, </span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">fill=</span>Species, <span class="at">size=</span>count), </span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">h =</span> <span class="fl">0.05</span>, <span class="at">w =</span> <span class="fl">0.05</span>), <span class="at">pch=</span><span class="dv">24</span>, </span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>             <span class="at">color=</span><span class="st">"black"</span>, <span class="at">alpha =</span><span class="fl">0.5</span>, <span class="at">show.legend=</span><span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"#004949"</span>, <span class="st">"#DB6D00"</span>, <span class="st">"#D82632"</span>, </span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"#290AD8"</span>, <span class="st">"#FED439"</span>, <span class="st">"#B66DFF"</span>, </span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"#006DDB"</span>, <span class="st">"#FA9C88"</span>, <span class="st">"#924900"</span>, </span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"#7BA9CB"</span>, <span class="st">"#008600"</span>))<span class="sc">+</span></span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_size_continuous</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">6</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="ZosteropsMaps_files/figure-html/Ogasawara and Volcano Islands samping map-1.png" class="img-fluid figure-img" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Save the Ogasawara and Volcano Islands sampling map as a <code>png</code> file.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the sampling plot</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"ZosteropsSamplingMapOGASAWARA.png"</span>, <span class="at">device =</span> <span class="st">"png"</span>, </span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">width =</span> <span class="dv">9</span>, <span class="at">height =</span> <span class="fl">6.5</span>, <span class="at">units =</span> <span class="st">"in"</span>, <span class="at">dpi =</span> <span class="dv">500</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="mapping-philippine-samples" class="level3">
+<h3 class="anchored" data-anchor-id="mapping-philippine-samples">Mapping Philippine samples</h3>
+<p>Many samples across multiple taxa were sampled in the Philippines for this study. Create a separate map that focuses on those samples.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot all native samples in the Philippines</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>()<span class="sc">+</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="at">data =</span> pac, <span class="fu">aes</span>(<span class="at">x=</span>long, <span class="at">y =</span> lat, <span class="at">group =</span> group), </span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">fill=</span><span class="st">"lightgrey"</span>, </span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">col=</span><span class="st">"black"</span>, <span class="at">cex=</span>.<span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">115</span>, <span class="dv">127</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="fl">20.3</span>)) <span class="sc">+</span> </span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> sampling.df, <span class="fu">aes</span>(<span class="at">x =</span> Longitude, <span class="at">y =</span> Latitude, </span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">fill=</span>Species, <span class="at">size=</span>count), </span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">h =</span> <span class="fl">0.2</span>, <span class="at">w =</span> <span class="fl">0.2</span>), <span class="at">pch=</span><span class="dv">21</span>, </span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">color=</span><span class="st">"black"</span>, <span class="at">alpha =</span><span class="fl">0.5</span>, <span class="at">show.legend=</span><span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> samplingSANGER.df, <span class="fu">aes</span>(<span class="at">x =</span> Longitude, <span class="at">y =</span> Latitude, </span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">fill=</span>Species, <span class="at">size=</span>count), </span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">h =</span> <span class="fl">0.2</span>, <span class="at">w =</span> <span class="fl">0.2</span>), <span class="at">pch=</span><span class="dv">24</span>, </span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>             <span class="at">color=</span><span class="st">"black"</span>, <span class="at">alpha =</span><span class="fl">0.5</span>, <span class="at">show.legend=</span><span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"#004949"</span>, <span class="st">"#DB6D00"</span>, <span class="st">"#D82632"</span>, </span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"#290AD8"</span>, <span class="st">"#FED439"</span>, <span class="st">"#B66DFF"</span>, </span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"#006DDB"</span>, <span class="st">"#FA9C88"</span>, <span class="st">"#924900"</span>, </span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"#7BA9CB"</span>, <span class="st">"#008600"</span>))<span class="sc">+</span></span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_size_continuous</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">6</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="ZosteropsMaps_files/figure-html/Philippine sampling map-1.png" class="img-fluid figure-img" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Save the Philippine sampling map as a <code>png</code> file.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the sampling plot</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"ZosteropsSamplingMapPHILIPPINES.png"</span>, <span class="at">device =</span> <span class="st">"png"</span>, </span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">width =</span> <span class="dv">9</span>, <span class="at">height =</span> <span class="fl">6.5</span>, <span class="at">units =</span> <span class="st">"in"</span>, <span class="at">dpi =</span> <span class="dv">500</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="close-log" class="level2">
+<h2 class="anchored" data-anchor-id="close-log">Close log</h2>
+<p>Close the log file.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log_close</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-maps" class="csl-entry" role="listitem">
+Becker, Original S code by Richard A., Allan R. Wilks. R version by Ray Brownrigg. Enhancements by Thomas P Minka, and Alex Deckmyn. 2024. <span>“Maps: Draw Geographical Maps.”</span> <a href="https://CRAN.R-project.org/package=maps">https://CRAN.R-project.org/package=maps</a>.
+</div>
+<div id="ref-logr" class="csl-entry" role="listitem">
+Bosak, David. 2024. <span>“Logr: Creates Log Files.”</span> <a href="https://CRAN.R-project.org/package=logr">https://CRAN.R-project.org/package=logr</a>.
+</div>
+<div id="ref-deraad2024" class="csl-entry" role="listitem">
+DeRaad, Devon A., Marlon E. Cobos, Natalie R. Hofmeister, Lucas H. DeCicco, Madhvi X. Venkatraman, Isao Nishiumi, Bailey McKay, et al. 2024. <span>“On the Brink of Explosion? Identifying the Source and Potential Spread of Introduced Zosterops White-Eyes in North America.”</span> <em>Biological Invasions</em> 26 (5): 1615–39. <a href="https://doi.org/10.1007/s10530-024-03268-8">https://doi.org/10.1007/s10530-024-03268-8</a>.
+</div>
+<div id="ref-sf" class="csl-entry" role="listitem">
+Pebesma, Edzer, and Roger Bivand. 2023. <span>“<span></span>Spatial Data Science: With Applications in r<span></span>.”</span> <a href="https://doi.org/10.1201/9780429459016">https://doi.org/10.1201/9780429459016</a>.
+</div>
+<div id="ref-ggplot2" class="csl-entry" role="listitem">
+Wickham, Hadley. 2016. <span>“Ggplot2: Elegant Graphics for Data Analysis.”</span> <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

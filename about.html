@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Introduction – Zosterops Methods and Results</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-b663525e4b92bb903b2199e2d401bf36.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-504dfd40fe2ab044efd8c4ece178275b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Zosterops Methods and Results</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./about.html" aria-current="page"> 
+<span class="menu-text">Introduction</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./ZosteropsMaps.html"> 
+<span class="menu-text">Sampling Maps</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Summary_Sanger.html"> 
+<span class="menu-text">Sanger sequencing summary statistics and trees</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Zosterops_StarBEAST2.html"> 
+<span class="menu-text">StarBEAST2</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./ZosteropsBPP.html"> 
+<span class="menu-text">BPP and GDI based species delimitation</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./ZosteropsSNPs_analysis.html"> 
+<span class="menu-text">Distance trees, PCA, UMAP, and DAPC analyses</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Zosterops_SNPFst.html"> 
+<span class="menu-text">Genetic differentiation and biogeographic breaks</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Zosterops_SVDQ.html"> 
+<span class="menu-text">Species trees and delimitation with SVDQuartets, PICL, and DELINEATE</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./ZosteropsMorphometrics.html"> 
+<span class="menu-text">Linear morphometrics</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#sampling" id="toc-sampling" class="nav-link active" data-scroll-target="#sampling">Sampling</a></li>
+  <li><a href="#lab-work-and-analysis" id="toc-lab-work-and-analysis" class="nav-link" data-scroll-target="#lab-work-and-analysis">Lab work and analysis</a></li>
+  <li><a href="#museum-morphometrics" id="toc-museum-morphometrics" class="nav-link" data-scroll-target="#museum-morphometrics">Museum morphometrics</a></li>
+  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Introduction</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This study is part of a decades-long international collaboration to learn about the systematics, evolution, and island biogeography of East Asian and Philippine birds. This chapter in that story involves the systematics of a particularly complex group within the white-eye genus <em>Zosterops</em>. The systematics of the white-eyes of East Asia and the Philippines, dubbed the Asiatic white-eyes, has proven to be confounding. Various studies have made strides in understanding this group but have suffered from insufficient sampling to tackle this particular problem <span class="citation" data-cites="lim2018 jones2008 gwee2020 oliveros2021 moyle2009">(<a href="#ref-lim2018" role="doc-biblioref">Lim et al. 2018</a>; <a href="#ref-jones2008" role="doc-biblioref">JONES and KENNEDY 2008</a>; <a href="#ref-gwee2020" role="doc-biblioref">Gwee et al. 2020</a>; <a href="#ref-oliveros2021" role="doc-biblioref">Oliveros, Andersen, and Moyle 2021</a>; <a href="#ref-moyle2009" role="doc-biblioref">Moyle et al. 2009</a>)</span>. With the help of collaborators at the University of Kansas we produced a RADseq dataset and coupled that genome-wide genetic data with a smaller allele-based Sanger sequenced dataset and phenotypic data from linear morphometrics from museum study skins. Here we will describe in detail, perhaps excruciating, the methods and analyses in this work. The hope is that the work will be reproducible by our colleagues and accessible for students, especially for those learning to grapple with the complexities of large-scale single nucleotide polymorphism (SNP) datasets.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/7254126816_745ed779d1_o-01.jpg" class="img-fluid figure-img"></p>
+<figcaption>Lanyu Island off the east coast of Taiwan.</figcaption>
+</figure>
+</div>
+<section id="sampling" class="level2">
+<h2 class="anchored" data-anchor-id="sampling">Sampling</h2>
+<p>The strength of this study lies in its comprehensive sampling effort. 208 genetic samples and 354 museum skins were analyzed from several museums in the United States, China, Taiwan, and Japan. All of the sampling in this study is accessioned in natural history museums.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/7279519048_8c1a5f983f_o-01.jpg" class="img-fluid figure-img"></p>
+<figcaption>An author (HLM) collecting samples on Lanyu Island.</figcaption>
+</figure>
+</div>
+<p>For the Asiatic white-eye complex we have sampled from many populations for the genetic analysis including all but three of the 15 subspecies within the combined <em>Z. japonicus</em> and <em>Z. montanus</em> group. This sampling was geographically widespread ranging from large temperate islands such as Hokkaido and Honshu, tiny, far-flung oceanic islands such as those in the Volcano group in the Western Pacific, and a variety of tropical islands in the Philippine and Indonesian archipelagos, as well as multiple taxa and populations for continental species ranging from Singapore to the Russian Far East.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/IMG_4268-01.JPG" class="img-fluid figure-img" width="1024"></p>
+<figcaption>An author (BDM) with <em>Zosterops japonicus</em> on the Japanese island of Tsushima.</figcaption>
+</figure>
+</div>
+</section>
+<section id="lab-work-and-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="lab-work-and-analysis">Lab work and analysis</h2>
+<p>All the bench work for this project was conducted either at the University of Kansas for RADseq or Marshall University and Cincinnati Museum Center for the Sanger sequenced loci. Initial analyses were done at the University of Kansas by Devon DeRaad and published in the journal <em>Biological Invasions</em> <span class="citation" data-cites="deraad2024">(<a href="#ref-deraad2024" role="doc-biblioref">DeRaad et al. 2024</a>)</span>. Where those initial analyses focused on using the RADseq data and ecological niche modeling to study the origin and spread of the introduced populations in Hawaii and Southern California, this study takes those data and adds Sanger sequences and morphology to focus on the systematics of the group in Asia. The initial basic filtering and preparation of the RADseq data for analysis is documented in <span class="citation" data-cites="deraad2024">(<a href="#ref-deraad2024" role="doc-biblioref">DeRaad et al. 2024</a>)</span>. All the analyses here are directed toward solving the puzzle of the species limits within this group and determining their relationships. The lead on those integrative analyses were done by Herman Mays Jr.&nbsp;at Marshall University with considerable help from Laura Kubatko at Ohio State University.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/IMG_0536-01.jpg" class="img-fluid figure-img" width="1024"></p>
+<figcaption>A view of lab work in the lab of one of the authors (HLM) at Marshall University.</figcaption>
+</figure>
+</div>
+</section>
+<section id="museum-morphometrics" class="level2">
+<h2 class="anchored" data-anchor-id="museum-morphometrics">Museum morphometrics</h2>
+<p>Species are more than just the accumulation of neutral genetic differences. We added phenotypic data to these analyses to make for a more inclusive and integrative investigation of species limits and evolution in this group. Phenotypes in this study were focused on linear morphometrics derived from museum skins. Access to museum collections was generously provided by the American Museum of Natural History, Cincinnati Museum Center, The Field Museum, and the National Museum of Natural History at the Smithsonian. We have immense gratitude for these institutions and their staff for maintaining these collections and making them accessible.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/FMNH_Zosterops_drawer5-01.JPG" class="img-fluid figure-img" width="1024"></p>
+<figcaption>Specimens of <em>Zosterops nigrorum catarmanensis</em> (top) and <em>Z. montanus</em> at the Field Museum, Chicago, IL.</figcaption>
+</figure>
+</div>
+</section>
+<section id="acknowledgements" class="level2">
+<h2 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
+<p>Herman L. Mays Jr., PhD (HLM) conducted these analyses and created this document. This research was only possible through decades of collaboration with colleagues and institutions in Taiwan, China, and Japan, the support of museum collections in the USA, and training and collaboration with Laura Kubatko at The Ohio State University. Support for HLM was provided by the National Science Foundation through a Mid-career Award (NSF#2322123). Additional acknowledgments appear in the published account of this work. Questions about these analyses and research program are welcomed and should be directed to HLM at maysh@marshall.edu or maysher@gmail.com. Additional information about the broader research program may be found at <a href="https://www.monofilia.org" class="uri">https://www.monofilia.org</a>.</p>
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-deraad2024" class="csl-entry" role="listitem">
+DeRaad, Devon A., Marlon E. Cobos, Natalie R. Hofmeister, Lucas H. DeCicco, Madhvi X. Venkatraman, Isao Nishiumi, Bailey McKay, et al. 2024. <span>“On the Brink of Explosion? Identifying the Source and Potential Spread of Introduced Zosterops White-Eyes in North America.”</span> <em>Biological Invasions</em> 26 (5): 1615–39. <a href="https://doi.org/10.1007/s10530-024-03268-8">https://doi.org/10.1007/s10530-024-03268-8</a>.
+</div>
+<div id="ref-gwee2020" class="csl-entry" role="listitem">
+Gwee, Chyi Yin, Kritika M Garg, Balaji Chattopadhyay, Keren R Sadanandan, Dewi M Prawiradilaga, Martin Irestedt, Fumin Lei, et al. 2020. <span>“Phylogenomics of White-Eyes, a <span>‘</span>Great Speciator<span>’</span>, Reveals Indonesian Archipelago as the Center of Lineage Diversity.”</span> <em>eLife</em> 9 (December). <a href="https://doi.org/10.7554/elife.62765">https://doi.org/10.7554/elife.62765</a>.
+</div>
+<div id="ref-jones2008" class="csl-entry" role="listitem">
+JONES, ANDREW W., and ROBERT S. KENNEDY. 2008. <span>“Evolution in a Tropical Archipelago: Comparative Phylogeography of Philippine Fauna and Flora Reveals Complex Patterns of Colonization and Diversification.”</span> <em>Biological Journal of the Linnean Society</em> 95 (3): 620–39. <a href="https://doi.org/10.1111/j.1095-8312.2008.01073.x">https://doi.org/10.1111/j.1095-8312.2008.01073.x</a>.
+</div>
+<div id="ref-lim2018" class="csl-entry" role="listitem">
+Lim, Bryan T. M., Keren R. Sadanandan, Caroline Dingle, Yu Yan Leung, Dewi M. Prawiradilaga, Mohammad Irham, Hidayat Ashari, Jessica G. H. Lee, and Frank E. Rheindt. 2018. <span>“Molecular Evidence Suggests Radical Revision of Species Limits in the Great Speciator White-Eye Genus Zosterops.”</span> <em>Journal of Ornithology</em> 160 (1): 1–16. <a href="https://doi.org/10.1007/s10336-018-1583-7">https://doi.org/10.1007/s10336-018-1583-7</a>.
+</div>
+<div id="ref-moyle2009" class="csl-entry" role="listitem">
+Moyle, Robert G., Christopher E. Filardi, Catherine E. Smith, and Jared Diamond. 2009. <span>“Explosive Pleistocene Diversification and Hemispheric Expansion of a <span>“</span>Great Speciator<span>”</span>.”</span> <em>Proceedings of the National Academy of Sciences</em> 106 (6): 1863–68. <a href="https://doi.org/10.1073/pnas.0809861105">https://doi.org/10.1073/pnas.0809861105</a>.
+</div>
+<div id="ref-oliveros2021" class="csl-entry" role="listitem">
+Oliveros, Carl H., Michael J. Andersen, and Robert G. Moyle. 2021. <span>“A Phylogeny of White-Eyes Based on Ultraconserved Elements.”</span> <em>Molecular Phylogenetics and Evolution</em> 164 (November): 107273. <a href="https://doi.org/10.1016/j.ympev.2021.107273">https://doi.org/10.1016/j.ympev.2021.107273</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

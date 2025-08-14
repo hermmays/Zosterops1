@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>StarBEAST2 – Zosterops Methods and Results</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-b663525e4b92bb903b2199e2d401bf36.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-95a2ced3787879bf47d026b70c7a7c79.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Zosterops Methods and Results</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">Introduction</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./ZosteropsMaps.html"> 
+<span class="menu-text">Sampling Maps</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Summary_Sanger.html"> 
+<span class="menu-text">Sanger sequencing summary statistics and trees</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./Zosterops_StarBEAST2.html" aria-current="page"> 
+<span class="menu-text">StarBEAST2</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./ZosteropsBPP.html"> 
+<span class="menu-text">BPP and GDI based species delimitation</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./ZosteropsSNPs_analysis.html"> 
+<span class="menu-text">Distance trees, PCA, UMAP, and DAPC analyses</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Zosterops_SNPFst.html"> 
+<span class="menu-text">Genetic differentiation and biogeographic breaks</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Zosterops_SVDQ.html"> 
+<span class="menu-text">Species trees and delimitation with SVDQuartets, PICL, and DELINEATE</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./ZosteropsMorphometrics.html"> 
+<span class="menu-text">Linear morphometrics</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#goals" id="toc-goals" class="nav-link active" data-scroll-target="#goals">Goals</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a></li>
+  <li><a href="#data-files" id="toc-data-files" class="nav-link" data-scroll-target="#data-files">Data files</a></li>
+  <li><a href="#software-and-packages" id="toc-software-and-packages" class="nav-link" data-scroll-target="#software-and-packages">Software and packages</a></li>
+  <li><a href="#generating-the-xml-file" id="toc-generating-the-xml-file" class="nav-link" data-scroll-target="#generating-the-xml-file">Generating the xml file</a>
+  <ul class="collapse">
+  <li><a href="#partitions" id="toc-partitions" class="nav-link" data-scroll-target="#partitions">Partitions</a></li>
+  <li><a href="#taxon-sets" id="toc-taxon-sets" class="nav-link" data-scroll-target="#taxon-sets">Taxon sets</a></li>
+  <li><a href="#tip-dates" id="toc-tip-dates" class="nav-link" data-scroll-target="#tip-dates">Tip dates</a></li>
+  <li><a href="#gene-ploidy" id="toc-gene-ploidy" class="nav-link" data-scroll-target="#gene-ploidy"><strong>Gene ploidy</strong></a></li>
+  <li><a href="#population-model" id="toc-population-model" class="nav-link" data-scroll-target="#population-model">Population Model</a></li>
+  <li><a href="#site-model" id="toc-site-model" class="nav-link" data-scroll-target="#site-model">Site Model</a></li>
+  <li><a href="#clock-model" id="toc-clock-model" class="nav-link" data-scroll-target="#clock-model">Clock Model</a></li>
+  <li><a href="#priors" id="toc-priors" class="nav-link" data-scroll-target="#priors">Priors</a></li>
+  <li><a href="#mcmc" id="toc-mcmc" class="nav-link" data-scroll-target="#mcmc">MCMC</a></li>
+  <li><a href="#save-xml-file" id="toc-save-xml-file" class="nav-link" data-scroll-target="#save-xml-file">Save xml file</a></li>
+  </ul></li>
+  <li><a href="#mcmc-beast2-runs" id="toc-mcmc-beast2-runs" class="nav-link" data-scroll-target="#mcmc-beast2-runs">MCMC BEAST2 Runs</a></li>
+  <li><a href="#combining-log-and-tree-files" id="toc-combining-log-and-tree-files" class="nav-link" data-scroll-target="#combining-log-and-tree-files">Combining log and tree files</a></li>
+  <li><a href="#maximum-clade-credibility-consensus-tree" id="toc-maximum-clade-credibility-consensus-tree" class="nav-link" data-scroll-target="#maximum-clade-credibility-consensus-tree">Maximum clade credibility consensus tree</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
+  <ul class="collapse">
+  <li><a href="#a-runs" id="toc-a-runs" class="nav-link" data-scroll-target="#a-runs">A Runs</a></li>
+  <li><a href="#b-runs" id="toc-b-runs" class="nav-link" data-scroll-target="#b-runs">B Runs</a></li>
+  <li><a href="#c-runs" id="toc-c-runs" class="nav-link" data-scroll-target="#c-runs">C Runs</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">StarBEAST2</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="goals" class="level2">
+<h2 class="anchored" data-anchor-id="goals">Goals</h2>
+<p>What follows is our workflow for the StarBEAST2 <span class="citation" data-cites="ogilvie2017">(<a href="#ref-ogilvie2017" role="doc-biblioref">Ogilvie, Bouckaert, and Drummond 2017</a>)</span> analysis for Zosterops. In this analysis we will generate Zosterops species trees from our individual Sanger sequenced loci using Bayesian phylogenetic inference and the Markov chain Monte Carlo (MCMC) algorithm.</p>
+</section>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
+<p>We are using BEAST v2.7.4 for the analysis <span class="citation" data-cites="bouckaert2019 bouckaert2014 drummond2012 drummond2007">(<a href="#ref-bouckaert2019" role="doc-biblioref">R. Bouckaert et al. 2019</a>, <a href="#ref-bouckaert2014" role="doc-biblioref">2014</a>; <a href="#ref-drummond2012" role="doc-biblioref">Alexei J. Drummond et al. 2012</a>; <a href="#ref-drummond2007" role="doc-biblioref">Alexei J. Drummond and Rambaut 2007</a>)</span>. Quarto version 1.6.39 for Mac OS was used to document the workflow.</p>
+</section>
+<section id="data-files" class="level2">
+<h2 class="anchored" data-anchor-id="data-files">Data files</h2>
+<p>This analysis requires the mitochondrial DNA (mtDNA) alignments and the phased nuclear coding DNA (nuDNA) alignments from the Sanger sequenced loci. The protocol for phasing the nuDNA alignments may be found in the <strong>Sanger sequencing summary statistics and trees</strong> section. In addition a taxon set file will be required to assign individual samples to their taxon and/or population of origin.</p>
+<p>Subsequent analysis requires the following <code>fasta</code> files including the mtDNA alignments and the phased nuDNA alignments from the procedure described in the <strong>Sanger sequencing summary statistics and trees</strong> section.</p>
+<ul>
+<li><p><code>COI.fasta</code></p></li>
+<li><p><code>ND2.fasta</code></p></li>
+<li><p><code>B3GNT9_phased.fasta</code></p></li>
+<li><p><code>BIRC2_phased.fasta</code></p></li>
+<li><p><code>CCDC_phased.fasta</code></p></li>
+<li><p><code>GPRC6_phased.fasta</code></p></li>
+<li><p><code>LACTBL_phased.fasta</code></p></li>
+<li><p><code>USP38_phased.fasta</code></p></li>
+</ul>
+<p>Below are the taxon set files required for these analyses.</p>
+<ul>
+<li><p><code>Zosterops taxon sets A.txt</code></p></li>
+<li><p><code>Zosterops taxon sets B.txt</code></p></li>
+</ul>
+</section>
+<section id="software-and-packages" class="level2">
+<h2 class="anchored" data-anchor-id="software-and-packages">Software and packages</h2>
+<p>BEAST2 software is available <a href="https://www.beast2.org/">here</a>. This analysis was conducted on a prior version of BEAST2 (v2.7.4 available <a href="https://github.com/CompEvol/beast2/releases">here</a>) but nearly identical results were achieved using the most recent version of BEAST2 (v2.7.7 as of the writing of this protocol). BEAUTi2 is the tool available with BEAST2 that allows for package management and a graphical user interface (GUI) to generate the <code>xml</code> files needed to run analyses. The programs LogCombiner and TreeAnnotator are also included with the BEAST2 install and will be needed to process the results of the MCMC runs. In addition, the program <a href="https://beast.community/tracer">Tracer</a> will be required to assess the results of an MCMC run and <a href="https://beast.community/figtree">FigTree</a> to edit and visualize species trees produced by BEAST2. Below is a summary of the needed software for this analysis and links to downloads.</p>
+<ul>
+<li><p><a href="https://github.com/CompEvol/beast2/releases">BEAST2 v2.7.4</a> <span class="citation" data-cites="bouckaert2019">(<a href="#ref-bouckaert2019" role="doc-biblioref">R. Bouckaert et al. 2019</a>)</span> This install will include BEAST2, BEAUTi2, LogCombiner, and TreeAnnotator.</p></li>
+<li><p><a href="https://beast.community/tracer">Tracer</a> <span class="citation" data-cites="rambaut2018">(<a href="#ref-rambaut2018" role="doc-biblioref">Rambaut et al. 2018</a>)</span></p></li>
+<li><p><a href="https://beast.community/figtree">FigTree</a></p></li>
+</ul>
+<p>In addition the following packages will need to be installed from the BEAUTi2 GUI using the package manager. To install packages in BEAUTi2 select <strong>File</strong> from the top bar and <strong>Manage Packages</strong> from the drop down menu. The package manager will display a table of installed packages and their latest versions. To install select the desired package and click on the <strong>Install/Upgrade</strong> button. After installing or upgrading packages you will have to close BEAUTi2 and restart before proceeding. Install the following packages.</p>
+<ul>
+<li><p><a href="https://github.com/BEAST2-Dev/bModelTest">bModelTest</a> <span class="citation" data-cites="bouckaert2017">(<a href="#ref-bouckaert2017" role="doc-biblioref">R. R. Bouckaert and Drummond 2017</a>)</span></p></li>
+<li><p><a href="https://github.com/genomescale/starbeast2">StarBEAST2</a> <span class="citation" data-cites="ogilvie2017">(<a href="#ref-ogilvie2017" role="doc-biblioref">Ogilvie, Bouckaert, and Drummond 2017</a>)</span></p></li>
+</ul>
+</section>
+<section id="generating-the-xml-file" class="level2">
+<h2 class="anchored" data-anchor-id="generating-the-xml-file">Generating the xml file</h2>
+<p>After installing the needed packages restart BEAUTi2. From the <strong>File</strong> menu select <strong>Template</strong> and then <strong>StarBeast2</strong>. The StarBEAST2 template should display nine tabs titled as follows; <strong>Partitions</strong>, <strong>Taxon Sets</strong>, <strong>Tip Dates</strong>, <strong>Gene Ploidy</strong>, <strong>Population Model</strong>, <strong>Site Model</strong>, <strong>Clock Model</strong>, <strong>Priors</strong>, and <strong>MCMC</strong>.</p>
+<section id="partitions" class="level3">
+<h3 class="anchored" data-anchor-id="partitions">Partitions</h3>
+<p>Sequence alignments will be added to the <code>xml</code> file in the <strong>Partitions</strong> tab. This can be done by either clicking the <strong>+</strong> button at the bottom of the tab and selecting <strong>Import Alignment</strong> from the subsequent menu options or by simply dragging the <code>fasta</code> file for each alignment into the <strong>Partitions</strong> tab. After specifying that an alignment is being imported select <strong>nucleotide</strong> when asked by BEAUTi2 to “Choose the datatype”. For each locus the correct number of taxa, sites, and data type should be listed. For each the file name will be used as the name BEAST2 uses for that particular locus. Also each locus should have a <strong>Site Model</strong>, <strong>Clock Model</strong>, and <strong>Tree</strong> unique to that alignment and with the same name. The <strong>Partition</strong> tab should look like this when completed.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Screen Shot 2024-12-11 at 10.58.51 AM.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="630"></p>
+</figure>
+</div>
+</section>
+<section id="taxon-sets" class="level3">
+<h3 class="anchored" data-anchor-id="taxon-sets">Taxon sets</h3>
+<p>For the mtDNA alignments each individual sample has only a single sequence while there are two sequences for the diploid nuDNA alignments. The two phased sequences for each diploid individual sample should be labeled <em>a</em> and <em>b</em> (i.e.&nbsp;ZJja004a and ZJja004b are the two phased sequences for sample ZJja004). The <em>a</em> and <em>b</em> suffixes were automatically added to sample names for the phased sequences in PHASE 2.1.1 (see <strong>Sanger sequencing summary statistics and trees</strong>). For consistency an <em>a</em> suffix was manually added to the sample name for each sequence in the mtDNA alignments to prevent a third sample name from appearing for each sample with both mtDNA and nuDNA sequences in the <strong>Taxon sets</strong> tab.</p>
+<p>Some project numbers do not necessarily reflect the taxonomic origin of the individual samples. For example, samples ZJlo001 - ZJlo005 appear based on their project number designations to be <em>Zosterops japonicus loochoensis</em> but these project numbers were assigned in error before realizing they originated on the island of Chichijima outside the range of <em>Z. japonicus loochoensis</em>. For the Ogasawara Islands the subspecies designation for <em>Z. japonicus</em> is uncertain with some suspicion that these birds are subspecies hybrids between <em>Z. japonicus stejnegeri</em> in the Izu Islands and <em>Z. japonicus alani</em> in the Ogasawara/Volcano Islands. For our purposes we assigned birds in the Ogasawara and Volcano Islands the taxonomic designation <em>Z. japonicus alani</em> and birds in the Izu Islands <em>Z. japonicus stejnegeri</em> with the realization that gene flow may be occurring throughout these oceanic islands.</p>
+<p>Click the <strong>Taxon sets</strong> tab. A list of sample names corresponding to the sequences in the alignments should appear in the <strong>Taxon</strong> column. For each sample a designation could be manually entered into the <strong>Species/Population</strong> column (time consuming) or automatically filled from a taxon sets file. To automatically add information on taxon assignment and/or population of origin click the <strong>Guess</strong> button at the bottom of the tab. Another window will open. Select the radio button corresponding to the <strong>read from file</strong> and the corresponding <strong>Browse</strong> button to select the appropriate taxon sets file. Click the <strong>Show options</strong> button and select <strong>txt</strong> to allow for the selection of <code>txt</code> files as taxon set entries. For the first set of BEAST2 runs samples were grouped by taxon (species and subspecies) and geography (island or island group) according to the <code>Zosterops taxon sets A.txt</code> file. This file is tab delimited and contains no headers and two columns with the identifying string for each individual sequence and the associated taxon and locality data as follows.</p>
+<pre><code>ZAsu001a    Zosterops atrifrons surdus
+ZAsu001b    Zosterops atrifrons surdus
+ZAsu002a    Zosterops atrifrons surdus
+ZAsu002b    Zosterops atrifrons surdus
+ZEba001a    Zosterops everetti basilanicus
+ZEba001b    Zosterops everetti basilanicus
+ZEba002a    Zosterops everetti basilanicus
+ZEba002b    Zosterops everetti basilanicus
+ZEba003a    Zosterops everetti basilanicus
+ZEba003b    Zosterops everetti basilanicus
+ZEbo001a    Zosterops everetti boholensis
+ZEbo001b    Zosterops everetti boholensis
+ZERxx001a   Zosterops erythropleurus
+ZERxx002a   Zosterops erythropleurus
+ZERxx002b   Zosterops erythropleurus
+ZERxx003a   Zosterops erythropleurus
+ZERxx003b   Zosterops erythropleurus
+ZERxx004a   Zosterops erythropleurus
+ZERxx004b   Zosterops erythropleurus
+ZERxx005a   Zosterops erythropleurus
+ZERxx005b   Zosterops erythropleurus
+ZJal001a    Zosterops japonicus alani HAHAJIMA
+ZJal001b    Zosterops japonicus alani HAHAJIMA
+ZJal002a    Zosterops japonicus alani HAHAJIMA
+ZJal003a    Zosterops japonicus alani HAHAJIMA
+ZJal004a    Zosterops japonicus alani HAHAJIMA
+ZJal005a    Zosterops japonicus alani HAHAJIMA
+ZJal006a    Zosterops japonicus alani IMOTOJIMA
+ZJal006b    Zosterops japonicus alani IMOTOJIMA
+ZJal007a    Zosterops japonicus alani IMOTOJIMA
+ZJal008a    Zosterops japonicus alani IMOTOJIMA
+ZJal009a    Zosterops japonicus alani IMOTOJIMA
+ZJal010a    Zosterops japonicus alani ANEJIMA
+ZJal010b    Zosterops japonicus alani ANEJIMA
+ZJal011a    Zosterops japonicus alani ANEJIMA
+ZJal012a    Zosterops japonicus alani ANEJIMA
+ZJal013a    Zosterops japonicus alani ANEJIMA
+ZJal014a    Zosterops japonicus alani ANEJIMA
+ZJal015a    Zosterops japonicus alani IMOTOJIMA
+ZJal016a    Zosterops japonicus alani IWOJIMA
+ZJal016b    Zosterops japonicus alani IWOJIMA
+ZJba001a    Zosterops meyeni LANYU
+ZJba002a    Zosterops meyeni LANYU
+ZJin001a    Zosterops japonicus insularis OSUMI
+ZJin001b    Zosterops japonicus insularis OSUMI
+ZJin003a    Zosterops japonicus insularis OSUMI
+ZJin003b    Zosterops japonicus insularis OSUMI
+ZJja001a    Zosterops japonicus japonicus GEOJE
+ZJja001b    Zosterops japonicus japonicus GEOJE
+ZJja002a    Zosterops japonicus japonicus GEOJE
+ZJja003a    Zosterops japonicus japonicus JEJU
+ZJja003b    Zosterops japonicus japonicus JEJU
+ZJja004a    Zosterops japonicus japonicus JEJU
+ZJja004b    Zosterops japonicus japonicus JEJU
+ZJja005a    Zosterops japonicus japonicus JEJU
+ZJja006a    Zosterops japonicus japonicus JEJU
+ZJja007a    Zosterops japonicus japonicus JEJU
+ZJja008a    Zosterops japonicus japonicus HONSHU
+ZJja009a    Zosterops japonicus japonicus HEUKSANDO
+ZJja010a    Zosterops japonicus japonicus HEUKSANDO
+ZJja011a    Zosterops japonicus japonicus HEUKSANDO
+ZJja012a    Zosterops japonicus japonicus HONSHU
+ZJja012b    Zosterops japonicus japonicus HONSHU
+ZJja013a    Zosterops japonicus japonicus HONSHU
+ZJja014a    Zosterops japonicus japonicus HONSHU
+ZJja014b    Zosterops japonicus japonicus HONSHU
+ZJja015a    Zosterops japonicus japonicus HONSHU
+ZJja015b    Zosterops japonicus japonicus HONSHU
+ZJja016a    Zosterops japonicus japonicus SHIKOKU
+ZJja016b    Zosterops japonicus japonicus SHIKOKU
+ZJja017a    Zosterops japonicus japonicus HONSHU
+ZJja017b    Zosterops japonicus japonicus HONSHU
+ZJja018a    Zosterops japonicus japonicus HOKKAIDO
+ZJja018b    Zosterops japonicus japonicus HOKKAIDO
+ZJja019a    Zosterops japonicus japonicus HONSHU
+ZJja019b    Zosterops japonicus japonicus HONSHU
+ZJja021a    Zosterops japonicus japonicus HONSHU
+ZJja022a    Zosterops japonicus japonicus HONSHU
+ZJja022b    Zosterops japonicus japonicus HONSHU
+ZJja024a    Zosterops japonicus japonicus HONSHU
+ZJja024b    Zosterops japonicus japonicus HONSHU
+ZJja026a    Zosterops japonicus japonicus HONSHU
+ZJja031a    Zosterops japonicus japonicus HONSHU
+ZJja032a    Zosterops japonicus japonicus HONSHU
+ZJja034a    Zosterops japonicus japonicus TSUSHIMA
+ZJja034b    Zosterops japonicus japonicus TSUSHIMA
+ZJja035a    Zosterops japonicus japonicus TSUSHIMA
+ZJlo001a    Zosterops japonicus alani CHICHIJIMA
+ZJlo001b    Zosterops japonicus alani CHICHIJIMA
+ZJlo002a    Zosterops japonicus alani CHICHIJIMA
+ZJlo003a    Zosterops japonicus alani CHICHIJIMA
+ZJlo004a    Zosterops japonicus alani CHICHIJIMA
+ZJlo005a    Zosterops japonicus alani CHICHIJIMA
+ZJlo006a    Zosterops japonicus loochoensis IRIOMOTE
+ZJlo006b    Zosterops japonicus loochoensis IRIOMOTE
+ZJlo007a    Zosterops japonicus loochoensis OKINAWA
+ZJlo007b    Zosterops japonicus loochoensis OKINAWA
+ZJlo008a    Zosterops japonicus loochoensis OKINAWA
+ZJlo009a    Zosterops japonicus loochoensis OKINAWA
+ZJlo010a    Zosterops japonicus loochoensis ISHIGAKI
+ZJlo010b    Zosterops japonicus loochoensis ISHIGAKI
+ZJlo011a    Zosterops japonicus loochoensis ISHIGAKI
+ZJlo012a    Zosterops japonicus loochoensis KIKAI
+ZJlo012b    Zosterops japonicus loochoensis KIKAI
+ZJlo013a    Zosterops japonicus loochoensis KIKAI
+ZJlo014a    Zosterops japonicus loochoensis IRIOMOTE
+ZJlo014b    Zosterops japonicus loochoensis IRIOMOTE
+ZJlo015a    Zosterops japonicus loochoensis AMAMI
+ZJlo015b    Zosterops japonicus loochoensis AMAMI
+ZJlo016a    Zosterops japonicus loochoensis MIYAKO
+ZJlo016b    Zosterops japonicus loochoensis MIYAKO
+ZJlo017a    Zosterops japonicus loochoensis IRIOMOTE
+ZJlo018a    Zosterops japonicus loochoensis IRIOMOTE
+ZJlo020a    Zosterops japonicus loochoensis IRIOMOTE
+ZJlo021a    Zosterops japonicus loochoensis TOKUNO
+ZJlo021b    Zosterops japonicus loochoensis TOKUNO
+ZJlo022a    Zosterops japonicus loochoensis TOKUNO
+ZJlo023a    Zosterops japonicus loochoensis OKINOERABU
+ZJlo023b    Zosterops japonicus loochoensis OKINOERABU
+ZJlo024a    Zosterops japonicus loochoensis YONAGUNI
+ZJlo024b    Zosterops japonicus loochoensis YONAGUNI
+ZJlo026a    Zosterops japonicus loochoensis MIYAKO
+ZJlo027a    Zosterops japonicus loochoensis YONAGUNI
+ZJlo031a    Zosterops japonicus loochoensis KUME
+ZJlo031b    Zosterops japonicus loochoensis KUME
+ZJlo032a    Zosterops japonicus loochoensis KUME
+ZJlo034a    Zosterops japonicus loochoensis MIYAKO
+ZJlo035a    Zosterops japonicus loochoensis OKINAWA
+ZJlo035b    Zosterops japonicus loochoensis OKINAWA
+ZJlo038a    Zosterops japonicus loochoensis OKINAWA
+ZJlo039a    Zosterops japonicus loochoensis ISHIGAKI
+ZJlo042a    Zosterops japonicus loochoensis AMAMI
+ZJlo042b    Zosterops japonicus loochoensis AMAMI
+ZJlo045a    Zosterops japonicus loochoensis AMAMI
+ZJlo051a    Zosterops japonicus loochoensis OKINOERABU
+ZJlo055a    Zosterops japonicus loochoensis KIKAI
+ZJlo055b    Zosterops japonicus loochoensis KIKAI
+ZJsi001a    Zosterops simplex TAIWAN
+ZJsi001b    Zosterops simplex TAIWAN
+ZJsi002a    Zosterops simplex TAIWAN
+ZJsi002b    Zosterops simplex TAIWAN
+ZJsi003a    Zosterops simplex TAIWAN
+ZJsi003b    Zosterops simplex TAIWAN
+ZJsi005a    Zosterops simplex TAIWAN
+ZJsi005b    Zosterops simplex TAIWAN
+ZJsi015a    Zosterops simplex MACAO
+ZJsi015b    Zosterops simplex MACAO
+ZJsi017a    Zosterops simplex GUANGXI
+ZJsi017b    Zosterops simplex GUANGXI
+ZJsi018a    Zosterops simplex SICHUAN
+ZJsi018b    Zosterops simplex SICHUAN
+ZJsi023a    Zosterops simplex GUANGDONG
+ZJsi024a    Zosterops simplex GUANGDONG
+ZJsi025a    Zosterops simplex GUANGDONG
+ZJsi026a    Zosterops simplex YUNNAN
+ZJsi026b    Zosterops simplex YUNNAN
+ZJsi027a    Zosterops simplex GUANGXI
+ZJsi027b    Zosterops simplex GUANGXI
+ZJsi028a    Zosterops simplex GUANGXI
+ZJsi032a    Zosterops simplex GUANGXI
+ZJsi032b    Zosterops simplex GUANGXI
+ZJst001a    Zosterops japonicus stejnegeri NIIJIMA
+ZJst001b    Zosterops japonicus stejnegeri NIIJIMA
+ZJst002a    Zosterops japonicus stejnegeri AOGASHIMA
+ZJst002b    Zosterops japonicus stejnegeri AOGASHIMA
+ZJst006a    Zosterops japonicus stejnegeri AOGASHIMA
+ZJst007a    Zosterops japonicus stejnegeri KOZUSHIMA
+ZJst007b    Zosterops japonicus stejnegeri KOZUSHIMA
+ZJst008a    Zosterops japonicus stejnegeri KOZUSHIMA
+ZJst010a    Zosterops japonicus stejnegeri KOZUSHIMA
+ZJst011a    Zosterops japonicus stejnegeri KOZUSHIMA
+ZJst012a    Zosterops japonicus stejnegeri MIYAKE
+ZJst012b    Zosterops japonicus stejnegeri MIYAKE
+ZJst013a    Zosterops japonicus stejnegeri MIYAKE
+ZJst014a    Zosterops japonicus stejnegeri MIYAKE
+ZJst015a    Zosterops japonicus stejnegeri MIYAKE
+ZJst016a    Zosterops japonicus stejnegeri MIYAKE
+ZJst017a    Zosterops japonicus stejnegeri NIIJIMA
+ZMOdi001a   Zosterops montanus diuatae MINDANAO
+ZMOdi001b   Zosterops montanus diuatae MINDANAO
+ZMOha001a   Zosterops montanus halconensis MINDORO
+ZMOha001b   Zosterops montanus halconensis MINDORO
+ZMOmo001a   Zosterops montanus montanus SULAWESI
+ZMOmo001b   Zosterops montanus montanus SULAWESI
+ZMOmo002a   Zosterops montanus montanus JAVA
+ZMOmo002b   Zosterops montanus montanus JAVA
+ZMOmo003a   Zosterops montanus montanus JAVA
+ZMOmo003b   Zosterops montanus montanus JAVA
+ZMOmo004a   Zosterops montanus montanus JAVA
+ZMOmo004b   Zosterops montanus montanus JAVA
+ZMOpa001a   Zosterops montanus parkesi PALAWAN
+ZMOpa001b   Zosterops montanus parkesi PALAWAN
+ZMOpa002a   Zosterops montanus parkesi PALAWAN
+ZMOpa002b   Zosterops montanus parkesi PALAWAN
+ZMOpe001a   Zosterops montanus pectoralis NEGROS
+ZMOpe001b   Zosterops montanus pectoralis NEGROS
+ZMOpe002a   Zosterops montanus pectoralis NEGROS
+ZMOpe002b   Zosterops montanus pectoralis NEGROS
+ZMOpe003a   Zosterops montanus pectoralis NEGROS
+ZMOpe003b   Zosterops montanus pectoralis NEGROS
+ZMOvu001a   Zosterops montanus vulcani MINDANAO
+ZMOvu001b   Zosterops montanus vulcani MINDANAO
+ZMOvu002a   Zosterops montanus vulcani MINDANAO
+ZMOvu002b   Zosterops montanus vulcani MINDANAO
+ZMOvu003a   Zosterops montanus vulcani MINDANAO
+ZMOvu003b   Zosterops montanus vulcani MINDANAO
+ZMOvu004a   Zosterops montanus vulcani MINDANAO
+ZMOvu004b   Zosterops montanus vulcani MINDANAO
+ZMOvu005a   Zosterops montanus vulcani MINDANAO
+ZMOvu006a   Zosterops montanus vulcani MINDANAO
+ZMOvu006b   Zosterops montanus vulcani MINDANAO
+ZMOvu007a   Zosterops montanus vulcani MINDANAO
+ZMOwh002a   Zosterops montanus whiteheadi LUZON
+ZMOwh002b   Zosterops montanus whiteheadi LUZON
+ZMOwh003a   Zosterops montanus whiteheadi LUZON
+ZMOwh003b   Zosterops montanus whiteheadi LUZON
+ZMOwh004a   Zosterops montanus whiteheadi LUZON
+ZMOwh004b   Zosterops montanus whiteheadi LUZON
+ZMOwh005a   Zosterops montanus whiteheadi LUZON
+ZMOwh005b   Zosterops montanus whiteheadi LUZON
+ZMOwh006a   Zosterops montanus whiteheadi LUZON
+ZMOwh006b   Zosterops montanus whiteheadi LUZON
+ZMOxx001a   Zosterops montanus PANAY
+ZMOxx002a   Zosterops montanus PANAY
+ZMOxx002b   Zosterops montanus PANAY
+ZMOxx003a   Zosterops montanus PANAY
+ZMOxx003b   Zosterops montanus PANAY
+ZMOxx004a   Zosterops montanus PANAY
+ZMOxx004b   Zosterops montanus PANAY
+ZMOxx005a   Zosterops montanus PANAY
+ZMOxx005b   Zosterops montanus PANAY
+ZMOxx006a   Zosterops montanus PANAY
+ZMOxx006b   Zosterops montanus PANAY
+ZMOxx007a   Zosterops montanus PANAY
+ZMOxx007b   Zosterops montanus PANAY
+ZMOxx008a   Zosterops montanus PANAY
+ZMOxx008b   Zosterops montanus PANAY
+ZMxx001a    Zosterops meyeni BATANES
+ZMxx001b    Zosterops meyeni BATANES
+ZMxx002a    Zosterops meyeni BATANES
+ZMxx002b    Zosterops meyeni BATANES
+ZMxx003a    Zosterops meyeni LANYU
+ZMxx003b    Zosterops meyeni LANYU
+ZMxx004a    Zosterops meyeni LANYU
+ZMxx004b    Zosterops meyeni LANYU
+ZMxx005a    Zosterops meyeni LANYU
+ZMxx005b    Zosterops meyeni LANYU
+ZMxx006a    Zosterops meyeni LANYU
+ZMxx007a    Zosterops meyeni LANYU
+ZMxx008a    Zosterops meyeni LANYU
+ZNca001a    Zosterops nigrorum catamanensis CAMIGUINSUR
+ZNca001b    Zosterops nigrorum catamanensis CAMIGUINSUR
+ZNin001a    Zosterops nigrorum innominatus LUZON
+ZNin001b    Zosterops nigrorum innominatus LUZON
+ZNlu001a    Zosterops nigrorum luzonicus LUZON
+ZNlu001b    Zosterops nigrorum luzonicus LUZON
+ZNme001a    Zosterops nigrorum meyleri CAMIGUINNORTE
+ZNme001b    Zosterops nigrorum meyleri CAMIGUINNORTE
+ZNni001a    Zosterops nigrorum nigrorum PANAY
+ZNni001b    Zosterops nigrorum nigrorum PANAY
+ZPxx001a    Zosterops simplex SINGAPORE
+ZPxx001b    Zosterops simplex SINGAPORE
+ZPxx002a    Zosterops simplex SINGAPORE
+ZPxx002b    Zosterops simplex SINGAPORE</code></pre>
+<p>The file <code>Zosterops taxon sets B.txt</code> contains the same list of individual samples as the <code>Zosterops taxon sets A.txt</code> file but with samples collapsed according to taxon. There is no locality information in this file except for the samples of <em>Z. montanus</em> collected on the island of Panay. This file appears as follows.</p>
+<pre><code>ZAsu001a    Zosterops atrifrons surdus
+ZAsu001b    Zosterops atrifrons surdus
+ZAsu002a    Zosterops atrifrons surdus
+ZAsu002b    Zosterops atrifrons surdus
+ZEba001a    Zosterops everetti basilanicus
+ZEba001b    Zosterops everetti basilanicus
+ZEba002a    Zosterops everetti basilanicus
+ZEba002b    Zosterops everetti basilanicus
+ZEba003a    Zosterops everetti basilanicus
+ZEba003b    Zosterops everetti basilanicus
+ZEbo001a    Zosterops everetti boholensis
+ZEbo001b    Zosterops everetti boholensis
+ZERxx001a   Zosterops erythropleurus
+ZERxx002a   Zosterops erythropleurus
+ZERxx002b   Zosterops erythropleurus
+ZERxx003a   Zosterops erythropleurus
+ZERxx003b   Zosterops erythropleurus
+ZERxx004a   Zosterops erythropleurus
+ZERxx004b   Zosterops erythropleurus
+ZERxx005a   Zosterops erythropleurus
+ZERxx005b   Zosterops erythropleurus
+ZJal001a    Zosterops japonicus alani
+ZJal001b    Zosterops japonicus alani
+ZJal002a    Zosterops japonicus alani
+ZJal003a    Zosterops japonicus alani
+ZJal004a    Zosterops japonicus alani
+ZJal005a    Zosterops japonicus alani
+ZJal006a    Zosterops japonicus alani
+ZJal006b    Zosterops japonicus alani
+ZJal007a    Zosterops japonicus alani
+ZJal008a    Zosterops japonicus alani
+ZJal009a    Zosterops japonicus alani
+ZJal010a    Zosterops japonicus alani
+ZJal010b    Zosterops japonicus alani
+ZJal011a    Zosterops japonicus alani
+ZJal012a    Zosterops japonicus alani
+ZJal013a    Zosterops japonicus alani
+ZJal014a    Zosterops japonicus alani
+ZJal015a    Zosterops japonicus alani
+ZJal016a    Zosterops japonicus alani
+ZJal016b    Zosterops japonicus alani
+ZJba001a    Zosterops meyeni
+ZJba002a    Zosterops meyeni
+ZJin001a    Zosterops japonicus insularis
+ZJin001b    Zosterops japonicus insularis
+ZJin003a    Zosterops japonicus insularis
+ZJin003b    Zosterops japonicus insularis
+ZJja001a    Zosterops japonicus japonicus
+ZJja001b    Zosterops japonicus japonicus
+ZJja002a    Zosterops japonicus japonicus
+ZJja003a    Zosterops japonicus japonicus
+ZJja003b    Zosterops japonicus japonicus
+ZJja004a    Zosterops japonicus japonicus
+ZJja004b    Zosterops japonicus japonicus
+ZJja005a    Zosterops japonicus japonicus
+ZJja006a    Zosterops japonicus japonicus
+ZJja007a    Zosterops japonicus japonicus
+ZJja008a    Zosterops japonicus japonicus
+ZJja009a    Zosterops japonicus japonicus
+ZJja010a    Zosterops japonicus japonicus
+ZJja011a    Zosterops japonicus japonicus
+ZJja012a    Zosterops japonicus japonicus
+ZJja012b    Zosterops japonicus japonicus
+ZJja013a    Zosterops japonicus japonicus
+ZJja014a    Zosterops japonicus japonicus
+ZJja014b    Zosterops japonicus japonicus
+ZJja015a    Zosterops japonicus japonicus
+ZJja015b    Zosterops japonicus japonicus
+ZJja016a    Zosterops japonicus japonicus
+ZJja016b    Zosterops japonicus japonicus
+ZJja017a    Zosterops japonicus japonicus
+ZJja017b    Zosterops japonicus japonicus
+ZJja018a    Zosterops japonicus japonicus
+ZJja018b    Zosterops japonicus japonicus
+ZJja019a    Zosterops japonicus japonicus
+ZJja019b    Zosterops japonicus japonicus
+ZJja021a    Zosterops japonicus japonicus
+ZJja022a    Zosterops japonicus japonicus
+ZJja022b    Zosterops japonicus japonicus
+ZJja024a    Zosterops japonicus japonicus
+ZJja024b    Zosterops japonicus japonicus
+ZJja026a    Zosterops japonicus japonicus
+ZJja031a    Zosterops japonicus japonicus
+ZJja032a    Zosterops japonicus japonicus
+ZJja034a    Zosterops japonicus japonicus
+ZJja034b    Zosterops japonicus japonicus
+ZJja035a    Zosterops japonicus japonicus
+ZJlo001a    Zosterops japonicus alani
+ZJlo001b    Zosterops japonicus alani
+ZJlo002a    Zosterops japonicus alani
+ZJlo003a    Zosterops japonicus alani
+ZJlo004a    Zosterops japonicus alani
+ZJlo005a    Zosterops japonicus alani
+ZJlo006a    Zosterops japonicus loochoensis
+ZJlo006b    Zosterops japonicus loochoensis
+ZJlo007a    Zosterops japonicus loochoensis
+ZJlo007b    Zosterops japonicus loochoensis
+ZJlo008a    Zosterops japonicus loochoensis
+ZJlo009a    Zosterops japonicus loochoensis
+ZJlo010a    Zosterops japonicus loochoensis
+ZJlo010b    Zosterops japonicus loochoensis
+ZJlo011a    Zosterops japonicus loochoensis
+ZJlo012a    Zosterops japonicus loochoensis
+ZJlo012b    Zosterops japonicus loochoensis
+ZJlo013a    Zosterops japonicus loochoensis
+ZJlo014a    Zosterops japonicus loochoensis
+ZJlo014b    Zosterops japonicus loochoensis
+ZJlo015a    Zosterops japonicus loochoensis
+ZJlo015b    Zosterops japonicus loochoensis
+ZJlo016a    Zosterops japonicus loochoensis
+ZJlo016b    Zosterops japonicus loochoensis
+ZJlo017a    Zosterops japonicus loochoensis
+ZJlo018a    Zosterops japonicus loochoensis
+ZJlo020a    Zosterops japonicus loochoensis
+ZJlo021a    Zosterops japonicus loochoensis
+ZJlo021b    Zosterops japonicus loochoensis
+ZJlo022a    Zosterops japonicus loochoensis
+ZJlo023a    Zosterops japonicus loochoensis
+ZJlo023b    Zosterops japonicus loochoensis
+ZJlo024a    Zosterops japonicus loochoensis
+ZJlo024b    Zosterops japonicus loochoensis
+ZJlo026a    Zosterops japonicus loochoensis
+ZJlo027a    Zosterops japonicus loochoensis
+ZJlo031a    Zosterops japonicus loochoensis
+ZJlo031b    Zosterops japonicus loochoensis
+ZJlo032a    Zosterops japonicus loochoensis
+ZJlo034a    Zosterops japonicus loochoensis
+ZJlo035a    Zosterops japonicus loochoensis
+ZJlo035b    Zosterops japonicus loochoensis
+ZJlo038a    Zosterops japonicus loochoensis
+ZJlo039a    Zosterops japonicus loochoensis
+ZJlo042a    Zosterops japonicus loochoensis
+ZJlo042b    Zosterops japonicus loochoensis
+ZJlo045a    Zosterops japonicus loochoensis
+ZJlo051a    Zosterops japonicus loochoensis
+ZJlo055a    Zosterops japonicus loochoensis
+ZJlo055b    Zosterops japonicus loochoensis
+ZJsi001a    Zosterops simplex
+ZJsi001b    Zosterops simplex
+ZJsi002a    Zosterops simplex
+ZJsi002b    Zosterops simplex
+ZJsi003a    Zosterops simplex
+ZJsi003b    Zosterops simplex
+ZJsi005a    Zosterops simplex
+ZJsi005b    Zosterops simplex
+ZJsi015a    Zosterops simplex
+ZJsi015b    Zosterops simplex
+ZJsi017a    Zosterops simplex
+ZJsi017b    Zosterops simplex
+ZJsi018a    Zosterops simplex
+ZJsi018b    Zosterops simplex
+ZJsi023a    Zosterops simplex
+ZJsi024a    Zosterops simplex
+ZJsi025a    Zosterops simplex
+ZJsi026a    Zosterops simplex
+ZJsi026b    Zosterops simplex
+ZJsi027a    Zosterops simplex
+ZJsi027b    Zosterops simplex
+ZJsi028a    Zosterops simplex
+ZJsi032a    Zosterops simplex
+ZJsi032b    Zosterops simplex
+ZJst001a    Zosterops japonicus stejnegeri
+ZJst001b    Zosterops japonicus stejnegeri
+ZJst002a    Zosterops japonicus stejnegeri
+ZJst002b    Zosterops japonicus stejnegeri
+ZJst006a    Zosterops japonicus stejnegeri
+ZJst007a    Zosterops japonicus stejnegeri
+ZJst007b    Zosterops japonicus stejnegeri
+ZJst008a    Zosterops japonicus stejnegeri
+ZJst010a    Zosterops japonicus stejnegeri
+ZJst011a    Zosterops japonicus stejnegeri
+ZJst012a    Zosterops japonicus stejnegeri
+ZJst012b    Zosterops japonicus stejnegeri
+ZJst013a    Zosterops japonicus stejnegeri
+ZJst014a    Zosterops japonicus stejnegeri
+ZJst015a    Zosterops japonicus stejnegeri
+ZJst016a    Zosterops japonicus stejnegeri
+ZJst017a    Zosterops japonicus stejnegeri
+ZMOdi001a   Zosterops montanus diuatae
+ZMOdi001b   Zosterops montanus diuatae
+ZMOha001a   Zosterops montanus halconensis
+ZMOha001b   Zosterops montanus halconensis
+ZMOmo001a   Zosterops montanus montanus
+ZMOmo001b   Zosterops montanus montanus
+ZMOmo002a   Zosterops montanus montanus
+ZMOmo002b   Zosterops montanus montanus
+ZMOmo003a   Zosterops montanus montanus
+ZMOmo003b   Zosterops montanus montanus
+ZMOmo004a   Zosterops montanus montanus
+ZMOmo004b   Zosterops montanus montanus
+ZMOpa001a   Zosterops montanus parkesi
+ZMOpa001b   Zosterops montanus parkesi
+ZMOpa002a   Zosterops montanus parkesi
+ZMOpa002b   Zosterops montanus parkesi
+ZMOpe001a   Zosterops montanus pectoralis
+ZMOpe001b   Zosterops montanus pectoralis
+ZMOpe002a   Zosterops montanus pectoralis
+ZMOpe002b   Zosterops montanus pectoralis
+ZMOpe003a   Zosterops montanus pectoralis
+ZMOpe003b   Zosterops montanus pectoralis
+ZMOvu001a   Zosterops montanus vulcani
+ZMOvu001b   Zosterops montanus vulcani
+ZMOvu002a   Zosterops montanus vulcani
+ZMOvu002b   Zosterops montanus vulcani
+ZMOvu003a   Zosterops montanus vulcani
+ZMOvu003b   Zosterops montanus vulcani
+ZMOvu004a   Zosterops montanus vulcani
+ZMOvu004b   Zosterops montanus vulcani
+ZMOvu005a   Zosterops montanus vulcani
+ZMOvu006a   Zosterops montanus vulcani
+ZMOvu006b   Zosterops montanus vulcani
+ZMOvu007a   Zosterops montanus vulcani
+ZMOwh002a   Zosterops montanus whiteheadi
+ZMOwh002b   Zosterops montanus whiteheadi
+ZMOwh003a   Zosterops montanus whiteheadi
+ZMOwh003b   Zosterops montanus whiteheadi
+ZMOwh004a   Zosterops montanus whiteheadi
+ZMOwh004b   Zosterops montanus whiteheadi
+ZMOwh005a   Zosterops montanus whiteheadi
+ZMOwh005b   Zosterops montanus whiteheadi
+ZMOwh006a   Zosterops montanus whiteheadi
+ZMOwh006b   Zosterops montanus whiteheadi
+ZMOxx001a   Zosterops montanus PANAY
+ZMOxx002a   Zosterops montanus PANAY
+ZMOxx002b   Zosterops montanus PANAY
+ZMOxx003a   Zosterops montanus PANAY
+ZMOxx003b   Zosterops montanus PANAY
+ZMOxx004a   Zosterops montanus PANAY
+ZMOxx004b   Zosterops montanus PANAY
+ZMOxx005a   Zosterops montanus PANAY
+ZMOxx005b   Zosterops montanus PANAY
+ZMOxx006a   Zosterops montanus PANAY
+ZMOxx006b   Zosterops montanus PANAY
+ZMOxx007a   Zosterops montanus PANAY
+ZMOxx007b   Zosterops montanus PANAY
+ZMOxx008a   Zosterops montanus PANAY
+ZMOxx008b   Zosterops montanus PANAY
+ZMxx001a    Zosterops meyeni
+ZMxx001b    Zosterops meyeni
+ZMxx002a    Zosterops meyeni
+ZMxx002b    Zosterops meyeni
+ZMxx003a    Zosterops meyeni
+ZMxx003b    Zosterops meyeni
+ZMxx004a    Zosterops meyeni
+ZMxx004b    Zosterops meyeni
+ZMxx005a    Zosterops meyeni
+ZMxx005b    Zosterops meyeni
+ZMxx006a    Zosterops meyeni
+ZMxx007a    Zosterops meyeni
+ZMxx008a    Zosterops meyeni
+ZNca001a    Zosterops nigrorum catamanensis
+ZNca001b    Zosterops nigrorum catamanensis
+ZNin001a    Zosterops nigrorum innominatus
+ZNin001b    Zosterops nigrorum innominatus
+ZNlu001a    Zosterops nigrorum luzonicus
+ZNlu001b    Zosterops nigrorum luzonicus
+ZNme001a    Zosterops nigrorum meyleri
+ZNme001b    Zosterops nigrorum meyleri
+ZNni001a    Zosterops nigrorum nigrorum
+ZNni001b    Zosterops nigrorum nigrorum
+ZPxx001a    Zosterops simplex SINGAPORE
+ZPxx001b    Zosterops simplex SINGAPORE
+ZPxx002a    Zosterops simplex SINGAPORE
+ZPxx002b    Zosterops simplex SINGAPORE</code></pre>
+<p><code>Zosterops taxon sets mtDNA.txt</code> is a third taxon sets file that is limited to samples from the mtDNA alignments (COI and ND2). This file includes both taxon and locality data but note that for each haploid mtDNA sample there are no identifiers with the <em>b</em> suffix.</p>
+<pre><code>ZAsu001a    Zosterops atrifrons surdus
+ZAsu002a    Zosterops atrifrons surdus
+ZEba001a    Zosterops everetti basilanicus
+ZEba002a    Zosterops everetti basilanicus
+ZEba003a    Zosterops everetti basilanicus
+ZEbo001a    Zosterops everetti boholensis
+ZERxx001a   Zosterops erythropleurus
+ZERxx002a   Zosterops erythropleurus
+ZERxx003a   Zosterops erythropleurus
+ZERxx004a   Zosterops erythropleurus
+ZERxx005a   Zosterops erythropleurus
+ZJal001a    Zosterops japonicus alani HAHAJIMA
+ZJal002a    Zosterops japonicus alani HAHAJIMA
+ZJal003a    Zosterops japonicus alani HAHAJIMA
+ZJal004a    Zosterops japonicus alani HAHAJIMA
+ZJal005a    Zosterops japonicus alani HAHAJIMA
+ZJal006a    Zosterops japonicus alani IMOTOJIMA
+ZJal007a    Zosterops japonicus alani IMOTOJIMA
+ZJal008a    Zosterops japonicus alani IMOTOJIMA
+ZJal009a    Zosterops japonicus alani IMOTOJIMA
+ZJal010a    Zosterops japonicus alani ANEJIMA
+ZJal011a    Zosterops japonicus alani ANEJIMA
+ZJal012a    Zosterops japonicus alani ANEJIMA
+ZJal013a    Zosterops japonicus alani ANEJIMA
+ZJal014a    Zosterops japonicus alani ANEJIMA
+ZJal015a    Zosterops japonicus alani IMOTOJIMA
+ZJba001a    Zosterops meyeni LANYU
+ZJba002a    Zosterops meyeni LANYU
+ZJin001a    Zosterops japonicus insularis OSUMI
+ZJin003a    Zosterops japonicus insularis OSUMI
+ZJja002a    Zosterops japonicus japonicus GEOJE
+ZJja004a    Zosterops japonicus japonicus JEJU
+ZJja005a    Zosterops japonicus japonicus JEJU
+ZJja006a    Zosterops japonicus japonicus JEJU
+ZJja007a    Zosterops japonicus japonicus JEJU
+ZJja008a    Zosterops japonicus japonicus HONSHU
+ZJja009a    Zosterops japonicus japonicus HEUKSANDO
+ZJja010a    Zosterops japonicus japonicus HEUKSANDO
+ZJja011a    Zosterops japonicus japonicus HEUKSANDO
+ZJja013a    Zosterops japonicus japonicus HONSHU
+ZJja014a    Zosterops japonicus japonicus HONSHU
+ZJja015a    Zosterops japonicus japonicus HONSHU
+ZJja016a    Zosterops japonicus japonicus SHIKOKU
+ZJja017a    Zosterops japonicus japonicus HONSHU
+ZJja018a    Zosterops japonicus japonicus HOKKAIDO
+ZJja019a    Zosterops japonicus japonicus HONSHU
+ZJja021a    Zosterops japonicus japonicus HONSHU
+ZJja022a    Zosterops japonicus japonicus HONSHU
+ZJja026a    Zosterops japonicus japonicus HONSHU
+ZJja031a    Zosterops japonicus japonicus HONSHU
+ZJja032a    Zosterops japonicus japonicus HONSHU
+ZJja034a    Zosterops japonicus japonicus TSUSHIMA
+ZJja035a    Zosterops japonicus japonicus TSUSHIMA
+ZJlo001a    Zosterops japonicus alani CHICHIJIMA
+ZJlo002a    Zosterops japonicus alani CHICHIJIMA
+ZJlo003a    Zosterops japonicus alani CHICHIJIMA
+ZJlo004a    Zosterops japonicus alani CHICHIJIMA
+ZJlo005a    Zosterops japonicus alani CHICHIJIMA
+ZJlo007a    Zosterops japonicus loochoensis OKINAWA
+ZJlo008a    Zosterops japonicus loochoensis OKINAWA
+ZJlo009a    Zosterops japonicus loochoensis OKINAWA
+ZJlo010a    Zosterops japonicus loochoensis ISHIGAKI
+ZJlo011a    Zosterops japonicus loochoensis ISHIGAKI
+ZJlo012a    Zosterops japonicus loochoensis KIKAI
+ZJlo013a    Zosterops japonicus loochoensis KIKAI
+ZJlo014a    Zosterops japonicus loochoensis IRIOMOTE
+ZJlo015a    Zosterops japonicus loochoensis AMAMI
+ZJlo016a    Zosterops japonicus loochoensis MIYAKO
+ZJlo017a    Zosterops japonicus loochoensis IRIOMOTE
+ZJlo018a    Zosterops japonicus loochoensis IRIOMOTE
+ZJlo020a    Zosterops japonicus loochoensis IRIOMOTE
+ZJlo021a    Zosterops japonicus loochoensis TOKUNO
+ZJlo022a    Zosterops japonicus loochoensis TOKUNO
+ZJlo023a    Zosterops japonicus loochoensis OKINOERABU
+ZJlo024a    Zosterops japonicus loochoensis YONAGUNI
+ZJlo026a    Zosterops japonicus loochoensis MIYAKO
+ZJlo027a    Zosterops japonicus loochoensis YONAGUNI
+ZJlo031a    Zosterops japonicus loochoensis KUME
+ZJlo032a    Zosterops japonicus loochoensis KUME
+ZJlo034a    Zosterops japonicus loochoensis MIYAKO
+ZJlo038a    Zosterops japonicus loochoensis OKINAWA
+ZJlo039a    Zosterops japonicus loochoensis ISHIGAKI
+ZJlo042a    Zosterops japonicus loochoensis AMAMI
+ZJlo045a    Zosterops japonicus loochoensis AMAMI
+ZJlo051a    Zosterops japonicus loochoensis OKINOERABU
+ZJsi017a    Zosterops simplex GUANGXI
+ZJsi023a    Zosterops simplex GUANGDONG
+ZJsi024a    Zosterops simplex GUANGDONG
+ZJsi025a    Zosterops simplex GUANGDONG
+ZJsi026a    Zosterops simplex YUNNAN
+ZJsi027a    Zosterops simplex GUANGXI
+ZJsi028a    Zosterops simplex GUANGXI
+ZJst006a    Zosterops japonicus stejnegeri AOGASHIMA
+ZJst007a    Zosterops japonicus stejnegeri KOZUSHIMA
+ZJst008a    Zosterops japonicus stejnegeri KOZUSHIMA
+ZJst010a    Zosterops japonicus stejnegeri KOZUSHIMA
+ZJst011a    Zosterops japonicus stejnegeri KOZUSHIMA
+ZJst012a    Zosterops japonicus stejnegeri MIYAKE
+ZJst013a    Zosterops japonicus stejnegeri MIYAKE
+ZJst014a    Zosterops japonicus stejnegeri MIYAKE
+ZJst015a    Zosterops japonicus stejnegeri MIYAKE
+ZJst016a    Zosterops japonicus stejnegeri MIYAKE
+ZJst017a    Zosterops japonicus stejnegeri NIIJIMA
+ZMOdi001a   Zosterops montanus diuatae MINDANAO
+ZMOha001a   Zosterops montanus halconensis MINDORO
+ZMOmo001a   Zosterops montanus montanus SULAWESI
+ZMOmo002a   Zosterops montanus montanus JAVA
+ZMOmo003a   Zosterops montanus montanus JAVA
+ZMOmo004a   Zosterops montanus montanus JAVA
+ZMOpa001a   Zosterops montanus parkesi PALAWAN
+ZMOpa002a   Zosterops montanus parkesi PALAWAN
+ZMOpe001a   Zosterops montanus pectoralis NEGROS
+ZMOpe002a   Zosterops montanus pectoralis NEGROS
+ZMOpe003a   Zosterops montanus pectoralis NEGROS
+ZMOvu001a   Zosterops montanus vulcani MINDANAO
+ZMOvu002a   Zosterops montanus vulcani MINDANAO
+ZMOvu003a   Zosterops montanus vulcani MINDANAO
+ZMOvu004a   Zosterops montanus vulcani MINDANAO
+ZMOvu005a   Zosterops montanus vulcani MINDANAO
+ZMOvu006a   Zosterops montanus vulcani MINDANAO
+ZMOvu007a   Zosterops montanus vulcani MINDANAO
+ZMOwh002a   Zosterops montanus whiteheadi LUZON
+ZMOwh003a   Zosterops montanus whiteheadi LUZON
+ZMOwh004a   Zosterops montanus whiteheadi LUZON
+ZMOwh005a   Zosterops montanus whiteheadi LUZON
+ZMOwh006a   Zosterops montanus whiteheadi LUZON
+ZMOxx001a   Zosterops montanus PANAY
+ZMOxx002a   Zosterops montanus PANAY
+ZMOxx003a   Zosterops montanus PANAY
+ZMOxx004a   Zosterops montanus PANAY
+ZMOxx005a   Zosterops montanus PANAY
+ZMOxx006a   Zosterops montanus PANAY
+ZMOxx007a   Zosterops montanus PANAY
+ZMOxx008a   Zosterops montanus PANAY
+ZMxx001a    Zosterops meyeni BATANES
+ZMxx002a    Zosterops meyeni BATANES
+ZMxx003a    Zosterops meyeni LANYU
+ZMxx004a    Zosterops meyeni LANYU
+ZMxx005a    Zosterops meyeni LANYU
+ZMxx006a    Zosterops meyeni LANYU
+ZMxx007a    Zosterops meyeni LANYU
+ZMxx008a    Zosterops meyeni LANYU
+ZNca001a    Zosterops nigrorum catamanensis CAMIGUINSUR
+ZNin001a    Zosterops nigrorum innominatus LUZON
+ZNlu001a    Zosterops nigrorum luzonicus LUZON
+ZNme001a    Zosterops nigrorum meyleri CAMIGUINNORTE
+ZNni001a    Zosterops nigrorum nigrorum PANAY
+ZPxx001a    Zosterops simplex SINGAPORE
+ZPxx002a    Zosterops simplex SINGAPORE</code></pre>
+<p>Different sets of StarBEAST2 runs will employ different <code>xml</code> files each with a different taxon set. Below is what the <strong>Taxon sets</strong> tab should look like with <code>Zosterops taxon sets A.txt</code>. The first run will be with this taxon set specifying both taxon and geographic localities.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Screen Shot 2024-12-11 at 10.59.10 AM.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="630"></p>
+</figure>
+</div>
+</section>
+<section id="tip-dates" class="level3">
+<h3 class="anchored" data-anchor-id="tip-dates">Tip dates</h3>
+<p>The next tab in BEAUTi2 is the <strong>Tip Dates</strong> tab. The only selection in this tab is a check box associated with <strong>Use tip dates</strong>. Leave this box unchecked and proceed to the next tab.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Screen Shot 2024-12-11 at 11.01.24 AM.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="630"></p>
+</figure>
+</div>
+</section>
+<section id="gene-ploidy" class="level3">
+<h3 class="anchored" data-anchor-id="gene-ploidy"><strong>Gene ploidy</strong></h3>
+<p>The ploidy for each locus is set on the next tab titled, appropriately, <strong>Gene Ploidy</strong>. A list of loci corresponding to those alignments imported into the <strong>Partitions</strong> tab should appear in the <strong>Gene Ploidy</strong> tab. Enter the ploidy for each locus in the corresponding box. nuDNA loci are diploid and biparentally inherited so for those loci enter a ploidy of 2.0. The mtDNA loci are uniparentally inherited and haploid. For the mtDNA loci enter 0.5 in the ploidy box. When completed this tab should appear as follows.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Screen Shot 2024-12-11 at 10.59.34 AM.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="630"></p>
+</figure>
+</div>
+</section>
+<section id="population-model" class="level3">
+<h3 class="anchored" data-anchor-id="population-model">Population Model</h3>
+<p>In the <strong>Population Model</strong> tab select <strong>Analytical Population Size integration</strong> from the drop-down menu.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Screen Shot 2024-12-11 at 10.59.53 AM.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="630"></p>
+</figure>
+</div>
+</section>
+<section id="site-model" class="level3">
+<h3 class="anchored" data-anchor-id="site-model">Site Model</h3>
+<p>Substitution models for each unlinked locus are set in the <strong>Site Model</strong> tab. For each locus use <a href="https://github.com/BEAST2-Dev/bModelTest">bModelTest</a> to estimate the best substitution model. If the bModelTest package (see <strong>Software and Packages</strong> section above) was installed then this option should be available in BEAUTi2 in the drop-down at the top of the <strong>Site Model</strong> tab as the <strong>BEAST Model Test</strong> option. For each locus select <strong>BEAST Model Test</strong> from the drop-down and for <strong>Mutation Rate</strong> click the <strong>estimate</strong> box. Mutation rates among loci are estimated relative to one another so leave the <strong>Mutation Rate</strong> at 1.0 for each locus. Repeat this process for each locus.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Screen Shot 2024-12-11 at 11.00.07 AM.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="630"></p>
+</figure>
+</div>
+</section>
+<section id="clock-model" class="level3">
+<h3 class="anchored" data-anchor-id="clock-model">Clock Model</h3>
+<p>Next set the molecular clock model. Click on the <strong>Clock Model</strong> tab. For each locus added to the <strong>Partition</strong> tab there should be a corresponding entry listed in the <strong>Clock Model</strong> tab. For all loci select <strong>Strict Clock</strong> from the drop-down menu at the top of the tab. The substitution rate for mtDNA was based on a divergence rate of 2.1% per million years (Ma). This equates to a mean of 1.05% or 0.0105 substitutions/site/lineage/Ma. This range is consistent with mtDNA substitution rates reported in birds <span class="citation" data-cites="fleischer1998 pereira2006 weir2008 eo2010">(<a href="#ref-fleischer1998" role="doc-biblioref">FLEISCHER, MCINTOSH, and TARR 1998</a>; <a href="#ref-pereira2006" role="doc-biblioref">Pereira and Baker 2006</a>; <a href="#ref-weir2008" role="doc-biblioref">WEIR and SCHLUTER 2008</a>; <a href="#ref-eo2010" role="doc-biblioref">Eo and DeWoody 2010</a>)</span>. For both the mtDNA loci (COI and ND2) enter 0.0105 in the <strong>Clock.rate</strong> box and click the <strong>estimate</strong> box. For the nuDNA loci enter 0.00105 in the <strong>Clock.rate</strong> boxes and check the <strong>estimate</strong> box.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Screen Shot 2024-12-11 at 11.00.21 AM.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="630"></p>
+</figure>
+</div>
+</section>
+<section id="priors" class="level3">
+<h3 class="anchored" data-anchor-id="priors">Priors</h3>
+<p>StarBEAST2 is a Bayesian method and as such it requires the user to set the priors for various parameters. For these analyses the default priors will be used for everything except for the clock rates. As we did for the <strong>Clock Model</strong> tab, clock rate priors will be based off of molecular clock rates estimated in the literature. Click on the <strong>Priors</strong> tab and scroll down to the <strong>strictClockRate</strong> values for each locus. Select the arrow symbol on the left to reveal the settings for the <strong>strictClockRate</strong> prior distribution for each locus. A <strong>LogNormal</strong> distribution from the drop down menu should be selected for all the <strong>strictClockRate</strong> priors. The box to the right should have the initial clock rate for each locus (same as defined in the <strong>Clock Rate</strong> tab) and show lower and upper bounds from 0.0 to infinity. Consistent with mtDNA substitution rates reported in birds <span class="citation" data-cites="fleischer1998 pereira2006 weir2008 eo2010">(<a href="#ref-fleischer1998" role="doc-biblioref">FLEISCHER, MCINTOSH, and TARR 1998</a>; <a href="#ref-pereira2006" role="doc-biblioref">Pereira and Baker 2006</a>; <a href="#ref-weir2008" role="doc-biblioref">WEIR and SCHLUTER 2008</a>; <a href="#ref-eo2010" role="doc-biblioref">Eo and DeWoody 2010</a>)</span> the mean clock rate (<strong>M</strong>) for the mtDNA loci (COI and ND2) will be set at 0.0105 substitutions/site/lineage/Ma with a standard deviation (<strong>S</strong>) of 1.0. Make sure the <strong>Mean in Real Space</strong> box is checked to view the prior distribution. For the mtDNA loci <strong>M</strong> = 0.0105 and <strong>S</strong> = 1.0 and a log normal distribution results in a 5 - 95% quantile range of 0.00123 - 0.033 and a median clock rate of 0.00637. The same conditions should be set for each nuDNA locus prior except that the mean (<strong>M</strong>) should be set at 1/10th the clock rate of the mtDNA loci (<strong>M</strong> = 0.00105). For the nuDNA loci the 5 - 95% quantile range is 0.000123 - 0.0033 and the median clock rate is 0.000637.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Screen Shot 2024-12-11 at 11.01.01 AM.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="630"></p>
+</figure>
+</div>
+</section>
+<section id="mcmc" class="level3">
+<h3 class="anchored" data-anchor-id="mcmc">MCMC</h3>
+<p>The final tab (<strong>MCMC</strong>) sets the parameters for the run. Enter 10 million (10000000) in the <strong>Chain Length</strong> box. Enter 20000 in the box titled <strong>Store Every</strong> to indicate that results should be stored every 20,000 iteration of the MCMC chain. The burnin period should be 1 million. Enter 1000000 into the corresponding <strong>Pre Burnin</strong> box. The number of initiation attempts should be 10 (enter 10 for the <strong>Num Initiation Attempts</strong> box). Leave the remaining parameters at their default values.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Screen Shot 2024-12-11 at 11.01.14 AM.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="630"></p>
+</figure>
+</div>
+</section>
+<section id="save-xml-file" class="level3">
+<h3 class="anchored" data-anchor-id="save-xml-file">Save xml file</h3>
+<p>All the needed parameters for the <code>xml</code> file are now completed. Save the file by selecting <strong>File</strong> from the top bar in BEAUTi2 and <strong>Save as</strong>.</p>
+<p>Replicate multiple independent runs in three groups. Group A uses the <code>Zosterops taxon sets A.txt</code> file in the <code>xml</code> setup with both taxon and island information to define the individual samples. Group B also uses both taxon and island information in the BEAUTi2 <strong>Taxon sets</strong> tab during the <code>xml</code> setup but employs the <code>Zosterops taxon sets mtDNA.txt</code> file to define the individual samples. Group A <code>xml</code> files include all loci in the <strong>Partitions</strong> tab. Group B <code>xml</code> files include only the two mtDNA loci (COI and ND2) in the <strong>Partitions</strong> tab. Group C runs include all loci in the <strong>Partitions</strong> tab but use the <code>Zosterops taxon sets B.txt</code> file to define the samples by taxon only, collapsing populations across multiple localities into the same taxonomic group.</p>
+<p>Create a working directory for each run labeled appropriately (A1-20; B1-20; C1-20). Create one <code>xml</code> file for each of these groups and duplicate that file 20 times changing the file name to create a sequential series of <code>xml</code> files from 1 -20 (A1-A20 for Group A, B1-B20 for Group B, and C1-C20 for group C).</p>
+<p>Names for <code>xml</code> files for the first runs in each group are as follows. ‘STARBEAST274’ denotes the version of StarBEAST2 used and BMT denotes that these runs use bModelTest for the site model selection.</p>
+<p><code>Zosterops_STARBEAST274BMT_A1.xml</code></p>
+<p><code>Zosterops_STARBEAST274BMT_B1.xml</code></p>
+<p><code>Zosterops_STARBEAST274BMT_C1.xml</code></p>
+</section>
+</section>
+<section id="mcmc-beast2-runs" class="level2">
+<h2 class="anchored" data-anchor-id="mcmc-beast2-runs">MCMC BEAST2 Runs</h2>
+<p>There will be three sets of 20 MCMC runs for this analysis. For each run follow these instructions. Create a separate directory for each run labeled A1 - A20 for the Group A runs, B1 - B20 for the Group B runs, and C1 - C20 for the Group C runs. Each directory should contain the appropriate <code>xml</code> file created in BEAUTi2. Open BEAST2. The following dialog window should appear. Use the <strong>Choose file…</strong> button to select the appropriate <code>xml</code> file for the run. A different value should appear in the <strong>Random number seed box</strong> with each separate run. If your machine will allow it, increase the number of threads and instances. Our runs were executed with 20 threads and 4 instances on either an Apple M1 iMac with 16GB RAM or an Apple M2 Max MacBook Pro with 96GB RAM. Click the <strong>Run</strong> button. Once BEAST2 is running the dialog window may be closed and the progress of the run monitored. Each run on either of these machines took approximately 30 - 40 minutes.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/BEAST2_dialogbox.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="630"></p>
+</figure>
+</div>
+</section>
+<section id="combining-log-and-tree-files" class="level2">
+<h2 class="anchored" data-anchor-id="combining-log-and-tree-files">Combining log and tree files</h2>
+<p>For each of the run groups (A, B, and C) combine the <code>log</code> and the <code>trees</code> files generated by BEAST and saved in the run directory. Open the LogCombiner application included with the BEAST2 download. For <strong>File type</strong> select <strong>Log Files</strong> from the drop-down. Drag and drop all the <code>log</code> files from StarBEAST2 runs within a group into the <strong>Select input files</strong> box. Click the <strong>Choose file…</strong> button and at the prompt name the combined <code>log</code> file. Combined <code>log</code> files for the three groups of StarBEAST2 runs are as follows.</p>
+<p><code>Zosterops_logs_A.log</code></p>
+<p><code>Zosterops_logs_B.log</code></p>
+<p><code>Zosterops_logs_C.log</code></p>
+<p>Repeat the same process for the species tree files (<code>trees</code>) for the three run groups (A, B, and C). Combine the species trees from each run and not the individual locus trees. Open the LogCombiner application and select <strong>Tree Files</strong> from the <strong>File Type</strong> drop-down. Drag and drop all the <code>trees</code> files from StarBEAST2 runs within a group into the <strong>Select input files</strong> box. Click the <strong>Choose file…</strong> button and at the prompt name the combined <code>trees</code> file. Combined <code>trees</code> files for the three groups of StarBEAST2 runs are as follows.</p>
+<p><code>Zosterops_trees_A.trees</code></p>
+<p><code>Zosterops_trees_B.trees</code></p>
+<p><code>Zosterops_trees_C.trees</code></p>
+</section>
+<section id="maximum-clade-credibility-consensus-tree" class="level2">
+<h2 class="anchored" data-anchor-id="maximum-clade-credibility-consensus-tree">Maximum clade credibility consensus tree</h2>
+<p>Open the TreeAnnotator application included with the BEAST2 download. Enter 10 for the <strong>Burn in percentage</strong>. Leave the <strong>Posterior probability limit</strong> at 0.0. Choose <strong>Maximum clade credibility tree</strong> from the drop-down menu for <strong>Target tree type</strong> and <strong>Common Ancestor heights</strong> for the <strong>Node heights</strong>. Select the combined species tree file from the previous step by clicking the <strong>Choose file…</strong> button at the <strong>Input Tree File</strong> prompt. For the <strong>Output File</strong> selection click the <strong>Choose file…</strong> button and name the file and choose the appropriate directory. Consensus species tree files are named as follows.</p>
+<p><code>Zosterops_Speciestree_A.trees</code></p>
+<p><code>Zosterops_Speciestree_B.trees</code></p>
+<p><code>Zosterops_Speciestree_C.trees</code></p>
+</section>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<section id="a-runs" class="level3">
+<h3 class="anchored" data-anchor-id="a-runs">A Runs</h3>
+<p>Consensus species tree from the A runs series of 20 replicate runs using all loci and the <code>Zosterops taxon sets A.txt</code> taxon set file. The tree is edited in <a href="https://beast.community/figtree">FigTree</a> with posterior probability displayed at the nodes.</p>
+<p><img src="images/Zosterops_speciestree_A_posterior.png" class="img-fluid" width="1200"></p>
+<p>Consensus species tree from the A runs series of 20 replicate runs using all loci and the <code>Zosterops taxon sets A.txt</code> taxon set file. The tree is edited in <a href="https://beast.community/figtree">FigTree</a> with 95% height displayed at the nodes and an axis in Ma.</p>
+<p><img src="images/Zosterops_speciestree_A_95HPD.png" class="img-fluid" width="1200"></p>
+</section>
+<section id="b-runs" class="level3">
+<h3 class="anchored" data-anchor-id="b-runs">B Runs</h3>
+<p>Consensus species tree from the B runs series of 20 replicate runs using only the mtDNA loci (COI and ND2) and the <code>Zosterops taxon sets mtDNA.txt</code> taxon set file. This taxon file has the same taxonomic and geographic designations as <code>Zosterops taxon sets A.txt</code>. The tree is edited in <a href="https://beast.community/figtree">FigTree</a> with posterior probability displayed at the nodes.</p>
+<p><img src="images/Zosterops_speciestree_B_posterior.png" class="img-fluid" width="1200"></p>
+<p>Consensus species tree from the B runs series of 20 replicate runs using only the mtDNA loci (COI and ND2) and the <code>Zosterops taxon sets mtDNA.txt</code> taxon set file. The tree is edited in <a href="https://beast.community/figtree">FigTree</a> with 95% height displayed at the nodes and an axis in Ma.</p>
+<p><img src="images/Zosterops_speciestree_B_95HPD.png" class="img-fluid" width="1200"></p>
+</section>
+<section id="c-runs" class="level3">
+<h3 class="anchored" data-anchor-id="c-runs">C Runs</h3>
+<p>Consensus species tree from the C runs series of 20 replicate runs using all loci and the <code>Zosterops taxon sets B.txt</code> taxon set file limited primarily to taxon designations. The tree is edited in <a href="https://beast.community/figtree">FigTree</a> with posterior probability displayed at the nodes and an axis in Ma.</p>
+<p><img src="images/Zosterops_speciestree_C_posterior.png" class="img-fluid" width="1200"></p>
+<p>Consensus species tree from the C runs series of 20 replicate runs using all loci and the <code>Zosterops taxon sets B.txt</code> taxon set file limited primarily to taxon designations. The tree is edited in <a href="https://beast.community/figtree">FigTree</a> with 95% height displayed at the nodes and an axis in Ma.</p>
+<p><img src="images/Zosterops_speciestree_C_95HPD.png" class="img-fluid" width="1200"></p>
+
+
+
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-bouckaert2017" class="csl-entry" role="listitem">
+Bouckaert, Remco R., and Alexei J. Drummond. 2017. <span>“bModelTest: Bayesian Phylogenetic Site Model Averaging and Model Comparison.”</span> <em>BMC Evolutionary Biology</em> 17 (1). <a href="https://doi.org/10.1186/s12862-017-0890-6">https://doi.org/10.1186/s12862-017-0890-6</a>.
+</div>
+<div id="ref-bouckaert2014" class="csl-entry" role="listitem">
+Bouckaert, Remco, Joseph Heled, Denise Kühnert, Tim Vaughan, Chieh-Hsi Wu, Dong Xie, Marc A. Suchard, Andrew Rambaut, and Alexei J. Drummond. 2014. <span>“BEAST 2: A Software Platform for Bayesian Evolutionary Analysis.”</span> Edited by Andreas Prlic. <em>PLoS Computational Biology</em> 10 (4): e1003537. <a href="https://doi.org/10.1371/journal.pcbi.1003537">https://doi.org/10.1371/journal.pcbi.1003537</a>.
+</div>
+<div id="ref-bouckaert2019" class="csl-entry" role="listitem">
+Bouckaert, Remco, Timothy G. Vaughan, Joëlle Barido-Sottani, Sebastián Duchêne, Mathieu Fourment, Alexandra Gavryushkina, Joseph Heled, et al. 2019. <span>“BEAST 2.5: An Advanced Software Platform for Bayesian Evolutionary Analysis.”</span> Edited by Mihaela Pertea. <em>PLOS Computational Biology</em> 15 (4): e1006650. <a href="https://doi.org/10.1371/journal.pcbi.1006650">https://doi.org/10.1371/journal.pcbi.1006650</a>.
+</div>
+<div id="ref-drummond2007" class="csl-entry" role="listitem">
+Drummond, Alexei J, and Andrew Rambaut. 2007. <span>“BEAST: Bayesian Evolutionary Analysis by Sampling Trees.”</span> <em>BMC Evolutionary Biology</em> 7 (1): 214. <a href="https://doi.org/10.1186/1471-2148-7-214">https://doi.org/10.1186/1471-2148-7-214</a>.
+</div>
+<div id="ref-drummond2012" class="csl-entry" role="listitem">
+Drummond, Alexei J., Marc A. Suchard, Dong Xie, and Andrew Rambaut. 2012. <span>“Bayesian Phylogenetics with BEAUti and the BEAST 1.7.”</span> <em>Molecular Biology and Evolution</em> 29 (8): 1969–73. <a href="https://doi.org/10.1093/molbev/mss075">https://doi.org/10.1093/molbev/mss075</a>.
+</div>
+<div id="ref-eo2010" class="csl-entry" role="listitem">
+Eo, Soo Hyung, and J. Andrew DeWoody. 2010. <span>“Evolutionary Rates of Mitochondrial Genomes Correspond to Diversification Rates and to Contemporary Species Richness in Birds and Reptiles.”</span> <em>Proceedings of the Royal Society B: Biological Sciences</em> 277 (1700): 3587–92. <a href="https://doi.org/10.1098/rspb.2010.0965">https://doi.org/10.1098/rspb.2010.0965</a>.
+</div>
+<div id="ref-fleischer1998" class="csl-entry" role="listitem">
+FLEISCHER, ROBERT C., CARL E. MCINTOSH, and CHERYL L. TARR. 1998. <span>“Evolution on a Volcanic Conveyor Belt: Using Phylogeographic Reconstructions and K<span></span>Ar<span>-</span>Based Ages of the Hawaiian Islands to Estimate Molecular Evolutionary Rates.”</span> <em>Molecular Ecology</em> 7 (4): 533–45. <a href="https://doi.org/10.1046/j.1365-294x.1998.00364.x">https://doi.org/10.1046/j.1365-294x.1998.00364.x</a>.
+</div>
+<div id="ref-ogilvie2017" class="csl-entry" role="listitem">
+Ogilvie, Huw A., Remco R. Bouckaert, and Alexei J. Drummond. 2017. <span>“StarBEAST2 Brings Faster Species Tree Inference and Accurate Estimates of Substitution Rates.”</span> <em>Molecular Biology and Evolution</em> 34 (8): 2101–14. <a href="https://doi.org/10.1093/molbev/msx126">https://doi.org/10.1093/molbev/msx126</a>.
+</div>
+<div id="ref-pereira2006" class="csl-entry" role="listitem">
+Pereira, Sergio L., and Allan J. Baker. 2006. <span>“A Mitogenomic Timescale for Birds Detects Variable Phylogenetic Rates of Molecular Evolution and Refutes the Standard Molecular Clock.”</span> <em>Molecular Biology and Evolution</em> 23 (9): 1731–40. <a href="https://doi.org/10.1093/molbev/msl038">https://doi.org/10.1093/molbev/msl038</a>.
+</div>
+<div id="ref-rambaut2018" class="csl-entry" role="listitem">
+Rambaut, Andrew, Alexei J Drummond, Dong Xie, Guy Baele, and Marc A Suchard. 2018. <span>“Posterior Summarization in Bayesian Phylogenetics Using Tracer 1.7.”</span> Edited by Edward Susko. <em>Systematic Biology</em> 67 (5): 901–4. <a href="https://doi.org/10.1093/sysbio/syy032">https://doi.org/10.1093/sysbio/syy032</a>.
+</div>
+<div id="ref-weir2008" class="csl-entry" role="listitem">
+WEIR, J. T., and D. SCHLUTER. 2008. <span>“Calibrating the Avian Molecular Clock.”</span> <em>Molecular Ecology</em> 17 (10): 2321–28. <a href="https://doi.org/10.1111/j.1365-294x.2008.03742.x">https://doi.org/10.1111/j.1365-294x.2008.03742.x</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
