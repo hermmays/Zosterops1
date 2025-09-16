@@ -166,6 +166,7 @@ div.csl-indent {
   <ul>
   <li><a href="#goals" id="toc-goals" class="nav-link active" data-scroll-target="#goals">Goals</a></li>
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a></li>
+  <li><a href="#general-methods-summary" id="toc-general-methods-summary" class="nav-link" data-scroll-target="#general-methods-summary">General methods summary</a></li>
   <li><a href="#data-files" id="toc-data-files" class="nav-link" data-scroll-target="#data-files">Data files</a></li>
   <li><a href="#software-and-packages" id="toc-software-and-packages" class="nav-link" data-scroll-target="#software-and-packages">Software and packages</a></li>
   <li><a href="#generating-the-xml-file" id="toc-generating-the-xml-file" class="nav-link" data-scroll-target="#generating-the-xml-file">Generating the xml file</a>
@@ -222,6 +223,10 @@ div.csl-indent {
 <section id="getting-started" class="level2">
 <h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
 <p>We are using BEAST v2.7.4 for the analysis <span class="citation" data-cites="bouckaert2019 bouckaert2014 drummond2012 drummond2007">(<a href="#ref-bouckaert2019" role="doc-biblioref">R. Bouckaert et al. 2019</a>, <a href="#ref-bouckaert2014" role="doc-biblioref">2014</a>; <a href="#ref-drummond2012" role="doc-biblioref">Alexei J. Drummond et al. 2012</a>; <a href="#ref-drummond2007" role="doc-biblioref">Alexei J. Drummond and Rambaut 2007</a>)</span>. Quarto version 1.6.39 for Mac OS was used to document the workflow.</p>
+</section>
+<section id="general-methods-summary" class="level2">
+<h2 class="anchored" data-anchor-id="general-methods-summary">General methods summary</h2>
+<p>A multilocus species tree was generated from the combined mtDNA and nuDNA Sanger sequencing data using <em>StarBEAST2</em> <span class="citation" data-cites="ogilvie2017">(<a href="#ref-ogilvie2017" role="doc-biblioref">Ogilvie, Bouckaert, and Drummond 2017</a>)</span> implemented in <em>BEAUTi2/BEAST2</em> v2.7.4 <span class="citation" data-cites="drummond2012 bouckaert2014">(<a href="#ref-drummond2012" role="doc-biblioref">Alexei J. Drummond et al. 2012</a>; <a href="#ref-bouckaert2014" role="doc-biblioref">R. Bouckaert et al. 2014</a>)</span>. We used <em>bModelTest</em> in <em>StarBEAST2</em> to select the substitution model for each partition/locus <span class="citation" data-cites="bouckaert2017">(<a href="#ref-bouckaert2017" role="doc-biblioref">R. R. Bouckaert and Drummond 2017</a>)</span>. A strict molecular clock approach was used for each locus. Priors for substitution rates were estimated based on lognormal distributions. The prior distribution for ND2 and COI was based on a mean of 0.0105 substitutions/site/lineage/Ma and a standard deviation of 1 (5–95% quantile range of 0.00123 - 0.033 and a median clock rate of 0.00637). This range is consistent with mtDNA substitution rates reported in birds <span class="citation" data-cites="fleischer1998 pereira2006 weir2008 eo2010">(<a href="#ref-fleischer1998" role="doc-biblioref">FLEISCHER, MCINTOSH, and TARR 1998</a>; <a href="#ref-pereira2006" role="doc-biblioref">Pereira and Baker 2006</a>; <a href="#ref-weir2008" role="doc-biblioref">WEIR and SCHLUTER 2008</a>; <a href="#ref-eo2010" role="doc-biblioref">Eo and DeWoody 2010</a>)</span>. For the intron loci we based our prior substitution rate distributions on a mean 1/10th that of the ND2 and COI rates or 0.00105 substitutions/site/lineage/Ma and a standard deviation of 1 (5–95% quantile range is 0.000123 - 0.0033 and the median clock rate is 0.000637). We justified the substitution prior distribution for the nuclear loci on the basis of previous estimations of nuclear substitution rates in vertebrates relative to those of mtDNA <span class="citation" data-cites="johnson2000 johnson2000a prychitko2000 armstrong2001">(<a href="#ref-johnson2000" role="doc-biblioref">Johnson and Clayton 2000a</a>, <a href="#ref-johnson2000a" role="doc-biblioref">2000b</a>; <a href="#ref-prychitko2000" role="doc-biblioref">Prychitko and Moore 2000</a>; <a href="#ref-armstrong2001" role="doc-biblioref">Armstrong, Braun, and Kimball 2001</a>)</span>. Three analyses in <em>StarBEAST2</em>, labeled A, B, and C, were conducted with these parameters. The taxon set for the A and B runs included information on taxon (species and subspecies) and geography. The A runs included partitions for all eight loci and the B runs include only the mtDNA loci. Another set of runs (C runs) incorporated all partitions (mtDNA and nuDNA) but was based on only taxonomic assignments (genus, species, subspecies) for each sample and no additional geographic information. 20 independent runs were conducted for each analysis with 10M length Markov chain Monte Carlo (MCMC) chains, 1M burnin lengths, and results stored every 20,000 iterations for each individual run. Log and tree files were combined across these 20 runs using <em>LogCombiner</em> and a maximum clade credibility consensus tree was generated using <em>TreeAnnotator</em> for each of the three analyses (both <em>LogCombiner</em> and <em>TreeAnnotator</em> are included in the <em>BEAUTi2/BEAST2</em> v2.7.4 package).&nbsp;</p>
 </section>
 <section id="data-files" class="level2">
 <h2 class="anchored" data-anchor-id="data-files">Data files</h2>
@@ -1090,6 +1095,9 @@ ZPxx002a    Zosterops simplex SINGAPORE</code></pre>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-armstrong2001" class="csl-entry" role="listitem">
+Armstrong, Margaret H., Edward L. Braun, and Rebecca T. Kimball. 2001. <span>“Phylogenetic Utility of Avian Ovomucoid Intron G: A Comparison of Nuclear and Mitochondrial Phylogenies in Galliformes.”</span> <em>The Auk</em> 118 (3): 799–804. <a href="https://doi.org/10.1093/auk/118.3.799">https://doi.org/10.1093/auk/118.3.799</a>.
+</div>
 <div id="ref-bouckaert2017" class="csl-entry" role="listitem">
 Bouckaert, Remco R., and Alexei J. Drummond. 2017. <span>“bModelTest: Bayesian Phylogenetic Site Model Averaging and Model Comparison.”</span> <em>BMC Evolutionary Biology</em> 17 (1). <a href="https://doi.org/10.1186/s12862-017-0890-6">https://doi.org/10.1186/s12862-017-0890-6</a>.
 </div>
@@ -1111,11 +1119,20 @@ Eo, Soo Hyung, and J. Andrew DeWoody. 2010. <span>“Evolutionary Rates of Mitoc
 <div id="ref-fleischer1998" class="csl-entry" role="listitem">
 FLEISCHER, ROBERT C., CARL E. MCINTOSH, and CHERYL L. TARR. 1998. <span>“Evolution on a Volcanic Conveyor Belt: Using Phylogeographic Reconstructions and K<span></span>Ar<span>-</span>Based Ages of the Hawaiian Islands to Estimate Molecular Evolutionary Rates.”</span> <em>Molecular Ecology</em> 7 (4): 533–45. <a href="https://doi.org/10.1046/j.1365-294x.1998.00364.x">https://doi.org/10.1046/j.1365-294x.1998.00364.x</a>.
 </div>
+<div id="ref-johnson2000" class="csl-entry" role="listitem">
+Johnson, Kevin P., and Dale H. Clayton. 2000a. <span>“Nuclear and Mitochondrial Genes Contain Similar Phylogenetic Signal for Pigeons and Doves (Aves: Columbiformes).”</span> <em>Molecular Phylogenetics and Evolution</em> 14 (1): 141–51. <a href="https://doi.org/10.1006/mpev.1999.0682">https://doi.org/10.1006/mpev.1999.0682</a>.
+</div>
+<div id="ref-johnson2000a" class="csl-entry" role="listitem">
+———. 2000b. <span>“A Molecular Phylogeny of the Dove Genus Zenaida: Mitochondrial and Nuclear DNA Sequences.”</span> <em>The Condor</em> 102 (4): 864–70. <a href="https://doi.org/10.1093/condor/102.4.864">https://doi.org/10.1093/condor/102.4.864</a>.
+</div>
 <div id="ref-ogilvie2017" class="csl-entry" role="listitem">
 Ogilvie, Huw A., Remco R. Bouckaert, and Alexei J. Drummond. 2017. <span>“StarBEAST2 Brings Faster Species Tree Inference and Accurate Estimates of Substitution Rates.”</span> <em>Molecular Biology and Evolution</em> 34 (8): 2101–14. <a href="https://doi.org/10.1093/molbev/msx126">https://doi.org/10.1093/molbev/msx126</a>.
 </div>
 <div id="ref-pereira2006" class="csl-entry" role="listitem">
 Pereira, Sergio L., and Allan J. Baker. 2006. <span>“A Mitogenomic Timescale for Birds Detects Variable Phylogenetic Rates of Molecular Evolution and Refutes the Standard Molecular Clock.”</span> <em>Molecular Biology and Evolution</em> 23 (9): 1731–40. <a href="https://doi.org/10.1093/molbev/msl038">https://doi.org/10.1093/molbev/msl038</a>.
+</div>
+<div id="ref-prychitko2000" class="csl-entry" role="listitem">
+Prychitko, Thomas M., and William S. Moore. 2000. <span>“Comparative Evolution of the Mitochondrial Cytochrome b Gene and Nuclear β-Fibrinogen Intron 7 in Woodpeckers.”</span> <em>Molecular Biology and Evolution</em> 17 (7): 1101–11. <a href="https://doi.org/10.1093/oxfordjournals.molbev.a026391">https://doi.org/10.1093/oxfordjournals.molbev.a026391</a>.
 </div>
 <div id="ref-rambaut2018" class="csl-entry" role="listitem">
 Rambaut, Andrew, Alexei J Drummond, Dong Xie, Guy Baele, and Marc A Suchard. 2018. <span>“Posterior Summarization in Bayesian Phylogenetics Using Tracer 1.7.”</span> Edited by Edward Susko. <em>Systematic Biology</em> 67 (5): 901–4. <a href="https://doi.org/10.1093/sysbio/syy032">https://doi.org/10.1093/sysbio/syy032</a>.

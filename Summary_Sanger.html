@@ -200,6 +200,11 @@ div.csl-indent {
   <ul>
   <li><a href="#goals" id="toc-goals" class="nav-link active" data-scroll-target="#goals">Goals</a></li>
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a></li>
+  <li><a href="#general-methods-summary" id="toc-general-methods-summary" class="nav-link" data-scroll-target="#general-methods-summary">General methods summary</a>
+  <ul class="collapse">
+  <li><a href="#gdna-extraction" id="toc-gdna-extraction" class="nav-link" data-scroll-target="#gdna-extraction">gDNA extraction</a></li>
+  <li><a href="#pcr-and-sanger-sequencing" id="toc-pcr-and-sanger-sequencing" class="nav-link" data-scroll-target="#pcr-and-sanger-sequencing">PCR and Sanger sequencing</a></li>
+  </ul></li>
   <li><a href="#data-files" id="toc-data-files" class="nav-link" data-scroll-target="#data-files">Data files</a></li>
   <li><a href="#description-of-summary-statistics-and-tree-building-procedure-for-a-single-locus" id="toc-description-of-summary-statistics-and-tree-building-procedure-for-a-single-locus" class="nav-link" data-scroll-target="#description-of-summary-statistics-and-tree-building-procedure-for-a-single-locus">Description of summary statistics and tree building procedure for a single locus</a>
   <ul class="collapse">
@@ -259,6 +264,151 @@ div.csl-indent {
 <h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
 <p>We are using R version 4.4.2, RStudio version 2024.09.1 for the analysis. Quarto version 1.6.39 for Mac OS was used to document the workflow. Set the working directory in RStudio to one where the necessary phased Sanger sequencing alignments and other data are accessible.</p>
 </section>
+<section id="general-methods-summary" class="level2">
+<h2 class="anchored" data-anchor-id="general-methods-summary">General methods summary</h2>
+<section id="gdna-extraction" class="level3">
+<h3 class="anchored" data-anchor-id="gdna-extraction">gDNA extraction</h3>
+<p>Whole gDNA was isolated from either blood or tissue samples using a magnetic bead based protocol (University of Kansas) <span class="citation" data-cites="rohland2012">(<a href="#ref-rohland2012" role="doc-biblioref">Rohland and Reich 2012</a>)</span> or standard phenol-chloroform-isoamyl alcohol (PCI) protocol followed by ethanol precipitation (Cincinnati Museum Center and Marshall University) and quantified by a Qubit dsDNA Assay.</p>
+</section>
+<section id="pcr-and-sanger-sequencing" class="level3">
+<h3 class="anchored" data-anchor-id="pcr-and-sanger-sequencing">PCR and Sanger sequencing</h3>
+<p>159 individual samples underwent polymerase chain reactions (PCRs) and Sanger sequencing across eight loci including two mtDNA and six nuclear protein-coding exons (nuDNA). Common sequence tags, either CS1 (5′-ACACTGACGACATGGTTCTACA) in the forward direction or CS2 (5′-TACGGTAGCAGAGACTTGGTCT) in the reverse direction, were added to all the oligonucleotide sequences in this study <span class="citation" data-cites="moonsamy2013">(<a href="#ref-moonsamy2013" role="doc-biblioref">Moonsamy et al. 2013</a>)</span>. The addition of common 5′ tags allowed for CS1 and CS2 oligonucleotides to be utilized as sequencing primers for all amplicons across all loci. The NADH dehydrogenase subunit 2 (ND2) and cytochrome c oxidase subunit 1 (COI) were amplified using the primers L5216 and H6313 <span class="citation" data-cites="sorenson1999">(<a href="#ref-sorenson1999" role="doc-biblioref">Sorenson et al. 1999</a>)</span> and BIRDF1 and BIRDR2 <span class="citation" data-cites="hebert2004">(<a href="#ref-hebert2004" role="doc-biblioref">Hebert et al. 2004</a>)</span>, respectively. Six nuDNA coding loci (B3GNT9, BIRC2, CCDC, GPRC6, LACTBL, and USP38) were amplified using primers from Liu <em>et al.</em> <span class="citation" data-cites="liu2018">(<a href="#ref-liu2018" role="doc-biblioref">Liu et al. 2018</a>)</span>. A complete list of the oligonucleotide sequences used as PCR primers in this study are shown below.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Oligonucleotide name</th>
+<th>5′-CS tag&nbsp;+&nbsp;target sequence (5′&nbsp;→&nbsp;3′)</th>
+<th>Locus description</th>
+<th>Location/reference species</th>
+<th>References</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>L5216-CS1</td>
+<td>ACACTGACGACATGGTTCTACAGGCCCATACCCCGRAAATG</td>
+<td>NADH dehydrogenase subunit 2 (ND2)</td>
+<td>mtDNA/avian</td>
+<td>Sorenson et al.&nbsp;1999</td>
+</tr>
+<tr class="even">
+<td>H6313-CS2</td>
+<td>TACGGTAGCAGAGACTTGGTCTACTCCTRTTTAAGGCTTTGAAGGC</td>
+<td>NADH dehydrogenase subunit 2 (ND2)</td>
+<td>mtDNA/avian</td>
+<td>Sorenson et al.&nbsp;1999</td>
+</tr>
+<tr class="odd">
+<td>BIRDF1-CS1</td>
+<td>ACACTGACGACATGGTTCTACATTCTCCAACCACAAAGACATTGGCAC</td>
+<td>Cytochrome c Oxidase Subunit 1 (COI)</td>
+<td>mtDNA/avian</td>
+<td>Hebert et al.&nbsp;2004</td>
+</tr>
+<tr class="even">
+<td>BIRDR2-CS2</td>
+<td>TACGGTAGCAGAGACTTGGTCTACTACATGTGAGATGATTCCGAATCCAG</td>
+<td>Cytochrome c Oxidase Subunit 1 (COI)</td>
+<td>mtDNA/avian</td>
+<td>Hebert et al.&nbsp;2004</td>
+</tr>
+<tr class="odd">
+<td>B3GNT9F-CS1</td>
+<td>ACACTGACGACATGGTTCTACACCATTGGAAAGGCTTCTTCAC</td>
+<td>betaGal beta-1,3-N-acetylglucosaminyltransferase 9</td>
+<td>chromosome 11/<em>Taeniopygia guttata</em></td>
+<td>Liu et al.&nbsp;2018</td>
+</tr>
+<tr class="even">
+<td>B3GNT9R-CS2</td>
+<td>TACGGTAGCAGAGACTTGGTCTTTTCTGCTCATTGCTATCAAATC</td>
+<td>betaGal beta-1,3-N-acetylglucosaminyltransferase 9</td>
+<td>chromosome 11/<em>Taeniopygia guttata</em></td>
+<td>Liu et al.&nbsp;2018</td>
+</tr>
+<tr class="odd">
+<td>BIRC2F-CS1</td>
+<td>ACACTGACGACATGGTTCTACAATCTGCAAGCTGTTCAGGC</td>
+<td>baculoviral IAP repeat containing 2</td>
+<td>chromosome 1/<em>Taeniopygia guttata</em></td>
+<td>Liu et al.&nbsp;2018</td>
+</tr>
+<tr class="even">
+<td>BIRC2R-CS2</td>
+<td>TACGGTAGCAGAGACTTGGTCTCCGGGCTGGGTTTTATTAC</td>
+<td>baculoviral IAP repeat containing 2</td>
+<td>chromosome 1/<em>Taeniopygia guttata</em></td>
+<td>Liu et al.&nbsp;2018</td>
+</tr>
+<tr class="odd">
+<td>CCDCF-CS1</td>
+<td>ACACTGACGACATGGTTCTACACCAAAGTTACTGGAGAACCTTCC</td>
+<td>coiled-coil domain containing 141</td>
+<td>chromosome 7/<em>Taeniopygia guttata</em></td>
+<td>Liu et al.&nbsp;2018</td>
+</tr>
+<tr class="even">
+<td>CCDCR-CS2</td>
+<td>TACGGTAGCAGAGACTTGGTCTATACAGAGCTGTCATCTTCAGCC</td>
+<td>coiled-coil domain containing 141</td>
+<td>chromosome 7/<em>Taeniopygia guttata</em></td>
+<td>Liu et al.&nbsp;2018</td>
+</tr>
+<tr class="odd">
+<td>GPRC6F-CS1</td>
+<td>ACACTGACGACATGGTTCTACAACAACAAAACCTACTGGGC</td>
+<td>G protein-coupled receptor, class C, group 6, member A</td>
+<td>chromosome 3/<em>Taeniopygia guttata</em></td>
+<td>Liu et al.&nbsp;2018</td>
+</tr>
+<tr class="even">
+<td>GPRC6R-CS2</td>
+<td>TACGGTAGCAGAGACTTGGTCTCAGGGATAAATACAATCCATGCT</td>
+<td>G protein-coupled receptor, class C, group 6, member A</td>
+<td>chromosome 3/<em>Taeniopygia guttata</em></td>
+<td>Liu et al.&nbsp;2018</td>
+</tr>
+<tr class="odd">
+<td>LACTBLF-CS1</td>
+<td>ACACTGACGACATGGTTCTACACCAGTGAGATGGAGGCAGAG</td>
+<td>lactamase, beta-like 1</td>
+<td>chromosome 21/<em>Taeniopygia guttata</em></td>
+<td>Liu et al.&nbsp;2018</td>
+</tr>
+<tr class="even">
+<td>LACTBLR-CS2</td>
+<td>TACGGTAGCAGAGACTTGGTCTATCCGCTCCCAGATGGC</td>
+<td>lactamase, beta-like 1</td>
+<td>chromosome 21/<em>Taeniopygia guttata</em></td>
+<td>Liu et al.&nbsp;2018</td>
+</tr>
+<tr class="odd">
+<td>USP38F-CS1</td>
+<td>ACACTGACGACATGGTTCTACACCTGAGATCCTTAGTGGAGACAA</td>
+<td>ubiquitin carboxyl-terminal hydrolase 38</td>
+<td>chromosome 4/<em>Taeniopygia guttata</em></td>
+<td>Liu et al.&nbsp;2018</td>
+</tr>
+<tr class="even">
+<td>USP38R-CS2</td>
+<td>TACGGTAGCAGAGACTTGGTCTGCATCCATGAGGTCTTTTTGTAG</td>
+<td>ubiquitin carboxyl-terminal hydrolase 38</td>
+<td>chromosome 4/<em>Taeniopygia guttata</em></td>
+<td>Liu et al.&nbsp;2018</td>
+</tr>
+</tbody>
+</table>
+<p>PCRs were performed in 10μL reactions in a 96-well thermal cycler (Life Technologies) with commercial polymerase master mixes (either Fidelitaq™ Master Mix, Affymetrix/USB or AmpliTaq Gold™ 360 Master Mix, Applied Biosystems™) and forward and reverse primers (0.5&nbsp;μmol&nbsp;L<sup>−1</sup> each; Integrated DNA Technology) using a thermal profile of 94°C for 4&nbsp;min followed by 30 cycles of 1&nbsp;min at 94°C, 1&nbsp;min at 50°C, and 2&nbsp;min at 72°C, and then a final extension cycle for 10&nbsp;min at 72°C. The same thermal profile was utilized for all PCRs across all loci. Primers and excess dNTPs were inactivated with ExoSAP-IT™ (Applied Biosystems™) following the manufacturer’s instructions. Sequencing reactions were performed on ExoSAP-IT<sup>®</sup> treated PCR amplicons either in-house (Cincinnati Museum Center or Marshall University) using BigDye<sup>®</sup> v3.1 Cycle Sequencing and BigDye Xterminator<sup>®</sup> kits (Life Technologies) and separating on a 3130 Genetic Analyzer (Life Technologies) or by submitting for Sanger sequencing to Eurofins Genomics using their Prepaid Plate DNA kits. PCR amplicons were sequenced in both directions with primers based on the common sequence tags incorporated into all amplicons (CS1 and CS2).</p>
+<p>Complementary strands were aligned and edited using <em>Geneious</em> v8.1.4 (Biomatters, available from http://www.geneious.com) <span class="citation" data-cites="kearse2012">(<a href="#ref-kearse2012" role="doc-biblioref">Kearse et al. 2012</a>)</span>. Chromatograms were inspected and every variation was checked for authenticity. The phase of nuclear alleles was determined statistically using <em>Seqphase</em> <span class="citation" data-cites="flot2009">(<a href="#ref-flot2009" role="doc-biblioref">Flot 2009</a>)</span> and <em>Phase</em> v2.1 <span class="citation" data-cites="stephens2001">(<a href="#ref-stephens2001" role="doc-biblioref">Stephens, Smith, and Donnelly 2001</a>)</span> and phased nuclear haplotypes aligned using <em>Geneious</em> (Biomatters). General descriptive statistics for Sanger sequenced loci including nucleotide diversity, haplotype diversity, segregating sites, q, Tajima’s D <span class="citation" data-cites="tajima1989">(<a href="#ref-tajima1989" role="doc-biblioref">Tajima 1989</a>)</span>, and the R<sub>2</sub> test <span class="citation" data-cites="ramos-onsins2002">(<a href="#ref-ramos-onsins2002" role="doc-biblioref">Ramos-Onsins and Rozas 2002</a>)</span> as well as substitution model tests and trees and networks (distance-based and maximum likelihood) for individual loci were generated using the R packages <em>ape</em> <span class="citation" data-cites="ape-2">(<a href="#ref-ape-2" role="doc-biblioref">Paradis and Schliep 2019a</a>)</span>, <em>pegas</em> <span class="citation" data-cites="pegas-2">(<a href="#ref-pegas-2" role="doc-biblioref">Paradis 2010a</a>)</span>, and <em>phangorn</em> <span class="citation" data-cites="phangorn-2">(<a href="#ref-phangorn-2" role="doc-biblioref">Schliep 2011a</a>)</span>. R v4.4.2 was used throughout various analyses in this study (R Core Team, 2024).</p>
+</section>
+</section>
 <section id="data-files" class="level2">
 <h2 class="anchored" data-anchor-id="data-files">Data files</h2>
 <p>This dataset includes Sanger sequenced polymerase chain reaction (PCR) amplicon alignments for two mitochondrial DNA (mtDNA) and six protein coding nuclear loci (nuDNA). Prior to this analysis Sanger sequencing <code>ab1</code> files were uploaded to Geneious<sup>Ⓡ</sup> 8.1.9 for editing, alignment, and quality control. Multiple sequencing runs for each amplicon were assembled and assembled loci were aligned across individual samples using Geneious Alignment. Alignments for each locus were trimmed and edited in Geneious and the identity of each locus confirmed with a megablast search. The reading frame was set by eye by avoiding frames with stop codons and a blastp search was done on the translation consensus for each alignment to confirm the locus identity. Alignments were exported as <code>fasta</code> files.</p>
@@ -294,9 +444,9 @@ div.csl-indent {
 <p>Begin the analysis by restarting the R session (Session/Restart R in RStudio), loading the initial package libraries, and starting a log of the analysis. Other package libraries will be loaded as needed in later blocks. The following R packages should be installed using the Tools/Install Packages feature in RStudio.</p>
 <ul>
 <li><p>logr <span class="citation" data-cites="logr">(<a href="#ref-logr" role="doc-biblioref">Bosak 2024</a>)</span> Optional if you wish to create a log file for the analysis.</p></li>
-<li><p>ape <span class="citation" data-cites="ape">(<a href="#ref-ape" role="doc-biblioref">Paradis and Schliep 2019</a>)</span></p></li>
-<li><p>pegas <span class="citation" data-cites="pegas">(<a href="#ref-pegas" role="doc-biblioref">Paradis 2010</a>)</span></p></li>
-<li><p>phangorn <span class="citation" data-cites="phangorn">(<a href="#ref-phangorn" role="doc-biblioref">Schliep 2011</a>)</span></p></li>
+<li><p>ape <span class="citation" data-cites="ape">(<a href="#ref-ape" role="doc-biblioref">Paradis and Schliep 2019b</a>)</span></p></li>
+<li><p>pegas <span class="citation" data-cites="pegas">(<a href="#ref-pegas" role="doc-biblioref">Paradis 2010b</a>)</span></p></li>
+<li><p>phangorn <span class="citation" data-cites="phangorn">(<a href="#ref-phangorn" role="doc-biblioref">Schliep 2011b</a>)</span></p></li>
 <li><p>gt <span class="citation" data-cites="gt">(<a href="#ref-gt" role="doc-biblioref">Iannone et al. 2024</a>)</span></p></li>
 <li><p>webshot2 <span class="citation" data-cites="webshot2">(<a href="#ref-webshot2" role="doc-biblioref">Chang 2025</a>)</span></p></li>
 <li><p>dplyr <span class="citation" data-cites="dplyr">(<a href="#ref-dplyr" role="doc-biblioref">Wickham et al. 2023</a>)</span></p></li>
@@ -1078,7 +1228,7 @@ $Pval.beta
 [1] 0.05447387
 
 $P.val
-[1] 0.0804</code></pre>
+[1] 0.0796</code></pre>
 </div>
 </div>
 </section>
@@ -1119,105 +1269,105 @@ $P.val
 <span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>mtCOI <span class="ot">&lt;-</span> <span class="fu">modelTest</span>(ZosteropsCOI)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Model        df  logLik   AIC      BIC
-          JC 261 -2276.924 5075.847 6242.726 
-        JC+I 262 -2211.078 4946.156 6117.506 
-     JC+G(4) 262 -2210.582 4945.164 6116.514 
-   JC+G(4)+I 263 -2209.326 4944.652 6120.473 
-         F81 264 -2267.425 5062.85 6243.141 
-       F81+I 265 -2198.294 4926.588 6111.35 
-    F81+G(4) 265 -2197.975 4925.951 6110.713 
-  F81+G(4)+I 266 -2196.794 4925.589 6114.822 
-         K80 262 -2136.23 4796.461 5967.81 
-       K80+I 263 -2067.727 4661.454 5837.274 
-    K80+G(4) 263 -2067.269 4660.538 5836.358 
-  K80+G(4)+I 264 -2065.561 4659.122 5839.413 
-         HKY 265 -2126.776 4783.553 5968.315 
-       HKY+I 266 -2050.506 4633.011 5822.244 
-    HKY+G(4) 266 -2050.375 4632.751 5821.983 
-  HKY+G(4)+I 267 -2049.313 4632.626 5826.33 
-        TrNe 263 -2135.245 4796.489 5972.31 
-      TrNe+I 264 -2067.159 4662.318 5842.609 
-   TrNe+G(4) 264 -2066.652 4661.304 5841.596 
- TrNe+G(4)+I 265 -2065.101 4660.202 5844.964 
-         TrN 266 -2126.6 4785.201 5974.434 
-       TrN+I 267 -2049.815 4633.629 5827.333 
-    TrN+G(4) 267 -2049.856 4633.711 5827.415 
-  TrN+G(4)+I 268 -2048.876 4633.752 5831.926 
-        TPM1 263 -2136.129 4798.257 5974.078 
-      TPM1+I 264 -2067.621 4663.243 5843.534 
-   TPM1+G(4) 264 -2067.164 4662.327 5842.618 
- TPM1+G(4)+I 265 -2065.456 4660.913 5845.674 
-         K81 263 -2136.129 4798.257 5974.078 
-       K81+I 264 -2067.621 4663.243 5843.534 
-    K81+G(4) 264 -2067.164 4662.327 5842.618 
-  K81+G(4)+I 265 -2065.456 4660.913 5845.674 
-       TPM1u 266 -2126.727 4785.455 5974.687 
-     TPM1u+I 267 -2050.498 4634.995 5828.699 
-  TPM1u+G(4) 267 -2050.367 4634.733 5828.437 
-TPM1u+G(4)+I 268 -2049.304 4634.608 5832.782 
-        TPM2 263 -2132.139 4790.277 5966.097 
-      TPM2+I 264 -2064.634 4657.269 5837.56 
-   TPM2+G(4) 264 -2064.047 4656.094 5836.385 
- TPM2+G(4)+I 265 -2062.01 4654.02 5838.782 
-       TPM2u 266 -2124.154 4780.308 5969.541 
-     TPM2u+I 267 -2049.165 4632.329 5826.033 
-  TPM2u+G(4) 267 -2048.967 4631.934 5825.638 
-TPM2u+G(4)+I 268 -2047.712 4631.424 5829.599 
-        TPM3 263 -2136.074 4798.147 5973.967 
-      TPM3+I 264 -2067.716 4663.432 5843.723 
-   TPM3+G(4) 264 -2067.256 4662.511 5842.802 
- TPM3+G(4)+I 265 -2065.554 4661.109 5845.871 
-       TPM3u 266 -2126.733 4785.466 5974.698 
-     TPM3u+I 267 -2050.489 4634.979 5828.682 
-  TPM3u+G(4) 267 -2050.36 4634.72 5828.423 
-TPM3u+G(4)+I 268 -2049.286 4634.571 5832.746 
-       TIM1e 264 -2135.143 4798.286 5978.578 
-     TIM1e+I 265 -2067.053 4664.107 5848.869 
-  TIM1e+G(4) 265 -2066.547 4663.095 5847.856 
-TIM1e+G(4)+I 266 -2064.997 4661.993 5851.226 
-        TIM1 267 -2126.551 4787.103 5980.806 
-      TIM1+I 268 -2049.807 4635.614 5833.788 
-   TIM1+G(4) 268 -2049.847 4635.694 5833.868 
- TIM1+G(4)+I 269 -2048.867 4635.733 5838.378 
-       TIM2e 264 -2131.156 4790.311 5970.602 
-     TIM2e+I 265 -2064.081 4658.163 5842.925 
-  TIM2e+G(4) 265 -2063.469 4656.937 5841.699 
-TIM2e+G(4)+I 266 -2061.647 4655.295 5844.527 
-        TIM2 267 -2123.977 4781.953 5975.657 
-      TIM2+I 268 -2048.504 4633.007 5831.181 
-   TIM2+G(4) 268 -2048.463 4632.926 5831.101 
- TIM2+G(4)+I 269 -2047.269 4632.538 5835.183 
-       TIM3e 264 -2135.089 4798.177 5978.468 
-     TIM3e+I 265 -2067.148 4664.296 5849.057 
-  TIM3e+G(4) 265 -2066.638 4663.276 5848.038 
-TIM3e+G(4)+I 266 -2065.093 4662.186 5851.419 
-        TIM3 267 -2126.557 4787.114 5980.817 
-      TIM3+I 268 -2049.799 4635.598 5833.772 
-   TIM3+G(4) 268 -2049.841 4635.683 5833.857 
- TIM3+G(4)+I 269 -2048.849 4635.698 5838.343 
-        TVMe 265 -2131.949 4793.899 5978.66 
-      TVMe+I 266 -2064.607 4661.215 5850.448 
-   TVMe+G(4) 266 -2064.017 4660.035 5849.268 
- TVMe+G(4)+I 267 -2061.991 4657.982 5851.686 
-         TVM 268 -2124.084 4784.168 5982.342 
-       TVM+I 269 -2049.15 4636.3 5838.945 
-    TVM+G(4) 269 -2048.953 4635.906 5838.551 
-  TVM+G(4)+I 270 -2047.69 4635.381 5842.497 
-         SYM 266 -2130.966 4793.933 5983.165 
-       SYM+I 267 -2064.054 4662.108 5855.812 
-    SYM+G(4) 267 -2063.438 4660.876 5854.579 
-  SYM+G(4)+I 268 -2061.627 4659.254 5857.428 
-         GTR 269 -2123.907 4785.813 5988.458 
-       GTR+I 270 -2048.49 4636.981 5844.096 
-    GTR+G(4) 270 -2048.45 4636.901 5844.016 
-  GTR+G(4)+I 271 -2047.248 4636.496 5848.082 </code></pre>
+          JC 261 -2283.282 5088.565 6255.443 
+        JC+I 262 -2217.378 4958.757 6130.106 
+     JC+G(4) 262 -2216.882 4957.764 6129.113 
+   JC+G(4)+I 263 -2215.851 4957.701 6133.522 
+         F81 264 -2274.807 5077.614 6257.905 
+       F81+I 265 -2205.589 4941.179 6125.941 
+    F81+G(4) 265 -2205.277 4940.554 6125.316 
+  F81+G(4)+I 266 -2204.38 4940.759 6129.992 
+         K80 262 -2142.526 4809.052 5980.402 
+       K80+I 263 -2073.758 4673.515 5849.336 
+    K80+G(4) 263 -2073.293 4672.586 5848.406 
+  K80+G(4)+I 264 -2071.701 4671.401 5851.692 
+         HKY 265 -2134.087 4798.173 5982.935 
+       HKY+I 266 -2057.446 4646.892 5836.124 
+    HKY+G(4) 266 -2057.286 4646.573 5835.805 
+  HKY+G(4)+I 267 -2054.06 4642.12 5835.823 
+        TrNe 263 -2141.921 4809.843 5985.663 
+      TrNe+I 264 -2073.516 4675.033 5855.324 
+   TrNe+G(4) 264 -2073.008 4674.016 5854.307 
+ TrNe+G(4)+I 265 -2071.457 4672.914 5857.676 
+         TrN 266 -2133.68 4799.361 5988.593 
+       TrN+I 267 -2056.221 4646.441 5840.145 
+    TrN+G(4) 267 -2056.31 4646.62 5840.324 
+  TrN+G(4)+I 268 -2053.22 4642.441 5840.615 
+        TPM1 263 -2142.426 4810.851 5986.671 
+      TPM1+I 264 -2073.655 4675.311 5855.602 
+   TPM1+G(4) 264 -2073.191 4674.382 5854.673 
+ TPM1+G(4)+I 265 -2071.6 4673.2 5857.962 
+         K81 263 -2142.426 4810.851 5986.671 
+       K81+I 264 -2073.655 4675.311 5855.602 
+    K81+G(4) 264 -2073.191 4674.382 5854.673 
+  K81+G(4)+I 265 -2071.6 4673.2 5857.962 
+       TPM1u 266 -2134.039 4800.077 5989.31 
+     TPM1u+I 267 -2057.439 4648.878 5842.582 
+  TPM1u+G(4) 267 -2057.279 4648.558 5842.261 
+TPM1u+G(4)+I 268 -2054.051 4644.103 5842.277 
+        TPM2 263 -2138.438 4802.877 5978.697 
+      TPM2+I 264 -2070.68 4669.361 5849.652 
+   TPM2+G(4) 264 -2070.093 4668.186 5848.477 
+ TPM2+G(4)+I 265 -2068.195 4666.39 5851.152 
+       TPM2u 266 -2131.467 4794.935 5984.168 
+     TPM2u+I 267 -2056.117 4646.233 5839.937 
+  TPM2u+G(4) 267 -2055.891 4645.783 5839.486 
+TPM2u+G(4)+I 268 -2052.455 4640.91 5839.084 
+        TPM3 263 -2142.37 4810.74 5986.56 
+      TPM3+I 264 -2073.748 4675.496 5855.787 
+   TPM3+G(4) 264 -2073.28 4674.56 5854.851 
+ TPM3+G(4)+I 265 -2071.693 4673.387 5858.149 
+       TPM3u 266 -2134.044 4800.087 5989.32 
+     TPM3u+I 267 -2057.428 4648.856 5842.559 
+  TPM3u+G(4) 267 -2057.27 4648.539 5842.243 
+TPM3u+G(4)+I 268 -2054.031 4644.061 5842.235 
+       TIM1e 264 -2141.821 4811.642 5991.933 
+     TIM1e+I 265 -2073.414 4676.829 5861.59 
+  TIM1e+G(4) 265 -2072.906 4675.812 5860.574 
+TIM1e+G(4)+I 266 -2071.357 4674.713 5863.946 
+        TIM1 267 -2133.632 4801.264 5994.968 
+      TIM1+I 268 -2056.214 4648.428 5846.602 
+   TIM1+G(4) 268 -2056.303 4648.605 5846.78 
+ TIM1+G(4)+I 269 -2053.212 4644.424 5847.069 
+       TIM2e 264 -2137.835 4803.67 5983.961 
+     TIM2e+I 265 -2070.448 4670.897 5855.659 
+  TIM2e+G(4) 265 -2069.832 4669.664 5854.426 
+TIM2e+G(4)+I 266 -2068.02 4668.041 5857.273 
+        TIM2 267 -2131.059 4796.118 5989.822 
+      TIM2+I 268 -2054.929 4645.859 5844.033 
+   TIM2+G(4) 268 -2054.936 4645.872 5844.046 
+ TIM2+G(4)+I 269 -2051.594 4641.189 5843.834 
+       TIM3e 264 -2141.766 4811.532 5991.823 
+     TIM3e+I 265 -2073.506 4677.013 5861.774 
+  TIM3e+G(4) 265 -2072.994 4675.989 5860.751 
+TIM3e+G(4)+I 266 -2071.449 4674.897 5864.13 
+        TIM3 267 -2133.637 4801.274 5994.978 
+      TIM3+I 268 -2056.203 4648.407 5846.581 
+   TIM3+G(4) 268 -2056.295 4648.59 5846.764 
+ TIM3+G(4)+I 269 -2053.192 4644.384 5847.03 
+        TVMe 265 -2138.249 4806.498 5991.26 
+      TVMe+I 266 -2070.655 4673.31 5862.542 
+   TVMe+G(4) 266 -2070.064 4672.128 5861.36 
+ TVMe+G(4)+I 267 -2068.176 4670.351 5864.055 
+         TVM 268 -2131.397 4798.795 5996.969 
+       TVM+I 269 -2056.1 4650.2 5852.845 
+    TVM+G(4) 269 -2055.875 4649.75 5852.395 
+  TVM+G(4)+I 270 -2052.431 4644.863 5851.979 
+         SYM 266 -2137.646 4807.292 5996.525 
+       SYM+I 267 -2070.423 4674.845 5868.549 
+    SYM+G(4) 267 -2069.802 4673.604 5867.308 
+  SYM+G(4)+I 268 -2068 4672 5870.174 
+         GTR 269 -2130.989 4799.978 6002.623 
+       GTR+I 270 -2054.914 4649.829 5856.945 
+    GTR+G(4) 270 -2054.922 4649.843 5856.959 
+  GTR+G(4)+I 271 -2051.572 4645.144 5856.73 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>fitCOI <span class="ot">&lt;-</span> <span class="fu">as.pml</span>(mtCOI, <span class="st">"AIC"</span>)</span>
 <span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>fit_mtCOI <span class="ot">&lt;-</span> <span class="fu">pml_bb</span>(mtCOI, <span class="at">control =</span> <span class="fu">pml.control</span>(<span class="at">trace =</span> <span class="dv">0</span>))</span>
 <span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>fit_mtCOI</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>model: HKY+G(4) 
-loglikelihood: -2049.655 
+loglikelihood: -2049.545 
 unconstrained loglikelihood: -1572.029 
 Model of rate heterogeneity: Discrete gamma model
 Number of rate categories: 4 
@@ -1230,10 +1380,10 @@ Shape parameter: 0.1005955
 
 Rate matrix:
          a        c        g        t
-a  0.00000  1.00000 20.32658  1.00000
-c  1.00000  0.00000  1.00000 20.32658
-g 20.32658  1.00000  0.00000  1.00000
-t  1.00000 20.32658  1.00000  0.00000
+a  0.00000  1.00000 20.33181  1.00000
+c  1.00000  0.00000  1.00000 20.33181
+g 20.33181  1.00000  0.00000  1.00000
+t  1.00000 20.33181  1.00000  0.00000
 
 Base frequencies:  
         a         c         g         t 
@@ -1895,98 +2045,98 @@ assigned to the same haplotype</code></pre>
 <span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a>mtND2 <span class="ot">&lt;-</span> <span class="fu">modelTest</span>(ZosteropsND2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Model        df  logLik   AIC      BIC
-          JC 283 -3834.272 8234.543 9617.143 
-        JC+I 284 -3777.715 8123.43 9510.914 
-     JC+G(4) 284 -3777.335 8122.67 9510.154 
-   JC+G(4)+I 285 -3777.177 8124.355 9516.725 
-         F81 286 -3791.791 8155.583 9552.839 
-       F81+I 287 -3731.737 8037.474 9439.615 
-    F81+G(4) 287 -3731.901 8037.802 9439.944 
-  F81+G(4)+I 288 -3731.933 8039.867 9446.893 
-         K80 284 -3612.378 7792.756 9180.241 
-       K80+I 285 -3552.865 7675.729 9068.099 
-    K80+G(4) 285 -3552.197 7674.395 9066.765 
-  K80+G(4)+I 286 -3551.905 7675.81 9073.066 
-         HKY 287 -3556.231 7686.462 9088.603 
-       HKY+I 288 -3483.75 7543.499 8950.526 
-    HKY+G(4) 288 -3483.608 7543.217 8950.243 
-  HKY+G(4)+I 289 -3483.268 7544.537 8956.449 
-        TrNe 285 -3611.723 7793.447 9185.817 
-      TrNe+I 286 -3552.672 7677.344 9074.599 
-   TrNe+G(4) 286 -3552.006 7676.011 9073.267 
- TrNe+G(4)+I 287 -3551.687 7677.374 9079.516 
-         TrN 288 -3547.533 7671.065 9078.092 
-       TrN+I 289 -3470.325 7518.649 8930.561 
-    TrN+G(4) 289 -3470.977 7519.954 8931.866 
-  TrN+G(4)+I 290 -3471.107 7522.213 8939.011 
-        TPM1 285 -3611.974 7793.948 9186.319 
-      TPM1+I 286 -3552.541 7677.082 9074.338 
-   TPM1+G(4) 286 -3551.882 7675.764 9073.019 
- TPM1+G(4)+I 287 -3551.595 7677.189 9079.331 
-         K81 285 -3611.974 7793.948 9186.319 
-       K81+I 286 -3552.541 7677.082 9074.338 
-    K81+G(4) 286 -3551.882 7675.764 9073.019 
-  K81+G(4)+I 287 -3551.595 7677.189 9079.331 
-       TPM1u 288 -3556.201 7688.403 9095.43 
-     TPM1u+I 289 -3483.725 7545.45 8957.363 
-  TPM1u+G(4) 289 -3483.59 7545.181 8957.093 
-TPM1u+G(4)+I 290 -3483.246 7546.492 8963.289 
-        TPM2 285 -3610.444 7790.887 9183.257 
-      TPM2+I 286 -3551.045 7674.09 9071.345 
-   TPM2+G(4) 286 -3550.308 7672.617 9069.872 
- TPM2+G(4)+I 287 -3549.956 7673.912 9076.053 
-       TPM2u 288 -3556.194 7688.387 9095.414 
-     TPM2u+I 289 -3483.292 7544.585 8956.497 
-  TPM2u+G(4) 289 -3483.139 7544.279 8956.191 
-TPM2u+G(4)+I 290 -3482.843 7545.686 8962.484 
-        TPM3 285 -3612.323 7794.647 9187.017 
-      TPM3+I 286 -3552.68 7677.361 9074.617 
-   TPM3+G(4) 286 -3552.061 7676.123 9073.378 
- TPM3+G(4)+I 287 -3551.777 7677.555 9079.696 
-       TPM3u 288 -3555.848 7687.695 9094.722 
-     TPM3u+I 289 -3482.885 7543.769 8955.682 
-  TPM3u+G(4) 289 -3482.803 7543.605 8955.517 
-TPM3u+G(4)+I 290 -3482.45 7544.9 8961.698 
-       TIM1e 286 -3611.321 7794.643 9191.899 
-     TIM1e+I 287 -3552.35 7678.7 9080.841 
-  TIM1e+G(4) 287 -3551.692 7677.384 9079.525 
-TIM1e+G(4)+I 288 -3551.379 7678.757 9085.784 
-        TIM1 289 -3547.502 7673.004 9084.917 
-      TIM1+I 290 -3470.299 7520.598 8937.396 
-   TIM1+G(4) 290 -3470.96 7521.92 8938.717 
- TIM1+G(4)+I 291 -3471.077 7524.155 8945.838 
-       TIM2e 286 -3609.79 7791.58 9188.836 
-     TIM2e+I 287 -3550.888 7675.776 9077.917 
-  TIM2e+G(4) 287 -3550.166 7674.331 9076.473 
-TIM2e+G(4)+I 288 -3549.796 7675.592 9082.619 
-        TIM2 289 -3547.497 7672.993 9084.906 
-      TIM2+I 290 -3469.787 7519.573 8936.371 
-   TIM2+G(4) 290 -3470.406 7520.811 8937.609 
- TIM2+G(4)+I 291 -3470.577 7523.155 8944.838 
-       TIM3e 286 -3611.669 7795.338 9192.594 
-     TIM3e+I 287 -3552.492 7678.985 9081.126 
-  TIM3e+G(4) 287 -3551.876 7677.753 9079.894 
-TIM3e+G(4)+I 288 -3551.566 7679.132 9086.159 
-        TIM3 289 -3547.146 7672.293 9084.205 
-      TIM3+I 290 -3469.459 7518.917 8935.715 
-   TIM3+G(4) 290 -3470.135 7520.27 8937.068 
- TIM3+G(4)+I 291 -3470.231 7522.461 8944.145 
-        TVMe 287 -3609.934 7793.867 9196.008 
-      TVMe+I 288 -3550.438 7676.875 9083.902 
-   TVMe+G(4) 288 -3549.777 7675.555 9082.582 
- TVMe+G(4)+I 289 -3549.44 7676.88 9088.793 
-         TVM 290 -3555.462 7690.923 9107.721 
-       TVM+I 291 -3482.076 7546.152 8967.836 
-    TVM+G(4) 291 -3481.989 7545.979 8967.662 
-  TVM+G(4)+I 292 -3481.689 7547.377 8973.946 
-         SYM 288 -3609.284 7794.567 9201.594 
-       SYM+I 289 -3550.286 7678.573 9090.485 
-    SYM+G(4) 289 -3549.643 7677.287 9089.199 
-  SYM+G(4)+I 290 -3549.288 7678.577 9095.375 
-         GTR 291 -3546.756 7675.512 9097.195 
-       GTR+I 292 -3468.543 7521.086 8947.655 
-    GTR+G(4) 292 -3469.172 7522.344 8948.913 
-  GTR+G(4)+I 293 -3469.317 7524.635 8956.089 </code></pre>
+          JC 283 -3833.874 8233.749 9616.348 
+        JC+I 284 -3777.317 8122.634 9510.119 
+     JC+G(4) 284 -3776.621 8121.241 9508.726 
+   JC+G(4)+I 285 -3776.473 8122.945 9515.316 
+         F81 286 -3791.204 8154.409 9551.664 
+       F81+I 287 -3731.152 8036.305 9438.446 
+    F81+G(4) 287 -3731.01 8036.02 9438.161 
+  F81+G(4)+I 288 -3731.063 8038.126 9445.153 
+         K80 284 -3611.983 7791.966 9179.451 
+       K80+I 285 -3552.473 7674.947 9067.317 
+    K80+G(4) 285 -3551.495 7672.991 9065.361 
+  K80+G(4)+I 286 -3551.203 7674.406 9071.662 
+         HKY 287 -3555.646 7685.293 9087.434 
+       HKY+I 288 -3483.173 7542.347 8949.373 
+    HKY+G(4) 288 -3482.857 7541.713 8948.74 
+  HKY+G(4)+I 289 -3482.568 7543.136 8955.049 
+        TrNe 285 -3611.189 7792.377 9184.748 
+      TrNe+I 286 -3552.185 7676.371 9073.627 
+   TrNe+G(4) 286 -3551.223 7674.447 9071.703 
+ TrNe+G(4)+I 287 -3550.906 7675.812 9077.953 
+         TrN 288 -3547.438 7670.876 9077.902 
+       TrN+I 289 -3470.476 7518.952 8930.864 
+    TrN+G(4) 289 -3470.895 7519.79 8931.703 
+  TrN+G(4)+I 290 -3471.207 7522.413 8939.211 
+        TPM1 285 -3611.579 7793.159 9185.529 
+      TPM1+I 286 -3552.15 7676.299 9073.555 
+   TPM1+G(4) 286 -3551.18 7674.36 9071.615 
+ TPM1+G(4)+I 287 -3550.893 7675.786 9077.927 
+         K81 285 -3611.579 7793.159 9185.529 
+       K81+I 286 -3552.15 7676.299 9073.555 
+    K81+G(4) 286 -3551.18 7674.36 9071.615 
+  K81+G(4)+I 287 -3550.893 7675.786 9077.927 
+       TPM1u 288 -3555.617 7687.234 9094.261 
+     TPM1u+I 289 -3483.149 7544.298 8956.21 
+  TPM1u+G(4) 289 -3482.839 7543.678 8955.59 
+TPM1u+G(4)+I 290 -3482.546 7545.093 8961.89 
+        TPM2 285 -3610.049 7790.098 9182.468 
+      TPM2+I 286 -3550.654 7673.308 9070.564 
+   TPM2+G(4) 286 -3549.597 7671.194 9068.45 
+ TPM2+G(4)+I 287 -3549.244 7672.488 9074.63 
+       TPM2u 288 -3555.609 7687.218 9094.245 
+     TPM2u+I 289 -3482.715 7543.431 8955.343 
+  TPM2u+G(4) 289 -3482.39 7542.781 8954.693 
+TPM2u+G(4)+I 290 -3482.145 7544.291 8961.089 
+        TPM3 285 -3611.928 7793.857 9186.227 
+      TPM3+I 286 -3552.289 7676.579 9073.835 
+   TPM3+G(4) 286 -3551.359 7674.718 9071.973 
+ TPM3+G(4)+I 287 -3551.075 7676.151 9078.292 
+       TPM3u 288 -3555.263 7686.526 9093.553 
+     TPM3u+I 289 -3482.309 7542.618 8954.53 
+  TPM3u+G(4) 289 -3482.051 7542.101 8954.013 
+TPM3u+G(4)+I 290 -3481.752 7543.504 8960.302 
+       TIM1e 286 -3610.787 7793.574 9190.83 
+     TIM1e+I 287 -3551.864 7677.728 9079.869 
+  TIM1e+G(4) 287 -3550.91 7675.82 9077.962 
+TIM1e+G(4)+I 288 -3550.598 7677.196 9084.223 
+        TIM1 289 -3547.407 7672.815 9084.727 
+      TIM1+I 290 -3470.45 7520.901 8937.699 
+   TIM1+G(4) 290 -3470.878 7521.756 8938.554 
+ TIM1+G(4)+I 291 -3471.18 7524.359 8946.042 
+       TIM2e 286 -3609.256 7790.511 9187.767 
+     TIM2e+I 287 -3550.41 7674.82 9076.962 
+  TIM2e+G(4) 287 -3549.385 7672.769 9074.911 
+TIM2e+G(4)+I 288 -3549.016 7674.032 9081.059 
+        TIM2 289 -3547.402 7672.803 9084.716 
+      TIM2+I 290 -3469.938 7519.875 8936.673 
+   TIM2+G(4) 290 -3470.329 7520.658 8937.455 
+ TIM2+G(4)+I 291 -3470.691 7523.383 8945.066 
+       TIM3e 286 -3611.135 7794.269 9191.525 
+     TIM3e+I 287 -3552.007 7678.015 9080.156 
+  TIM3e+G(4) 287 -3551.095 7676.19 9078.331 
+TIM3e+G(4)+I 288 -3550.786 7677.572 9084.599 
+        TIM3 289 -3547.052 7672.103 9084.016 
+      TIM3+I 290 -3469.61 7519.22 8936.018 
+   TIM3+G(4) 290 -3470.054 7520.108 8936.906 
+ TIM3+G(4)+I 291 -3470.343 7522.686 8944.369 
+        TVMe 287 -3609.539 7793.078 9195.219 
+      TVMe+I 288 -3550.047 7676.094 9083.121 
+   TVMe+G(4) 288 -3549.066 7674.133 9081.159 
+ TVMe+G(4)+I 289 -3548.73 7675.46 9087.372 
+         TVM 290 -3554.877 7689.755 9106.552 
+       TVM+I 291 -3481.5 7545 8966.683 
+    TVM+G(4) 291 -3481.24 7544.48 8966.163 
+  TVM+G(4)+I 292 -3480.994 7545.987 8972.556 
+         SYM 288 -3608.75 7793.5 9200.526 
+       SYM+I 289 -3549.81 7677.621 9089.533 
+    SYM+G(4) 289 -3548.864 7675.728 9087.64 
+  SYM+G(4)+I 290 -3548.512 7677.023 9093.821 
+         GTR 291 -3546.661 7675.323 9097.006 
+       GTR+I 292 -3468.695 7521.389 8947.958 
+    GTR+G(4) 292 -3469.098 7522.196 8948.765 
+  GTR+G(4)+I 293 -3469.449 7524.898 8956.352 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a>fitND2 <span class="ot">&lt;-</span> <span class="fu">as.pml</span>(mtND2, <span class="st">"AIC"</span>)</span>
 <span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a>fit_mtND2 <span class="ot">&lt;-</span> <span class="fu">pml_bb</span>(mtND2, <span class="at">control =</span> <span class="fu">pml.control</span>(<span class="at">trace =</span> <span class="dv">0</span>))</span>
@@ -1995,14 +2145,14 @@ TIM3e+G(4)+I 288 -3551.566 7679.132 9086.159
 <pre><code>model: TrN+I 
 loglikelihood: -3470.136 
 unconstrained loglikelihood: -2719.987 
-Proportion of invariant sites: 0.6376646 
+Proportion of invariant sites: 0.6376977 
 
 Rate matrix:
-         a        c        g        t
-a  0.00000  1.00000 26.24983  1.00000
-c  1.00000  0.00000  1.00000 12.43024
-g 26.24983  1.00000  0.00000  1.00000
-t  1.00000 12.43024  1.00000  0.00000
+         a       c        g       t
+a  0.00000  1.0000 26.24014  1.0000
+c  1.00000  0.0000  1.00000 12.4257
+g 26.24014  1.0000  0.00000  1.0000
+t  1.00000 12.4257  1.00000  0.0000
 
 Base frequencies:  
          a          c          g          t 
@@ -2564,114 +2714,114 @@ haplotype because of ambiguities</code></pre>
 <span id="cb117-2"><a href="#cb117-2" aria-hidden="true" tabindex="-1"></a>mtB3GNT9 <span class="ot">&lt;-</span> <span class="fu">modelTest</span>(ZosteropsB3GNT9)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Model        df  logLik   AIC      BIC
-          JC 345 -1352.547 3395.093 4976.846 
-        JC+I 346 -1323.583 3339.167 4925.505 
-     JC+G(4) 346 -1334.935 3361.869 4948.207 
-   JC+G(4)+I 347 -1323.481 3340.961 4931.884 
-         F81 348 -1352.392 3400.783 4996.291 
-       F81+I 349 -1323.438 3344.875 4944.967 
-    F81+G(4) 349 -1334.781 3367.563 4967.655 
-  F81+G(4)+I 350 -1323.339 3346.677 4951.354 
-         K80 346 -1319.265 3330.531 4916.869 
-       K80+I 347 -1289.931 3273.861 4864.784 
-    K80+G(4) 347 -1301.582 3297.163 4888.086 
-  K80+G(4)+I 348 -1289.82 3275.639 4871.147 
-         HKY 349 -1319.102 3336.204 4936.296 
-       HKY+I 350 -1289.774 3279.548 4884.225 
-    HKY+G(4) 350 -1301.419 3302.838 4907.515 
-  HKY+G(4)+I 351 -1289.668 3281.336 4890.598 
-        TrNe 347 -1317.654 3329.308 4920.231 
-      TrNe+I 348 -1288.604 3273.209 4868.716 
-   TrNe+G(4) 348 -1299.906 3295.813 4891.32 
- TrNe+G(4)+I 349 -1288.714 3275.429 4875.521 
-         TrN 350 -1317.459 3334.919 4939.596 
-       TrN+I 351 -1288.508 3279.015 4888.277 
-    TrN+G(4) 351 -1299.731 3301.462 4910.724 
-  TrN+G(4)+I 352 -1288.604 3281.207 4895.054 
-        TPM1 347 -1319.097 3332.193 4923.116 
-      TPM1+I 348 -1289.782 3275.564 4871.071 
-   TPM1+G(4) 348 -1301.417 3298.833 4894.341 
- TPM1+G(4)+I 349 -1289.66 3277.32 4877.412 
-         K81 347 -1319.097 3332.193 4923.116 
-       K81+I 348 -1289.782 3275.564 4871.071 
-    K81+G(4) 348 -1301.417 3298.833 4894.341 
-  K81+G(4)+I 349 -1289.66 3277.32 4877.412 
-       TPM1u 350 -1318.933 3337.867 4942.544 
-     TPM1u+I 351 -1289.622 3281.245 4890.507 
-  TPM1u+G(4) 351 -1301.254 3304.507 4913.769 
-TPM1u+G(4)+I 352 -1289.506 3283.012 4896.858 
-        TPM2 347 -1319.106 3332.212 4923.135 
-      TPM2+I 348 -1289.879 3275.759 4871.266 
-   TPM2+G(4) 348 -1301.448 3298.895 4894.403 
- TPM2+G(4)+I 349 -1289.759 3277.518 4877.61 
-       TPM2u 350 -1318.953 3337.906 4942.583 
-     TPM2u+I 351 -1289.731 3281.462 4890.724 
-  TPM2u+G(4) 351 -1301.296 3304.592 4913.854 
-TPM2u+G(4)+I 352 -1289.617 3283.233 4897.08 
-        TPM3 347 -1317.212 3328.424 4919.347 
-      TPM3+I 348 -1287.197 3270.394 4865.901 
-   TPM3+G(4) 348 -1299.445 3294.89 4890.398 
- TPM3+G(4)+I 349 -1287.089 3272.177 4872.269 
-       TPM3u 350 -1317.073 3334.146 4938.823 
-     TPM3u+I 351 -1287.077 3276.153 4885.415 
-  TPM3u+G(4) 351 -1299.31 3300.62 4909.882 
-TPM3u+G(4)+I 352 -1286.974 3277.948 4891.795 
-       TIM1e 348 -1317.485 3330.971 4926.478 
-     TIM1e+I 349 -1288.455 3274.91 4875.002 
-  TIM1e+G(4) 349 -1299.741 3297.483 4897.575 
-TIM1e+G(4)+I 350 -1288.556 3277.111 4881.788 
-        TIM1 351 -1317.291 3336.582 4945.844 
-      TIM1+I 352 -1288.355 3280.711 4894.557 
-   TIM1+G(4) 352 -1299.566 3303.132 4916.978 
- TIM1+G(4)+I 353 -1288.443 3282.885 4901.317 
-       TIM2e 348 -1317.495 3330.989 4926.497 
-     TIM2e+I 349 -1288.547 3275.093 4875.185 
-  TIM2e+G(4) 349 -1299.772 3297.544 4897.636 
-TIM2e+G(4)+I 350 -1288.654 3277.308 4881.985 
-        TIM2 351 -1317.311 3336.621 4945.883 
-      TIM2+I 352 -1288.457 3280.915 4894.761 
-   TIM2+G(4) 352 -1299.607 3303.213 4917.06 
- TIM2+G(4)+I 353 -1288.551 3283.103 4901.534 
-       TIM3e 348 -1315.602 3327.203 4922.711 
-     TIM3e+I 349 -1285.923 3269.845 4869.938 
-  TIM3e+G(4) 349 -1297.786 3293.571 4893.663 
-TIM3e+G(4)+I 350 -1286.072 3272.145 4876.822 
-        TIM3 351 -1315.431 3332.863 4942.125 
-      TIM3+I 352 -1285.865 3275.731 4889.577 
-   TIM3+G(4) 352 -1297.639 3299.277 4913.124 
- TIM3+G(4)+I 353 -1286.001 3278.001 4896.433 
-        TVMe 349 -1317.053 3332.106 4932.198 
-      TVMe+I 350 -1287.168 3274.336 4879.013 
-   TVMe+G(4) 350 -1299.312 3298.623 4903.3 
- TVMe+G(4)+I 351 -1287.049 3276.098 4885.359 
-         TVM 352 -1316.924 3337.848 4951.695 
-       TVM+I 353 -1287.054 3280.107 4898.538 
-    TVM+G(4) 353 -1299.146 3304.291 4922.723 
-  TVM+G(4)+I 354 -1286.942 3281.883 4904.899 
-         SYM 350 -1315.442 3330.884 4935.561 
-       SYM+I 351 -1285.886 3273.772 4883.034 
-    SYM+G(4) 351 -1297.651 3297.303 4906.564 
-  SYM+G(4)+I 352 -1286.031 3276.062 4889.908 
-         GTR 353 -1315.283 3336.565 4954.997 
-       GTR+I 354 -1285.834 3279.668 4902.684 
-    GTR+G(4) 354 -1297.515 3303.029 4926.045 
-  GTR+G(4)+I 355 -1285.965 3281.931 4909.532 </code></pre>
+          JC 345 -1352.195 3394.39 4976.143 
+        JC+I 346 -1323.264 3338.528 4924.866 
+     JC+G(4) 346 -1334.589 3361.179 4947.517 
+   JC+G(4)+I 347 -1323.156 3340.311 4931.234 
+         F81 348 -1352.056 3400.112 4995.619 
+       F81+I 349 -1323.137 3344.274 4944.366 
+    F81+G(4) 349 -1334.453 3366.906 4966.998 
+  F81+G(4)+I 350 -1323.034 3346.067 4950.744 
+         K80 346 -1318.916 3329.832 4916.169 
+       K80+I 347 -1289.644 3273.288 4864.211 
+    K80+G(4) 347 -1301.245 3296.49 4887.413 
+  K80+G(4)+I 348 -1289.508 3275.016 4870.524 
+         HKY 349 -1318.769 3335.537 4935.629 
+       HKY+I 350 -1289.511 3279.023 4883.7 
+    HKY+G(4) 350 -1301.1 3302.2 4906.877 
+  HKY+G(4)+I 351 -1289.381 3280.762 4890.024 
+        TrNe 347 -1316.664 3327.328 4918.25 
+      TrNe+I 348 -1287.641 3271.282 4866.79 
+   TrNe+G(4) 348 -1298.877 3293.754 4889.262 
+ TrNe+G(4)+I 349 -1287.828 3273.655 4873.747 
+         TrN 350 -1316.48 3332.96 4937.637 
+       TrN+I 351 -1287.578 3277.157 4886.419 
+    TrN+G(4) 351 -1298.717 3299.434 4908.696 
+  TrN+G(4)+I 352 -1287.754 3279.508 4893.355 
+        TPM1 347 -1316.843 3327.686 4918.608 
+      TPM1+I 348 -1287.67 3271.34 4866.847 
+   TPM1+G(4) 348 -1299.223 3294.447 4889.954 
+ TPM1+G(4)+I 349 -1287.523 3273.047 4873.139 
+         K81 347 -1316.843 3327.686 4918.608 
+       K81+I 348 -1287.67 3271.34 4866.847 
+    K81+G(4) 348 -1299.223 3294.447 4889.954 
+  K81+G(4)+I 349 -1287.523 3273.047 4873.139 
+       TPM1u 350 -1316.697 3333.393 4938.07 
+     TPM1u+I 351 -1287.53 3277.059 4886.321 
+  TPM1u+G(4) 351 -1299.068 3300.136 4909.398 
+TPM1u+G(4)+I 352 -1287.389 3278.778 4892.624 
+        TPM2 347 -1318.756 3331.513 4922.435 
+      TPM2+I 348 -1289.591 3275.182 4870.689 
+   TPM2+G(4) 348 -1301.11 3298.221 4893.728 
+ TPM2+G(4)+I 349 -1289.444 3276.888 4876.981 
+       TPM2u 350 -1318.62 3337.239 4941.916 
+     TPM2u+I 351 -1289.466 3280.933 4890.195 
+  TPM2u+G(4) 351 -1300.977 3303.953 4913.215 
+TPM2u+G(4)+I 352 -1289.327 3282.654 4896.5 
+        TPM3 347 -1318.754 3331.508 4922.431 
+      TPM3+I 348 -1289.21 3274.42 4869.928 
+   TPM3+G(4) 348 -1301.04 3298.081 4893.588 
+ TPM3+G(4)+I 349 -1289.067 3276.134 4876.226 
+       TPM3u 350 -1318.615 3337.23 4941.907 
+     TPM3u+I 351 -1289.093 3280.187 4889.448 
+  TPM3u+G(4) 351 -1300.905 3303.811 4913.072 
+TPM3u+G(4)+I 352 -1288.956 3281.913 4895.759 
+       TIM1e 348 -1314.591 3325.182 4920.689 
+     TIM1e+I 349 -1285.663 3269.326 4869.419 
+  TIM1e+G(4) 349 -1296.873 3291.747 4891.839 
+TIM1e+G(4)+I 350 -1285.843 3271.686 4876.363 
+        TIM1 351 -1314.408 3330.816 4940.078 
+      TIM1+I 352 -1285.593 3275.185 4889.032 
+   TIM1+G(4) 352 -1296.712 3297.423 4911.27 
+ TIM1+G(4)+I 353 -1285.762 3277.525 4895.956 
+       TIM2e 348 -1316.504 3329.008 4924.516 
+     TIM2e+I 349 -1287.579 3273.158 4873.25 
+  TIM2e+G(4) 349 -1298.742 3295.483 4895.575 
+TIM2e+G(4)+I 350 -1287.766 3275.532 4880.209 
+        TIM2 351 -1316.331 3334.662 4943.924 
+      TIM2+I 352 -1287.524 3279.048 4892.895 
+   TIM2+G(4) 352 -1298.592 3301.184 4915.03 
+ TIM2+G(4)+I 353 -1287.7 3281.4 4899.831 
+       TIM3e 348 -1316.502 3329.005 4924.512 
+     TIM3e+I 349 -1287.23 3272.46 4872.552 
+  TIM3e+G(4) 349 -1298.672 3295.344 4895.436 
+TIM3e+G(4)+I 350 -1287.432 3274.865 4879.542 
+        TIM3 351 -1316.327 3334.653 4943.915 
+      TIM3+I 352 -1287.185 3278.371 4892.217 
+   TIM3+G(4) 352 -1298.523 3301.046 4914.892 
+ TIM3+G(4)+I 353 -1287.376 3280.752 4899.184 
+        TVMe 349 -1316.69 3331.38 4931.472 
+      TVMe+I 350 -1287.424 3274.849 4879.526 
+   TVMe+G(4) 350 -1299.053 3298.106 4902.783 
+ TVMe+G(4)+I 351 -1287.263 3276.525 4885.787 
+         TVM 352 -1316.561 3337.123 4950.969 
+       TVM+I 353 -1287.313 3280.627 4899.058 
+    TVM+G(4) 353 -1298.929 3303.857 4922.288 
+  TVM+G(4)+I 354 -1287.16 3282.319 4905.335 
+         SYM 350 -1314.438 3328.876 4933.553 
+       SYM+I 351 -1285.421 3272.842 4882.104 
+    SYM+G(4) 351 -1296.702 3295.405 4904.666 
+  SYM+G(4)+I 352 -1285.615 3275.229 4889.076 
+         GTR 353 -1314.273 3334.546 4952.977 
+       GTR+I 354 -1285.379 3278.758 4901.774 
+    GTR+G(4) 354 -1296.561 3301.123 4924.139 
+  GTR+G(4)+I 355 -1285.561 3281.123 4908.724 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb119"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb119-1"><a href="#cb119-1" aria-hidden="true" tabindex="-1"></a>fitB3GNT9 <span class="ot">&lt;-</span> <span class="fu">as.pml</span>(mtB3GNT9, <span class="st">"AIC"</span>)</span>
 <span id="cb119-2"><a href="#cb119-2" aria-hidden="true" tabindex="-1"></a>fit_mtB3GNT9 <span class="ot">&lt;-</span> <span class="fu">pml_bb</span>(mtB3GNT9, <span class="at">control =</span> <span class="fu">pml.control</span>(<span class="at">trace =</span> <span class="dv">0</span>))</span>
 <span id="cb119-3"><a href="#cb119-3" aria-hidden="true" tabindex="-1"></a>fit_mtB3GNT9</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>model: K80+I 
-loglikelihood: -1288.628 
+loglikelihood: -1287.74 
 unconstrained loglikelihood: -1199.476 
-Proportion of invariant sites: 0.9368926 
+Proportion of invariant sites: 0.936351 
 
 Rate matrix:
          a        c        g        t
-a  0.00000  1.00000 27.26364  1.00000
-c  1.00000  0.00000  1.00000 27.26364
-g 27.26364  1.00000  0.00000  1.00000
-t  1.00000 27.26364  1.00000  0.00000
+a  0.00000  1.00000 27.11834  1.00000
+c  1.00000  0.00000  1.00000 27.11834
+g 27.11834  1.00000  0.00000  1.00000
+t  1.00000 27.11834  1.00000  0.00000
 
 Base frequencies:  
    a    c    g    t 
@@ -3235,112 +3385,112 @@ haplotype because of ambiguities</code></pre>
 <pre><code>Model        df  logLik   AIC      BIC
           JC 349 -1021.577 2741.154 4250.981 
         JC+I 350 -1010.168 2720.335 4234.488 
-     JC+G(4) 350 -1013.408 2726.815 4240.967 
-   JC+G(4)+I 351 -1009.568 2721.137 4239.615 
-         F81 352 -1018.056 2740.111 4262.916 
-       F81+I 353 -1006.749 2719.499 4246.629 
-    F81+G(4) 353 -1009.916 2725.832 4252.963 
-  F81+G(4)+I 354 -1006.162 2720.325 4251.782 
+     JC+G(4) 350 -1013.436 2726.872 4241.024 
+   JC+G(4)+I 351 -1009.859 2721.718 4240.197 
+         F81 352 -1017.787 2739.574 4262.378 
+       F81+I 353 -1006.484 2718.967 4246.098 
+    F81+G(4) 353 -1009.677 2725.353 4252.484 
+  F81+G(4)+I 354 -1006.185 2720.37 4251.827 
          K80 350 -997.3475 2694.695 4208.847 
        K80+I 351 -985.8817 2673.763 4192.242 
-    K80+G(4) 351 -989.1622 2680.324 4198.803 
-  K80+G(4)+I 352 -985.2803 2674.561 4197.365 
-         HKY 353 -993.8314 2693.663 4220.794 
-       HKY+I 354 -982.7362 2673.472 4204.929 
-    HKY+G(4) 354 -985.7509 2679.502 4210.959 
-  HKY+G(4)+I 355 -982.1019 2674.204 4209.987 
-        TrNe 351 -997.3036 2696.607 4215.086 
-      TrNe+I 352 -985.7056 2675.411 4198.216 
-   TrNe+G(4) 352 -989.0913 2682.183 4204.987 
- TrNe+G(4)+I 353 -985.1773 2676.355 4203.485 
-         TrN 354 -993.6454 2695.291 4226.748 
-       TrN+I 355 -982.3735 2674.747 4210.53 
-    TrN+G(4) 355 -985.524 2681.048 4216.831 
-  TrN+G(4)+I 356 -981.8472 2675.694 4215.804 
+    K80+G(4) 351 -989.1906 2680.381 4198.86 
+  K80+G(4)+I 352 -985.5664 2675.133 4197.937 
+         HKY 353 -993.5628 2693.126 4220.256 
+       HKY+I 354 -982.4725 2672.945 4204.402 
+    HKY+G(4) 354 -985.5127 2679.025 4210.482 
+  HKY+G(4)+I 355 -982.1404 2674.281 4210.064 
+        TrNe 351 -997.3441 2696.688 4215.167 
+      TrNe+I 352 -985.8728 2675.746 4198.55 
+   TrNe+G(4) 352 -989.1902 2682.38 4205.185 
+ TrNe+G(4)+I 353 -985.5657 2677.131 4204.262 
+         TrN 354 -993.5362 2695.072 4226.529 
+       TrN+I 355 -982.3945 2674.789 4210.572 
+    TrN+G(4) 355 -985.477 2680.954 4216.737 
+  TrN+G(4)+I 356 -982.0961 2676.192 4216.301 
         TPM1 351 -997.3475 2696.695 4215.173 
       TPM1+I 352 -985.8801 2675.76 4198.565 
-   TPM1+G(4) 352 -989.162 2682.324 4205.129 
- TPM1+G(4)+I 353 -985.279 2676.558 4203.689 
+   TPM1+G(4) 352 -989.1904 2682.381 4205.186 
+ TPM1+G(4)+I 353 -985.5651 2677.13 4204.261 
          K81 351 -997.3475 2696.695 4215.173 
        K81+I 352 -985.8801 2675.76 4198.565 
-    K81+G(4) 352 -989.162 2682.324 4205.129 
-  K81+G(4)+I 353 -985.279 2676.558 4203.689 
-       TPM1u 354 -993.8313 2695.663 4227.12 
-     TPM1u+I 355 -982.7356 2675.471 4211.254 
-  TPM1u+G(4) 355 -985.7508 2681.502 4217.285 
-TPM1u+G(4)+I 356 -982.1013 2676.203 4216.312 
+    K81+G(4) 352 -989.1904 2682.381 4205.186 
+  K81+G(4)+I 353 -985.5651 2677.13 4204.261 
+       TPM1u 354 -993.5627 2695.125 4226.582 
+     TPM1u+I 355 -982.4719 2674.944 4210.727 
+  TPM1u+G(4) 355 -985.5125 2681.025 4216.808 
+TPM1u+G(4)+I 356 -982.1398 2676.28 4216.389 
         TPM2 351 -997.3452 2696.69 4215.169 
       TPM2+I 352 -985.8817 2675.763 4198.568 
-   TPM2+G(4) 352 -989.161 2682.322 4205.127 
- TPM2+G(4)+I 353 -985.2803 2676.561 4203.691 
-       TPM2u 354 -993.8213 2695.643 4227.1 
-     TPM2u+I 355 -982.7314 2675.463 4211.246 
-  TPM2u+G(4) 355 -985.7423 2681.485 4217.268 
-TPM2u+G(4)+I 356 -982.0978 2676.196 4216.305 
-        TPM3 351 -996.0203 2694.041 4212.519 
-      TPM3+I 352 -984.3094 2672.619 4195.423 
-   TPM3+G(4) 352 -987.775 2679.55 4202.355 
- TPM3+G(4)+I 353 -983.7138 2673.428 4200.558 
-       TPM3u 354 -992.5527 2693.105 4224.562 
-     TPM3u+I 355 -981.2611 2672.522 4208.305 
-  TPM3u+G(4) 355 -984.4231 2678.846 4214.629 
-TPM3u+G(4)+I 356 -980.6357 2673.271 4213.381 
-       TIM1e 352 -997.3036 2698.607 4221.412 
-     TIM1e+I 353 -985.7039 2677.408 4204.538 
-  TIM1e+G(4) 353 -989.0911 2684.182 4211.313 
-TIM1e+G(4)+I 354 -985.176 2678.352 4209.809 
-        TIM1 355 -993.6454 2697.291 4233.074 
-      TIM1+I 356 -982.3728 2676.746 4216.855 
-   TIM1+G(4) 356 -985.5238 2683.048 4223.157 
- TIM1+G(4)+I 357 -981.8467 2677.693 4222.129 
-       TIM2e 352 -997.3013 2698.603 4221.407 
-     TIM2e+I 353 -985.7056 2677.411 4204.542 
-  TIM2e+G(4) 353 -989.09 2684.18 4211.311 
-TIM2e+G(4)+I 354 -985.1773 2678.355 4209.812 
-        TIM2 355 -993.6353 2697.271 4233.054 
-      TIM2+I 356 -982.3681 2676.736 4216.845 
-   TIM2+G(4) 356 -985.515 2683.03 4223.139 
- TIM2+G(4)+I 357 -981.8424 2677.685 4222.12 
-       TIM3e 352 -995.9762 2695.952 4218.757 
-     TIM3e+I 353 -984.1267 2674.253 4201.384 
-  TIM3e+G(4) 353 -987.7054 2681.411 4208.542 
-TIM3e+G(4)+I 354 -983.6032 2675.206 4206.663 
-        TIM3 355 -992.3665 2694.733 4230.516 
-      TIM3+I 356 -980.8855 2673.771 4213.88 
-   TIM3+G(4) 356 -984.1954 2680.391 4220.5 
- TIM3+G(4)+I 357 -980.3665 2674.733 4219.168 
-        TVMe 353 -996.0181 2698.036 4225.167 
-      TVMe+I 354 -984.3094 2676.619 4208.076 
-   TVMe+G(4) 354 -987.7737 2683.547 4215.004 
- TVMe+G(4)+I 355 -983.7138 2677.428 4213.211 
-         TVM 356 -992.5426 2697.085 4237.194 
-       TVM+I 357 -981.2573 2676.515 4220.95 
-    TVM+G(4) 357 -984.4146 2682.829 4227.265 
-  TVM+G(4)+I 358 -980.6325 2677.265 4226.027 
-         SYM 354 -995.974 2699.948 4231.405 
-       SYM+I 355 -984.1267 2678.253 4214.036 
-    SYM+G(4) 355 -987.7041 2685.408 4221.191 
-  SYM+G(4)+I 356 -983.6032 2679.206 4219.316 
-         GTR 357 -992.3562 2698.712 4243.148 
-       GTR+I 358 -980.881 2677.762 4226.524 
-    GTR+G(4) 358 -984.1864 2684.373 4233.134 
-  GTR+G(4)+I 359 -980.3625 2678.725 4231.813 </code></pre>
+   TPM2+G(4) 352 -989.1894 2682.379 4205.183 
+ TPM2+G(4)+I 353 -985.5664 2677.133 4204.264 
+       TPM2u 354 -993.5527 2695.105 4226.562 
+     TPM2u+I 355 -982.4679 2674.936 4210.719 
+  TPM2u+G(4) 355 -985.5042 2681.008 4216.791 
+TPM2u+G(4)+I 356 -982.1365 2676.273 4216.382 
+        TPM3 351 -996.02 2694.04 4212.519 
+      TPM3+I 352 -984.3065 2672.613 4195.418 
+   TPM3+G(4) 352 -987.8034 2679.607 4202.411 
+ TPM3+G(4)+I 353 -983.993 2673.986 4201.117 
+       TPM3u 354 -992.2838 2692.568 4224.025 
+     TPM3u+I 355 -980.9951 2671.99 4207.773 
+  TPM3u+G(4) 355 -984.1769 2678.354 4214.137 
+TPM3u+G(4)+I 356 -980.6679 2673.336 4213.445 
+       TIM1e 352 -997.3441 2698.688 4221.493 
+     TIM1e+I 353 -985.8712 2677.742 4204.873 
+  TIM1e+G(4) 353 -989.19 2684.38 4211.511 
+TIM1e+G(4)+I 354 -985.5644 2679.129 4210.586 
+        TIM1 355 -993.5361 2697.072 4232.855 
+      TIM1+I 356 -982.3939 2676.788 4216.897 
+   TIM1+G(4) 356 -985.4769 2682.954 4223.063 
+ TIM1+G(4)+I 357 -982.0955 2678.191 4222.626 
+       TIM2e 352 -997.3418 2698.684 4221.488 
+     TIM2e+I 353 -985.8728 2677.746 4204.876 
+  TIM2e+G(4) 353 -989.189 2684.378 4211.509 
+TIM2e+G(4)+I 354 -985.5657 2679.131 4210.588 
+        TIM2 355 -993.5261 2697.052 4232.835 
+      TIM2+I 356 -982.3896 2676.779 4216.888 
+   TIM2+G(4) 356 -985.4684 2682.937 4223.046 
+ TIM2+G(4)+I 357 -982.092 2678.184 4222.619 
+       TIM3e 352 -996.0167 2696.033 4218.838 
+     TIM3e+I 353 -984.2962 2674.592 4201.723 
+  TIM3e+G(4) 353 -987.8032 2681.606 4208.737 
+TIM3e+G(4)+I 354 -983.9916 2675.983 4207.44 
+        TIM3 355 -992.2571 2694.514 4230.297 
+      TIM3+I 356 -980.9112 2673.822 4213.932 
+   TIM3+G(4) 356 -984.1484 2680.297 4220.406 
+ TIM3+G(4)+I 357 -980.6175 2675.235 4219.67 
+        TVMe 353 -996.0179 2698.036 4225.167 
+      TVMe+I 354 -984.3066 2676.613 4208.07 
+   TVMe+G(4) 354 -987.8021 2683.604 4215.061 
+ TVMe+G(4)+I 355 -983.9931 2677.986 4213.769 
+         TVM 356 -992.2737 2696.547 4236.657 
+       TVM+I 357 -980.9915 2675.983 4220.418 
+    TVM+G(4) 357 -984.1806 2682.361 4226.797 
+  TVM+G(4)+I 358 -980.6651 2677.33 4226.092 
+         SYM 354 -996.0146 2700.029 4231.486 
+       SYM+I 355 -984.2962 2678.592 4214.376 
+    SYM+G(4) 355 -987.7917 2685.583 4221.367 
+  SYM+G(4)+I 356 -983.9916 2679.983 4220.092 
+         GTR 357 -992.247 2698.494 4242.929 
+       GTR+I 358 -980.9074 2677.815 4226.576 
+    GTR+G(4) 358 -984.1399 2684.28 4233.041 
+  GTR+G(4)+I 359 -980.6144 2679.229 4232.317 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb146"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb146-1"><a href="#cb146-1" aria-hidden="true" tabindex="-1"></a>fitBIRC2 <span class="ot">&lt;-</span> <span class="fu">as.pml</span>(mtBIRC2, <span class="st">"AIC"</span>)</span>
 <span id="cb146-2"><a href="#cb146-2" aria-hidden="true" tabindex="-1"></a>fit_mtBIRC2 <span class="ot">&lt;-</span> <span class="fu">pml_bb</span>(mtBIRC2, <span class="at">control =</span> <span class="fu">pml.control</span>(<span class="at">trace =</span> <span class="dv">0</span>))</span>
 <span id="cb146-3"><a href="#cb146-3" aria-hidden="true" tabindex="-1"></a>fit_mtBIRC2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>model: K80+I 
-loglikelihood: -985.8777 
+loglikelihood: -985.877 
 unconstrained loglikelihood: -972.4502 
-Proportion of invariant sites: 0.9079766 
+Proportion of invariant sites: 0.9079807 
 
 Rate matrix:
          a        c        g        t
-a  0.00000  1.00000 28.75985  1.00000
-c  1.00000  0.00000  1.00000 28.75985
-g 28.75985  1.00000  0.00000  1.00000
-t  1.00000 28.75985  1.00000  0.00000
+a  0.00000  1.00000 28.74561  1.00000
+c  1.00000  0.00000  1.00000 28.74561
+g 28.74561  1.00000  0.00000  1.00000
+t  1.00000 28.74561  1.00000  0.00000
 
 Base frequencies:  
    a    c    g    t 
@@ -3907,7 +4057,7 @@ haplotype because of ambiguities</code></pre>
    JC+G(4)+I 347 -1220.516 3135.031 4727.389 
          F81 348 -1206.573 3109.147 4706.093 
        F81+I 349 -1204.988 3107.975 4709.511 
-    F81+G(4) 349 -1205.036 3108.072 4709.607 
+    F81+G(4) 349 -1205.036 3108.071 4709.607 
   F81+G(4)+I 350 -1205.015 3110.03 4716.154 
          K80 346 -1210.743 3113.487 4701.255 
        K80+I 347 -1209.003 3112.006 4704.364 
@@ -3943,7 +4093,7 @@ TPM1u+G(4)+I 352 -1192.294 3088.587 4703.89
  TPM2+G(4)+I 349 -1205.187 3108.375 4709.91 
        TPM2u 350 -1189.626 3079.252 4685.376 
      TPM2u+I 351 -1188.499 3078.997 4689.711 
-  TPM2u+G(4) 351 -1188.507 3079.014 4689.728 
+  TPM2u+G(4) 351 -1188.507 3079.015 4689.728 
 TPM2u+G(4)+I 352 -1188.531 3081.061 4696.364 
         TPM3 347 -1209.829 3113.658 4706.016 
       TPM3+I 348 -1208.058 3112.116 4709.062 
@@ -3961,13 +4111,13 @@ TIM1e+G(4)+I 350 -1207.272 3114.544 4720.668
       TIM1+I 352 -1191.465 3086.93 4702.232 
    TIM1+G(4) 352 -1191.471 3086.942 4702.244 
  TIM1+G(4)+I 353 -1191.5 3089.001 4708.892 
-       TIM2e 348 -1205.763 3107.525 4704.472 
+       TIM2e 348 -1205.763 3107.525 4704.471 
      TIM2e+I 349 -1204.38 3106.759 4708.295 
   TIM2e+G(4) 349 -1204.393 3106.785 4708.32 
 TIM2e+G(4)+I 350 -1204.414 3108.828 4714.953 
         TIM2 351 -1188.758 3079.517 4690.23 
       TIM2+I 352 -1187.676 3079.351 4694.654 
-   TIM2+G(4) 352 -1187.687 3079.374 4694.676 
+   TIM2+G(4) 352 -1187.688 3079.375 4694.677 
  TIM2+G(4)+I 353 -1187.712 3081.424 4701.315 
        TIM3e 348 -1209.045 3114.089 4711.036 
      TIM3e+I 349 -1207.255 3112.51 4714.046 
@@ -3985,13 +4135,13 @@ TIM3e+G(4)+I 350 -1207.293 3114.586 4720.71
        TVM+I 353 -1187.621 3081.241 4701.132 
     TVM+G(4) 353 -1187.629 3081.258 4701.149 
   TVM+G(4)+I 354 -1187.654 3083.309 4707.789 
-         SYM 350 -1204.856 3109.712 4715.837 
+         SYM 350 -1204.856 3109.712 4715.836 
        SYM+I 351 -1203.444 3108.888 4719.601 
     SYM+G(4) 351 -1203.46 3108.921 4719.634 
   SYM+G(4)+I 352 -1203.48 3110.961 4726.263 
          GTR 353 -1187.895 3081.79 4701.681 
        GTR+I 354 -1186.798 3081.595 4706.075 
-    GTR+G(4) 354 -1186.809 3081.617 4706.097 
+    GTR+G(4) 354 -1186.809 3081.618 4706.098 
   GTR+G(4)+I 355 -1186.835 3083.67 4712.739 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb173"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb173-1"><a href="#cb173-1" aria-hidden="true" tabindex="-1"></a>fitCCDC <span class="ot">&lt;-</span> <span class="fu">as.pml</span>(mtCCDC, <span class="st">"AIC"</span>)</span>
@@ -4004,10 +4154,10 @@ unconstrained loglikelihood: -1259.548
 
 Rate matrix:
              a            c        g            t
-a 0.000000e+00 3.293088e-06 3.046793 3.293088e-06
-c 3.293088e-06 0.000000e+00 1.000000 3.046793e+00
+a 0.000000e+00 3.292090e-06 3.046793 3.292090e-06
+c 3.292090e-06 0.000000e+00 1.000000 3.046793e+00
 g 3.046793e+00 1.000000e+00 0.000000 1.000000e+00
-t 3.293088e-06 3.046793e+00 1.000000 0.000000e+00
+t 3.292090e-06 3.046793e+00 1.000000 0.000000e+00
 
 Base frequencies:  
         a         c         g         t 
@@ -4569,114 +4719,114 @@ haplotype because of ambiguities</code></pre>
 <span id="cb198-2"><a href="#cb198-2" aria-hidden="true" tabindex="-1"></a>mtGPRC6 <span class="ot">&lt;-</span> <span class="fu">modelTest</span>(ZosteropsGPRC6)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Model        df  logLik   AIC      BIC
-          JC 345 -1077.894 2845.789 4390.875 
-        JC+I 346 -1059.257 2810.514 4360.079 
-     JC+G(4) 346 -1068.777 2829.554 4379.118 
-   JC+G(4)+I 347 -1059.248 2812.497 4366.539 
-         F81 348 -1054.945 2805.89 4364.412 
-       F81+I 349 -1036.583 2771.166 4334.166 
-    F81+G(4) 349 -1045.852 2789.704 4352.703 
-  F81+G(4)+I 350 -1036.565 2773.13 4340.609 
-         K80 346 -1069.814 2831.627 4381.192 
-       K80+I 347 -1051.116 2796.233 4350.276 
-    K80+G(4) 347 -1060.691 2815.381 4369.424 
-  K80+G(4)+I 348 -1051.065 2798.129 4356.651 
-         HKY 349 -1046.657 2791.315 4354.315 
-       HKY+I 350 -1027.353 2754.706 4322.185 
-    HKY+G(4) 350 -1037.455 2774.911 4342.389 
-  HKY+G(4)+I 351 -1027.426 2756.852 4328.809 
-        TrNe 347 -1069.295 2832.59 4386.633 
-      TrNe+I 348 -1051.069 2798.138 4356.659 
-   TrNe+G(4) 348 -1060.266 2816.532 4375.053 
- TrNe+G(4)+I 349 -1051.063 2800.126 4363.126 
-         TrN 350 -1045.524 2791.048 4358.526 
-       TrN+I 351 -1027.333 2756.666 4328.623 
-    TrN+G(4) 351 -1036.461 2774.923 4346.88 
-  TrN+G(4)+I 352 -1027.327 2758.654 4335.09 
-        TPM1 347 -1069.713 2833.426 4387.469 
-      TPM1+I 348 -1051.021 2798.041 4356.563 
-   TPM1+G(4) 348 -1060.591 2817.181 4375.703 
- TPM1+G(4)+I 349 -1050.974 2799.948 4362.948 
-         K81 347 -1069.713 2833.426 4387.469 
-       K81+I 348 -1051.021 2798.041 4356.563 
-    K81+G(4) 348 -1060.591 2817.181 4375.703 
-  K81+G(4)+I 349 -1050.974 2799.948 4362.948 
-       TPM1u 350 -1046.498 2792.996 4360.474 
-     TPM1u+I 351 -1027.182 2756.365 4328.322 
-  TPM1u+G(4) 351 -1037.292 2776.585 4348.542 
-TPM1u+G(4)+I 352 -1027.267 2758.534 4334.97 
-        TPM2 347 -1066.803 2827.606 4381.648 
-      TPM2+I 348 -1048.528 2793.057 4351.578 
-   TPM2+G(4) 348 -1057.721 2811.442 4369.964 
- TPM2+G(4)+I 349 -1048.41 2794.821 4357.821 
-       TPM2u 350 -1044.175 2788.35 4355.828 
-     TPM2u+I 351 -1025.241 2752.482 4324.439 
-  TPM2u+G(4) 351 -1035.014 2772.028 4343.985 
-TPM2u+G(4)+I 352 -1025.296 2754.592 4331.027 
-        TPM3 347 -1069.527 2833.054 4387.097 
-      TPM3+I 348 -1050.926 2797.852 4356.374 
-   TPM3+G(4) 348 -1060.413 2816.826 4375.347 
- TPM3+G(4)+I 349 -1050.88 2799.761 4362.761 
-       TPM3u 350 -1046.158 2792.316 4359.794 
-     TPM3u+I 351 -1026.826 2755.652 4327.609 
-  TPM3u+G(4) 351 -1036.937 2775.875 4347.832 
-TPM3u+G(4)+I 352 -1026.923 2757.847 4334.282 
-       TIM1e 348 -1069.195 2834.389 4392.911 
-     TIM1e+I 349 -1050.974 2799.947 4362.947 
-  TIM1e+G(4) 349 -1060.166 2818.332 4381.332 
-TIM1e+G(4)+I 350 -1050.973 2801.945 4369.424 
-        TIM1 351 -1045.364 2792.729 4364.685 
-      TIM1+I 352 -1027.16 2758.32 4334.755 
-   TIM1+G(4) 352 -1036.297 2776.595 4353.03 
- TIM1+G(4)+I 353 -1027.164 2760.327 4341.241 
-       TIM2e 348 -1066.286 2828.571 4387.092 
-     TIM2e+I 349 -1048.499 2794.997 4357.997 
-  TIM2e+G(4) 349 -1057.287 2812.575 4375.574 
-TIM2e+G(4)+I 350 -1048.411 2796.822 4364.3 
-        TIM2 351 -1043.043 2788.086 4360.043 
-      TIM2+I 352 -1025.224 2754.448 4330.883 
-   TIM2+G(4) 352 -1034.043 2772.086 4348.521 
- TIM2+G(4)+I 353 -1025.21 2756.42 4337.334 
-       TIM3e 348 -1069.009 2834.017 4392.539 
-     TIM3e+I 349 -1050.888 2799.776 4362.776 
-  TIM3e+G(4) 349 -1059.985 2817.97 4380.97 
-TIM3e+G(4)+I 350 -1050.88 2801.761 4369.239 
-        TIM3 351 -1045.024 2792.049 4364.005 
-      TIM3+I 352 -1026.803 2757.607 4334.042 
-   TIM3+G(4) 352 -1035.949 2775.898 4352.334 
- TIM3+G(4)+I 353 -1026.821 2759.641 4340.555 
-        TVMe 349 -1066.536 2831.072 4394.072 
-      TVMe+I 350 -1048.349 2796.698 4364.176 
-   TVMe+G(4) 350 -1057.462 2814.924 4382.403 
- TVMe+G(4)+I 351 -1048.234 2798.468 4370.425 
-         TVM 352 -1043.675 2791.35 4367.786 
-       TVM+I 353 -1024.715 2755.43 4336.344 
-    TVM+G(4) 353 -1034.505 2775.01 4355.924 
-  TVM+G(4)+I 354 -1024.793 2757.585 4342.977 
-         SYM 350 -1066.019 2832.037 4399.516 
-       SYM+I 351 -1048.326 2798.651 4370.608 
-    SYM+G(4) 351 -1057.03 2816.059 4388.016 
-  SYM+G(4)+I 352 -1048.235 2800.47 4376.905 
-         GTR 353 -1042.543 2791.086 4372 
-       GTR+I 354 -1024.696 2757.392 4342.784 
-    GTR+G(4) 354 -1033.532 2775.063 4360.456 
-  GTR+G(4)+I 355 -1024.703 2759.405 4349.276 </code></pre>
+          JC 345 -1079.804 2849.609 4394.695 
+        JC+I 346 -1061.179 2814.358 4363.922 
+     JC+G(4) 346 -1070.688 2833.377 4382.941 
+   JC+G(4)+I 347 -1061.163 2816.325 4370.368 
+         F81 348 -1057.134 2810.269 4368.79 
+       F81+I 349 -1038.792 2775.583 4338.583 
+    F81+G(4) 349 -1048.043 2794.087 4357.087 
+  F81+G(4)+I 350 -1038.767 2777.535 4345.013 
+         K80 346 -1071.724 2835.447 4385.012 
+       K80+I 347 -1053.029 2800.059 4354.102 
+    K80+G(4) 347 -1062.601 2819.203 4373.246 
+  K80+G(4)+I 348 -1052.982 2801.964 4360.485 
+         HKY 349 -1048.848 2795.696 4358.696 
+       HKY+I 350 -1029.599 2759.199 4326.677 
+    HKY+G(4) 350 -1039.652 2779.305 4346.783 
+  HKY+G(4)+I 351 -1029.689 2761.379 4333.336 
+        TrNe 347 -1071.204 2836.407 4390.45 
+      TrNe+I 348 -1052.997 2801.994 4360.516 
+   TrNe+G(4) 348 -1062.171 2820.343 4378.864 
+ TrNe+G(4)+I 349 -1052.983 2803.965 4366.965 
+         TrN 350 -1047.712 2795.425 4362.903 
+       TrN+I 351 -1029.565 2761.13 4333.087 
+    TrN+G(4) 351 -1038.65 2779.3 4351.257 
+  TrN+G(4)+I 352 -1029.552 2763.104 4339.539 
+        TPM1 347 -1071.622 2837.245 4391.287 
+      TPM1+I 348 -1052.908 2801.816 4360.337 
+   TPM1+G(4) 348 -1062.498 2820.996 4379.518 
+ TPM1+G(4)+I 349 -1052.858 2803.716 4366.716 
+         K81 347 -1071.622 2837.245 4391.287 
+       K81+I 348 -1052.908 2801.816 4360.337 
+    K81+G(4) 348 -1062.498 2820.996 4379.518 
+  K81+G(4)+I 349 -1052.858 2803.716 4366.716 
+       TPM1u 350 -1048.688 2797.375 4364.854 
+     TPM1u+I 351 -1029.393 2760.786 4332.743 
+  TPM1u+G(4) 351 -1039.485 2780.97 4352.927 
+TPM1u+G(4)+I 352 -1029.486 2762.972 4339.407 
+        TPM2 347 -1068.711 2831.421 4385.464 
+      TPM2+I 348 -1050.389 2796.778 4355.3 
+   TPM2+G(4) 348 -1059.624 2815.248 4373.769 
+ TPM2+G(4)+I 349 -1050.254 2798.509 4361.509 
+       TPM2u 350 -1046.364 2792.728 4360.206 
+     TPM2u+I 351 -1027.446 2756.893 4328.849 
+  TPM2u+G(4) 351 -1037.205 2776.41 4348.367 
+TPM2u+G(4)+I 352 -1027.499 2758.997 4335.433 
+        TPM3 347 -1071.436 2836.873 4390.916 
+      TPM3+I 348 -1052.822 2801.643 4360.164 
+   TPM3+G(4) 348 -1062.321 2820.642 4379.163 
+ TPM3+G(4)+I 349 -1052.773 2803.547 4366.546 
+       TPM3u 350 -1048.347 2796.695 4364.173 
+     TPM3u+I 351 -1029.037 2760.074 4332.031 
+  TPM3u+G(4) 351 -1039.13 2780.26 4352.216 
+TPM3u+G(4)+I 352 -1029.139 2762.278 4338.714 
+       TIM1e 348 -1071.102 2838.204 4396.726 
+     TIM1e+I 349 -1052.875 2803.749 4366.749 
+  TIM1e+G(4) 349 -1062.068 2822.136 4385.136 
+TIM1e+G(4)+I 350 -1052.859 2805.717 4373.196 
+        TIM1 351 -1047.552 2797.104 4369.06 
+      TIM1+I 352 -1029.358 2762.716 4339.151 
+   TIM1+G(4) 352 -1038.482 2780.964 4357.399 
+ TIM1+G(4)+I 353 -1029.346 2764.692 4345.606 
+       TIM2e 348 -1068.192 2832.383 4390.905 
+     TIM2e+I 349 -1050.371 2798.742 4361.742 
+  TIM2e+G(4) 349 -1059.183 2816.367 4379.367 
+TIM2e+G(4)+I 350 -1050.254 2800.508 4367.986 
+        TIM2 351 -1045.23 2792.46 4364.416 
+      TIM2+I 352 -1027.416 2758.831 4335.267 
+   TIM2+G(4) 352 -1036.219 2776.438 4352.874 
+ TIM2+G(4)+I 353 -1027.378 2760.757 4341.671 
+       TIM3e 348 -1070.917 2837.833 4396.355 
+     TIM3e+I 349 -1052.795 2803.591 4366.591 
+  TIM3e+G(4) 349 -1061.888 2821.776 4384.776 
+TIM3e+G(4)+I 350 -1052.773 2805.547 4373.025 
+        TIM3 351 -1047.212 2796.424 4368.381 
+      TIM3+I 352 -1029.004 2762.007 4338.443 
+   TIM3+G(4) 352 -1038.135 2780.269 4356.705 
+ TIM3+G(4)+I 353 -1029.005 2764.01 4344.924 
+        TVMe 349 -1068.443 2834.886 4397.886 
+      TVMe+I 350 -1050.19 2800.381 4367.859 
+   TVMe+G(4) 350 -1059.362 2818.723 4386.202 
+ TVMe+G(4)+I 351 -1050.051 2802.102 4374.059 
+         TVM 352 -1045.863 2795.726 4372.161 
+       TVM+I 353 -1026.882 2759.763 4340.677 
+    TVM+G(4) 353 -1036.691 2779.382 4360.296 
+  TVM+G(4)+I 354 -1026.942 2761.884 4347.277 
+         SYM 350 -1067.924 2835.848 4403.327 
+       SYM+I 351 -1050.176 2802.352 4374.309 
+    SYM+G(4) 351 -1058.924 2819.847 4391.804 
+  SYM+G(4)+I 352 -1050.05 2804.099 4380.534 
+         GTR 353 -1044.729 2795.458 4376.372 
+       GTR+I 354 -1026.852 2761.704 4347.097 
+    GTR+G(4) 354 -1035.709 2779.419 4364.811 
+  GTR+G(4)+I 355 -1026.826 2763.652 4353.523 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb200"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb200-1"><a href="#cb200-1" aria-hidden="true" tabindex="-1"></a>fitGPRC6 <span class="ot">&lt;-</span> <span class="fu">as.pml</span>(mtGPRC6, <span class="st">"AIC"</span>)</span>
 <span id="cb200-2"><a href="#cb200-2" aria-hidden="true" tabindex="-1"></a>fit_mtGPRC6 <span class="ot">&lt;-</span> <span class="fu">pml_bb</span>(mtGPRC6, <span class="at">control =</span> <span class="fu">pml.control</span>(<span class="at">trace =</span> <span class="dv">0</span>))</span>
 <span id="cb200-3"><a href="#cb200-3" aria-hidden="true" tabindex="-1"></a>fit_mtGPRC6</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>model: HKY+I 
-loglikelihood: -1024.468 
+loglikelihood: -1024.153 
 unconstrained loglikelihood: -982.8015 
-Proportion of invariant sites: 0.9657727 
+Proportion of invariant sites: 0.9679232 
 
 Rate matrix:
          a        c        g        t
-a  0.00000  1.00000 10.17427  1.00000
-c  1.00000  0.00000  1.00000 10.17427
-g 10.17427  1.00000  0.00000  1.00000
-t  1.00000 10.17427  1.00000  0.00000
+a  0.00000  1.00000 15.43142  1.00000
+c  1.00000  0.00000  1.00000 15.43142
+g 15.43142  1.00000  0.00000  1.00000
+t  1.00000 15.43142  1.00000  0.00000
 
 Base frequencies:  
         a         c         g         t 
@@ -5238,98 +5388,98 @@ haplotype because of ambiguities</code></pre>
 <span id="cb225-2"><a href="#cb225-2" aria-hidden="true" tabindex="-1"></a>mtLACTBL <span class="ot">&lt;-</span> <span class="fu">modelTest</span>(ZosteropsLACTBL)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Model        df  logLik   AIC      BIC
-          JC 353 -1437.974 3581.947 5181.347 
-        JC+I 354 -1394.497 3496.994 5100.925 
-     JC+G(4) 354 -1409.115 3526.23 5130.16 
-   JC+G(4)+I 355 -1393.94 3497.88 5106.342 
-         F81 356 -1435.4 3582.8 5195.792 
-       F81+I 357 -1391.353 3496.705 5114.229 
-    F81+G(4) 357 -1406.385 3526.771 5144.294 
-  F81+G(4)+I 358 -1390.833 3497.667 5119.721 
-         K80 354 -1398.492 3504.984 5108.915 
-       K80+I 355 -1354.661 3419.321 5027.783 
-    K80+G(4) 355 -1369.548 3449.096 5057.557 
-  K80+G(4)+I 356 -1354.119 3420.238 5033.23 
-         HKY 357 -1395.481 3504.963 5122.486 
-       HKY+I 358 -1349.66 3415.32 5037.374 
-    HKY+G(4) 358 -1365.992 3447.984 5070.038 
-  HKY+G(4)+I 359 -1349.307 3416.615 5043.2 
-        TrNe 355 -1398.489 3506.978 5115.44 
-      TrNe+I 356 -1354.231 3420.462 5033.455 
-   TrNe+G(4) 356 -1369.535 3451.071 5064.063 
- TrNe+G(4)+I 357 -1353.833 3421.666 5039.189 
-         TrN 358 -1395.447 3506.893 5128.947 
-       TrN+I 359 -1349.384 3416.769 5043.354 
-    TrN+G(4) 359 -1365.991 3449.983 5076.568 
-  TrN+G(4)+I 360 -1349.162 3418.325 5049.441 
-        TPM1 355 -1396.502 3503.004 5111.466 
-      TPM1+I 356 -1352.56 3417.121 5030.113 
-   TPM1+G(4) 356 -1367.532 3447.063 5060.055 
- TPM1+G(4)+I 357 -1352.076 3418.153 5035.676 
-         K81 355 -1396.502 3503.004 5111.466 
-       K81+I 356 -1352.56 3417.121 5030.113 
-    K81+G(4) 356 -1367.532 3447.063 5060.055 
-  K81+G(4)+I 357 -1352.076 3418.153 5035.676 
-       TPM1u 358 -1393.564 3503.128 5125.182 
-     TPM1u+I 359 -1347.82 3413.64 5040.225 
-  TPM1u+G(4) 359 -1364.103 3446.205 5072.79 
-TPM1u+G(4)+I 360 -1347.508 3415.016 5046.132 
-        TPM2 355 -1398.467 3506.933 5115.395 
-      TPM2+I 356 -1354.623 3421.246 5034.238 
-   TPM2+G(4) 356 -1369.543 3451.086 5064.079 
- TPM2+G(4)+I 357 -1354.079 3422.159 5039.682 
-       TPM2u 358 -1395.479 3506.958 5129.012 
-     TPM2u+I 359 -1349.531 3417.062 5043.647 
-  TPM2u+G(4) 359 -1365.988 3449.976 5076.561 
-TPM2u+G(4)+I 360 -1349.168 3418.336 5049.452 
-        TPM3 355 -1398.011 3506.022 5114.484 
-      TPM3+I 356 -1354.343 3420.685 5033.678 
-   TPM3+G(4) 356 -1369.108 3450.216 5063.208 
- TPM3+G(4)+I 357 -1353.759 3421.519 5039.042 
-       TPM3u 358 -1395.139 3506.277 5128.331 
-     TPM3u+I 359 -1349.5 3417 5043.585 
-  TPM3u+G(4) 359 -1365.713 3449.425 5076.011 
-TPM3u+G(4)+I 360 -1349.116 3418.231 5049.347 
-       TIM1e 356 -1396.499 3504.999 5117.991 
-     TIM1e+I 357 -1352.125 3418.251 5035.774 
-  TIM1e+G(4) 357 -1367.519 3449.038 5066.561 
-TIM1e+G(4)+I 358 -1351.795 3419.591 5041.645 
-        TIM1 359 -1393.529 3505.058 5131.643 
-      TIM1+I 360 -1347.547 3415.094 5046.21 
-   TIM1+G(4) 360 -1364.102 3448.204 5079.32 
- TIM1+G(4)+I 361 -1347.369 3416.739 5052.386 
-       TIM2e 356 -1398.464 3508.928 5121.92 
-     TIM2e+I 357 -1354.189 3422.379 5039.902 
-  TIM2e+G(4) 357 -1369.531 3453.061 5070.585 
-TIM2e+G(4)+I 358 -1353.786 3423.571 5045.625 
-        TIM2 359 -1395.444 3508.888 5135.473 
-      TIM2+I 360 -1349.254 3418.508 5049.624 
-   TIM2+G(4) 360 -1365.988 3451.975 5083.091 
- TIM2+G(4)+I 361 -1349.017 3420.034 5055.681 
-       TIM3e 356 -1398.008 3508.017 5121.009 
-     TIM3e+I 357 -1353.913 3421.827 5039.35 
-  TIM3e+G(4) 357 -1369.095 3452.189 5069.713 
-TIM3e+G(4)+I 358 -1353.462 3422.925 5044.979 
-        TIM3 359 -1395.104 3508.208 5134.793 
-      TIM3+I 360 -1349.227 3418.454 5049.57 
-   TIM3+G(4) 360 -1365.712 3451.424 5082.54 
- TIM3+G(4)+I 361 -1348.97 3419.941 5055.588 
-        TVMe 357 -1395.693 3505.386 5122.909 
-      TVMe+I 358 -1351.931 3419.862 5041.916 
-   TVMe+G(4) 358 -1366.8 3449.6 5071.654 
- TVMe+G(4)+I 359 -1351.391 3420.781 5047.367 
-         TVM 360 -1392.862 3505.724 5136.84 
-       TVM+I 361 -1347.053 3416.107 5051.753 
-    TVM+G(4) 361 -1363.438 3448.875 5084.522 
-  TVM+G(4)+I 362 -1346.706 3417.412 5057.59 
-         SYM 358 -1395.69 3507.381 5129.435 
-       SYM+I 359 -1351.497 3420.993 5047.578 
-    SYM+G(4) 359 -1366.787 3451.574 5078.159 
-  SYM+G(4)+I 360 -1351.096 3422.192 5053.308 
-         GTR 361 -1392.827 3507.655 5143.302 
-       GTR+I 362 -1346.776 3417.552 5057.729 
-    GTR+G(4) 362 -1363.437 3450.874 5091.052 
-  GTR+G(4)+I 363 -1346.558 3419.116 5063.824 </code></pre>
+          JC 353 -1444.544 3595.088 5194.488 
+        JC+I 354 -1398.448 3504.895 5108.826 
+     JC+G(4) 354 -1414.186 3536.373 5140.304 
+   JC+G(4)+I 355 -1397.076 3504.152 5112.614 
+         F81 356 -1440.972 3593.944 5206.936 
+       F81+I 357 -1394.327 3502.655 5120.178 
+    F81+G(4) 357 -1410.467 3534.933 5152.456 
+  F81+G(4)+I 358 -1393.011 3502.021 5124.076 
+         K80 354 -1404.058 3516.117 5120.048 
+       K80+I 355 -1357.349 3424.697 5033.159 
+    K80+G(4) 355 -1373.547 3457.094 5065.555 
+  K80+G(4)+I 356 -1355.892 3423.785 5036.777 
+         HKY 357 -1400.044 3514.089 5131.612 
+       HKY+I 358 -1351.346 3418.692 5040.746 
+    HKY+G(4) 358 -1368.995 3453.989 5076.043 
+  HKY+G(4)+I 359 -1350.123 3418.245 5044.83 
+        TrNe 355 -1404.057 3518.113 5126.575 
+      TrNe+I 356 -1356.654 3425.308 5038.301 
+   TrNe+G(4) 356 -1373.495 3458.989 5071.982 
+ TrNe+G(4)+I 357 -1355.353 3424.706 5042.23 
+         TrN 358 -1400.036 3516.071 5138.125 
+       TrN+I 359 -1350.885 3419.769 5046.355 
+    TrN+G(4) 359 -1368.987 3455.974 5082.559 
+  TrN+G(4)+I 360 -1349.805 3419.609 5050.725 
+        TPM1 355 -1402.078 3514.156 5122.618 
+      TPM1+I 356 -1355.366 3422.731 5035.724 
+   TPM1+G(4) 356 -1371.569 3455.138 5068.131 
+ TPM1+G(4)+I 357 -1353.947 3421.895 5039.418 
+         K81 355 -1402.078 3514.156 5122.618 
+       K81+I 356 -1355.366 3422.731 5035.724 
+    K81+G(4) 356 -1371.569 3455.138 5068.131 
+  K81+G(4)+I 357 -1353.947 3421.895 5039.418 
+       TPM1u 358 -1398.135 3512.271 5134.325 
+     TPM1u+I 359 -1349.615 3417.23 5043.815 
+  TPM1u+G(4) 359 -1367.141 3452.282 5078.867 
+TPM1u+G(4)+I 360 -1348.41 3416.82 5047.936 
+        TPM2 355 -1404.034 3518.067 5126.529 
+      TPM2+I 356 -1357.296 3426.593 5039.585 
+   TPM2+G(4) 356 -1373.543 3459.087 5072.079 
+ TPM2+G(4)+I 357 -1355.845 3425.69 5043.213 
+       TPM2u 358 -1400.042 3516.084 5138.138 
+     TPM2u+I 359 -1351.192 3420.383 5046.968 
+  TPM2u+G(4) 359 -1368.99 3455.979 5082.564 
+TPM2u+G(4)+I 360 -1349.969 3419.938 5051.054 
+        TPM3 355 -1403.575 3517.151 5125.612 
+      TPM3+I 356 -1357.011 3426.023 5039.015 
+   TPM3+G(4) 356 -1373.099 3458.198 5071.191 
+ TPM3+G(4)+I 357 -1355.519 3425.038 5042.561 
+       TPM3u 358 -1399.7 3515.4 5137.454 
+     TPM3u+I 359 -1351.17 3420.341 5046.926 
+  TPM3u+G(4) 359 -1368.71 3455.42 5082.005 
+TPM3u+G(4)+I 360 -1349.92 3419.84 5050.956 
+       TIM1e 356 -1402.076 3516.152 5129.145 
+     TIM1e+I 357 -1354.664 3423.328 5040.852 
+  TIM1e+G(4) 357 -1371.517 3457.034 5074.557 
+TIM1e+G(4)+I 358 -1353.418 3422.836 5044.891 
+        TIM1 359 -1398.127 3514.253 5140.839 
+      TIM1+I 360 -1349.154 3418.308 5049.424 
+   TIM1+G(4) 360 -1367.134 3454.267 5085.383 
+ TIM1+G(4)+I 361 -1348.105 3418.21 5053.857 
+       TIM2e 356 -1404.032 3520.064 5133.056 
+     TIM2e+I 357 -1356.597 3427.194 5044.718 
+  TIM2e+G(4) 357 -1373.491 3460.982 5078.506 
+TIM2e+G(4)+I 358 -1355.291 3426.583 5048.637 
+        TIM2 359 -1400.033 3518.066 5144.652 
+      TIM2+I 360 -1350.73 3421.46 5052.576 
+   TIM2+G(4) 360 -1368.982 3457.964 5089.08 
+ TIM2+G(4)+I 361 -1349.639 3421.278 5056.924 
+       TIM3e 356 -1403.574 3519.147 5132.14 
+     TIM3e+I 357 -1356.317 3426.635 5044.158 
+  TIM3e+G(4) 357 -1373.046 3460.091 5077.615 
+TIM3e+G(4)+I 358 -1354.963 3425.927 5047.981 
+        TIM3 359 -1399.691 3517.382 5143.967 
+      TIM3+I 360 -1350.713 3421.426 5052.542 
+   TIM3+G(4) 360 -1368.703 3457.406 5088.522 
+ TIM3+G(4)+I 361 -1349.599 3421.198 5056.845 
+        TVMe 357 -1401.263 3516.526 5134.049 
+      TVMe+I 358 -1354.66 3425.32 5047.374 
+   TVMe+G(4) 358 -1370.813 3457.627 5079.681 
+ TVMe+G(4)+I 359 -1353.207 3424.415 5051 
+         TVM 360 -1397.428 3514.857 5145.973 
+       TVM+I 361 -1348.778 3419.556 5055.203 
+    TVM+G(4) 361 -1366.454 3454.908 5090.555 
+  TVM+G(4)+I 362 -1347.561 3419.122 5059.3 
+         SYM 358 -1401.261 3518.522 5140.577 
+       SYM+I 359 -1353.962 3425.924 5052.509 
+    SYM+G(4) 359 -1370.761 3459.521 5086.106 
+  SYM+G(4)+I 360 -1352.656 3425.312 5056.428 
+         GTR 361 -1397.42 3516.839 5152.486 
+       GTR+I 362 -1348.317 3420.634 5060.812 
+    GTR+G(4) 362 -1366.447 3456.895 5097.072 
+  GTR+G(4)+I 363 -1347.239 3420.477 5065.186 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb227"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb227-1"><a href="#cb227-1" aria-hidden="true" tabindex="-1"></a>fitLACTBL <span class="ot">&lt;-</span> <span class="fu">as.pml</span>(mtLACTBL, <span class="st">"AIC"</span>)</span>
 <span id="cb227-2"><a href="#cb227-2" aria-hidden="true" tabindex="-1"></a>fit_mtLACTBL <span class="ot">&lt;-</span> <span class="fu">pml_bb</span>(mtLACTBL, <span class="at">control =</span> <span class="fu">pml.control</span>(<span class="at">trace =</span> <span class="dv">0</span>))</span>
@@ -5338,14 +5488,14 @@ TIM3e+G(4)+I 358 -1353.462 3422.925 5044.979
 <pre><code>model: K80+I 
 loglikelihood: -1350.264 
 unconstrained loglikelihood: -1228.464 
-Proportion of invariant sites: 0.9207285 
+Proportion of invariant sites: 0.9207406 
 
 Rate matrix:
          a        c        g        t
-a  0.00000  1.00000 18.95098  1.00000
-c  1.00000  0.00000  1.00000 18.95098
-g 18.95098  1.00000  0.00000  1.00000
-t  1.00000 18.95098  1.00000  0.00000
+a  0.00000  1.00000 18.95077  1.00000
+c  1.00000  0.00000  1.00000 18.95077
+g 18.95077  1.00000  0.00000  1.00000
+t  1.00000 18.95077  1.00000  0.00000
 
 Base frequencies:  
    a    c    g    t 
@@ -5907,98 +6057,98 @@ haplotype because of ambiguities</code></pre>
 <span id="cb252-2"><a href="#cb252-2" aria-hidden="true" tabindex="-1"></a>mtUSP38 <span class="ot">&lt;-</span> <span class="fu">modelTest</span>(ZosteropsUSP38)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Model        df  logLik   AIC      BIC
-          JC 361 -1229.767 3181.535 4831.624 
-        JC+I 362 -1199.946 3123.893 4778.553 
-     JC+G(4) 362 -1215.294 3154.589 4809.248 
-   JC+G(4)+I 363 -1199.552 3125.104 4784.335 
-         F81 364 -1222.742 3173.485 4837.286 
-       F81+I 365 -1192.966 3115.932 4784.304 
-    F81+G(4) 365 -1208.272 3146.543 4814.915 
-  F81+G(4)+I 366 -1192.531 3117.063 4790.006 
-         K80 362 -1207.598 3139.196 4793.855 
-       K80+I 363 -1177.786 3081.571 4740.802 
-    K80+G(4) 363 -1193.126 3112.253 4771.483 
-  K80+G(4)+I 364 -1177.375 3082.751 4746.552 
-         HKY 365 -1200.258 3130.517 4798.889 
-       HKY+I 366 -1170.527 3073.055 4745.998 
-    HKY+G(4) 366 -1185.779 3103.557 4776.501 
-  HKY+G(4)+I 367 -1169.988 3073.976 4751.49 
-        TrNe 363 -1206.359 3138.717 4797.948 
-      TrNe+I 364 -1176.748 3081.496 4745.297 
-   TrNe+G(4) 364 -1191.829 3111.658 4775.459 
- TrNe+G(4)+I 365 -1176.49 3082.98 4751.352 
-         TrN 366 -1199.111 3130.223 4803.166 
-       TrN+I 367 -1169.356 3072.712 4750.226 
-    TrN+G(4) 367 -1184.555 3103.11 4780.624 
-  TrN+G(4)+I 368 -1169.03 3074.059 4756.144 
-        TPM1 363 -1206.215 3138.431 4797.661 
-      TPM1+I 364 -1176.478 3080.957 4744.758 
-   TPM1+G(4) 364 -1191.769 3111.539 4775.34 
- TPM1+G(4)+I 365 -1176.08 3082.16 4750.532 
-         K81 363 -1206.215 3138.431 4797.661 
-       K81+I 364 -1176.478 3080.957 4744.758 
-    K81+G(4) 364 -1191.769 3111.539 4775.34 
-  K81+G(4)+I 365 -1176.08 3082.16 4750.532 
-       TPM1u 366 -1198.907 3129.814 4802.757 
-     TPM1u+I 367 -1169.266 3072.533 4750.047 
-  TPM1u+G(4) 367 -1184.439 3102.878 4780.392 
-TPM1u+G(4)+I 368 -1168.752 3073.505 4755.59 
-        TPM2 363 -1206.305 3138.61 4797.84 
-      TPM2+I 364 -1176.693 3081.386 4745.187 
-   TPM2+G(4) 364 -1191.854 3111.707 4775.509 
- TPM2+G(4)+I 365 -1176.317 3082.633 4751.005 
-       TPM2u 366 -1199.054 3130.107 4803.051 
-     TPM2u+I 367 -1169.533 3073.066 4750.58 
-  TPM2u+G(4) 367 -1184.619 3103.238 4780.752 
-TPM2u+G(4)+I 368 -1169.034 3074.068 4756.153 
-        TPM3 363 -1206.375 3138.749 4797.98 
-      TPM3+I 364 -1176.412 3080.824 4744.625 
-   TPM3+G(4) 364 -1191.886 3111.772 4775.573 
- TPM3+G(4)+I 365 -1176.029 3082.058 4750.43 
-       TPM3u 366 -1199.185 3130.37 4803.314 
-     TPM3u+I 367 -1169.381 3072.761 4750.275 
-  TPM3u+G(4) 367 -1184.724 3103.447 4780.961 
-TPM3u+G(4)+I 368 -1168.889 3073.777 4755.862 
-       TIM1e 364 -1204.977 3137.953 4801.754 
-     TIM1e+I 365 -1175.438 3080.877 4749.249 
-  TIM1e+G(4) 365 -1190.479 3110.958 4779.33 
-TIM1e+G(4)+I 366 -1175.191 3082.382 4755.325 
-        TIM1 367 -1197.76 3129.521 4807.035 
-      TIM1+I 368 -1168.094 3072.188 4754.273 
-   TIM1+G(4) 368 -1183.241 3102.483 4784.568 
- TIM1+G(4)+I 369 -1167.786 3073.572 4760.228 
-       TIM2e 364 -1205.066 3138.133 4801.934 
-     TIM2e+I 365 -1175.65 3081.301 4749.673 
-  TIM2e+G(4) 365 -1190.579 3111.159 4779.531 
-TIM2e+G(4)+I 366 -1175.415 3082.831 4755.774 
-        TIM2 367 -1197.907 3129.815 4807.329 
-      TIM2+I 368 -1168.368 3072.736 4754.82 
-   TIM2+G(4) 368 -1183.383 3102.765 4784.85 
- TIM2+G(4)+I 369 -1168.072 3074.145 4760.801 
-       TIM3e 364 -1205.135 3138.27 4802.072 
-     TIM3e+I 365 -1175.386 3080.773 4749.145 
-  TIM3e+G(4) 365 -1190.617 3111.233 4779.606 
-TIM3e+G(4)+I 366 -1175.139 3082.278 4755.221 
-        TIM3 367 -1198.038 3130.076 4807.59 
-      TIM3+I 368 -1168.197 3072.394 4754.479 
-   TIM3+G(4) 368 -1183.476 3102.952 4785.037 
- TIM3+G(4)+I 369 -1167.889 3073.778 4760.434 
-        TVMe 365 -1205.074 3140.148 4808.521 
-      TVMe+I 366 -1175.324 3082.648 4755.591 
-   TVMe+G(4) 366 -1190.624 3113.248 4786.191 
- TVMe+G(4)+I 367 -1174.971 3083.942 4761.456 
-         TVM 368 -1197.98 3131.96 4814.045 
-       TVM+I 369 -1168.396 3074.791 4761.447 
-    TVM+G(4) 369 -1183.535 3105.07 4791.726 
-  TVM+G(4)+I 370 -1167.939 3075.879 4767.106 
-         SYM 366 -1203.835 3139.67 4812.614 
-       SYM+I 367 -1174.291 3082.582 4760.096 
-    SYM+G(4) 367 -1189.336 3112.671 4790.185 
-  SYM+G(4)+I 368 -1174.064 3084.129 4766.214 
-         GTR 369 -1196.833 3131.667 4818.322 
-       GTR+I 370 -1167.218 3074.436 4765.663 
-    GTR+G(4) 370 -1182.328 3104.655 4795.882 
-  GTR+G(4)+I 371 -1166.94 3075.88 4771.678 </code></pre>
+          JC 361 -1231.154 3184.307 4834.396 
+        JC+I 362 -1201.331 3126.663 4781.322 
+     JC+G(4) 362 -1216.708 3157.417 4812.076 
+   JC+G(4)+I 363 -1201.379 3128.759 4787.989 
+         F81 364 -1224.722 3177.443 4841.245 
+       F81+I 365 -1194.936 3119.872 4788.244 
+    F81+G(4) 365 -1210.278 3150.555 4818.927 
+  F81+G(4)+I 366 -1194.995 3121.991 4794.934 
+         K80 362 -1212.004 3148.008 4802.667 
+       K80+I 363 -1182.119 3090.238 4749.469 
+    K80+G(4) 363 -1197.553 3121.105 4780.336 
+  K80+G(4)+I 364 -1182.164 3092.327 4756.129 
+         HKY 365 -1205.276 3140.551 4808.924 
+       HKY+I 366 -1175.45 3082.899 4755.842 
+    HKY+G(4) 366 -1190.815 3113.629 4786.573 
+  HKY+G(4)+I 367 -1175.442 3084.884 4762.399 
+        TrNe 363 -1211.021 3148.041 4807.272 
+      TrNe+I 364 -1181.362 3090.724 4754.525 
+   TrNe+G(4) 364 -1196.533 3121.066 4784.867 
+ TrNe+G(4)+I 365 -1181.368 3092.735 4761.108 
+         TrN 366 -1204.373 3140.746 4813.689 
+       TrN+I 367 -1174.589 3083.177 4760.691 
+    TrN+G(4) 367 -1189.861 3113.721 4791.235 
+  TrN+G(4)+I 368 -1174.605 3085.209 4767.294 
+        TPM1 363 -1209.929 3145.859 4805.089 
+      TPM1+I 364 -1180.153 3088.306 4752.107 
+   TPM1+G(4) 364 -1195.506 3119.013 4782.814 
+ TPM1+G(4)+I 365 -1180.19 3090.379 4758.752 
+         K81 363 -1209.929 3145.859 4805.089 
+       K81+I 364 -1180.153 3088.306 4752.107 
+    K81+G(4) 364 -1195.506 3119.013 4782.814 
+  K81+G(4)+I 365 -1180.19 3090.379 4758.752 
+       TPM1u 366 -1203.248 3138.496 4811.439 
+     TPM1u+I 367 -1173.555 3081.111 4758.625 
+  TPM1u+G(4) 367 -1188.821 3111.643 4789.157 
+TPM1u+G(4)+I 368 -1173.587 3083.173 4765.258 
+        TPM2 363 -1210.064 3146.127 4805.358 
+      TPM2+I 364 -1180.472 3088.943 4752.744 
+   TPM2+G(4) 364 -1195.641 3119.281 4783.083 
+ TPM2+G(4)+I 365 -1180.48 3090.961 4759.333 
+       TPM2u 366 -1203.468 3138.936 4811.88 
+     TPM2u+I 367 -1173.95 3081.9 4759.414 
+  TPM2u+G(4) 367 -1189.062 3112.125 4789.639 
+TPM2u+G(4)+I 368 -1173.994 3083.987 4766.072 
+        TPM3 363 -1210.17 3146.339 4805.57 
+      TPM3+I 364 -1180.064 3088.128 4751.929 
+   TPM3+G(4) 364 -1195.709 3119.419 4783.22 
+ TPM3+G(4)+I 365 -1180.079 3090.158 4758.53 
+       TPM3u 366 -1203.667 3139.333 4812.276 
+     TPM3u+I 367 -1173.731 3081.462 4758.976 
+  TPM3u+G(4) 367 -1189.221 3112.442 4789.956 
+TPM3u+G(4)+I 368 -1173.774 3083.548 4765.633 
+       TIM1e 364 -1208.946 3145.893 4809.694 
+     TIM1e+I 365 -1179.393 3088.785 4757.158 
+  TIM1e+G(4) 365 -1194.471 3118.941 4787.313 
+TIM1e+G(4)+I 366 -1179.399 3090.799 4763.742 
+        TIM1 367 -1202.346 3138.691 4816.205 
+      TIM1+I 368 -1172.693 3081.385 4763.47 
+   TIM1+G(4) 368 -1187.873 3111.745 4793.83 
+ TIM1+G(4)+I 369 -1172.697 3083.394 4770.05 
+       TIM2e 364 -1209.081 3146.162 4809.964 
+     TIM2e+I 365 -1179.71 3089.421 4757.793 
+  TIM2e+G(4) 365 -1194.641 3119.282 4787.655 
+TIM2e+G(4)+I 366 -1179.718 3091.437 4764.38 
+        TIM2 367 -1202.566 3139.133 4816.647 
+      TIM2+I 368 -1173.099 3082.199 4764.284 
+   TIM2+G(4) 368 -1188.098 3112.195 4794.28 
+ TIM2+G(4)+I 369 -1173.104 3084.208 4770.864 
+       TIM3e 364 -1209.186 3146.372 4810.173 
+     TIM3e+I 365 -1179.317 3088.635 4757.007 
+  TIM3e+G(4) 365 -1194.699 3119.397 4787.77 
+TIM3e+G(4)+I 366 -1179.324 3090.649 4763.592 
+        TIM3 367 -1202.763 3139.527 4817.041 
+      TIM3+I 368 -1172.851 3081.702 4763.787 
+   TIM3+G(4) 368 -1188.242 3112.484 4794.569 
+ TIM3+G(4)+I 369 -1172.855 3083.71 4770.366 
+        TVMe 365 -1208.219 3146.437 4814.809 
+      TVMe+I 366 -1178.424 3088.848 4761.791 
+   TVMe+G(4) 366 -1193.787 3119.574 4792.517 
+ TVMe+G(4)+I 367 -1178.43 3090.859 4768.373 
+         TVM 368 -1201.858 3139.717 4821.802 
+       TVM+I 369 -1172.246 3082.493 4769.148 
+    TVM+G(4) 369 -1187.451 3112.901 4799.557 
+  TVM+G(4)+I 370 -1172.299 3084.598 4775.825 
+         SYM 366 -1207.235 3146.471 4819.414 
+       SYM+I 367 -1177.672 3089.344 4766.858 
+    SYM+G(4) 367 -1192.775 3119.55 4797.064 
+  SYM+G(4)+I 368 -1177.681 3091.362 4773.447 
+         GTR 369 -1200.956 3139.912 4826.568 
+       GTR+I 370 -1171.378 3082.755 4773.982 
+    GTR+G(4) 370 -1186.5 3113 4804.227 
+  GTR+G(4)+I 371 -1171.384 3084.767 4780.565 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb254"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb254-1"><a href="#cb254-1" aria-hidden="true" tabindex="-1"></a>fitUSP38 <span class="ot">&lt;-</span> <span class="fu">as.pml</span>(mtUSP38, <span class="st">"AIC"</span>)</span>
 <span id="cb254-2"><a href="#cb254-2" aria-hidden="true" tabindex="-1"></a>fit_mtUSP38 <span class="ot">&lt;-</span> <span class="fu">pml_bb</span>(mtUSP38, <span class="at">control =</span> <span class="fu">pml.control</span>(<span class="at">trace =</span> <span class="dv">0</span>))</span>
@@ -6007,14 +6157,14 @@ TIM3e+G(4)+I 366 -1175.139 3082.278 4755.221
 <pre><code>model: K80+I 
 loglikelihood: -1174.155 
 unconstrained loglikelihood: -1148.149 
-Proportion of invariant sites: 0.9652911 
+Proportion of invariant sites: 0.965286 
 
 Rate matrix:
-         a        c        g        t
-a  0.00000  1.00000 56.63174  1.00000
-c  1.00000  0.00000  1.00000 56.63174
-g 56.63174  1.00000  0.00000  1.00000
-t  1.00000 56.63174  1.00000  0.00000
+       a      c      g      t
+a  0.000  1.000 56.632  1.000
+c  1.000  0.000  1.000 56.632
+g 56.632  1.000  0.000  1.000
+t  1.000 56.632  1.000  0.000
 
 Base frequencies:  
    a    c    g    t 
@@ -6189,10 +6339,10 @@ The following object is masked from 'package:ape':
 8                 0.93      0.004      -0.78              0.438    0.03
   R2 test p-value
 1           0.080
-2           0.008
-3           0.021
+2           0.006
+3           0.017
 4           0.000
-5           0.001
+5           0.002
 6           0.001
 7           0.000
 8           0.003</code></pre>
@@ -6218,23 +6368,23 @@ The following object is masked from 'package:ape':
 <span id="cb268-19"><a href="#cb268-19" aria-hidden="true" tabindex="-1"></a><span class="st">                             the pegas and ape R packages"</span>))</span>
 <span id="cb268-20"><a href="#cb268-20" aria-hidden="true" tabindex="-1"></a>AllLociSummaryTable</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="zttgvpguzp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#zttgvpguzp table {
+<div id="prochuroyj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#prochuroyj table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#zttgvpguzp thead, #zttgvpguzp tbody, #zttgvpguzp tfoot, #zttgvpguzp tr, #zttgvpguzp td, #zttgvpguzp th {
+#prochuroyj thead, #prochuroyj tbody, #prochuroyj tfoot, #prochuroyj tr, #prochuroyj td, #prochuroyj th {
   border-style: none;
 }
 
-#zttgvpguzp p {
+#prochuroyj p {
   margin: 0;
   padding: 0;
 }
 
-#zttgvpguzp .gt_table {
+#prochuroyj .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -6260,12 +6410,12 @@ The following object is masked from 'package:ape':
   border-left-color: #D3D3D3;
 }
 
-#zttgvpguzp .gt_caption {
+#prochuroyj .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#zttgvpguzp .gt_title {
+#prochuroyj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -6277,7 +6427,7 @@ The following object is masked from 'package:ape':
   border-bottom-width: 0;
 }
 
-#zttgvpguzp .gt_subtitle {
+#prochuroyj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -6289,7 +6439,7 @@ The following object is masked from 'package:ape':
   border-top-width: 0;
 }
 
-#zttgvpguzp .gt_heading {
+#prochuroyj .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -6301,13 +6451,13 @@ The following object is masked from 'package:ape':
   border-right-color: #D3D3D3;
 }
 
-#zttgvpguzp .gt_bottom_border {
+#prochuroyj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#zttgvpguzp .gt_col_headings {
+#prochuroyj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6322,7 +6472,7 @@ The following object is masked from 'package:ape':
   border-right-color: #D3D3D3;
 }
 
-#zttgvpguzp .gt_col_heading {
+#prochuroyj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6342,7 +6492,7 @@ The following object is masked from 'package:ape':
   overflow-x: hidden;
 }
 
-#zttgvpguzp .gt_column_spanner_outer {
+#prochuroyj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6354,15 +6504,15 @@ The following object is masked from 'package:ape':
   padding-right: 4px;
 }
 
-#zttgvpguzp .gt_column_spanner_outer:first-child {
+#prochuroyj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#zttgvpguzp .gt_column_spanner_outer:last-child {
+#prochuroyj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#zttgvpguzp .gt_column_spanner {
+#prochuroyj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -6374,11 +6524,11 @@ The following object is masked from 'package:ape':
   width: 100%;
 }
 
-#zttgvpguzp .gt_spanner_row {
+#prochuroyj .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#zttgvpguzp .gt_group_heading {
+#prochuroyj .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6404,7 +6554,7 @@ The following object is masked from 'package:ape':
   text-align: left;
 }
 
-#zttgvpguzp .gt_empty_group_heading {
+#prochuroyj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -6419,15 +6569,15 @@ The following object is masked from 'package:ape':
   vertical-align: middle;
 }
 
-#zttgvpguzp .gt_from_md > :first-child {
+#prochuroyj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#zttgvpguzp .gt_from_md > :last-child {
+#prochuroyj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#zttgvpguzp .gt_row {
+#prochuroyj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6446,7 +6596,7 @@ The following object is masked from 'package:ape':
   overflow-x: hidden;
 }
 
-#zttgvpguzp .gt_stub {
+#prochuroyj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6459,7 +6609,7 @@ The following object is masked from 'package:ape':
   padding-right: 5px;
 }
 
-#zttgvpguzp .gt_stub_row_group {
+#prochuroyj .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6473,15 +6623,15 @@ The following object is masked from 'package:ape':
   vertical-align: top;
 }
 
-#zttgvpguzp .gt_row_group_first td {
+#prochuroyj .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#zttgvpguzp .gt_row_group_first th {
+#prochuroyj .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#zttgvpguzp .gt_summary_row {
+#prochuroyj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6491,16 +6641,16 @@ The following object is masked from 'package:ape':
   padding-right: 5px;
 }
 
-#zttgvpguzp .gt_first_summary_row {
+#prochuroyj .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#zttgvpguzp .gt_first_summary_row.thick {
+#prochuroyj .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#zttgvpguzp .gt_last_summary_row {
+#prochuroyj .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6510,7 +6660,7 @@ The following object is masked from 'package:ape':
   border-bottom-color: #D3D3D3;
 }
 
-#zttgvpguzp .gt_grand_summary_row {
+#prochuroyj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6520,7 +6670,7 @@ The following object is masked from 'package:ape':
   padding-right: 5px;
 }
 
-#zttgvpguzp .gt_first_grand_summary_row {
+#prochuroyj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6530,7 +6680,7 @@ The following object is masked from 'package:ape':
   border-top-color: #D3D3D3;
 }
 
-#zttgvpguzp .gt_last_grand_summary_row_top {
+#prochuroyj .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6540,11 +6690,11 @@ The following object is masked from 'package:ape':
   border-bottom-color: #D3D3D3;
 }
 
-#zttgvpguzp .gt_striped {
+#prochuroyj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#zttgvpguzp .gt_table_body {
+#prochuroyj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6553,7 +6703,7 @@ The following object is masked from 'package:ape':
   border-bottom-color: #D3D3D3;
 }
 
-#zttgvpguzp .gt_footnotes {
+#prochuroyj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6567,7 +6717,7 @@ The following object is masked from 'package:ape':
   border-right-color: #D3D3D3;
 }
 
-#zttgvpguzp .gt_footnote {
+#prochuroyj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -6576,7 +6726,7 @@ The following object is masked from 'package:ape':
   padding-right: 5px;
 }
 
-#zttgvpguzp .gt_sourcenotes {
+#prochuroyj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6590,7 +6740,7 @@ The following object is masked from 'package:ape':
   border-right-color: #D3D3D3;
 }
 
-#zttgvpguzp .gt_sourcenote {
+#prochuroyj .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -6598,72 +6748,72 @@ The following object is masked from 'package:ape':
   padding-right: 5px;
 }
 
-#zttgvpguzp .gt_left {
+#prochuroyj .gt_left {
   text-align: left;
 }
 
-#zttgvpguzp .gt_center {
+#prochuroyj .gt_center {
   text-align: center;
 }
 
-#zttgvpguzp .gt_right {
+#prochuroyj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#zttgvpguzp .gt_font_normal {
+#prochuroyj .gt_font_normal {
   font-weight: normal;
 }
 
-#zttgvpguzp .gt_font_bold {
+#prochuroyj .gt_font_bold {
   font-weight: bold;
 }
 
-#zttgvpguzp .gt_font_italic {
+#prochuroyj .gt_font_italic {
   font-style: italic;
 }
 
-#zttgvpguzp .gt_super {
+#prochuroyj .gt_super {
   font-size: 65%;
 }
 
-#zttgvpguzp .gt_footnote_marks {
+#prochuroyj .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#zttgvpguzp .gt_asterisk {
+#prochuroyj .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#zttgvpguzp .gt_indent_1 {
+#prochuroyj .gt_indent_1 {
   text-indent: 5px;
 }
 
-#zttgvpguzp .gt_indent_2 {
+#prochuroyj .gt_indent_2 {
   text-indent: 10px;
 }
 
-#zttgvpguzp .gt_indent_3 {
+#prochuroyj .gt_indent_3 {
   text-indent: 15px;
 }
 
-#zttgvpguzp .gt_indent_4 {
+#prochuroyj .gt_indent_4 {
   text-indent: 20px;
 }
 
-#zttgvpguzp .gt_indent_5 {
+#prochuroyj .gt_indent_5 {
   text-indent: 25px;
 }
 
-#zttgvpguzp .katex-display {
+#prochuroyj .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#zttgvpguzp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#prochuroyj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -6724,7 +6874,7 @@ The following object is masked from 'package:ape':
 <td class="gt_row gt_center" headers="Tajima's D">-1.72</td>
 <td class="gt_row gt_center" headers="Tajima's D p-value">0.085</td>
 <td class="gt_row gt_center" headers="R2 test">0.04</td>
-<td class="gt_row gt_center" headers="R2 test p-value">0.008</td>
+<td class="gt_row gt_center" headers="R2 test p-value">0.006</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_center" headers="Locus">B3GNT9</td>
@@ -6742,7 +6892,7 @@ The following object is masked from 'package:ape':
 <td class="gt_row gt_center" headers="Tajima's D">-1.07</td>
 <td class="gt_row gt_center" headers="Tajima's D p-value">0.286</td>
 <td class="gt_row gt_center" headers="R2 test">0.04</td>
-<td class="gt_row gt_center" headers="R2 test p-value">0.021</td>
+<td class="gt_row gt_center" headers="R2 test p-value">0.017</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_center" headers="Locus">BIRC2</td>
@@ -6778,7 +6928,7 @@ The following object is masked from 'package:ape':
 <td class="gt_row gt_center" headers="Tajima's D">-1.48</td>
 <td class="gt_row gt_center" headers="Tajima's D p-value">0.140</td>
 <td class="gt_row gt_center" headers="R2 test">0.03</td>
-<td class="gt_row gt_center" headers="R2 test p-value">0.001</td>
+<td class="gt_row gt_center" headers="R2 test p-value">0.002</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_center" headers="Locus">GPRC6</td>
@@ -6870,20 +7020,47 @@ Chang, Winston. 2025. <span>“Webshot2: Take Screenshots of Web Pages.”</span
 <div id="ref-flot2009" class="csl-entry" role="listitem">
 Flot, J-F. 2009. <span>“Seqphase: A Web Tool for Interconverting Phase Input/Output Files and Fasta Sequence Alignments.”</span> <em>Molecular Ecology Resources</em> 10 (1): 162–66. <a href="https://doi.org/10.1111/j.1755-0998.2009.02732.x">https://doi.org/10.1111/j.1755-0998.2009.02732.x</a>.
 </div>
+<div id="ref-hebert2004" class="csl-entry" role="listitem">
+Hebert, Paul D. N, Mark Y Stoeckle, Tyler S Zemlak, and Charles M Francis. 2004. <span>“Identification of Birds Through DNA Barcodes.”</span> Edited by Charles Godfray. <em>PLoS Biology</em> 2 (10): e312. <a href="https://doi.org/10.1371/journal.pbio.0020312">https://doi.org/10.1371/journal.pbio.0020312</a>.
+</div>
 <div id="ref-gt" class="csl-entry" role="listitem">
 Iannone, Richard, Joe Cheng, Barret Schloerke, Ellis Hughes, Alexandra Lauer, JooYoung Seo, Ken Brevoort, and Olivier Roy. 2024. <span>“Gt: Easily Create Presentation-Ready Display Tables.”</span> <a href="https://CRAN.R-project.org/package=gt">https://CRAN.R-project.org/package=gt</a>.
 </div>
+<div id="ref-kearse2012" class="csl-entry" role="listitem">
+Kearse, Matthew, Richard Moir, Amy Wilson, Steven Stones-Havas, Matthew Cheung, Shane Sturrock, Simon Buxton, et al. 2012. <span>“Geneious Basic: An Integrated and Extendable Desktop Software Platform for the Organization and Analysis of Sequence Data.”</span> <em>Bioinformatics</em> 28 (12): 1647–49. <a href="https://doi.org/10.1093/bioinformatics/bts199">https://doi.org/10.1093/bioinformatics/bts199</a>.
+</div>
+<div id="ref-liu2018" class="csl-entry" role="listitem">
+Liu, Yang, Simin Liu, Chia-Fen Yeh, Nan Zhang, Guoling Chen, Pinjia Que, Lu Dong, and Shou-hsien Li. 2018. <span>“The First Set of Universal Nuclear Protein-Coding Loci Markers for Avian Phylogenetic and Population Genetic Studies.”</span> <em>Scientific Reports</em> 8 (1). <a href="https://doi.org/10.1038/s41598-018-33646-x">https://doi.org/10.1038/s41598-018-33646-x</a>.
+</div>
+<div id="ref-moonsamy2013" class="csl-entry" role="listitem">
+Moonsamy, P. V., T. Williams, P. Bonella, C. L. Holcomb, B. N. Höglund, G. Hillman, D. Goodridge, et al. 2013. <span>“High Throughput HLA Genotyping Using 454 Sequencing and the Fluidigm Access Array<span></span> System for Simplified Amplicon Library Preparation.”</span> <em>Tissue Antigens</em> 81 (3): 141–49. <a href="https://doi.org/10.1111/tan.12071">https://doi.org/10.1111/tan.12071</a>.
+</div>
 <div id="ref-pegas" class="csl-entry" role="listitem">
-Paradis, Emmanuel. 2010. <span>“Pegas: An <span></span>r<span></span> Package for Population Genetics with an Integrated–Modular Approach”</span> 26: 419–20. <a href="https://doi.org/10.1093/bioinformatics/btp696">https://doi.org/10.1093/bioinformatics/btp696</a>.
+Paradis, Emmanuel. 2010b. <span>“Pegas: An <span></span>r<span></span> Package for Population Genetics with an Integrated–Modular Approach”</span> 26: 419–20. <a href="https://doi.org/10.1093/bioinformatics/btp696">https://doi.org/10.1093/bioinformatics/btp696</a>.
+</div>
+<div id="ref-pegas-2" class="csl-entry" role="listitem">
+———. 2010a. <span>“Pegas: An <span></span>r<span></span> Package for Population Genetics with an Integrated–Modular Approach”</span> 26: 419–20. <a href="https://doi.org/10.1093/bioinformatics/btp696">https://doi.org/10.1093/bioinformatics/btp696</a>.
 </div>
 <div id="ref-ape" class="csl-entry" role="listitem">
-Paradis, Emmanuel, and Klaus Schliep. 2019. <span>“Ape 5.0: An Environment for Modern Phylogenetics and Evolutionary Analyses in <span></span>r<span></span>”</span> 35: 526–28. <a href="https://doi.org/10.1093/bioinformatics/bty633">https://doi.org/10.1093/bioinformatics/bty633</a>.
+Paradis, Emmanuel, and Klaus Schliep. 2019b. <span>“Ape 5.0: An Environment for Modern Phylogenetics and Evolutionary Analyses in <span></span>r<span></span>”</span> 35: 526–28. <a href="https://doi.org/10.1093/bioinformatics/bty633">https://doi.org/10.1093/bioinformatics/bty633</a>.
+</div>
+<div id="ref-ape-2" class="csl-entry" role="listitem">
+———. 2019a. <span>“Ape 5.0: An Environment for Modern Phylogenetics and Evolutionary Analyses in <span></span>r<span></span>”</span> 35: 526–28. <a href="https://doi.org/10.1093/bioinformatics/bty633">https://doi.org/10.1093/bioinformatics/bty633</a>.
 </div>
 <div id="ref-ramos-onsins2002" class="csl-entry" role="listitem">
 Ramos-Onsins, Sebastian E., and Julio Rozas. 2002. <span>“Statistical Properties of New Neutrality Tests Against Population Growth.”</span> <em>Molecular Biology and Evolution</em> 19 (12): 2092–2100. <a href="https://doi.org/10.1093/oxfordjournals.molbev.a004034">https://doi.org/10.1093/oxfordjournals.molbev.a004034</a>.
 </div>
+<div id="ref-rohland2012" class="csl-entry" role="listitem">
+Rohland, Nadin, and David Reich. 2012. <span>“Cost-Effective, High-Throughput DNA Sequencing Libraries for Multiplexed Target Capture.”</span> <em>Genome Research</em> 22 (5): 939–46. <a href="https://doi.org/10.1101/gr.128124.111">https://doi.org/10.1101/gr.128124.111</a>.
+</div>
 <div id="ref-phangorn" class="csl-entry" role="listitem">
-Schliep, Klaus. 2011. <span>“Phangorn: Phylogenetic Analysis in r”</span> 27. <a href="https://doi.org/10.1093/bioinformatics/btq706">https://doi.org/10.1093/bioinformatics/btq706</a>.
+Schliep, Klaus. 2011b. <span>“Phangorn: Phylogenetic Analysis in r”</span> 27. <a href="https://doi.org/10.1093/bioinformatics/btq706">https://doi.org/10.1093/bioinformatics/btq706</a>.
+</div>
+<div id="ref-phangorn-2" class="csl-entry" role="listitem">
+———. 2011a. <span>“Phangorn: Phylogenetic Analysis in r”</span> 27. <a href="https://doi.org/10.1093/bioinformatics/btq706">https://doi.org/10.1093/bioinformatics/btq706</a>.
+</div>
+<div id="ref-sorenson1999" class="csl-entry" role="listitem">
+Sorenson, Michael D., Jennifer C. Ast, Derek E. Dimcheff, Tamaki Yuri, and David P. Mindell. 1999. <span>“Primers for a PCR-Based Approach to Mitochondrial Genome Sequencing in Birds and Other Vertebrates.”</span> <em>Molecular Phylogenetics and Evolution</em> 12 (2): 105–14. <a href="https://doi.org/10.1006/mpev.1998.0602">https://doi.org/10.1006/mpev.1998.0602</a>.
 </div>
 <div id="ref-stephens2001" class="csl-entry" role="listitem">
 Stephens, Matthew, Nicholas J. Smith, and Peter Donnelly. 2001. <span>“A New Statistical Method for Haplotype Reconstruction from Population Data.”</span> <em>The American Journal of Human Genetics</em> 68 (4): 978–89. <a href="https://doi.org/10.1086/319501">https://doi.org/10.1086/319501</a>.
