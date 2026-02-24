@@ -168,7 +168,7 @@ div.csl-indent {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./ZosteropsSNPs_analysis.html"> 
-<span class="menu-text">Distance trees, PCA, UMAP, and DAPC analyses</span></a>
+<span class="menu-text">MSN, Distance trees, PCA, UMAP, and DAPC analyses</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./Zosterops_SNPFst.html"> 
@@ -200,6 +200,7 @@ div.csl-indent {
   <ul>
   <li><a href="#goals" id="toc-goals" class="nav-link active" data-scroll-target="#goals">Goals</a></li>
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a></li>
+  <li><a href="#general-methods-summary" id="toc-general-methods-summary" class="nav-link" data-scroll-target="#general-methods-summary">General methods summary</a></li>
   <li><a href="#data-files" id="toc-data-files" class="nav-link" data-scroll-target="#data-files">Data files</a>
   <ul class="collapse">
   <li><a href="#individual-samples-and-collecting-localities-snps" id="toc-individual-samples-and-collecting-localities-snps" class="nav-link" data-scroll-target="#individual-samples-and-collecting-localities-snps">Individual samples and collecting localities: SNPs</a></li>
@@ -245,22 +246,27 @@ div.csl-indent {
 
 <section id="goals" class="level2">
 <h2 class="anchored" data-anchor-id="goals">Goals</h2>
-<p>What follows is our workflow for mapping the sampling localities for all the individual samples included in the Zosterops single nucleotide polymorphism (SNP) dataset generated from a double digest restriction-site associated DNA (ddRAD) library (see DeRaad et al.2024 for details on the ddRAD library <span class="citation" data-cites="deraad2024">(<a href="#ref-deraad2024" role="doc-biblioref">DeRaad et al. 2024</a>)</span>.</p>
+<p>What follows is our workflow for mapping the sampling localities for all the individual samples included in the Zosterops single nucleotide polymorphism (SNP) data generated from a double digest restriction-site associated DNA (ddRAD) library and Sanger sequencing datasets (see DeRaad et al.2024 for details on the ddRAD library <span class="citation" data-cites="deraad2024">(<a href="#ref-deraad2024" role="doc-biblioref">DeRaad et al. 2024</a>)</span>.</p>
 </section>
 <section id="getting-started" class="level2">
 <h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
 <p>We are using R version 4.4.2, RStudio version 2024.09.1 for the analysis. Quarto version 1.6.39 for Mac OS was used to document the workflow. Set the working directory in RStudio to one where the <code>txt</code> file denoting the identity and sampling location of the samples are accessible.</p>
+</section>
+<section id="general-methods-summary" class="level2">
+<h2 class="anchored" data-anchor-id="general-methods-summary">General methods summary</h2>
+<p>Sampling included specimen vouchered tissue samples and museum archived blood sampling from individual banded birds in the field. Samples were sourced from the American Museum of Natural History (New York, NY, USA), Cincinnati Museum Center (Cincinnati, OH, USA), Field Museum of Natural History (Chicago, IL, USA), Institute of Zoology of the Guangdong Academy of Sciences (Guangzhou, People’s Republic of China), University of Kansas Biodiversity Institute and Natural History Museum (Lawrence, KS, USA), Natural History Museum of Los Angeles County (Los Angeles, CA, USA), National Museum of Nature and Science (Tokyo, Japan), Smithsonian National Museum of Natural History (Washington D.C., USA), and the University of Washington Burke Museum (Seattle, WA, USA). For the sake of clarity, we treat <em>Z. japonicus</em> and <em>Z. montanus</em> according to the former taxonomic arrangement (i.e., as separate species) as we test various species delimitation hypotheses. Our sampling includes multiple individuals within each of five out of the six recognized subspecies for <em>Z. japonicus</em> and seven out of the nine subspecies within <em>Z. montanus</em>, including sampling from all the recognized <em>Z. montanus</em> subspecies within the Philippines. A total of 208 genomic DNA (gDNA) samples were used in this study with 159 represented in the Sanger sequencing dataset, 124 represented in the filtered SNP dataset, and 75 samples overlapping both genetic datasets.</p>
+<p>Latitude and longitude were available for most of the vouchered museum specimens and where not available were estimated from the locality description using the BerkeleyMapper 2.0 (<a href="https://www.gbif.org/tool/81294/berkeleymapper" class="uri">https://www.gbif.org/tool/81294/berkeleymapper</a>) georeferencing tool. Maps showing approximate locations of individual samples were created using the R packages <em>ggplot2</em> <span class="citation" data-cites="ggplot2">(<a href="#ref-ggplot2" role="doc-biblioref">Wickham 2016</a>)</span>, <em>maps</em> <span class="citation" data-cites="maps">(<a href="#ref-maps" role="doc-biblioref">Becker, Minka, and Deckmyn. 2024</a>)</span>, and <em>sf</em> <span class="citation" data-cites="sf">(<a href="#ref-sf" role="doc-biblioref">Pebesma and Bivand 2023</a>)</span>.</p>
 </section>
 <section id="data-files" class="level2">
 <h2 class="anchored" data-anchor-id="data-files">Data files</h2>
 <p>This analysis requires the following data files.</p>
 <ul>
 <li><p><code>ZosteropsPOPS4_LatLong.txt</code> A text file of individual samples included in the SNP dataset matched with taxon, locale, and latitude and longitude.</p></li>
-<li><p><code>ZosteropsPOPS_SANGER_LatLong.txt</code> A text file of individual samples included in the Sanger sequencing dataset but that do not appear in the SNP dataset matched with taxon, locale, and latitude and longitude.</p></li>
+<li><p><code>ZosteropsPOPS_SANGER_LatLong.txt</code> A text file of individual samples included in the Sanger sequencing dataset that do not appear in the SNP dataset matched with taxon, locale, and latitude and longitude.</p></li>
 </ul>
 <section id="individual-samples-and-collecting-localities-snps" class="level3">
 <h3 class="anchored" data-anchor-id="individual-samples-and-collecting-localities-snps">Individual samples and collecting localities: SNPs</h3>
-<p>A tab delimited text file with the individual sample IDs, taxon designations, the name of the sampling locales (designated by island or province), and latitude and longitude was created to generate maps. To reduce the amount of clutter on the maps subspecies were clustered together in shared geographic groups. <em>Zosterops japonicus</em> subspecies were designated as either <em>Z. japonicus alani</em> for the most remote subspecies in the Volcano Islands or grouped within a single <em>Z. japonicus</em> designation for all the remaining subspecies. Subspecies for <em>Z. montanus</em> were clustered into three groups including a Palawan group (montanus PALAWAN) consisting of <em>Z. montanus parkesi</em>, a northern Philippine group (montanus NORTH) for those subspecies on Mindoro and Luzon (<em>Z. montanus halconensis</em> amd <em>Z. montanus whiteheadi</em>), and a southern Philippine group (montanus SOUTH) including the remaining <em>Z. montanus</em> subspecies included in the study (<em>Z. montanus diuatae</em>, <em>Z. montanus montanus</em>, <em>Z. montanus pectoralis</em>, <em>Z. montanus vulcani</em>, and an unnamed but suggested subspecies on Panay). Subspecies within the <em>Z. everetti</em> and <em>Z. nigrorum</em> species were lumped together under a single species designation for each in the sampling maps but distinguished in later analyses. Samples from introduced populations in Hawaii and California are included in this list, but they are excluded from the final figure. The individual samples and their accompanying data from the file <code>ZosteropsPOPS4_LatLong.txt</code> are listed below. All of the samples listed in this file appear in the SNP analyses.</p>
+<p>A tab delimited text file with the individual sample IDs, taxon designations, the name of the sampling locales (designated by island or province), and latitude and longitude was created to generate maps. To reduce the amount of clutter on the maps subspecies were clustered together in shared geographic groups. <em>Zosterops japonicus</em> subspecies were designated as either <em>Z. japonicus alani</em> for the most remote subspecies in the Ogasawara and Volcano Islands or grouped within a single <em>Z. japonicus</em> designation for all the remaining subspecies. Subspecies for <em>Z. montanus</em> were clustered into three groups including a Palawan group (montanus PALAWAN) consisting of <em>Z. montanus parkesi</em>, a northern Philippine group (montanus NORTH) for those subspecies on Mindoro and Luzon (<em>Z. montanus halconensis</em> amd <em>Z. montanus whiteheadi</em>), and a southern Philippine group (montanus SOUTH) including the remaining <em>Z. montanus</em> subspecies included in the study (<em>Z. montanus diuatae</em>, <em>Z. montanus montanus</em>, <em>Z. montanus pectoralis</em>, <em>Z. montanus vulcani</em>, and an unnamed but suggested subspecies on Panay). Subspecies within the <em>Z. everetti</em> and <em>Z. nigrorum</em> species were lumped together under a single species designation for each in the sampling maps but distinguished in later analyses. Samples from introduced populations in Hawaii and California are included in this list, but they are excluded from the final figure. The individual samples and their accompanying data from the file <code>ZosteropsPOPS4_LatLong.txt</code> are listed below. All of the samples listed in this file appear in the SNP analyses.</p>
 <pre><code>SAMPLE  TAXON   LOCALE  LAT LONG
 ZJlo012 japonicus   KIKAI   28.317  129.9401
 ZJlo015 japonicus   AMAMI   28.3192 129.2765
@@ -293,7 +299,7 @@ ZJal005 japonicus alani HAHAJIMA    26.6735 142.1541
 ZJal010 japonicus alani ANEJIMA 26.5506 142.1581
 ZJal011 japonicus alani ANEJIMA 26.5506 142.1581
 ZJal012 japonicus alani ANEJIMA 26.5506 142.1581
-ZJal020 japonicus alani IWOJIMA 24.7876 141.3156
+ZJal020 japonicus alani IWOTO 24.7876 141.3156
 ZJst007 japonicus   KOZUSHIMA   34.2055 139.1345
 ZJst009 japonicus   KOZUSHIMA   34.2055 139.1345
 ZJst010 japonicus   KOZUSHIMA   34.2055 139.1345
@@ -406,10 +412,10 @@ ZJal009 japonicus alani IMOTOJIMA   26.5587 142.2085
 ZJal013 japonicus alani ANEJIMA 26.5506 142.1581
 ZJal014 japonicus alani ANEJIMA 26.5506 142.1581
 ZJal015 japonicus alani IMOTOJIMA   26.5587 142.2085
-ZJal016 japonicus alani IWOJIMA 24.7876 141.3156
-ZJal017 japonicus alani IWOJIMA 24.7876 141.3156
-ZJal018 japonicus alani IWOJIMA 24.7876 141.3156
-ZJal019 japonicus alani IWOJIMA 24.7876 141.3156
+ZJal016 japonicus alani IWOTO   24.7876 141.3156
+ZJal017 japonicus alani IWOTO   24.7876 141.3156
+ZJal018 japonicus alani IWOTO   24.7876 141.3156
+ZJal019 japonicus alani IWOTO   24.7876 141.3156
 ZJba001 meyeni  LANYU   22.0436 121.5484
 ZJba002 meyeni  LANYU   22.0436 121.5484
 ZJja006 japonicus   JEJU    33.4890 126.4983
@@ -428,11 +434,11 @@ ZJja031 japonicus   HONSHU  35.7032 139.6975
 ZJja032 japonicus   HONSHU  35.7032 139.6975
 ZJja034 japonicus   TSUSHIMA    34.4081 129.2860
 Zjja035 japonicus   TSUSHIMA    34.4081 129.2860
-ZJlo001 japonicus   CHICHIJIMA  27.0744 142.2178
-ZJlo002 japonicus   CHICHIJIMA  27.0744 142.2178
-ZJlo003 japonicus   CHICHIJIMA  27.0744 142.2178
-ZJlo004 japonicus   CHICHIJIMA  27.0744 142.2178
-ZJlo005 japonicus   CHICHIJIMA  27.0744 142.2178
+ZJlo001 japonicus alani CHICHIJIMA  27.0744 142.2178
+ZJlo002 japonicus alani CHICHIJIMA  27.0744 142.2178
+ZJlo003 japonicus alani CHICHIJIMA  27.0744 142.2178
+ZJlo004 japonicus alani CHICHIJIMA  27.0744 142.2178
+ZJlo005 japonicus alani CHICHIJIMA  27.0744 142.2178
 ZJlo006 japonicus   IRIOMOTE    24.3301 123.8188
 ZJlo007 japonicus   OKINAWA 26.7456 128.1779
 ZJlo008 japonicus   OKINAWA 26.7456 128.1779
@@ -500,9 +506,12 @@ ZMxx008 meyeni  LANYU   22.0093 121.5721</code></pre>
 <pre><code>[1] "./log/ZosteropsMaps.log"</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#load in each library used for mapping</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) <span class="co">#v3.4.1</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(maps) <span class="co">#v3.4.1</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf) <span class="co">#v1.0-12</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) <span class="co">#v3.4.1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'ggplot2' was built under R version 4.4.3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(maps) <span class="co">#v3.4.1</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf) <span class="co">#v1.0-12</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Linking to GEOS 3.11.0, GDAL 3.5.3, PROJ 9.1.0; sf_use_s2() is TRUE</code></pre>
 </div>
@@ -512,38 +521,38 @@ ZMxx008 meyeni  LANYU   22.0093 121.5721</code></pre>
 <h2 class="anchored" data-anchor-id="read-and-edit-data-snp-sampling">Read and edit data: SNP sampling</h2>
 <p>Read the data into a data frame using <code>read.csv</code> and indicate that the fields are tab delimited (<code>sep = "\t"</code>) and contain a header row (<code>header = TRUE</code>). First complete this process for the sampling data for the SNP dataset.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read tab delimited (sep = "\t") file with latitude and longitude</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>ZLocations <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Data/Location files/ZosteropsPOPS4_LatLong.txt"</span>, </span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>                       <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read tab delimited (sep = "\t") file with latitude and longitude</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>ZLocations <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Data/Location files/ZosteropsPOPS4_LatLong.txt"</span>, </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>                       <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Remove the samples from the introduced populations. Those samples are from Los Angeles (<em>Z. simplex</em>) and Hawaii (<em>Z. japonicus</em>) and are included in analyses but will not appear on the sampling maps.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove Los Angeles and Hawaii samples</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>ZLocations_NATIVE <span class="ot">&lt;-</span> ZLocations[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">105</span>,<span class="dv">106</span>,<span class="dv">107</span>,<span class="dv">120</span>,<span class="dv">121</span>,<span class="dv">122</span>,<span class="dv">123</span>,<span class="dv">124</span>),]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove Los Angeles and Hawaii samples</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>ZLocations_NATIVE <span class="ot">&lt;-</span> ZLocations[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">105</span>,<span class="dv">106</span>,<span class="dv">107</span>,<span class="dv">120</span>,<span class="dv">121</span>,<span class="dv">122</span>,<span class="dv">123</span>,<span class="dv">124</span>),]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="count-individual-samples-per-taxon-snp-sampling" class="level2">
 <h2 class="anchored" data-anchor-id="count-individual-samples-per-taxon-snp-sampling">Count individual samples per taxon: SNP sampling</h2>
 <p>To illustrate the relative number of individual samples from any particular site we will count the number of samples associated with a unique latitude and longitude. First split the data frame by the TAXON column.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Split by TAXON</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>Zlocations_NATIVE_TAXON <span class="ot">&lt;-</span> <span class="fu">split</span>(ZLocations_NATIVE, </span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>                                 ZLocations_NATIVE<span class="sc">$</span>TAXON)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Split by TAXON</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>Zlocations_NATIVE_TAXON <span class="ot">&lt;-</span> <span class="fu">split</span>(ZLocations_NATIVE, </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>                                 ZLocations_NATIVE<span class="sc">$</span>TAXON)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Using a loop count samples grouped by LAT and LONG columns and save this as a new data frame called <code>sampling.df</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># init sampling.df which will be a df of samples grouped by unique lat/long</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>sampling.df<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="cn">NULL</span>)</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># use a for loop to split the dataframe by species and summarize the number </span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># of individuals sampled at each locality for each species</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">names</span>(Zlocations_NATIVE_TAXON)){</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  samps <span class="ot">&lt;-</span> Zlocations_NATIVE_TAXON[[i]] <span class="sc">%&gt;%</span> </span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">group_by</span>(LAT, LONG) <span class="sc">%&gt;%</span> </span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">summarize</span>(<span class="at">count=</span>dplyr<span class="sc">::</span><span class="fu">n</span>())</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="fu">rep</span>(i, <span class="at">times=</span><span class="fu">nrow</span>(samps)), samps)</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  sampling.df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">rbind</span>(sampling.df, df))</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># init sampling.df which will be a df of samples grouped by unique lat/long</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>sampling.df<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="cn">NULL</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># use a for loop to split the dataframe by species and summarize the number </span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># of individuals sampled at each locality for each species</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">names</span>(Zlocations_NATIVE_TAXON)){</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  samps <span class="ot">&lt;-</span> Zlocations_NATIVE_TAXON[[i]] <span class="sc">%&gt;%</span> </span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">group_by</span>(LAT, LONG) <span class="sc">%&gt;%</span> </span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">summarize</span>(<span class="at">count=</span>dplyr<span class="sc">::</span><span class="fu">n</span>())</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="fu">rep</span>(i, <span class="at">times=</span><span class="fu">nrow</span>(samps)), samps)</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  sampling.df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">rbind</span>(sampling.df, df))</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`summarise()` has grouped output by 'LAT'. You can override using the `.groups`
 argument.
@@ -582,45 +591,45 @@ New names:</code></pre>
 </div>
 <p>Edit the column names in the new <code>sampling.df</code> data frame.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#fix colnames</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(sampling.df)<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"Species"</span>,<span class="st">"Latitude"</span>,<span class="st">"Longitude"</span>,<span class="st">"count"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#fix colnames</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(sampling.df)<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"Species"</span>,<span class="st">"Latitude"</span>,<span class="st">"Longitude"</span>,<span class="st">"count"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="read-and-edit-data-sanger-sampling" class="level2">
 <h2 class="anchored" data-anchor-id="read-and-edit-data-sanger-sampling">Read and edit data: Sanger sampling</h2>
 <p>Repeat the process above for the file containing the additional samples included in the Sanger sequencing dataset. There are no samples from introduced populations in the Sanger sequencing data so there is no need to follow up with the editing step.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pull location data for samples in the SANGER sequencing dataset </span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># but not in the NSP dataset</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Read tab delimited (sep = "\t") file with latitude and longitude</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>ZLocationsSANGER <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Data/Location files/ZosteropsPOPS_SANGER_LatLong.txt"</span>, </span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>                             <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pull location data for samples in the SANGER sequencing dataset </span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># but not in the NSP dataset</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Read tab delimited (sep = "\t") file with latitude and longitude</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>ZLocationsSANGER <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Data/Location files/ZosteropsPOPS_SANGER_LatLong.txt"</span>, </span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>                             <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="count-individual-samples-per-taxon-sanger-sampling" class="level2">
 <h2 class="anchored" data-anchor-id="count-individual-samples-per-taxon-sanger-sampling">Count individual samples per taxon: Sanger sampling</h2>
 <p>Split the data frame for the Sanger sequencing sampling by the TAXON column.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Split by TAXON</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>ZlocationsSANGER_TAXON <span class="ot">&lt;-</span> <span class="fu">split</span>(ZLocationsSANGER, </span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>                                ZLocationsSANGER<span class="sc">$</span>TAXON)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Split by TAXON</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>ZlocationsSANGER_TAXON <span class="ot">&lt;-</span> <span class="fu">split</span>(ZLocationsSANGER, </span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>                                ZLocationsSANGER<span class="sc">$</span>TAXON)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Using a loop count samples grouped by LAT and LONG columns and save this as a new data frame called <code>samplingSANGER.df</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># init samplingSANGER.df which will be a df of samples </span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># grouped by unique lat/long</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>samplingSANGER.df<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="cn">NULL</span>)</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co">#use a for loop to split the dataframe by species and </span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co">#summarize the number of individuals sampled at each </span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co">#locality for each species</span></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">names</span>(ZlocationsSANGER_TAXON)){</span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  samps <span class="ot">&lt;-</span> ZlocationsSANGER_TAXON[[i]] <span class="sc">%&gt;%</span> </span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">group_by</span>(LAT, LONG) <span class="sc">%&gt;%</span> </span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">summarize</span>(<span class="at">count=</span>dplyr<span class="sc">::</span><span class="fu">n</span>())</span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="fu">rep</span>(i, <span class="at">times=</span><span class="fu">nrow</span>(samps)), samps)</span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>  samplingSANGER.df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">rbind</span>(samplingSANGER.df, df))</span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># init samplingSANGER.df which will be a df of samples </span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># grouped by unique lat/long</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>samplingSANGER.df<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="cn">NULL</span>)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co">#use a for loop to split the dataframe by species and </span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co">#summarize the number of individuals sampled at each </span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co">#locality for each species</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">names</span>(ZlocationsSANGER_TAXON)){</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>  samps <span class="ot">&lt;-</span> ZlocationsSANGER_TAXON[[i]] <span class="sc">%&gt;%</span> </span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">group_by</span>(LAT, LONG) <span class="sc">%&gt;%</span> </span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">summarize</span>(<span class="at">count=</span>dplyr<span class="sc">::</span><span class="fu">n</span>())</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="fu">rep</span>(i, <span class="at">times=</span><span class="fu">nrow</span>(samps)), samps)</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>  samplingSANGER.df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">rbind</span>(samplingSANGER.df, df))</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`summarise()` has grouped output by 'LAT'. You can override using the `.groups`
 argument.
@@ -647,8 +656,8 @@ New names:</code></pre>
 </div>
 <p>Edit the column names in the new <code>samplingSANGER.df</code> data frame.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">#fix colnames</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(samplingSANGER.df)<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"Species"</span>,<span class="st">"Latitude"</span>,<span class="st">"Longitude"</span>,<span class="st">"count"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#fix colnames</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(samplingSANGER.df)<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"Species"</span>,<span class="st">"Latitude"</span>,<span class="st">"Longitude"</span>,<span class="st">"count"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="create-a-sampling-map" class="level2">
@@ -657,35 +666,35 @@ New names:</code></pre>
 <h3 class="anchored" data-anchor-id="mapping-all-samples">Mapping all samples</h3>
 <p>Download a world base map.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">#make base world map</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>pac<span class="ot">&lt;-</span><span class="fu">map_data</span>(<span class="st">"world"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">#make base world map</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>pac<span class="ot">&lt;-</span><span class="fu">map_data</span>(<span class="st">"world"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>First create a sampling map for all the Zosterops samples in the study (excluding those from introduced populations). Include two lines with the <code>geo_point</code> command. One line will define those points from the SNP sampling data frame (<code>sampling.df</code>) and identify those points as filled circles (<code>pch=21</code>). The next line will define the points using the <code>geo_point</code> command for the additional Sanger sequencing samples (<code>samplingSANGER.df</code>) and identify those points as triangles (<code>pch=24</code>). Because many of the sampling locations are the same for different taxa define <code>position = position_jitter(h=0.5, w=0.5)</code> to offset the points on the map so as they do not perfectly overlap. Also set <code>alpha=0.5</code> to make the points transparent. This will also help in showing those places where sampled taxa overlap in location.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot all native samples</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>()<span class="sc">+</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="at">data =</span> pac, <span class="fu">aes</span>(<span class="at">x=</span>long, <span class="at">y =</span> lat, <span class="at">group =</span> group), </span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">fill=</span><span class="st">"lightgrey"</span>, <span class="at">col=</span><span class="st">"black"</span>, <span class="at">cex=</span>.<span class="dv">1</span>)<span class="sc">+</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">90</span>, <span class="dv">145</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="dv">48</span>)) <span class="sc">+</span> </span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> sampling.df, <span class="fu">aes</span>(<span class="at">x =</span> Longitude, <span class="at">y =</span> Latitude, </span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">fill=</span>Species, <span class="at">size=</span>count), </span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">h =</span> <span class="fl">0.5</span>, <span class="at">w =</span> <span class="fl">0.5</span>), <span class="at">pch=</span><span class="dv">21</span>, </span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">color=</span><span class="st">"black"</span>, <span class="at">alpha =</span><span class="fl">0.5</span>, <span class="at">show.legend=</span><span class="cn">TRUE</span>) <span class="sc">+</span></span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> samplingSANGER.df, <span class="fu">aes</span>(<span class="at">x =</span> Longitude, <span class="at">y =</span> Latitude, </span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">fill=</span>Species, <span class="at">size=</span>count), </span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">h =</span> <span class="fl">0.5</span>, <span class="at">w =</span> <span class="fl">0.5</span>), <span class="at">pch=</span><span class="dv">24</span>, </span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>             <span class="at">color=</span><span class="st">"black"</span>, <span class="at">alpha =</span><span class="fl">0.5</span>, <span class="at">show.legend=</span><span class="cn">TRUE</span>) <span class="sc">+</span></span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
-<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"#004949"</span>, <span class="st">"#DB6D00"</span>, <span class="st">"#D82632"</span>, </span>
-<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"#290AD8"</span>, <span class="st">"#FED439"</span>, <span class="st">"#B66DFF"</span>, </span>
-<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"#006DDB"</span>, <span class="st">"#FA9C88"</span>, <span class="st">"#924900"</span>, </span>
-<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"#7BA9CB"</span>, <span class="st">"#008600"</span>))<span class="sc">+</span></span>
-<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_size_continuous</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">6</span>))<span class="sc">+</span></span>
-<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">override.aes =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">8</span>), <span class="at">order=</span><span class="dv">1</span>, </span>
-<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>                             <span class="at">label.theme =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"italic"</span>), </span>
-<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>                             <span class="at">position =</span> <span class="st">"left"</span>),</span>
-<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>         <span class="at">linewidth =</span> <span class="fu">guide_legend</span>(<span class="at">order =</span> <span class="dv">2</span>))<span class="sc">+</span></span>
-<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"left"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot all native samples</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>()<span class="sc">+</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="at">data =</span> pac, <span class="fu">aes</span>(<span class="at">x=</span>long, <span class="at">y =</span> lat, <span class="at">group =</span> group), </span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">fill=</span><span class="st">"lightgrey"</span>, <span class="at">col=</span><span class="st">"black"</span>, <span class="at">cex=</span>.<span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">90</span>, <span class="dv">145</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="dv">48</span>)) <span class="sc">+</span> </span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> sampling.df, <span class="fu">aes</span>(<span class="at">x =</span> Longitude, <span class="at">y =</span> Latitude, </span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">fill=</span>Species, <span class="at">size=</span>count), </span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">h =</span> <span class="fl">0.5</span>, <span class="at">w =</span> <span class="fl">0.5</span>), <span class="at">pch=</span><span class="dv">21</span>, </span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">color=</span><span class="st">"black"</span>, <span class="at">alpha =</span><span class="fl">0.5</span>, <span class="at">show.legend=</span><span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> samplingSANGER.df, <span class="fu">aes</span>(<span class="at">x =</span> Longitude, <span class="at">y =</span> Latitude, </span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">fill=</span>Species, <span class="at">size=</span>count), </span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">h =</span> <span class="fl">0.5</span>, <span class="at">w =</span> <span class="fl">0.5</span>), <span class="at">pch=</span><span class="dv">24</span>, </span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>             <span class="at">color=</span><span class="st">"black"</span>, <span class="at">alpha =</span><span class="fl">0.5</span>, <span class="at">show.legend=</span><span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"#004949"</span>, <span class="st">"#DB6D00"</span>, <span class="st">"#D82632"</span>, </span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"#290AD8"</span>, <span class="st">"#FED439"</span>, <span class="st">"#B66DFF"</span>, </span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"#006DDB"</span>, <span class="st">"#FA9C88"</span>, <span class="st">"#924900"</span>, </span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"#7BA9CB"</span>, <span class="st">"#008600"</span>))<span class="sc">+</span></span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_size_continuous</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">6</span>))<span class="sc">+</span></span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">override.aes =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">8</span>), <span class="at">order=</span><span class="dv">1</span>, </span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>                             <span class="at">label.theme =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"italic"</span>), </span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a>                             <span class="at">position =</span> <span class="st">"left"</span>),</span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>         <span class="at">linewidth =</span> <span class="fu">guide_legend</span>(<span class="at">order =</span> <span class="dv">2</span>))<span class="sc">+</span></span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"left"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
 ℹ Please use `linewidth` instead.</code></pre>
@@ -700,34 +709,34 @@ New names:</code></pre>
 </div>
 <p>Save the sampling map as a <code>png</code> file.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the sampling plot</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"ZosteropsSamplingMapALL.png"</span>, <span class="at">device =</span> <span class="st">"png"</span>, </span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">width =</span> <span class="dv">9</span>, <span class="at">height =</span> <span class="fl">6.5</span>, <span class="at">units =</span> <span class="st">"in"</span>, <span class="at">dpi =</span> <span class="dv">500</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the sampling plot</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"ZosteropsSamplingMapALL.png"</span>, <span class="at">device =</span> <span class="st">"png"</span>, </span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">width =</span> <span class="dv">9</span>, <span class="at">height =</span> <span class="fl">6.5</span>, <span class="at">units =</span> <span class="st">"in"</span>, <span class="at">dpi =</span> <span class="dv">500</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="mapping-ryukyu-island-samples" class="level3">
 <h3 class="anchored" data-anchor-id="mapping-ryukyu-island-samples">Mapping Ryukyu Island samples</h3>
 <p>Because many of the samples were collected on small islands and may appear close together at a large scale, create more geographically focused maps for particular regions with heavy sampling. This may be accomplished by editing the <code>coord_sf</code> command to narrow the latitude and longitude for each map. First create a map that is focused on those samples from the Ryukyu Islands.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot all native samples in the Ryukyu Islands</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>()<span class="sc">+</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="at">data =</span> pac, <span class="fu">aes</span>(<span class="at">x=</span>long, <span class="at">y =</span> lat, <span class="at">group =</span> group), </span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">fill=</span><span class="st">"lightgrey"</span>, <span class="at">col=</span><span class="st">"black"</span>, <span class="at">cex=</span>.<span class="dv">1</span>)<span class="sc">+</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">122</span>, <span class="dv">131</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">24</span>, <span class="dv">31</span>)) <span class="sc">+</span> </span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> sampling.df, <span class="fu">aes</span>(<span class="at">x =</span> Longitude, <span class="at">y =</span> Latitude, </span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">fill=</span>Species, <span class="at">size=</span>count), </span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">h =</span> <span class="fl">0.1</span>, <span class="at">w =</span> <span class="fl">0.1</span>), <span class="at">pch=</span><span class="dv">21</span>, </span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">color=</span><span class="st">"black"</span>, <span class="at">alpha =</span><span class="fl">0.5</span>, <span class="at">show.legend=</span><span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> samplingSANGER.df, <span class="fu">aes</span>(<span class="at">x =</span> Longitude, <span class="at">y =</span> Latitude, </span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">fill=</span>Species, <span class="at">size=</span>count), </span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">h =</span> <span class="fl">0.1</span>, <span class="at">w =</span> <span class="fl">0.1</span>), <span class="at">pch=</span><span class="dv">24</span>, </span>
-<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>             <span class="at">color=</span><span class="st">"black"</span>, <span class="at">alpha =</span><span class="fl">0.5</span>, <span class="at">show.legend=</span><span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
-<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"#004949"</span>, <span class="st">"#DB6D00"</span>, <span class="st">"#D82632"</span>, </span>
-<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"#290AD8"</span>, <span class="st">"#FED439"</span>, <span class="st">"#B66DFF"</span>, </span>
-<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"#006DDB"</span>, <span class="st">"#FA9C88"</span>, <span class="st">"#924900"</span>, </span>
-<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"#7BA9CB"</span>, <span class="st">"#008600"</span>))<span class="sc">+</span></span>
-<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_size_continuous</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">6</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot all native samples in the Ryukyu Islands</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>()<span class="sc">+</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="at">data =</span> pac, <span class="fu">aes</span>(<span class="at">x=</span>long, <span class="at">y =</span> lat, <span class="at">group =</span> group), </span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">fill=</span><span class="st">"lightgrey"</span>, <span class="at">col=</span><span class="st">"black"</span>, <span class="at">cex=</span>.<span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">122</span>, <span class="dv">131</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">24</span>, <span class="dv">31</span>)) <span class="sc">+</span> </span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> sampling.df, <span class="fu">aes</span>(<span class="at">x =</span> Longitude, <span class="at">y =</span> Latitude, </span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">fill=</span>Species, <span class="at">size=</span>count), </span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">h =</span> <span class="fl">0.1</span>, <span class="at">w =</span> <span class="fl">0.1</span>), <span class="at">pch=</span><span class="dv">21</span>, </span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">color=</span><span class="st">"black"</span>, <span class="at">alpha =</span><span class="fl">0.5</span>, <span class="at">show.legend=</span><span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> samplingSANGER.df, <span class="fu">aes</span>(<span class="at">x =</span> Longitude, <span class="at">y =</span> Latitude, </span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">fill=</span>Species, <span class="at">size=</span>count), </span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">h =</span> <span class="fl">0.1</span>, <span class="at">w =</span> <span class="fl">0.1</span>), <span class="at">pch=</span><span class="dv">24</span>, </span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>             <span class="at">color=</span><span class="st">"black"</span>, <span class="at">alpha =</span><span class="fl">0.5</span>, <span class="at">show.legend=</span><span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"#004949"</span>, <span class="st">"#DB6D00"</span>, <span class="st">"#D82632"</span>, </span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"#290AD8"</span>, <span class="st">"#FED439"</span>, <span class="st">"#B66DFF"</span>, </span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"#006DDB"</span>, <span class="st">"#FA9C88"</span>, <span class="st">"#924900"</span>, </span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"#7BA9CB"</span>, <span class="st">"#008600"</span>))<span class="sc">+</span></span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_size_continuous</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">6</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -738,67 +747,28 @@ New names:</code></pre>
 </div>
 <p>Save the Ryukyu Islands sampling map as a <code>png</code> file.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the sampling plot</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"ZosteropsSamplingMapRYUKYU.png"</span>, <span class="at">device =</span> <span class="st">"png"</span>, </span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">width =</span> <span class="dv">9</span>, <span class="at">height =</span> <span class="fl">6.5</span>, <span class="at">units =</span> <span class="st">"in"</span>, <span class="at">dpi =</span> <span class="dv">500</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the sampling plot</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"ZosteropsSamplingMapRYUKYU.png"</span>, <span class="at">device =</span> <span class="st">"png"</span>, </span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">width =</span> <span class="dv">9</span>, <span class="at">height =</span> <span class="fl">6.5</span>, <span class="at">units =</span> <span class="st">"in"</span>, <span class="at">dpi =</span> <span class="dv">500</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="mapping-ogasawara-and-volcano-island-samples" class="level3">
 <h3 class="anchored" data-anchor-id="mapping-ogasawara-and-volcano-island-samples">Mapping Ogasawara and Volcano Island samples</h3>
-<p>Because the samples from the Ogasawara and Volcano Islands are isolated geographically and tightly clustered make a separate map for those samples. Many of these islands are tiny and will not show up on the map but rest assured they are there.</p>
+<p>Because the samples from the Ogasawara and Volcano Islands are isolated geographically make a separate map for those samples. Many of these islands are tiny and will not show up on the map but rest assured they are there.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot all native samples in the Ogasawara and Volcano Islands</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>()<span class="sc">+</span></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="at">data =</span> pac, <span class="fu">aes</span>(<span class="at">x=</span>long, <span class="at">y =</span> lat, <span class="at">group =</span> group), </span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">fill=</span><span class="st">"lightgrey"</span>, </span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">col=</span><span class="st">"black"</span>, <span class="at">cex=</span>.<span class="dv">1</span>)<span class="sc">+</span></span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">141</span>, <span class="dv">143</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="fl">24.4</span>, <span class="fl">27.2</span>)) <span class="sc">+</span> </span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> sampling.df, <span class="fu">aes</span>(<span class="at">x =</span> Longitude, <span class="at">y =</span> Latitude, </span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">fill=</span>Species, <span class="at">size=</span>count), </span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">h =</span> <span class="fl">0.05</span>, <span class="at">w =</span> <span class="fl">0.05</span>), <span class="at">pch=</span><span class="dv">21</span>, </span>
-<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">color=</span><span class="st">"black"</span>, <span class="at">alpha =</span><span class="fl">0.5</span>, <span class="at">show.legend=</span><span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> samplingSANGER.df, <span class="fu">aes</span>(<span class="at">x =</span> Longitude, <span class="at">y =</span> Latitude, </span>
-<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">fill=</span>Species, <span class="at">size=</span>count), </span>
-<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">h =</span> <span class="fl">0.05</span>, <span class="at">w =</span> <span class="fl">0.05</span>), <span class="at">pch=</span><span class="dv">24</span>, </span>
-<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>             <span class="at">color=</span><span class="st">"black"</span>, <span class="at">alpha =</span><span class="fl">0.5</span>, <span class="at">show.legend=</span><span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
-<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"#004949"</span>, <span class="st">"#DB6D00"</span>, <span class="st">"#D82632"</span>, </span>
-<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"#290AD8"</span>, <span class="st">"#FED439"</span>, <span class="st">"#B66DFF"</span>, </span>
-<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"#006DDB"</span>, <span class="st">"#FA9C88"</span>, <span class="st">"#924900"</span>, </span>
-<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"#7BA9CB"</span>, <span class="st">"#008600"</span>))<span class="sc">+</span></span>
-<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_size_continuous</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">6</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="ZosteropsMaps_files/figure-html/Ogasawara and Volcano Islands samping map-1.png" class="img-fluid figure-img" width="576"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Save the Ogasawara and Volcano Islands sampling map as a <code>png</code> file.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the sampling plot</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"ZosteropsSamplingMapOGASAWARA.png"</span>, <span class="at">device =</span> <span class="st">"png"</span>, </span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">width =</span> <span class="dv">9</span>, <span class="at">height =</span> <span class="fl">6.5</span>, <span class="at">units =</span> <span class="st">"in"</span>, <span class="at">dpi =</span> <span class="dv">500</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="mapping-philippine-samples" class="level3">
-<h3 class="anchored" data-anchor-id="mapping-philippine-samples">Mapping Philippine samples</h3>
-<p>Many samples across multiple taxa were sampled in the Philippines for this study. Create a separate map that focuses on those samples.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot all native samples in the Philippines</span></span>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot all native samples in the Ogasawara and Volcano Islands</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>()<span class="sc">+</span></span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="at">data =</span> pac, <span class="fu">aes</span>(<span class="at">x=</span>long, <span class="at">y =</span> lat, <span class="at">group =</span> group), </span>
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">fill=</span><span class="st">"lightgrey"</span>, </span>
 <span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">col=</span><span class="st">"black"</span>, <span class="at">cex=</span>.<span class="dv">1</span>)<span class="sc">+</span></span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">115</span>, <span class="dv">127</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="fl">20.3</span>)) <span class="sc">+</span> </span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">141</span>, <span class="dv">143</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="fl">24.4</span>, <span class="fl">27.2</span>)) <span class="sc">+</span> </span>
 <span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> sampling.df, <span class="fu">aes</span>(<span class="at">x =</span> Longitude, <span class="at">y =</span> Latitude, </span>
 <span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">fill=</span>Species, <span class="at">size=</span>count), </span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">h =</span> <span class="fl">0.2</span>, <span class="at">w =</span> <span class="fl">0.2</span>), <span class="at">pch=</span><span class="dv">21</span>, </span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">h =</span> <span class="fl">0.05</span>, <span class="at">w =</span> <span class="fl">0.05</span>), <span class="at">pch=</span><span class="dv">21</span>, </span>
 <span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">color=</span><span class="st">"black"</span>, <span class="at">alpha =</span><span class="fl">0.5</span>, <span class="at">show.legend=</span><span class="cn">FALSE</span>) <span class="sc">+</span></span>
 <span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> samplingSANGER.df, <span class="fu">aes</span>(<span class="at">x =</span> Longitude, <span class="at">y =</span> Latitude, </span>
 <span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">fill=</span>Species, <span class="at">size=</span>count), </span>
-<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">h =</span> <span class="fl">0.2</span>, <span class="at">w =</span> <span class="fl">0.2</span>), <span class="at">pch=</span><span class="dv">24</span>, </span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">h =</span> <span class="fl">0.05</span>, <span class="at">w =</span> <span class="fl">0.05</span>), <span class="at">pch=</span><span class="dv">24</span>, </span>
 <span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>             <span class="at">color=</span><span class="st">"black"</span>, <span class="at">alpha =</span><span class="fl">0.5</span>, <span class="at">show.legend=</span><span class="cn">FALSE</span>) <span class="sc">+</span></span>
 <span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
 <span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"#004949"</span>, <span class="st">"#DB6D00"</span>, <span class="st">"#D82632"</span>, </span>
@@ -809,6 +779,45 @@ New names:</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
+<p><img src="ZosteropsMaps_files/figure-html/Ogasawara and Volcano Islands samping map-1.png" class="img-fluid figure-img" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Save the Ogasawara and Volcano Islands sampling map as a <code>png</code> file.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the sampling plot</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"ZosteropsSamplingMapOGASAWARA.png"</span>, <span class="at">device =</span> <span class="st">"png"</span>, </span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">width =</span> <span class="dv">9</span>, <span class="at">height =</span> <span class="fl">6.5</span>, <span class="at">units =</span> <span class="st">"in"</span>, <span class="at">dpi =</span> <span class="dv">500</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="mapping-philippine-samples" class="level3">
+<h3 class="anchored" data-anchor-id="mapping-philippine-samples">Mapping Philippine samples</h3>
+<p>Many samples across multiple taxa were sampled in the Philippines for this study. Create a separate map that focuses on those samples.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot all native samples in the Philippines</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>()<span class="sc">+</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="at">data =</span> pac, <span class="fu">aes</span>(<span class="at">x=</span>long, <span class="at">y =</span> lat, <span class="at">group =</span> group), </span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">fill=</span><span class="st">"lightgrey"</span>, </span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">col=</span><span class="st">"black"</span>, <span class="at">cex=</span>.<span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">115</span>, <span class="dv">127</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="fl">20.3</span>)) <span class="sc">+</span> </span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> sampling.df, <span class="fu">aes</span>(<span class="at">x =</span> Longitude, <span class="at">y =</span> Latitude, </span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">fill=</span>Species, <span class="at">size=</span>count), </span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">h =</span> <span class="fl">0.2</span>, <span class="at">w =</span> <span class="fl">0.2</span>), <span class="at">pch=</span><span class="dv">21</span>, </span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">color=</span><span class="st">"black"</span>, <span class="at">alpha =</span><span class="fl">0.5</span>, <span class="at">show.legend=</span><span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> samplingSANGER.df, <span class="fu">aes</span>(<span class="at">x =</span> Longitude, <span class="at">y =</span> Latitude, </span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">fill=</span>Species, <span class="at">size=</span>count), </span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">h =</span> <span class="fl">0.2</span>, <span class="at">w =</span> <span class="fl">0.2</span>), <span class="at">pch=</span><span class="dv">24</span>, </span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>             <span class="at">color=</span><span class="st">"black"</span>, <span class="at">alpha =</span><span class="fl">0.5</span>, <span class="at">show.legend=</span><span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"#004949"</span>, <span class="st">"#DB6D00"</span>, <span class="st">"#D82632"</span>, </span>
+<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"#290AD8"</span>, <span class="st">"#FED439"</span>, <span class="st">"#B66DFF"</span>, </span>
+<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"#006DDB"</span>, <span class="st">"#FA9C88"</span>, <span class="st">"#924900"</span>, </span>
+<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"#7BA9CB"</span>, <span class="st">"#008600"</span>))<span class="sc">+</span></span>
+<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_size_continuous</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">6</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
 <p><img src="ZosteropsMaps_files/figure-html/Philippine sampling map-1.png" class="img-fluid figure-img" width="576"></p>
 </figure>
 </div>
@@ -816,9 +825,9 @@ New names:</code></pre>
 </div>
 <p>Save the Philippine sampling map as a <code>png</code> file.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the sampling plot</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"ZosteropsSamplingMapPHILIPPINES.png"</span>, <span class="at">device =</span> <span class="st">"png"</span>, </span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">width =</span> <span class="dv">9</span>, <span class="at">height =</span> <span class="fl">6.5</span>, <span class="at">units =</span> <span class="st">"in"</span>, <span class="at">dpi =</span> <span class="dv">500</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the sampling plot</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"ZosteropsSamplingMapPHILIPPINES.png"</span>, <span class="at">device =</span> <span class="st">"png"</span>, </span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">width =</span> <span class="dv">9</span>, <span class="at">height =</span> <span class="fl">6.5</span>, <span class="at">units =</span> <span class="st">"in"</span>, <span class="at">dpi =</span> <span class="dv">500</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
@@ -826,7 +835,7 @@ New names:</code></pre>
 <h2 class="anchored" data-anchor-id="close-log">Close log</h2>
 <p>Close the log file.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log_close</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log_close</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
