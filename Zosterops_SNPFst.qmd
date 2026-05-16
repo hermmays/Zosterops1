@@ -1,9 +1,6 @@
 ---
 title: "Genetic differentiation and biogeographic breaks"
-format:
-  html:
-    grid:
-      body-width: 1200px
+
 editor: visual
 bibliography: ZosteropsDistanceFst.bib
 ---
@@ -15,6 +12,12 @@ What follows is our workflow for estimating genetic distance and differentiation
 ## Getting started
 
 We are using R version 4.4.2, RStudio version 2024.09.1 for the analysis. Quarto version 1.6.39 for Mac OS was used to document the workflow. Set the working directory in RStudio to one where the `vcf` file for the SNPs and a text file defining the population for each sample are available.
+
+## General methods summary
+
+The following analyses used the SNP dataset converted to the genlight format. Pairwise fixed differences were measured from the SNP dataset in R using the `gl.fixed.diff` function in the *dartR* v2 package. Samples were grouped according to a combination of species and geography with *Z. japonicus* split into an Ogasawara and Volcano Islands group containing *Z. japonicus alani* and a ‘continental’ island group containing the remaining subspecies. *Z. montanus* was divided into four groups: the nominate subspecies in Indonesia, a northern Philippines group, a central/southern Philippines group, and the *Z. montanus parkesi* subspecies on Palawan. In every tree produced, and the PCA and DAPC analyses, our single sample from *Z. nigrorum catarmanensis* from the island of Camiguin South (Zni14341) fell within *Z. montanus* with consistent and strong support and was considered a central/southern Philippine *Z. montanus* for these analyses. The remaining samples were assigned according to species.
+
+Pairwise F~ST~ was determined using the `stamppFst` function and pairwise Nei’s distances were measured using the `stamppNeisD` function in *StAMPP* and displayed as heatmaps using the R package *ggplot2*.  Additional population grouping was done for these analyses with *Z. japonicus* divided into populations in the northern, central, and southern Ryukyu Islands, the Korean Peninsula and adjacent islands, the main islands of Japan, the Ogasawara and Volcano Islands, the Izu Islands, and the introduced population in Hawaii. *Z. montanus* was divided into the Indonesian, northern Philippine, Visayas, Mindanao, and Palawan populations. *Z. simplex* was divided into those samples from the native range in Asia and introduced populations in North America. The rest of the samples were grouped only by species.
 
 ### Packages
 
@@ -81,7 +84,7 @@ Assignment file `ZosteropsPOPS_distance.txt`
 
   - `japonicusIZU` Populations of the *Z. japonicus stejnegeri* subspecies from the Izu Islands (including Niijima, Aogashima, Kozushima, and Miyake).
 
-  - `japonicusOGASAWARA` Populations of the *Z. japonicus alani* subspecies in the Ogasawara (including Chichijima, Hahajima, Imotojima, Anejima, and Imotojima islands) and Volcano islands (Iwojima).
+  - `japonicusOGASAWARA` Populations of the *Z. japonicus alani* subspecies in the Ogasawara (including Chichijima, Hahajima, Anejima, and Imotojima islands) and Volcano islands (Iwoto).
 
   - `japonicusHAWAII` Introduced population in the Hawaiian archipelago.
 
@@ -257,7 +260,7 @@ Assignment file `ZosteropsSPECIES.txt`
 
   - `japonicus` All populations of *Z. japonicus* in the main islands of Japan, Korean Peninsula, Ryukyu Islands, and Izu islands to Chichijima in the Ogasawara islands and the introduced *Z. japonicus* population in Hawaii.
 
-  - `japonicusOGASAWARA` Populations of the *Z. japonicus alani* subspecies in the Ogasawara (including Hahajima, Imotojima, Anejima, and Imotojima islands) and Volcano islands (Iwojima) are the most divergent within the *Z. japonicus* taxon and are for exploratory purposes considered a separate taxon.
+  - `japonicusOGASAWARA` Populations of the *Z. japonicus alani* subspecies in the Ogasawara (including Chichijima, Hahajima, Anejima, and Imotojima islands) and Volcano islands (Iwoto) are the most divergent within the *Z. japonicus* taxon and are for exploratory purposes considered a separate taxon.
 
 - *Zosterops meyeni*
 
