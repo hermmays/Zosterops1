@@ -1,0 +1,56 @@
+trait,group1,group2,p.value
+BillNareTip,everetti,erythropleurus,1.7e-08
+BillNareTip,japonicus CONTINENTAL,erythropleurus,1.2e-08
+BillNareTip,japonicus CONTINENTAL,everetti,1.00000
+BillNareTip,japonicus OCEANIC,erythropleurus,< 2e-16
+BillNareTip,japonicus OCEANIC,everetti,< 2e-16
+BillNareTip,japonicus OCEANIC,japonicus CONTINENTAL,2.2e-12
+BillNareTip,meyeni,erythropleurus,2.8e-11
+BillNareTip,meyeni,everetti,1.00000
+BillNareTip,meyeni,japonicus CONTINENTAL,1.00000
+BillNareTip,meyeni,japonicus OCEANIC,2.5e-08
+BillNareTip,montanus NORTH,erythropleurus,0.00692
+BillNareTip,montanus NORTH,everetti,1.00000
+BillNareTip,montanus NORTH,japonicus CONTINENTAL,1.00000
+BillNareTip,montanus NORTH,japonicus OCEANIC,9.2e-14
+BillNareTip,montanus NORTH,meyeni,0.43353
+BillNareTip,montanus SOUTH,erythropleurus,5.9e-12
+BillNareTip,montanus SOUTH,everetti,1.00000
+BillNareTip,montanus SOUTH,japonicus CONTINENTAL,1.00000
+BillNareTip,montanus SOUTH,japonicus OCEANIC,< 2e-16
+BillNareTip,montanus SOUTH,meyeni,1.00000
+BillNareTip,montanus SOUTH,montanus NORTH,1.00000
+BillNareTip,nigrorum,erythropleurus,0.00087
+BillNareTip,nigrorum,everetti,1.00000
+BillNareTip,nigrorum,japonicus CONTINENTAL,0.44709
+BillNareTip,nigrorum,japonicus OCEANIC,< 2e-16
+BillNareTip,nigrorum,meyeni,0.00872
+BillNareTip,nigrorum,montanus NORTH,1.00000
+BillNareTip,nigrorum,montanus SOUTH,0.09934
+BillNareTip,nigrorum CS,erythropleurus,4.0e-12
+BillNareTip,nigrorum CS,everetti,0.04714
+BillNareTip,nigrorum CS,japonicus CONTINENTAL,0.66903
+BillNareTip,nigrorum CS,japonicus OCEANIC,0.01460
+BillNareTip,nigrorum CS,meyeni,1.00000
+BillNareTip,nigrorum CS,montanus NORTH,0.01383
+BillNareTip,nigrorum CS,montanus SOUTH,0.14901
+BillNareTip,nigrorum CS,nigrorum,0.00019
+BillNareTip,palpebrosus,erythropleurus,1.00000
+BillNareTip,palpebrosus,everetti,8.3e-08
+BillNareTip,palpebrosus,japonicus CONTINENTAL,4.8e-08
+BillNareTip,palpebrosus,japonicus OCEANIC,< 2e-16
+BillNareTip,palpebrosus,meyeni,1.4e-10
+BillNareTip,palpebrosus,montanus NORTH,0.01365
+BillNareTip,palpebrosus,montanus SOUTH,5.1e-11
+BillNareTip,palpebrosus,nigrorum,0.00237
+BillNareTip,palpebrosus,nigrorum CS,1.5e-11
+BillNareTip,simplex,erythropleurus,1.00000
+BillNareTip,simplex,everetti,0.00297
+BillNareTip,simplex,japonicus CONTINENTAL,0.00082
+BillNareTip,simplex,japonicus OCEANIC,< 2e-16
+BillNareTip,simplex,meyeni,5.3e-06
+BillNareTip,simplex,montanus NORTH,1.00000
+BillNareTip,simplex,montanus SOUTH,1.8e-05
+BillNareTip,simplex,nigrorum,1.00000
+BillNareTip,simplex,nigrorum CS,1.9e-07
+BillNareTip,simplex,palpebrosus,1.00000

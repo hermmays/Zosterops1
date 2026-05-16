@@ -1,0 +1,355 @@
+Museum,Catalog number,Genus,Species,Subspecies,Locale,Name,Group,BillCulmen,BillNareTip,BillDepth,BillWidth,Tarsus,Wing,Tail
+Cincinnati Museum Center,B39029,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,10.79,7.77,3,3.09,17.2,61.5,36
+Cincinnati Museum Center,B37675,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,11.04,7.7,3.06,3.31,18.19,55,34
+Cincinnati Museum Center,B37676,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,10.13,7.66,2.95,3.21,18.22,57,35
+Cincinnati Museum Center,B37376,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,10.66,7.68,3.39,3.53,20.94,57.5,36
+Cincinnati Museum Center,B35538,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,9.01,6.63,3.15,3.48,17.9,52,33
+Cincinnati Museum Center,B37674,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,10.44,7.25,3.18,2.96,17.55,57,35
+Cincinnati Museum Center,B35539,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,10.69,8.54,3.22,2.87,16.26,55.5,36
+Cincinnati Museum Center,B35541,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,9.56,7.13,3.64,3.54,16.43,52,32
+Cincinnati Museum Center,B35543,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,10.29,7.48,2.82,3.22,15.76,55,38
+Cincinnati Museum Center,B35540,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,9.43,7.21,3.13,3.48,15.71,53,34
+Cincinnati Museum Center,B35626,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,9.92,7.76,3.26,2.93,17.34,52,38
+Cincinnati Museum Center,B36301,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,10.69,7.21,3.06,3.45,18.15,54,34
+Cincinnati Museum Center,B35836,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,10.08,7.28,2.91,3.58,17.95,58.5,34
+Cincinnati Museum Center,B36302,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,10.97,7.71,2.99,3.41,16.24,53.5,33
+Cincinnati Museum Center,B35837,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,9.95,7.58,3.1,3.79,17.15,58.5,29
+Cincinnati Museum Center,B35838,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,10.92,7.97,2.78,3.24,15.86,58,35
+Cincinnati Museum Center,B38163,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,11.11,8.58,3.24,3.76,16.74,59,36
+Cincinnati Museum Center,B36897,Zosterops,montanus,ssp,PANAY,Z montanus ssp,montanus SOUTH,11.55,8.36,3.46,3.49,17.48,51,35
+Cincinnati Museum Center,B39200,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,9.86,7.22,3.61,3.3,16.28,57,33
+Cincinnati Museum Center,B39198,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,10.16,7.71,3.13,3.6,17.17,54.5,34
+Cincinnati Museum Center,B36817,Zosterops,montanus,ssp,PANAY,Z montanus ssp,montanus SOUTH,11.08,8.03,3.03,3.72,17.41,54,37
+Cincinnati Museum Center,B36895,Zosterops,montanus,ssp,PANAY,Z montanus ssp,montanus SOUTH,11.44,8.48,3.28,3.08,19.16,53,34
+Cincinnati Museum Center,B36818,Zosterops,montanus,ssp,PANAY,Z montanus ssp,montanus SOUTH,11.77,8.7,3.6,3.8,16.34,55,35
+Cincinnati Museum Center,B36615,Zosterops,montanus,whiteheadi,LUZON,Z montanus whiteheadi,montanus NORTH,11.28,8.25,3.16,3.43,18.47,55,37
+Cincinnati Museum Center,B36616,Zosterops,montanus,whiteheadi,LUZON,Z montanus whiteheadi,montanus NORTH,10.66,7.72,2.89,3.37,17.68,56,36
+Cincinnati Museum Center,B39201,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,10.63,7.59,3.14,3.49,18.52,56,35
+Cincinnati Museum Center,B36894,Zosterops,montanus,ssp,PANAY,Z montanus ssp,montanus SOUTH,11.34,8.3,3.2,3.26,19.02,55,35
+Cincinnati Museum Center,B36898,Zosterops,montanus,ssp,PANAY,Z montanus ssp,montanus SOUTH,11.3,8.09,3.16,3.22,16.7,54,36
+Cincinnati Museum Center,B36896,Zosterops,montanus,ssp,PANAY,Z montanus ssp,montanus SOUTH,11.37,8.63,3.01,3.28,17.72,54,35
+Cincinnati Museum Center,B37023,Zosterops,montanus,pectoralis,NEGROS,Z montanus pectoralis,montanus SOUTH,11.03,8.57,3.22,3.57,18.84,58,38
+Cincinnati Museum Center,B37041,Zosterops,montanus,pectoralis,NEGROS,Z montanus pectoralis,montanus SOUTH,11.23,8.17,3.17,3.23,19.28,59,38
+Cincinnati Museum Center,B37042,Zosterops,montanus,pectoralis,NEGROS,Z montanus pectoralis,montanus SOUTH,10.42,7.99,2.81,3.19,17.06,56.5,35
+Cincinnati Museum Center,B37043,Zosterops,montanus,pectoralis,NEGROS,Z montanus pectoralis,montanus SOUTH,10.59,8.23,3.15,3.71,17.54,58,36
+Cincinnati Museum Center,B37052,Zosterops,montanus,pectoralis,NEGROS,Z montanus pectoralis,montanus SOUTH,11.05,8.38,3.15,3.51,17.79,60,40
+Cincinnati Museum Center,B37053,Zosterops,montanus,pectoralis,NEGROS,Z montanus pectoralis,montanus SOUTH,11.24,8.65,3.23,3.24,17.94,61.5,37
+Cincinnati Museum Center,B37054,Zosterops,montanus,pectoralis,NEGROS,Z montanus pectoralis,montanus SOUTH,10.9,8.15,2.88,3.46,17.54,60.5,38
+Cincinnati Museum Center,B37073,Zosterops,montanus,pectoralis,NEGROS,Z montanus pectoralis,montanus SOUTH,11.22,8.05,3.23,3.64,17.39,61.5,39
+Cincinnati Museum Center,B36991,Zosterops,montanus,halconensis,MINDORO,Z montanus halconensis,montanus NORTH,10.76,7.81,2.74,3.4,16.74,55,35
+Cincinnati Museum Center,B36979,Zosterops,montanus,halconensis,MINDORO,Z montanus halconensis,montanus NORTH,10.85,7.82,2.94,3.15,17.29,53,36
+Cincinnati Museum Center,B36617,Zosterops,montanus,whiteheadi,LUZON,Z montanus whiteheadi,montanus NORTH,11.27,8.67,3.03,3.76,17.37,56,36
+Cincinnati Museum Center,B36819,Zosterops,montanus,ssp,PANAY,Z montanus ssp,montanus SOUTH,11.39,8.38,3.14,3.31,17.24,56,37
+Cincinnati Museum Center,B33359,Zosterops,meyeni,batanis,BATAN,Z meyeni batanis,meyeni,11.18,8.84,3.61,3.54,17.3,58,38
+Cincinnati Museum Center,B33961,Zosterops,everetti,boholensis,BILIRAN,Z everetti boholensis,everetti,10.05,7.39,4.39,3.57,18.52,55,38
+Cincinnati Museum Center,B35474,Zosterops,everetti,basilanicus,MINDANAO,Z everetti basilanicus,everetti,10.25,7.34,3.05,3.07,16.81,56,40
+Cincinnati Museum Center,B35475,Zosterops,everetti,basilanicus,MINDANAO,Z everetti basilanicus,everetti,10.47,7.53,3.53,3.69,17.44,56,37
+Cincinnati Museum Center,B35473,Zosterops,everetti,basilanicus,MINDANAO,Z everetti basilanicus,everetti,11.1,7.9,3.55,3.58,16.19,55.5,34
+Cincinnati Museum Center,B35476,Zosterops,everetti,basilanicus,MINDANAO,Z everetti basilanicus,everetti,11.73,8.45,3.04,3.79,17.43,56,37
+Cincinnati Museum Center,B38321,Zosterops,nigrorum,innominatus,LUZON,Z nigrorum innominatus,nigrorum,9.82,7.22,3.17,3,15.44,53,34
+Cincinnati Museum Center,B36816,Zosterops,nigrorum,nigrorum,PANAY,Z nigrorum nigrorum,nigrorum,9.95,6.76,2.76,2.76,16.52,54,37
+Cincinnati Museum Center,B38322,Zosterops,nigrorum,innominatus,LUZON,Z nigrorum innominatus,nigrorum,9.29,6.63,2.87,2.95,15.8,50,35
+Cincinnati Museum Center,B38226,Zosterops,nigrorum,innominatus,LUZON,Z nigrorum innominatus,nigrorum,8.96,6.67,2.57,2.8,15.89,51,34
+Cincinnati Museum Center,B38227,Zosterops,nigrorum,innominatus,LUZON,Z nigrorum innominatus,nigrorum,8.77,6.83,2.74,2.92,16.47,49.5,32
+Cincinnati Museum Center,B38228,Zosterops,nigrorum,innominatus,LUZON,Z nigrorum innominatus,nigrorum,8.71,6.42,2.71,2.54,16.42,49,34
+National Museum,535697,Zosterops,erythropleurus,monotypic,THAILAND,Z erythropleurus,erythropleurus,10.16,7.11,2.66,2.64,16.67,60.5,29
+National Museum,535698,Zosterops,erythropleurus,monotypic,THAILAND,Z erythropleurus,erythropleurus,9.64,7.3,2.73,3.19,15.55,60,35
+National Museum,535699,Zosterops,erythropleurus,monotypic,THAILAND,Z erythropleurus,erythropleurus,9.11,6.67,2.9,2.37,16.35,59.5,38
+National Museum,535696,Zosterops,erythropleurus,monotypic,THAILAND,Z erythropleurus,erythropleurus,9.39,6.58,2.92,3.23,15.59,61,39
+National Museum,335147,Zosterops,erythropleurus,monotypic,SICHUAN,Z erythropleurus,erythropleurus,9.53,7.22,2.8,2.93,15.08,62.5,39
+National Museum,91558,Zosterops,japonicus,japonicus,HONSHU,Z japonicus japonicus,japonicus CONTINENTAL,10.5,8.07,3.3,3.28,16.68,60,37
+National Museum,606567,Zosterops,meyeni,batanis,LANYU,Z meyeni batanis,meyeni,10.6,7.33,3.69,3.64,20.79,56,38
+National Museum,606561,Zosterops,meyeni,batanis,LANYU,Z meyeni batanis,meyeni,10.66,7.67,3.21,3.48,18.08,59,39
+National Museum,606570,Zosterops,meyeni,batanis,GREENISLAND,Z meyeni batanis,meyeni,10.85,8.07,3.52,3.34,19.65,58,41
+National Museum,582854,Zosterops,meyeni,batanis,BATAN,Z meyeni batanis,meyeni,11.67,8.41,3.68,3.68,18.17,57.5,39
+National Museum,582853,Zosterops,meyeni,batanis,BATAN,Z meyeni batanis,meyeni,10.41,7.19,3.16,3.53,17.68,55.5,41
+National Museum,582852,Zosterops,meyeni,batanis,BATAN,Z meyeni batanis,meyeni,11.09,8,3.51,3.68,18.88,55,34
+National Museum,582851,Zosterops,meyeni,batanis,BATAN,Z meyeni batanis,meyeni,10.15,6.95,3.1,3.6,16.9,55,40
+National Museum,627873,Zosterops,japonicus,daitoensis,KITADAITOJIMA,Z japonicus daitoensis,japonicus CONTINENTAL,11.04,7.98,3.15,3.49,17.47,58.5,44
+National Museum,383201,Zosterops,japonicus,alani,IWOTO,Z japonicus alani,japonicus OCEANIC,12.36,7.88,3.42,3.33,20.56,61,46
+National Museum,383202,Zosterops,japonicus,alani,IWOTO,Z japonicus alani,japonicus OCEANIC,11.12,7.63,3.33,3.33,19.94,61.5,44
+National Museum,111658,Zosterops,japonicus,stejnegeri,OSHIMA,Z japonicus stejnegeri,japonicus OCEANIC,12.39,9.1,3.69,2.98,19.34,62.5,45
+National Museum,96110,Zosterops,japonicus,japonicus,HOKKAIDO,Z japonicus japonicus,japonicus CONTINENTAL,10.98,7.53,2.82,2.66,16.68,57,39
+National Museum,405525,Zosterops,japonicus,loochooensis,OKINAWA,Z japonicus loochooensis,japonicus CONTINENTAL,11.2,7.61,2.95,3.25,18.17,58.5,40
+National Museum,405522,Zosterops,japonicus,loochooensis,OKINAWA,Z japonicus loochooensis,japonicus CONTINENTAL,10.08,7.18,3.08,3.02,17.79,59.5,37
+National Museum,405521,Zosterops,japonicus,loochooensis,OKINAWA,Z japonicus loochooensis,japonicus CONTINENTAL,9.72,7.05,3.04,3.03,17.65,56,39
+National Museum,405520,Zosterops,japonicus,loochooensis,OKINAWA,Z japonicus loochooensis,japonicus CONTINENTAL,9.55,7.17,3.07,3.43,16.46,60.5,41
+National Museum,86143,Zosterops,simplex,simplex,HONGKONG,Z simplex simplex,simplex,7.72,5.07,2.89,3.37,16.13,55,37
+National Museum,86144,Zosterops,simplex,simplex,HONGKONG,Z simplex simplex,simplex,9.17,6.97,2.86,2.76,15.88,55.5,36
+National Museum,86145,Zosterops,simplex,simplex,HONGKONG,Z simplex simplex,simplex,9.06,7.32,2.69,3.14,16.1,54.5,37
+National Museum,578008,Zosterops,everetti,boholensis,LEYTE,Z everetti boholensis,everetti,10.25,7.84,3.65,3.29,15.62,54.5,35
+National Museum,578004,Zosterops,everetti,boholensis,LEYTE,Z everetti boholensis,everetti,10.1,7.17,3.6,3.56,15.7,53.5,41
+National Museum,578001,Zosterops,everetti,boholensis,LEYTE,Z everetti boholensis,everetti,10.63,7.26,3.42,3.3,15.59,61,38
+National Museum,211094,Zosterops,everetti,boholensis,BOHOL,Z everetti boholensis,everetti,10.02,6.89,3.22,3.21,16.3,55,41
+National Museum,315717,Zosterops,everetti,mandibularis,SULU,Z everetti mandibularis,everetti,9.86,7.15,3.08,3.55,15.5,53,40
+National Museum,485424,Zosterops,everetti,tahanensis,BORNEO,Z everetti tahanensis,everetti,8.26,5.79,2.48,3.22,13.82,52.5,31
+National Museum,581661,Zosterops,everetti,basilanicus,MINDANAO,Z everetti basilanicus,everetti,8.86,6.93,3.29,3.3,17.31,62,40
+National Museum,581677,Zosterops,everetti,basilanicus,MINDANAO,Z everetti basilanicus,everetti,9.9,6.57,3.22,2.95,16.11,54.5,42
+National Museum,192697,Zosterops,nigrorum,richmondi,CAGAYANCILLO,Z nigrorum richmondi,nigrorum,11.03,7.7,3.26,3.4,16.36,58.5,46
+National Museum,607560,Zosterops,nigrorum,aureiloris,LUZON,Z nigrorum aureiloris,nigrorum,10,6.73,2.93,2.94,14.49,52,35
+National Museum,192696,Zosterops,nigrorum,richmondi,CAGAYANCILLO,Z nigrorum richmondi,nigrorum,11.16,8.03,3.54,3.64,19.05,58.5,43
+National Museum,582068,Zosterops,montanus,pectoralis,NEGROS,Z montanus pectoralis,montanus SOUTH,10.35,7.2,3.18,3.52,19,53,40
+National Museum,582067,Zosterops,montanus,pectoralis,NEGROS,Z montanus pectoralis,montanus SOUTH,10.41,7.46,2.85,3.28,17.26,56.5,38
+National Museum,192701,Zosterops,nigrorum,nigrorum,MASBATE,Z nigrorum nigrorum,nigrorum,9.74,7.6,3.12,3.82,15.64,55,42
+National Museum,315706,Zosterops,nigrorum,nigrorum,PANAY,Z nigrorum nigrorum,nigrorum,10.06,7.27,3.26,3.39,13.84,52,38
+National Museum,192202,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,10.01,7.39,2.97,3.23,17.4,59,41
+National Museum,192203,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,11.08,7.99,3.33,3.57,16.82,62,38
+National Museum,202406,Zosterops,montanus,halconensis,MINDORO,Z montanus halconensis,montanus NORTH,10.16,7.74,2.88,3.48,16.11,55,39
+American Museum of Natural History,699708,Zosterops,erythropleurus,monotypic,YUNNAN,Z erythropleurus,erythropleurus,9.3,6.8,2.7,2.8,16.5,61.5,41
+American Museum of Natural History,699707,Zosterops,erythropleurus,monotypic,YUNNAN,Z erythropleurus,erythropleurus,10,6.9,2.6,3,14.6,59,37
+American Museum of Natural History,699704,Zosterops,erythropleurus,monotypic,YUNNAN,Z erythropleurus,erythropleurus,10.2,7.6,2.8,2.7,15.2,62,39
+American Museum of Natural History,699705,Zosterops,erythropleurus,monotypic,YUNNAN,Z erythropleurus,erythropleurus,9.9,7.2,2.8,3,15.5,59,38
+American Museum of Natural History,699706,Zosterops,erythropleurus,monotypic,YUNNAN,Z erythropleurus,erythropleurus,10,6.9,3.1,2.9,15.5,60,38
+American Museum of Natural History,699709,Zosterops,erythropleurus,monotypic,YUNNAN,Z erythropleurus,erythropleurus,10,6.5,2.8,2.8,15.6,60.5,38
+American Museum of Natural History,699714,Zosterops,erythropleurus,monotypic,BEIJING,Z erythropleurus,erythropleurus,9.4,7,3.1,2.8,16.7,59.5,45
+American Museum of Natural History,699710,Zosterops,erythropleurus,monotypic,SHANGHAI,Z erythropleurus,erythropleurus,10.1,6.5,3.3,2.8,14.9,61.5,44
+American Museum of Natural History,699712,Zosterops,erythropleurus,monotypic,BEIJING,Z erythropleurus,erythropleurus,9.7,6.1,2.9,2.8,16.4,57.5,41
+American Museum of Natural History,418687,Zosterops,erythropleurus,monotypic,SHANDONG,Z erythropleurus,erythropleurus,9.8,6.7,2.9,2.8,15.6,63.5,41
+American Museum of Natural History,418686,Zosterops,erythropleurus,monotypic,SHANDONG,Z erythropleurus,erythropleurus,9.1,6.3,2.5,2.7,15.9,51,42
+American Museum of Natural History,699713,Zosterops,erythropleurus,monotypic,BEIJING,Z erythropleurus,erythropleurus,9.7,6.3,2.9,2.9,18.9,54,37
+American Museum of Natural History,699716,Zosterops,erythropleurus,monotypic,BEIJING,Z erythropleurus,erythropleurus,10.3,6.4,2.8,2.6,15,61.2,42
+American Museum of Natural History,699711,Zosterops,erythropleurus,monotypic,BEIJING,Z erythropleurus,erythropleurus,9.1,6.6,2.6,2.6,16.8,59.5,40
+American Museum of Natural History,418685,Zosterops,erythropleurus,monotypic,SHANDONG,Z erythropleurus,erythropleurus,9.6,5.7,2.7,3.1,16.2,62,39
+American Museum of Natural History,418688,Zosterops,erythropleurus,monotypic,SHANDONG,Z erythropleurus,erythropleurus,8.1,5.8,2.5,2.8,14.8,57.5,41
+American Museum of Natural History,418684,Zosterops,erythropleurus,monotypic,SHANDONG,Z erythropleurus,erythropleurus,9.2,6.4,2.9,2.8,17.2,59.5,41
+American Museum of Natural History,418690,Zosterops,erythropleurus,monotypic,NOLOCALE,Z erythropleurus,erythropleurus,9.4,6.8,2.5,2.6,16,62.5,40
+American Museum of Natural History,418689,Zosterops,erythropleurus,monotypic,SHANDONG,Z erythropleurus,erythropleurus,9.6,6.6,2.7,2.7,16.9,61,44
+American Museum of Natural History,699715,Zosterops,erythropleurus,monotypic,BEIJING,Z erythropleurus,erythropleurus,9.1,6.2,2.5,2.4,18.3,59.5,40
+American Museum of Natural History,839413,Zosterops,japonicus,japonicus,TSUSHIMA,Z japonicus japonicus,japonicus CONTINENTAL,10.4,7.3,3,2.5,17.5,58,43
+American Museum of Natural History,839425,Zosterops,japonicus,japonicus,TSUSHIMA,Z japonicus japonicus,japonicus CONTINENTAL,12.8,8,3.2,3.1,17.1,61.5,49
+American Museum of Natural History,839434,Zosterops,japonicus,japonicus,TSUSHIMA,Z japonicus japonicus,japonicus CONTINENTAL,11.3,8.5,3.1,3.2,18.6,60,42
+American Museum of Natural History,839406,Zosterops,japonicus,japonicus,TSUSHIMA,Z japonicus japonicus,japonicus CONTINENTAL,11.7,8.3,3,3,17.9,60,45
+American Museum of Natural History,785303,Zosterops,japonicus,japonicus,KOREA,Z japonicus japonicus,japonicus CONTINENTAL,12,8.1,2.8,2.8,18.6,59.5,43
+American Museum of Natural History,785314,Zosterops,japonicus,stejnegeri,IZUISLANDS,Z japonicus stejnegeri,japonicus OCEANIC,10.3,7.9,2.8,2.8,19.5,60.5,44
+American Museum of Natural History,785340,Zosterops,japonicus,japonicus,HONSHU,Z japonicus japonicus,japonicus CONTINENTAL,10.8,7.7,2.6,2.5,17.4,58.5,43
+American Museum of Natural History,461440,Zosterops,japonicus,stejnegeri,HACHIJOJIMA,Z japonicus stejnegeri,japonicus OCEANIC,13.6,9.9,3.1,3.2,22.6,62,47
+American Museum of Natural History,785324,Zosterops,japonicus,stejnegeri,IZUISLANDS,Z japonicus stejnegeri,japonicus OCEANIC,14.4,10.1,3.2,3.2,21.2,60,46
+American Museum of Natural History,703552,Zosterops,japonicus,stejnegeri,MIYAKEJIMA,Z japonicus stejnegeri,japonicus OCEANIC,13.6,9.7,3.3,3.4,19.3,63,48
+American Museum of Natural History,785311,Zosterops,japonicus,stejnegeri,IZUISLANDS,Z japonicus stejnegeri,japonicus OCEANIC,13.4,9.6,3.7,3.7,18.8,61,40
+American Museum of Natural History,703551,Zosterops,japonicus,stejnegeri,MIYAKEJIMA,Z japonicus stejnegeri,japonicus OCEANIC,14.1,10.1,3.6,3.5,20.1,63,48
+American Museum of Natural History,461439,Zosterops,japonicus,stejnegeri,MIYAKEJIMA,Z japonicus stejnegeri,japonicus OCEANIC,14.6,9.6,3.2,3.3,19.6,63.5,50
+American Museum of Natural History,699764,Zosterops,japonicus,insularis,YAKUSHIMA,Z japonicus insularis,japonicus CONTINENTAL,12.5,8.3,2.8,3.2,22.1,60.5,50
+American Museum of Natural History,785316,Zosterops,japonicus,stejnegeri,IZUISLANDS,Z japonicus stejnegeri,japonicus OCEANIC,15.5,10.7,3.3,3.3,19.6,62,42
+American Museum of Natural History,699739,Zosterops,japonicus,alani,IWOTO,Z japonicus alani,japonicus OCEANIC,11.8,7.9,3.4,3.2,20.4,59,46
+American Museum of Natural History,699786,Zosterops,japonicus,insularis,TANEGASHIMA,Z japonicus insularis,japonicus CONTINENTAL,11.4,7.9,3.1,3.1,17.7,58,46
+American Museum of Natural History,699738,Zosterops,japonicus,alani,IWOTO,Z japonicus alani,japonicus OCEANIC,12.5,8.1,3.8,3.5,22.2,62,45
+American Museum of Natural History,699740,Zosterops,japonicus,alani,IWOTO,Z japonicus alani,japonicus OCEANIC,11.9,8.4,3.5,3.6,20.3,61.5,44
+American Museum of Natural History,699742,Zosterops,japonicus,alani,IWOTO,Z japonicus alani,japonicus OCEANIC,12.5,8.5,3.3,3.2,18.5,60.5,47
+American Museum of Natural History,699744,Zosterops,japonicus,alani,IWOTO,Z japonicus alani,japonicus OCEANIC,12.8,7.9,3.5,3.6,20.3,62,46
+American Museum of Natural History,699746,Zosterops,japonicus,alani,IWOTO,Z japonicus alani,japonicus OCEANIC,12.7,8.2,3.6,3.3,20.2,61,44
+American Museum of Natural History,699743,Zosterops,japonicus,alani,IWOTO,Z japonicus alani,japonicus OCEANIC,11.9,7.5,3.7,3.4,18.7,60,48
+American Museum of Natural History,699745,Zosterops,japonicus,alani,IWOTO,Z japonicus alani,japonicus OCEANIC,12.3,7.7,3.4,3.3,21.1,60.5,47
+American Museum of Natural History,699789,Zosterops,japonicus,loochooensis,ISHIGAKI,Z japonicus loochooensis,japonicus CONTINENTAL,11.4,7.9,2.9,3.1,18.1,58,45
+American Museum of Natural History,699809,Zosterops,japonicus,loochooensis,AMAMI,Z japonicus loochooensis,japonicus CONTINENTAL,10.6,7.8,2.8,2.4,17.9,57,45
+American Museum of Natural History,699826,Zosterops,japonicus,loochooensis,AMAMI,Z japonicus loochooensis,japonicus CONTINENTAL,10.9,7.2,2.8,3,17.7,55.5,45
+American Museum of Natural History,699816,Zosterops,japonicus,loochooensis,AMAMI,Z japonicus loochooensis,japonicus CONTINENTAL,10,7.2,2.8,3,19.6,57,41
+American Museum of Natural History,699819,Zosterops,japonicus,loochooensis,AMAMI,Z japonicus loochooensis,japonicus CONTINENTAL,10.2,7.6,2.7,2.8,17.1,55,48
+American Museum of Natural History,699823,Zosterops,japonicus,loochooensis,AMAMI,Z japonicus loochooensis,japonicus CONTINENTAL,10.6,7.4,3,3.1,19.3,55,43
+American Museum of Natural History,699815,Zosterops,japonicus,loochooensis,AMAMI,Z japonicus loochooensis,japonicus CONTINENTAL,11,7.7,3,3.1,18.2,57.5,44
+American Museum of Natural History,785351,Zosterops,japonicus,daitoensis,DAITOISLANDS,Z japonicus daitoensis,japonicus OCEANIC,10.7,7.6,3.1,2.9,17.2,61,41
+American Museum of Natural History,115079,Zosterops,simplex,simplex,SHANDONG,Z simplex simplex,simplex,8,6.3,2.7,2.8,15.8,59,43
+American Museum of Natural History,699889,Zosterops,simplex,simplex,JIUJIANG,Z simplex simplex,simplex,8.8,6.4,2.8,2.9,16.1,55.5,44
+American Museum of Natural History,115084,Zosterops,simplex,simplex,SHANDONG,Z simplex simplex,simplex,9.8,7.4,2.7,2.6,15.2,58,43
+American Museum of Natural History,115085,Zosterops,simplex,simplex,NOLOCALE,Z simplex simplex,simplex,8.7,7.1,2.7,2.9,16.3,57,39
+American Museum of Natural History,699854,Zosterops,simplex,simplex,YUNNAN,Z simplex simplex,simplex,9.6,7,2.7,2.9,17.5,56,44
+American Museum of Natural History,204017,Zosterops,simplex,simplex,NOLOCALE,Z simplex simplex,simplex,10,7.1,2.7,2.4,16,55,46
+American Museum of Natural History,418694,Zosterops,simplex,simplex,SHANDONG,Z simplex simplex,simplex,9.4,6.6,2.4,2.7,15.4,60,39
+American Museum of Natural History,699876,Zosterops,simplex,simplex,XIAMEN,Z simplex simplex,simplex,10,7.6,2.9,3.2,15,55.5,43
+American Museum of Natural History,699856,Zosterops,simplex,simplex,YUNNAN,Z simplex simplex,simplex,9.6,6.7,2.5,2.9,16.9,56,38
+American Museum of Natural History,418701,Zosterops,simplex,simplex,GUANGDONG,Z simplex simplex,simplex,9.1,6.8,3,2.8,16.1,55,39
+American Museum of Natural History,785346,Zosterops,simplex,simplex,TAIWAN,Z simplex simplex,simplex,9.6,7.3,2.7,3.1,15.8,51.5,37
+American Museum of Natural History,699918,Zosterops,simplex,simplex,TAIWAN,Z simplex simplex,simplex,9.2,6.9,2.6,2.7,16.4,54.5,41
+American Museum of Natural History,699919,Zosterops,simplex,simplex,TAIWAN,Z simplex simplex,simplex,10.9,7.5,2.9,2.8,16.7,53,40
+American Museum of Natural History,699916,Zosterops,simplex,simplex,TAIWAN,Z simplex simplex,simplex,9.9,7.1,2.5,3.1,16.7,51,37
+American Museum of Natural History,699906,Zosterops,simplex,simplex,TAIWAN,Z simplex simplex,simplex,9.1,7,3,3,16.1,50.5,35
+American Museum of Natural History,699923,Zosterops,simplex,simplex,TAIWAN,Z simplex simplex,simplex,9,7.2,2.7,2.9,15.9,54,42
+American Museum of Natural History,839397,Zosterops,meyeni,batanis,LANYU,Z meyeni batanis,meyeni,11.1,7.9,3,3.5,18.4,56,38
+American Museum of Natural History,839399,Zosterops,meyeni,batanis,LANYU,Z meyeni batanis,meyeni,9.9,7.7,3,3.5,17.6,56.5,39
+American Museum of Natural History,839394,Zosterops,meyeni,batanis,LANYU,Z meyeni batanis,meyeni,11.4,8.1,3.5,3.9,17.4,59.5,41
+American Museum of Natural History,839395,Zosterops,meyeni,batanis,LANYU,Z meyeni batanis,meyeni,10.2,7.2,3,3.2,17.6,60,45
+American Museum of Natural History,839396,Zosterops,meyeni,batanis,LANYU,Z meyeni batanis,meyeni,10.7,7.6,3.2,3.4,17.9,58,41
+American Museum of Natural History,839402,Zosterops,meyeni,batanis,LANYU,Z meyeni batanis,meyeni,10.3,7.4,3.2,3.2,17.9,55,38
+American Museum of Natural History,839397,Zosterops,meyeni,batanis,LANYU,Z meyeni batanis,meyeni,10.3,7.9,2.9,3.3,19.3,55,37
+American Museum of Natural History,810380,Zosterops,meyeni,batanis,LANYU,Z meyeni batanis,meyeni,10.6,7.6,3.2,3.3,18.5,54.5,43
+American Museum of Natural History,700146,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,9.9,7.1,3.2,3.5,15.5,55.5,43
+American Museum of Natural History,416949,Zosterops,montanus,whiteheadi,LUZON,Z montanus whiteheadi,montanus NORTH,9.9,7.1,3.1,2.7,16.4,55,40
+American Museum of Natural History,488892,Zosterops,montanus,pectoralis,NEGROS,Z montanus pectoralis,montanus SOUTH,9.3,7.2,3,2.6,17.1,52.5,37
+American Museum of Natural History,488896,Zosterops,montanus,pectoralis,NEGROS,Z montanus pectoralis,montanus SOUTH,9.8,7.1,2.8,3,17,54.5,40
+American Museum of Natural History,459968,Zosterops,montanus,pectoralis,NEGROS,Z montanus pectoralis,montanus SOUTH,10.3,7.4,3.2,2.6,18.8,57,42
+American Museum of Natural History,346385,Zosterops,montanus,montanus,TIMOR,Z montanus montanus,montanus SOUTH,9.7,6.9,3,3,15.4,59.5,42
+American Museum of Natural History,346390,Zosterops,montanus,montanus,TIMOR,Z montanus montanus,montanus SOUTH,9.7,7.1,2.7,3,15.7,56,42
+American Museum of Natural History,346386,Zosterops,montanus,montanus,TIMOR,Z montanus montanus,montanus SOUTH,9.3,6.9,2.8,2.8,17.1,59.5,44
+Field Museum,74154,Zosterops,japonicus,alani,MINAMITORISHIMA,Z japonicus alani,japonicus OCEANIC,12.5,8.6,3.7,3.5,20.6,61,42
+Field Museum,74153,Zosterops,japonicus,alani,IWOTO,Z japonicus alani,japonicus OCEANIC,11.8,8.7,3.5,3,21.9,61,50
+Field Museum,74152,Zosterops,japonicus,stejnegeri,MIYAKEJIMA,Z japonicus stejnegeri,japonicus OCEANIC,12.7,8.8,3.3,3.3,19.3,61.5,43
+Field Museum,246943,Zosterops,japonicus,stejnegeri,OSHIMA,Z japonicus stejnegeri,japonicus OCEANIC,12.8,8.7,3.2,3.3,21.8,60,41
+Field Museum,246944,Zosterops,japonicus,stejnegeri,OSHIMA,Z japonicus stejnegeri,japonicus OCEANIC,13.1,9.4,2.9,3.2,20.7,62.5,49
+Field Museum,246947,Zosterops,japonicus,stejnegeri,MIYAKEJIMA,Z japonicus stejnegeri,japonicus OCEANIC,13,9.7,3.3,3.4,21.7,61,46
+Field Museum,65661,Zosterops,japonicus,stejnegeri,NIIJIMA,Z japonicus stejnegeri,japonicus OCEANIC,13.2,9.5,3.7,3.4,20,63,44
+Field Museum,246950,Zosterops,japonicus,stejnegeri,MIYAKEJIMA,Z japonicus stejnegeri,japonicus OCEANIC,13.9,9.3,3.1,4,21.5,62,43
+Field Museum,246948,Zosterops,japonicus,stejnegeri,MIYAKEJIMA,Z japonicus stejnegeri,japonicus OCEANIC,14.2,10.1,3.4,3.5,23.2,64,45
+Field Museum,246949,Zosterops,japonicus,stejnegeri,MIYAKEJIMA,Z japonicus stejnegeri,japonicus OCEANIC,13.7,10.3,3.6,3.3,22,64,48
+Field Museum,246946,Zosterops,japonicus,stejnegeri,OSHIMA,Z japonicus stejnegeri,japonicus OCEANIC,13.8,9,3.4,3.5,20.9,61,42
+Field Museum,246945,Zosterops,japonicus,stejnegeri,OSHIMA,Z japonicus stejnegeri,japonicus OCEANIC,12.1,8.5,3.2,3.4,22.8,61.5,44
+Field Museum,74151,Zosterops,japonicus,japonicus,HONSHU,Z japonicus japonicus,japonicus CONTINENTAL,11,7.1,2.7,3,20.5,59,45
+Field Museum,74150,Zosterops,japonicus,japonicus,HONSHU,Z japonicus japonicus,japonicus CONTINENTAL,11.7,8.1,2.9,3,19.5,60,44
+Field Museum,65667,Zosterops,japonicus,japonicus,HONSHU,Z japonicus japonicus,japonicus CONTINENTAL,11,7.8,2.6,3.1,19.3,58,44
+Field Museum,257081,Zosterops,japonicus,japonicus,KOREA,Z japonicus japonicus,japonicus CONTINENTAL,12.3,7.5,3,2.9,18.2,58,45
+Field Museum,257082,Zosterops,japonicus,japonicus,KOREA,Z japonicus japonicus,japonicus CONTINENTAL,12.1,7.9,3.4,2.8,20.4,60,42
+Field Museum,186366,Zosterops,meyeni,batanis,BATAN,Z meyeni batanis,meyeni,11.2,8.7,3.5,3.5,18,55.5,41
+Field Museum,219896,Zosterops,meyeni,batanis,BATAN,Z meyeni batanis,meyeni,10.8,8.4,3.3,4,18.3,59.5,44
+Field Museum,186367,Zosterops,meyeni,batanis,BATAN,Z meyeni batanis,meyeni,11.2,7.9,3.4,3.3,19.7,58.5,44
+Field Museum,219895,Zosterops,meyeni,batanis,BATAN,Z meyeni batanis,meyeni,11.2,8.2,3.5,3.4,19.4,56,42
+Field Museum,20250,Zosterops,meyeni,meyeni,BANTON,Z meyeni meyeni,meyeni,10.8,7.4,3.2,2.8,18.2,55.5,40
+Field Museum,20749,Zosterops,meyeni,meyeni,BANTON,Z meyeni meyeni,meyeni,11.4,8.8,3.2,3.8,19.5,56.5,43
+Field Museum,24058,Zosterops,meyeni,meyeni,CALAYAN,Z meyeni meyeni,meyeni,10.6,7.8,3,3.4,18.9,55,41
+Field Museum,24059,Zosterops,meyeni,meyeni,CALAYAN,Z meyeni meyeni,meyeni,10.6,8.3,3,3.1,20.6,55,38
+Field Museum,76221,Zosterops,simplex,simplex,VIETNAM,Z simplex simplex,simplex,9.3,7.1,3,2.7,14.6,55.5,39
+Field Museum,76219,Zosterops,simplex,simplex,VIETNAM,Z simplex simplex,simplex,9.3,7.6,2.4,2.6,16,53,37
+Field Museum,80318,Zosterops,simplex,simplex,VIETNAM,Z simplex simplex,simplex,9.1,6.8,2.9,2.7,18.8,54,44
+Field Museum,80309,Zosterops,simplex,simplex,VIETNAM,Z simplex simplex,simplex,9.3,7.2,2.9,2.3,19.5,55,42
+Field Museum,80307,Zosterops,simplex,simplex,VIETNAM,Z simplex simplex,simplex,9.3,7.8,2.9,2.8,17.1,56,43
+Field Museum,80317,Zosterops,simplex,simplex,VIETNAM,Z simplex simplex,simplex,10,7.3,2.7,3.1,17.5,56,39
+Field Museum,80311,Zosterops,simplex,simplex,VIETNAM,Z simplex simplex,simplex,9,7.5,2.8,2.5,14.9,56.5,39
+Field Museum,80312,Zosterops,simplex,simplex,VIETNAM,Z simplex simplex,simplex,9.4,6.8,2.7,2.3,16.3,55,37
+Field Museum,59474,Zosterops,simplex,simplex,FUJIAN,Z simplex simplex,simplex,9.9,7.4,2.7,3,18.7,54.5,36
+Field Museum,109065,Zosterops,simplex,simplex,SICHUAN,Z simplex simplex,simplex,10.1,6.7,2.9,3,16.4,57,38
+Field Museum,275481,Zosterops,everetti,basilanicus,MINDANAO,Z everetti basilanicus,everetti,9.8,7.1,3,3,16.3,56.5,45
+Field Museum,279662,Zosterops,everetti,basilanicus,MINDANAO,Z everetti basilanicus,everetti,9.7,7.5,3.4,3.1,19.3,55,43
+Field Museum,279658,Zosterops,everetti,basilanicus,MINDANAO,Z everetti basilanicus,everetti,10.1,8.3,3.5,3.4,17.6,56.5,43
+Field Museum,284302,Zosterops,everetti,basilanicus,MINDANAO,Z everetti basilanicus,everetti,9.7,8.2,3.6,3.6,19.6,54.5,46
+Field Museum,279653,Zosterops,everetti,basilanicus,MINDANAO,Z everetti basilanicus,everetti,9.4,7,3.3,3.4,16.9,54,38
+Field Museum,227802,Zosterops,everetti,basilanicus,MINDANAO,Z everetti basilanicus,everetti,10.6,9,3.4,3.5,16.8,58.5,42
+Field Museum,279667,Zosterops,everetti,basilanicus,MINDANAO,Z everetti basilanicus,everetti,10.2,7.2,3,3.1,18.5,51,36
+Field Museum,275478,Zosterops,everetti,basilanicus,MINDANAO,Z everetti basilanicus,everetti,10.9,7.6,3.1,3.4,16,53.5,33
+Field Museum,248395,Zosterops,everetti,boholensis,SAMAR,Z everetti boholensis,everetti,10.6,7.8,3.3,3.3,18.1,62.5,41
+Field Museum,248398,Zosterops,everetti,boholensis,SAMAR,Z everetti boholensis,everetti,9.9,7.6,3.1,3.1,15.3,53,38
+Field Museum,248393,Zosterops,everetti,boholensis,SAMAR,Z everetti boholensis,everetti,10.6,7.7,3.5,3.2,16.8,56,41
+Field Museum,284635,Zosterops,everetti,basilanicus,CAMIGUIN,Z everetti basilanicus,everetti,11.2,8.4,3.6,3.4,17.9,58.5,42
+Field Museum,223710,Zosterops,everetti,boholensis,BOHOL,Z everetti boholensis,everetti,9.9,7.6,3.1,3.3,18.3,55,38
+Field Museum,223709,Zosterops,everetti,boholensis,BOHOL,Z everetti boholensis,everetti,9.7,8.4,3.2,3.3,17.9,54.5,44
+Field Museum,223705,Zosterops,everetti,boholensis,BOHOL,Z everetti boholensis,everetti,10.1,8,3.3,3,21.1,55,41
+Field Museum,223707,Zosterops,everetti,boholensis,BOHOL,Z everetti boholensis,everetti,10.4,7.9,3.5,3.3,19.6,55,42
+Field Museum,223721,Zosterops,everetti,boholensis,BOHOL,Z everetti boholensis,everetti,10,7.7,3.4,3.6,17.9,57.5,41
+Field Museum,223718,Zosterops,everetti,boholensis,BOHOL,Z everetti boholensis,everetti,9.6,7.6,3.3,3.1,17.4,53.5,39
+Field Museum,223719,Zosterops,everetti,boholensis,BOHOL,Z everetti boholensis,everetti,10.5,7.7,3.3,3,17.9,57,40
+Field Museum,223713,Zosterops,everetti,boholensis,BOHOL,Z everetti boholensis,everetti,9.7,7.3,3.2,3.1,17.4,57.5,43
+Field Museum,223720,Zosterops,everetti,boholensis,BOHOL,Z everetti boholensis,everetti,10,8.1,3.3,3.2,16.6,53.5,41
+Field Museum,276657,Zosterops,everetti,boholensis,LEYTE,Z everetti boholensis,everetti,10.6,7.7,3.4,3.2,17.7,55,47
+Field Museum,276661,Zosterops,everetti,boholensis,LEYTE,Z everetti boholensis,everetti,10.8,7.6,3.1,3.4,18.3,58,41
+Field Museum,276674,Zosterops,everetti,boholensis,LEYTE,Z everetti boholensis,everetti,10.6,7,3.3,3.1,17.1,56,39
+Field Museum,276664,Zosterops,everetti,boholensis,LEYTE,Z everetti boholensis,everetti,10.5,7.2,3.4,3.4,17,55.5,41
+Field Museum,276671,Zosterops,everetti,boholensis,LEYTE,Z everetti boholensis,everetti,10.3,7,3.6,3.1,16.4,58,42
+Field Museum,276667,Zosterops,everetti,boholensis,LEYTE,Z everetti boholensis,everetti,11.5,8.1,3.3,3.3,16.9,55.5,40
+Field Museum,276668,Zosterops,everetti,boholensis,LEYTE,Z everetti boholensis,everetti,10.6,7.3,3.1,3.1,16.6,59,41
+Field Museum,217590,Zosterops,everetti,siquijorensis,SIQUIJOR,Z everetti siquijorensis,everetti,9.9,8.3,3.3,2.9,15.9,50,38
+Field Museum,217593,Zosterops,everetti,siquijorensis,SIQUIJOR,Z everetti siquijorensis,everetti,9.2,7,2.9,3,17.3,53,37
+Field Museum,222859,Zosterops,everetti,siquijorensis,SIQUIJOR,Z everetti siquijorensis,everetti,10.6,8.3,3.4,3.6,17.8,57,37
+Field Museum,219262,Zosterops,everetti,siquijorensis,SIQUIJOR,Z everetti siquijorensis,everetti,10.5,8,3.2,3.3,17.5,54.5,43
+Field Museum,219261,Zosterops,everetti,siquijorensis,SIQUIJOR,Z everetti siquijorensis,everetti,9.7,7.3,3.2,3.3,16.9,57,43
+Field Museum,257408,Zosterops,nigrorum,aureiloris,LUZON,Z nigrorum aureiloris,nigrorum,9.7,6.9,3,2.7,16.7,50,37
+Field Museum,254260,Zosterops,nigrorum,aureiloris,LUZON,Z nigrorum aureiloris,nigrorum,9.9,6.9,3.1,3,16.7,52,37
+Field Museum,257406,Zosterops,nigrorum,aureiloris,LUZON,Z nigrorum aureiloris,nigrorum,9.5,6.8,3.2,2.7,17.8,53,37
+Field Museum,254263,Zosterops,nigrorum,aureiloris,LUZON,Z nigrorum aureiloris,nigrorum,8.7,6.4,3.1,2.8,15.3,50.5,40
+Field Museum,254303,Zosterops,nigrorum,aureiloris,LUZON,Z nigrorum aureiloris,nigrorum,10,7.3,2.9,3.1,17,54,38
+Field Museum,254270,Zosterops,nigrorum,aureiloris,LUZON,Z nigrorum aureiloris,nigrorum,10,7.1,3.1,2.7,17.6,52,38
+Field Museum,257414,Zosterops,nigrorum,aureiloris,LUZON,Z nigrorum aureiloris,nigrorum,9.1,7.2,3.4,2.5,17.1,53,35
+Field Museum,184515,Zosterops,nigrorum,aureiloris,LUZON,Z nigrorum aureiloris,nigrorum,9.3,6.3,2.4,2.2,16.7,51.5,38
+Field Museum,184570,Zosterops,nigrorum,aureiloris,LUZON,Z nigrorum aureiloris,nigrorum,9.3,8.1,2.9,2.8,16.9,50.5,37
+Field Museum,266569,Zosterops,nigrorum,luzonicus,LUZON,Z nigrorum luzonicus,nigrorum,10,7.3,3.4,3.1,16.3,56,41
+Field Museum,266577,Zosterops,nigrorum,luzonicus,LUZON,Z nigrorum luzonicus,nigrorum,9.2,7.2,3.1,2.8,17.9,51.5,41
+Field Museum,266570,Zosterops,nigrorum,luzonicus,LUZON,Z nigrorum luzonicus,nigrorum,10.3,7.7,3.3,3.2,17,49,36
+Field Museum,266571,Zosterops,nigrorum,luzonicus,LUZON,Z nigrorum luzonicus,nigrorum,9.9,7.7,3.1,3,17.4,53,39
+Field Museum,20060,Zosterops,nigrorum,nigrorum,TICAO,Z nigrorum nigrorum,nigrorum,9.5,7.8,3,3.3,19.2,55.5,41
+Field Museum,20251,Zosterops,nigrorum,nigrorum,TICAO,Z nigrorum nigrorum,nigrorum,10.1,8.7,2.9,3,16.6,56,34
+Field Museum,246424,Zosterops,nigrorum,nigrorum,NEGROS,Z nigrorum nigrorum,nigrorum,10.4,7.2,3.1,3.2,18.5,53.5,43
+Field Museum,191348,Zosterops,nigrorum,nigrorum,NEGROS,Z nigrorum nigrorum,nigrorum,9.3,7,3.7,3,16.1,51.5,38
+Field Museum,191341,Zosterops,nigrorum,nigrorum,NEGROS,Z nigrorum nigrorum,nigrorum,10.2,7.4,3.2,3.3,16.7,53,37
+Field Museum,251501,Zosterops,nigrorum,nigrorum,NEGROS,Z nigrorum nigrorum,nigrorum,10.2,7.8,3.7,3,17.8,54.5,43
+Field Museum,259878,Zosterops,nigrorum,innominatus,LUZON,Z nigrorum innominatus,nigrorum,8.9,7.5,2.9,2.8,17.5,53,38
+Field Museum,259894,Zosterops,nigrorum,innominatus,LUZON,Z nigrorum innominatus,nigrorum,9.3,7.1,2.8,2.7,16.8,49.5,41
+Field Museum,259893,Zosterops,nigrorum,innominatus,LUZON,Z nigrorum innominatus,nigrorum,10.1,7.9,3.1,2.9,18.3,52.5,36
+Field Museum,259899,Zosterops,nigrorum,innominatus,LUZON,Z nigrorum innominatus,nigrorum,10.3,7.2,2.9,3,17.7,52,35
+Field Museum,20247,Zosterops,nigrorum,richmondi,CAGAYANCILLO,Z nigrorum richmondi,nigrorum,11.1,8.7,3.4,3.6,17.9,57,46
+Field Museum,20248,Zosterops,nigrorum,richmondi,CAGAYANCILLO,Z nigrorum richmondi,nigrorum,10.5,8,3.1,3.4,20.8,57,38
+Field Museum,286516,Zosterops,nigrorum,catarmanensis,CAMIGUIN,Z nigrorum catarmanensis,nigrorum CS,11.1,7.9,3.7,3.3,18.8,58,42
+Field Museum,286521,Zosterops,nigrorum,catarmanensis,CAMIGUIN,Z nigrorum catarmanensis,nigrorum CS,11.1,7.7,3.8,3.3,18.8,57.5,38
+Field Museum,286523,Zosterops,nigrorum,catarmanensis,CAMIGUIN,Z nigrorum catarmanensis,nigrorum CS,10.8,8.3,3.8,3.6,18.6,59,39
+Field Museum,284611,Zosterops,nigrorum,catarmanensis,CAMIGUIN,Z nigrorum catarmanensis,nigrorum CS,11.6,8,3.5,3.6,19.4,60,44
+Field Museum,284595,Zosterops,nigrorum,catarmanensis,CAMIGUIN,Z nigrorum catarmanensis,nigrorum CS,10.8,8.4,3.2,3.3,19.9,61,39
+Field Museum,284587,Zosterops,nigrorum,catarmanensis,CAMIGUIN,Z nigrorum catarmanensis,nigrorum CS,11.4,8.4,3.4,3.3,17.8,60,40
+Field Museum,284609,Zosterops,nigrorum,catarmanensis,CAMIGUIN,Z nigrorum catarmanensis,nigrorum CS,10.4,7.9,3.1,3.6,19.9,59,43
+Field Museum,284612,Zosterops,nigrorum,catarmanensis,CAMIGUIN,Z nigrorum catarmanensis,nigrorum CS,11.2,8.2,3.4,3.1,19.2,63,45
+Field Museum,284622,Zosterops,nigrorum,catarmanensis,CAMIGUIN,Z nigrorum catarmanensis,nigrorum CS,11.1,8.2,3.6,3.5,18.5,61,42
+Field Museum,284592,Zosterops,nigrorum,catarmanensis,CAMIGUIN,Z nigrorum catarmanensis,nigrorum CS,11,8.3,3.6,3.2,20.1,58,40
+Field Museum,284621,Zosterops,nigrorum,catarmanensis,CAMIGUIN,Z nigrorum catarmanensis,nigrorum CS,11.1,8.8,3.9,3.5,19.7,60,43
+Field Museum,284613,Zosterops,nigrorum,catarmanensis,CAMIGUIN,Z nigrorum catarmanensis,nigrorum CS,10.9,8,3.7,3.4,19.5,59,34
+Field Museum,284615,Zosterops,nigrorum,catarmanensis,CAMIGUIN,Z nigrorum catarmanensis,nigrorum CS,11.4,8.4,3.2,3.4,18.4,56,41
+Field Museum,429299,Zosterops,montanus,whiteheadi,LUZON,Z montanus whiteheadi,montanus NORTH,9.8,6.4,2.4,2.9,17.2,56,39
+Field Museum,449785,Zosterops,montanus,whiteheadi,LUZON,Z montanus whiteheadi,montanus NORTH,10.2,7.4,3,2.8,15.9,51,34
+Field Museum,252895,Zosterops,montanus,whiteheadi,LUZON,Z montanus whiteheadi,montanus NORTH,9.7,6.9,2.9,2.8,18.6,54.5,37
+Field Museum,19747,Zosterops,montanus,whiteheadi,LUZON,Z montanus whiteheadi,montanus NORTH,10.1,7,2.5,2.7,17.1,53,38
+Field Museum,254259,Zosterops,montanus,whiteheadi,LUZON,Z montanus whiteheadi,montanus NORTH,10.6,6.9,3.4,2.8,17.8,54,36
+Field Museum,19746,Zosterops,montanus,whiteheadi,LUZON,Z montanus whiteheadi,montanus NORTH,10,7,2.8,3,15.8,53,38
+Field Museum,184493,Zosterops,montanus,whiteheadi,LUZON,Z montanus whiteheadi,montanus NORTH,10.6,7.1,2.6,3,14.6,51,33
+Field Museum,184494,Zosterops,montanus,whiteheadi,LUZON,Z montanus whiteheadi,montanus NORTH,10.1,6.9,2.9,3.1,17.9,52,35
+Field Museum,275471,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,9.3,7.1,2.8,3.3,18.5,53,36
+Field Museum,279646,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,9.8,7.5,3,3.4,16.7,56,40
+Field Museum,275472,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,9.5,7.1,3.3,3.1,17.5,53.5,36
+Field Museum,279637,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,9.7,6.8,2.9,2.9,17.2,56,38
+Field Museum,279633,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,9.7,7.3,3.1,3.2,16.7,56.5,39
+Field Museum,279640,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,9.6,6.9,2.6,3.1,17.5,55,37
+Field Museum,279649,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,10.4,7.1,3.2,3.4,18.4,54,41
+Field Museum,217460,Zosterops,montanus,pectoralis,NEGROS,Z montanus pectoralis,montanus SOUTH,9.5,7.4,3,2.3,17.1,56.5,39
+Field Museum,217458,Zosterops,montanus,pectoralis,NEGROS,Z montanus pectoralis,montanus SOUTH,10.4,7.8,3,2.8,17.4,54,38
+Field Museum,257249,Zosterops,montanus,pectoralis,NEGROS,Z montanus pectoralis,montanus SOUTH,11.7,8.8,3.1,3.1,18,59,42
+Field Museum,257259,Zosterops,montanus,pectoralis,NEGROS,Z montanus pectoralis,montanus SOUTH,11.2,7.9,3,3,17.4,58,42
+Field Museum,257257,Zosterops,montanus,pectoralis,NEGROS,Z montanus pectoralis,montanus SOUTH,11.3,7.5,3.3,2.7,18,57.5,40
+Field Museum,257264,Zosterops,montanus,pectoralis,NEGROS,Z montanus pectoralis,montanus SOUTH,11.3,8,3.6,2.8,18.3,58,40
+Field Museum,257252,Zosterops,montanus,pectoralis,NEGROS,Z montanus pectoralis,montanus SOUTH,11.8,8.6,3.6,3.6,17.9,56.5,42
+Field Museum,257250,Zosterops,montanus,pectoralis,NEGROS,Z montanus pectoralis,montanus SOUTH,10.8,8.1,3.1,2.9,17.6,56,42
+Field Museum,191359,Zosterops,montanus,pectoralis,NEGROS,Z montanus pectoralis,montanus SOUTH,9.9,7.8,3.1,3,17.6,55,32
+Field Museum,187918,Zosterops,montanus,pectoralis,NEGROS,Z montanus pectoralis,montanus SOUTH,10.2,7.5,3.1,2.9,18.7,54.5,38
+Field Museum,219515,Zosterops,montanus,pectoralis,NEGROS,Z montanus pectoralis,montanus SOUTH,10,7.5,2.9,3.2,17.3,52,33
+Field Museum,227742,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,10.5,7.5,3.1,3.3,16.9,61,41
+Field Museum,227722,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,10.1,7.5,3.3,3.1,17.7,55.5,39
+Field Museum,227716,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,10.6,8.1,3.1,3,18.2,58.5,42
+Field Museum,227708,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,10,7.3,3.4,3.2,17.1,56,39
+Field Museum,227704,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,10.9,7.3,3.1,3.2,17.5,53.5,34
+Field Museum,227719,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,10.1,6.6,2.7,2.8,17.8,55,39
+Field Museum,227732,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,10.8,7.8,3,3.5,17.1,55.5,41
+Field Museum,227770,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,11.1,7.8,3,3.1,18.5,61,41
+Field Museum,227729,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,10.4,7.8,3.2,3.3,17.3,55.5,40
+Field Museum,227744,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,11.1,7.8,3.2,3.1,17.8,54,36
+Field Museum,227717,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,11,7.2,3.3,3.4,17.4,56,36
+Field Museum,227731,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,10.9,8,3,3.1,15.8,55,34
+Field Museum,227762,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,10.3,7.9,3.4,3.1,17,54.5,37
+Field Museum,392322,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,9.8,6.8,2.6,2.6,18.1,54.5,40
+Field Museum,392321,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,10.4,7.4,2.7,3.2,16.9,55,41
+Field Museum,357634,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,11.5,8.1,3.1,3.6,16.7,55.5,40
+Field Museum,184500,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,11.4,7.4,2.9,3,17,56,41
+Field Museum,275462,Zosterops,montanus,vulcani,MINDANAO,Z montanus vulcani,montanus SOUTH,10.4,7.1,3.4,3.2,17.3,56.5,41
+Field Museum,244036,Zosterops,palpebrosus,palpebrosus,NEPAL,Z palpebrosus palpebrosus,palpebrosus,9.3,6,2.5,2.4,13.8,53,33
+Field Museum,244033,Zosterops,palpebrosus,palpebrosus,NEPAL,Z palpebrosus palpebrosus,palpebrosus,9.5,6.4,2.5,2.9,12.6,51,36
+Field Museum,243980,Zosterops,palpebrosus,palpebrosus,NEPAL,Z palpebrosus palpebrosus,palpebrosus,9.4,6.5,2.7,2.8,14.7,52,37
+Field Museum,243987,Zosterops,palpebrosus,palpebrosus,NEPAL,Z palpebrosus palpebrosus,palpebrosus,9.4,6.8,2.8,2.4,14.9,52,40
+Field Museum,243981,Zosterops,palpebrosus,palpebrosus,NEPAL,Z palpebrosus palpebrosus,palpebrosus,8.5,6.3,2.7,2.9,13.7,52.5,34
+Field Museum,244069,Zosterops,palpebrosus,palpebrosus,ASSAM,Z palpebrosus palpebrosus,palpebrosus,9.7,7.2,2.8,2.9,14.7,53.5,39
+Field Museum,80337,Zosterops,palpebrosus,williamsoni,LAOS,Z palpebrosus williamsoni,palpebrosus,9,6.7,2.6,2.9,15.7,52,34
+Field Museum,80334,Zosterops,palpebrosus,williamsoni,LAOS,Z palpebrosus williamsoni,palpebrosus,9.7,7,2.6,2.9,15.1,51.5,37
+Field Museum,91670,Zosterops,palpebrosus,williamsoni,LAOS,Z palpebrosus williamsoni,palpebrosus,9.7,7.1,3,2.4,15,54.5,40
+Field Museum,244021,Zosterops,palpebrosus,nilgiriensis,GHATS,Z palpebrosus nilgiriensis,palpebrosus,9.9,6.9,2.9,2.9,14.7,54,43
+Field Museum,244022,Zosterops,palpebrosus,nilgiriensis,GHATS,Z palpebrosus nilgiriensis,palpebrosus,10.8,7.9,3,2.9,16.7,56,43
+Field Museum,244019,Zosterops,palpebrosus,nilgiriensis,GHATS,Z palpebrosus nilgiriensis,palpebrosus,10.9,7.5,3.1,3,13.5,56,41
+Field Museum,244012,Zosterops,palpebrosus,nilgiriensis,GHATS,Z palpebrosus nilgiriensis,palpebrosus,11.1,8.2,3.2,3,15.3,53,42
+Field Museum,244020,Zosterops,palpebrosus,nilgiriensis,GHATS,Z palpebrosus nilgiriensis,palpebrosus,10.4,7.4,3.4,2.9,15,55,44
+Field Museum,243998,Zosterops,palpebrosus,occidentis,KATHIAWAR,Z palpebrosus occidentis,palpebrosus,8.2,6,3.1,2.6,15.5,54,39
+Field Museum,243993,Zosterops,palpebrosus,occidentis,KATHIAWAR,Z palpebrosus occidentis,palpebrosus,7.9,5.8,2.8,2.8,15.5,53.5,39
+Field Museum,243996,Zosterops,palpebrosus,occidentis,KATHIAWAR,Z palpebrosus occidentis,palpebrosus,8.6,6,2.8,2.6,15.5,55,40
+Field Museum,243997,Zosterops,palpebrosus,occidentis,KATHIAWAR,Z palpebrosus occidentis,palpebrosus,8.7,6.3,2.9,2.5,14.4,53.5,39
+Field Museum,244004,Zosterops,palpebrosus,occidentis,KATHIAWAR,Z palpebrosus occidentis,palpebrosus,8.4,6.4,2.8,3.2,16.2,53,40
+Field Museum,244054,Zosterops,palpebrosus,occidentis,NCINDIA,Z palpebrosus occidentis,palpebrosus,8.5,6.5,2.8,3.1,15,54,39
+Field Museum,257639,Zosterops,palpebrosus,egregius,SRILANKA,Z palpebrosus egregius,palpebrosus,8.7,6.3,2.6,2.8,15.9,51.5,37
+Field Museum,257640,Zosterops,palpebrosus,egregius,SRILANKA,Z palpebrosus egregius,palpebrosus,9,6.4,2.7,3,14.2,56.5,41
+Field Museum,257645,Zosterops,palpebrosus,egregius,SRILANKA,Z palpebrosus egregius,palpebrosus,8.3,6,2.5,2.5,15.4,52.5,39
+Field Museum,257641,Zosterops,palpebrosus,egregius,SRILANKA,Z palpebrosus egregius,palpebrosus,9.1,6.6,2.6,2.9,14.1,52,40

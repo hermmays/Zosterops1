@@ -1,0 +1,43 @@
+---
+title: "Zosterops_delimitR"
+format:
+  html:
+    grid:
+      body-width: 1200px
+editor: visual
+---
+
+Activate delimitR environment (created in Anaconda). don't forget to deactivate when you are done.
+
+```         
+(base) maysh-mac:Zosterops Methods and Results maysh$ conda activate delimitR
+(delimitR) maysh-mac:Zosterops Methods and Results maysh$ cd 
+```
+
+```{r}
+#| label: test1 delimitR
+# devtools::install('delimitR', dependencies = TRUE)
+```
+
+```{r}
+#| label: test2 delimitR
+library(ape)
+# Get delimitR formatted tree in Newick format
+ZosteropsSpeciesTree_delimitR <- read.tree(file = "Data/delimitR/ZosteropsSpeciesTree_delimitR.txt")
+
+# Plot the delimitR guide tree 
+plot(ZosteropsSpeciesTree_delimitR, edge.width = 3, label.offset = 0.001, cex = 1.2)
+```
+
+NOT WORKING!
+
+ABC
+
+```{r}
+#| label: test3 delimitR
+library(vcfR)
+library(dplyr)
+library(abc)
+ZosteropsSNPs <- read.vcfR("Data/VCF files/zost.filtered.snps.vcf.gz")
+ZosteropsSNPs
+```

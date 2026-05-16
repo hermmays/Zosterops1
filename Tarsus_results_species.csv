@@ -1,0 +1,29 @@
+trait,group1,group2,p.value
+Tarsus,everetti,erythropleurus,0.01171
+Tarsus,japonicus,erythropleurus,< 2e-16
+Tarsus,japonicus,everetti,< 2e-16
+Tarsus,meyeni,erythropleurus,1.6e-09
+Tarsus,meyeni,everetti,0.00110
+Tarsus,meyeni,japonicus,0.05774
+Tarsus,montanus,erythropleurus,0.00020
+Tarsus,montanus,everetti,1.00000
+Tarsus,montanus,japonicus,< 2e-16
+Tarsus,montanus,meyeni,0.00208
+Tarsus,nigrorum,erythropleurus,0.00012
+Tarsus,nigrorum,everetti,1.00000
+Tarsus,nigrorum,japonicus,6.9e-13
+Tarsus,nigrorum,meyeni,0.04812
+Tarsus,nigrorum,montanus,1.00000
+Tarsus,palpebrosus,erythropleurus,0.03215
+Tarsus,palpebrosus,everetti,8.3e-11
+Tarsus,palpebrosus,japonicus,< 2e-16
+Tarsus,palpebrosus,meyeni,< 2e-16
+Tarsus,palpebrosus,montanus,8.0e-15
+Tarsus,palpebrosus,nigrorum,4.2e-14
+Tarsus,simplex,erythropleurus,1.00000
+Tarsus,simplex,everetti,0.26235
+Tarsus,simplex,japonicus,< 2e-16
+Tarsus,simplex,meyeni,1.1e-07
+Tarsus,simplex,montanus,0.01128
+Tarsus,simplex,nigrorum,0.00555
+Tarsus,simplex,palpebrosus,0.00048

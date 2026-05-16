@@ -1,0 +1,1138 @@
+---
+title: "BPP and GDI based species delimitation"
+format:
+  html:
+    grid:
+      body-width: 1200px
+editor: visual
+bibliography: ZosteropsBPP.bib
+---
+
+## Goals
+
+What follows is our workflow for the Bayesian Phylogenetics and Phylogeography (BP&P or hereafter just BPP) and genealogical diversity index (GDI) analyses for East Asian Zosterops. Using the multispecies coalescent [@flouri2019], the BPP software package v4.7.0 [@flouri2018], and the GDI heuristic species delimitation methods outlined in Leaché et al. [@leaché2018] this analysis attempts to estimate 𝜃 and test species hypotheses against the eight locus Sanger sequencing dataset for East Asian Zosterops (see **Sanger sequencing summary statistics and trees** section).
+
+## Getting started
+
+We are using R version 4.4.2 and RStudio version 2024.09.1 to illustrate the guide trees in for BPP, calculate GDI, and plot 𝜃 and GDI. Quarto version 1.6.39 for Mac OS was used to document the workflow. The analysis was conducted using BPP v4.7.0. The [BPP manual](https://bpp.github.io/bpp-manual/bpp-4-manual/) is an excellent introduction to these analyses.
+
+## General methods summary
+
+We tested hypotheses regarding species limits based on the eight locus Sanger sequencing dataset and the *Bayesian Phylogenetic and Phylogeography* (*BP&P* or hereafter *BPP*) program v4.7.0 [@yang2015; @flouri2018] and estimates of the genealogical diversity index (GDI) [@jackson2016; @leaché2018]. BPP allows for multiple analyses based on multilocus DNA alignments and the multispecies coalescent model including species delimitation from a fixed species tree (analysis A10 in BPP) and estimation of the population scaled mutation rate (q) and speciation or split times (t) from assigned species lineages on a fixed tree (analysis A00 in BPP).
+
+We converted Sanger sequencing alignments, including both haploid mtDNA loci and phased diploid nuDNA loci, into a single phylip formatted text file. A scalar file was used to set the heredity scalars to 0.25 for the mtDNA loci and 1 for the nuDNA loci. Four imap files were created to map individual samples to taxa on a fixed species tree. The ‘tip’ imap schema included five putative lineages; *Z. japonicus*, *Z. meyeni*, *Z. montanus* from the Northern Philippines, *Z. montanus* from the Southern Philippines and Indonesia, and *Z. simplex*. The ‘tip’ species tree was defined such that *Z. japonicus*, *Z. meyeni*, and the northern *Z. montanus* formed a single clade sister to the southern *Z. montanus* and within that clade *Z. japonicus* and *Z. meyeni* are sister. *Z. simplex* formed an outgroup to a clade with *Z. japonicus*. *Z. meyeni*, and both lineages of *Z montanus*. The 'tip' tree is plotted below.
+
+```{r}
+#| label: Example Zosterops tree for general methods summary
+library(ape)
+ZOSTEROPSTREE <- read.tree(text = '((((Z. japonicus, Z. meyeni), Z. montanus NORTH), Z. montanus SOUTH), Z. simplex);')
+plot(ZOSTEROPSTREE, edge.width = 4, label.offset = 0.1)
+```
+
+Three other imap files were constructed such that each pair of lineages was successively collapsed starting with *Z. japonicus* and *Z. meyeni* merged together (the ‘mid1’ tree), followed by the collapse of *Z. japonicus*, *Z. meyeni*, and the northern *Z. montanus* (the ‘mid2’ tree), and finally the collapse of *Z. japonicus*, *Z. meyeni*, and both *Z. montanus* lineages into a sister group to *Z. simplex* (the ‘root’ tree). Replicate BPP runs of the A00 analysis for each of these four fixed species trees provided estimates of q and t along each branch which could then be used to calculate GDI for each lineage. GDI is the complementary probability of $$e^{(-2\tau/\theta_A)}$$
+
+and thus gives the probability of two sequences coalescing prior to (backwards in time) the divergence of population A and its sister lineage (Leaché et al. 2019) as follows.
+
+$$GDI = 1 - e^{(-2\tau/\theta_A)}$$
+
+Priors for the population q and t were based on an inverse G distribution defined by the parameters a and b. For all runs in BPP a was set at three and the b parameters for q (b~q~) and t (b~t~) varied among independent replicate runs. For the A10 runs various combinations of b~q~ (0.001 – 0.1) andb~t~ (0.0005 – 0.004) were used across runs corresponding to means of 0.0005 – 0.5 for q and 0.00025 – 0.002 for t prior distributions. These values were chosen based on what would be reasonable for a relatively recent set of lineages (\< 1mya) and in consultation with the BPP manual (<https://bpp.github.io/bpp-manual/bpp-4-manual/>). For all the A10 and A00 runs the GTR model was used with a burnin of 10,000 and a sample size of 100,000. Species delimitation algorithms 1 and 0 were tested in the A10 runs.
+
+Three replicate runs were done for the A00 analyses for each of four combinations of prior parameters (b~q~ andb~t~) across four fixed species trees (‘tip’, ‘mid1’, ‘mid2, and ‘root’) making a total of 48 A00 runs. Results from each set of three replicate runs under the same parameters were combined and GDI was calculated from estimates of q and t. q and GDI were plotted in R as density plots for each branch on the fixed species tree. This analysis was confined to those taxa with the greatest taxonomic uncertainty (*Z. japonicus*, *Z. meyeni*, and *Z. montanus*, with *Z. simplex* as an outgroup) and excluded all other taxa in this study (*Z. erythropleurus*, *Z. everetti*, *Z. nigrorum*, and *Z. palpebrosus*).
+
+## Software and packages
+
+- BPP v4.7.0 [@flouri2018] A newer version of BPP is available but this version appears to work fine. To replicate this analysis, run on an install of BPP v4.7.0 available [here](https://github.com/bpp/bpp/releases). Documentation for BPP is available [here](https://bpp.github.io/bpp-manual/bpp-4-manual/).
+
+- ape [@ape] The ape package was used to visualize the guide trees used in the BPP analyses.
+
+Load the ape library before proceeding.
+
+```{r}
+library(ape)
+```
+
+## Data files
+
+### Sequence alignments
+
+The data used for this analysis will be restricted to those Sanger sequences from *Zosterops japonicus*, *Z. meyeni*, *Z. montanus*, and *Z. simplex*. The sequence file is in *phylip* format.
+
+To illustrate the data format an excerpt of the sequence file `ZosteropsBPP_JMMSseq.txt` is shown below (ellipsis indicates where additional sequences from the original file have been left out). One alignment of individual sequences follows the other sequentially in a single file. A space followed by two numbers indicate the beginning of a locus. First is the number of individual sequences for that locus. Remember that for those loci from phased nuclear coding DNA (nuDNA) there will be two sequences for each individual with the individual identifying code followed by *a* and *b* to denote the two phased alleles (see **Sanger sequencing summary statistics and trees** section). The following number is the length of the sequence alignment in base pairs (bp). Each sequence will lead with the sample, an *a* for the mitochondrial DNA (mtDNA) loci or either *a* or *b* for the phased cdDNA loci, and underscore, the locus name (e.g. COI, ND2, B3GNT9), a \^ symbol, and finally the individual sample name (minus the allelic designations, *a* and/or *b*). The individual sample name following the \^ symbol should match the individual names used to map taxon names (i.e. the `imap` file).
+
+```         
+ 117 646
+
+ZJal002a_COI^ZJal002   
+ATAGTAGGTACCGCCCTAAGCCTCCTCATTCGAGCAGAACTCGGCCAACCAGGTGCCCTCCTGGGAGACGACCAAGTTTA
+TAACGTGATCGTCACAGCCCATGCTTTCGTAATAATCTTCTTCATAGTAATACCAATCATAATCGGAGGATTTGGAAACT
+GACTAGTCCCCCTAATGATTGGAGCCCCAGACATAGCATTCCCCCGAATAAACAACATAAGCTTCTGACTACTTCCTCCA
+TCATTCTTACTACTACTAGCCTCCTCCACAGTAGAAGCCGGAGTAGGTACAGGATGAACTGTATACCCCCCTCTAGCTGG
+CAATCTCGCCCACGCGGGAGCCTCAGTTGACCTAGCTATCTTCTCCCTACACCTAGCGGGTATCTCATCTATCCTAGGGG
+CAATCAACTTTATCACCACAGCAATCAACATAAAACCACCCGCCATCTCACAATACCAAACTCCCCTATTCGTTTGATCA
+GTACTAATCACCGCAGTCCTACTCCTCCTATCCCTACCCGTACTCGCTGCAGGTATTACAATGCTACTCACCGACCGTAA
+CCTAAACACCACCTTCTTCGACCCAGCAGGAGGAGGAGATCCAGTACTATACCAACATCTTTTCTGATTCTTCGGCCATC
+CTGANN
+ZJal003a_COI^ZJal003  
+ATAGTAGGTACCGCCCTAAGCCTCCTCATTCGAGCAGAACTCGGCCAACCAGGTGCCCTCCTGGGAGACGACCAAGTTTA
+TAACGTGATCGTCACAGCCCATGCTTTCGTAATAATCTTCTTCATAGTAATACCAATCATAATCGGAGGATTTGGAAACT
+GACTAGTCCCCCTAATGATTGGGGCCCCAGACATAGCATTCCCCCGAATAAACAACATAAGCTTCTGACTACTCCCTCCA
+TCATTCTTACTACTACTAGCCTCCTCCACAGTAGAAGCCGGAGTAGGTACAGGATGAACTGTATACCCCCCTCTAGCTGG
+TAATCTCGCCCACGCGGGAGCCTCAGTTGACCTAGCTATCTTCTCCCTACACCTAGCGGGTATCTCATCTATCCTAGGGG
+CAATCAACTTTATCACCACAGCAATCAACATAAAACCACCCGCCATCTCACAATACCAAACTCCCCTATTCGTTTGATCA
+GTACTAATCACCGCAGTCCTACTCCTCCTATCCCTACCCGTACTCGCTGCAGGTATTACAATGCTACTCACCGACCGTAA
+CCTAAACACCACCTTCTTCGACCCAGCAGGAGGAGGAGATCCAGTACTATACCAACATCTTTTCTGATTCTTCGGCCATC
+CTGANN
+ZJal004a_COI^ZJal004   
+ATAGTAGGTACCGCCCTAAGCCTCCTCATTCGAGCAGAACTCGGCCAACCAGGTGCCCTCCTGGGAGACGACCAAGTTTA
+TAACGTGATCGTCACAGCCCATGCTTTCGTAATAATCTTCTTCATAGTAATACCAATCATAATCGGAGGATTTGGAAACT
+GACTAGTCCCCCTAATGATTGGGGCCCCAGACATAGCATTCCCCCGAATAAACAACATAAGCTTCTGACTACTCCCTCCA
+TCATTCTTACTACTACTAGCCTCCTCCACAGTAGAAGCCGGAGTAGGTACAGGATGAACTGTATACCCCCCTCTAGCTGG
+TAATCTCGCCCACGCGGGAGCCTCAGTTGACCTAGCTATCTTCTCCCTACACCTAGCGGGTATCTCATCTATCCTAGGGG
+CAATCAACTTTATCACCACAGCAATCAACATAAAACCACCCGCCATCTCACAATACCAAACTCCCCTATTCGTTTGATCA
+GTACTAATCACCGCAGTCCTACTCCTCCTATCCCTACCCGTACTCGCTGCAGGTATTACAATGCTACTCACCGACCGTAA
+CCTAAACACCACCTTCTTCGACCCAGCAGGAGGAGGAGATCCAGTACTATACCAACATCTTTTCTGATTCTTCGGCCATC
+CTGANN
+ZJal005a_COI^ZJal005   
+ATAGTAGGTACCGCCCTAAGCCTCCTCATTCGAGCAGAACTCGGCCAACCAGGTGCCCTCCTGGGAGACGACCAAGTTTA
+TAACGTGATCGTCACAGCCCATGCTTTCGTAATAATCTTCTTCATAGTAATACCAATCATAATCGGAGGATTTGGAAACT
+GACTAGTCCCCCTAATGATTGGGGCCCCAGACATAGCATTCCCCCGAATAAACAACATAAGCTTCTGACTACTCCCTCCA
+TCATTCTTACTACTACTAGCCTCCTCCACAGTAGAAGCCGGAGTAGGTACAGGATGAACTGTATACCCCCCTCTAGCTGG
+TAATCTCGCCCACGCGGGAGCCTCAGTTGACCTAGCTATCTTCTCCCTACACCTAGCGGGTATCTCATCTATCCTAGGGG
+CAATCAACTTTATCACCACAGCAATCAACATAAAACCACCCGCCATCTCACAATACCAAACTCCCCTATTCGTTTGATCA
+GTACTAATCACCGCAGTCCTACTCCTCCTATCCCTACCCGTACTCGCTGCAGGTATTACAATGCTACTCACCGACCGTAA
+CCTAAACACCACCTTCTTCGACCCAGCAGGAGGAGGAGATCCAGTACTATACCAACATCTTTTCTGATTCTTCGGCCATC
+CTGANN
+
+...
+
+ 127 978
+
+ZJal001a_ND2^ZJal001   
+ATTTTTACTACCAGCCTCCTACTAGGAACAACCATTACAATTTCAAGCAACCATTGAATCATAGCCTGAGCCGGCCTTGA
+AATTAACACTCTAGCCATTCTCCCTATAATCTCAAAATCCCACCACCCCCGATCTGTCGAAGCCGCAACCAAATATTTCC
+TAACCCAAGCAGCTGCCTCTGCATTAGTGCTATTTTCCAGCATAACCAACGCATGACACACAGGCCAATGAGACATTACT
+CAACTAACCCATCCAACATCATCTCTTATCCTAACATCCGCCATCGCAATAAAACTGGGACTGGTCCCATTCCATTTCTG
+ATTCCCCGAAGTCCTACAAGGCTCCCCCCTCACTACTGGGCTACTCCTATCCACAGTCATAAAACTCCCACCAATTACCC
+TACTCTTCATAACATCACCTTCCCTAAACCCCACACTACTCACATGCATAGCCGTACTCTCAACAGCCTTGGGCGGCTGA
+ATAGGACTAAACCAAACACAAATCCGAAAAATCCTAGCTTTCTCCTCCATCTCCCACCTAGGTTGAATAGCCATCATTAT
+CGCTTATAACCCCAAACTTACACTATTAAACTTCTACCTATACACCCTAATAACTACAGCCGTATTCCTAACTTTAAACA
+CAATTAAAACCCCCAACCTATCTACCCTGATAACAACATGAACAAAAATCCCCTCACTAAACGCTATACTCTTCTTAACC
+CTACTATCCCTAGCAGGACTTCCACCACTAACCGGCTTCCTACCTAAATGACTCATTATCCAAGAACTCACTAAGCAAGA
+CATAATCCCAGCAGCAACAGCCATTTCCCTCCTATCCCTACTAGGACTATTCTTCTACCTACGCCTTGCATACTGTGCCA
+CAATCACACTCCCACCACACACCACAAACCATATGAAGCGATGACACATCAATAAACCAACCAGCACTACAATTGCCATC
+CTAATAGTTCTATCAACC
+ZJal002a_ND2^ZJal002   
+ATTTTTACTACCAGCCTCCTACTAGGAACAACCATTACAATTTCAAGCAACCATTGAATCATAGCCTGAGCCGGCCTTGA
+AATTAACACTCTAGCCATTCTCCCTATAATCTCAAAATCCCACCACCCCCGATCTGTCGAAGCCGCAACCAAATATTTCC
+TAACCCAAGCAGCTGCCTCTGCATTAGTGCTATTTTCCAGCATAACCAACGCATGACACACAGGCCAATGAGACATTACT
+CAACTAACCCATCCAACATCATCTCTTATCCTAACATCCGCCATCGCAATAAAACTGGGACTGGTCCCATTCCATTTCTG
+ATTCCCCGAAGTCCTACAAGGCTCCCCCCTCACTACTGGGCTACTCCTATCCACAGTCATAAAACTCCCACCAATTACCC
+TACTCTTCATAACATCACCTTCCCTAAACCCCACACTACTCACATGCATAGCCGTACTCTCAACAGCCTTGGGCGGCTGA
+ATAGGACTAAACCAAACACAAATCCGAAAAATCCTAGCTTTCTCCTCCATCTCCCACCTAGGTTGAATAGCCATCATTAT
+CGCTTATAACCCCAAACTTACACTATTAAACTTCTACCTATACACCCTAATAACTACAGCCGTATTCCTAACTTTAAACA
+CAATTAAAACCCCCAACCTATCTACCCTGATAACAACATGAACAAAAATCCCCTCACTAAACGCTATACTCTTCTTAACC
+CTACTATCCCTAGCAGGACTTCCACCACTAACCGGCTTCCTACCTAAATGACTCATTATCCAAGAACTCACTAAGCAAGA
+CATAATCCCAGCAGCAACAGCCATTTCCCTCCTATCCCTACTAGGACTATTCTTCTACCTACGCCTTGCATACTGTGCCA
+CAATCACACTCCCACCACACACCACAAACCATATGAAGCGATGACACATCAATAAACCAACCAGCACTACAATTGCCATC
+CTAATAGTTCTATCAACC
+ZJal003a_ND2^ZJal003   
+ATTTTTACTACCAGCCTCCTACTAGGAACAACCATTACAATTTCAAGCAACCATTGAATCATAGCCTGAGCCGGCCTTGA
+AATTAACACTCTAGCCATTCTCCCTATAATCTCAAAATCCCACCACCCCCGATCTGTCGAAGCCGCAACCAAATATTTCC
+TAACCCAAGCAGCTGCCTCTGCATTAGTGCTATTTTCCAGCATAACCAACGCATGACACACAGGCCAATGAGACATTACT
+CAACTAACCCATCCAACATCATCTCTTATCCTAACATCCGCCATCGCAATAAAACTGGGACTGGTCCCATTCCATTTCTG
+ATTCCCCGAAGTCCTACAAGGCTCCCCCCTCACTACTGGGCTACTCCTATCCACAGTCATAAAACTCCCACCAATTACCC
+TACTCTTCATAACATCACCTTCCCTAAACCCCACACTACTCACATGCATAGCCGTACTCTCAACAGCCTTGGGCGGCTGA
+ATAGGACTAAACCAAACACAAATCCGAAAAATCCTAGCTTTCTCCTCCATCTCCCACCTAGGTTGAATAGCCATCATTAT
+CGCTTATAACCCCAAACTTACACTATTAAACTTCTACCTATACACCCTAATAACTACAGCCGTATTCCTAACTTTAAACA
+CAATTAAAACCCCCAACCTATCTACCCTGATAACAACATGAACAAAAATCCCCTCACTAAACGCTATACTCTTCTTAACC
+CTACTATCCCTAGCAGGACTTCCACCACTAACCGGCTTCCTACCTAAATGACTCATTATCCAAGAACTCACTAAGCAAGA
+CATAATCCCAGCAGCAACAGCCATTTCCCTCCTATCCCTACTAGGACTATTCTTCTACCTACGCCTTGCATACTGTGCCA
+CAATCACACTCCCACCACACACCACAAACCATATGAAGCGATGACACATCAATAAACCAACCAGCACTACAATTGCCATC
+CTAATAGTTCTATCAACC
+ZJal004a_ND2^ZJal004   
+ATTTTTACTACCAGCCTCCTACTAGGAACAACCATTACAATTTCAAGCAACCATTGAATCATAGCCTGAGCCGGCCTTGA
+AATTAACACTCTAGCCATTCTCCCTATAATCTCAAAATCCCACCACCCCCGATCTGTCGAAGCCGCAACCAAATATTTCC
+TAACCCAAGCAGCTGCCTCTGCATTAGTGCTATTTTCCAGCATAACCAACGCATGACACACAGGCCAATGAGACATTACT
+CAACTAACCCATCCAACATCATCTCTTATCCTAACATCCGCCATCGCAATAAAACTGGGACTGGTCCCATTCCATTTCTG
+ATTCCCCGAAGTCCTACAAGGCTCCCCCCTCACTACTGGGCTACTCCTATCCACAGTCATAAAACTCCCACCAATTACCC
+TACTCTTCATAACATCACCTTCCCTAAACCCCACACTACTCACATGCATAGCCGTACTCTCAACAGCCTTGGGCGGCTGA
+ATAGGACTAAACCAAACACAAATCCGAAAAATCCTAGCTTTCTCCTCCATCTCCCACCTAGGTTGAATAGCCATCATTAT
+CGCTTATAACCCCAAACTTACACTATTAAACTTCTACCTATACACCCTAATAACTACAGCCGTATTCCTAACTTTAAACA
+CAATTAAAACCCCCAACCTATCTACCCTGATAACAACATGAACAAAAATCCCCTCACTAAACGCTATACTCTTCTTAACC
+CTACTATCCCTAGCAGGACTTCCACCACTAACCGGCTTCCTACCTAAATGACTCATTATCCAAGAACTCACTAAGCAAGA
+CATAATCCCAGCAGCAACAGCCATTTCCCTCCTATCCCTACTAGGACTATTCTTCTACCTACGCCTTGCATACTGTGCCA
+CAATCACACTCCCACCACACACCACAAACCATATGAAGCGATGACACATCAATAAACCAACCAGCACTACAATTGCCATC
+CTAATAGTTCTATCAACC
+
+...
+
+ 140 724
+
+ZJal006a_B3GNT9^ZJal006  
+CGTGAGATTGTTCGGAAGACTTGGGGCCGGGAGGGTTTGGTGAATGGGGAGCAGATCCAGCGAGTGTTCCTGCTGGGAAC
+ACCAAAGAATAGGACAGCCCTGGCAACGTGGGAGACCCTGATGCACCAGGAGAGTCAGACATACCGGGACATTTTACTCT
+GGGACTTCATGGACACTTTCTTCAACCTGACCCTGAAGGAGATCCACTTCCTGAGCTGGGCTGCTGAATTCTGCCACAAC
+GTGAAATTCATTTTCAAAGGTGACGCTGATGTTTTTGTCAACGTTGAGAACATTGTTGATTTCCTCAAGAGACACGACCC
+CACTGAAGACCTCTTTGTTGGGGACATCATCTACAATGCCCGTCCCATCCGTGTGCAGAAGAGCAAATACTACATCCCAG
+AGACCATGTATGGGCTGAGCATCTACCCTGCCTATGCTGGAGGAGGAGGGTTTTTGCTGTCCAGCTGCACCATGAGGAAG
+CTCTCCAGGGCTTGCAGAGAGGTGGAGCTGTTCCCCATTGATGATGTCTTTTTGGGCATGTGCTTACAGAGAATCAACCT
+CAAGCCAATTTTACACGAAGGATTCAAGACCTTTGGCATTGTTAAGCCTTCTGCTGCCCCACACCTACAGACGTTTGATC
+CCTGTTTTTACAAAGATCTCATGGTAGTTCATAGCCTGAAAGTTGCTGAGATCTGGCTAATGTGGAACCTGCTCCACAGC
+CCAC
+ZJal006b_B3GNT9^ZJal006  
+CGTGAGATTGTTCGGAAGACTTGGGGCCGGGAGGGTTTGGTGAATGGGGAGCAGATCCAGCGAGTGTTCCTGCTGGGAAC
+ACCAAAGAATAGGACAGCCCTGGCAACGTGGGAGACCCTGATGCACCAGGAGAGTCAGACATACCGGGACATTTTACTCT
+GGGACTTCATGGACACTTTCTTCAACCTGACCCTGAAGGAGATCCACTTCCTGAGCTGGGCTGCTGAATTCTGCCACAAC
+GTGAAATTCATTTTCAAAGGTGACGCTGATGTTTTTGTCAACGTTGAGAACATTGTTGATTTCCTCAAGAGACACGACCC
+CACTGAAGACCTCTTTGTTGGGGACATCATCTACAATGCCCGTCCCATCCGTGTGCAGAAGAGCAAATACTACATCCCAG
+AGACCATGTATGGGCTGAGCATCTACCCTGCCTATGCTGGAGGAGGAGGGTTTTTGCTGTCCAGCTGCACCATGAGGAAG
+CTCTCCAGGGCTTGCAGAGAGGTGGAGCTGTTCCCCATTGATGATGTCTTTTTGGGCATGTGCTTACAGAGAATCAACCT
+CAAGCCAATTTTACACGAAGGATTCAAGACCTTTGGCATTGTTAAGCCTTCTGCTGCCCCACACCTACAGACGTTTGATC
+CCTGTTTTTACAAAGATCTCATGGTAGTTCATAGCCTGAAAGTTGCTGAGATCTGGCTAATGTGGAACCTGCTCCACAGC
+CCAC
+ZJal010a_B3GNT9^ZJal010  
+CGTGAGATTGTTCGGAAGACTTGGGGCCGGGAGGGTTTGGTGAATGGGGAGCAGATCCAGCGAGTGTTCCTGCTGGGAAC
+ACCAAAGAATAGGACAGCCCTGGCAACGTGGGAGACCCTGATGCACCAGGAGAGTCAGACATACCGGGACATTTTACTCT
+GGGACTTCATGGACACTTTCTTCAACCTGACCCTGAAGGAGATCCACTTCCTGAGCTGGGCTGCTGAATTCTGCCACAAC
+GTGAAATTCATTTTCAAAGGTGACGCTGATGTTTTTGTCAACGTTGAGAACATTGTTGATTTCCTCAAGAGACACGACCC
+CACTGAAGACCTCTTTGTTGGGGACATCATCTACAATGCCCGTCCCATCCGTGTGCAGAAGAGCAAATACTACATCCCAG
+AGACCATGTATGGGCTGAGCATCTACCCTGCCTATGCTGGAGGAGGAGGGTTTTTGCTGTCCAGCTGCACCATGAGGAAG
+CTCTCCAGGGCTTGCAGAGAGGTGGAGCTGTTCCCCATTGATGATGTCTTTTTGGGCATGTGCTTACAGAGAATCAACCT
+CAAGCCAATTTTACACGAAGGATTCAAGACCTTTGGCATTGTTAAGCCTTCTGCTGCCCCACACCTACAGACGTTTGATC
+CCTGTTTTTACAAAGATCTCATGGTAGTTCATAGCCTGAAAGTTGCTGAGATCTGGCTAATGTGGAACCTGCTCCACAGC
+CCAC
+ZJal010b_B3GNT9^ZJal010  
+CGTGAGATTGTTCGGAAGACTTGGGGCCGGGAGGGTTTGGTGAATGGGGAGCAGATCCAGCGAGTGTTCCTGCTGGGAAC
+ACCAAAGAATAGGACAGCCCTGGCAACGTGGGAGACCCTGATGCACCAGGAGAGTCAGACATACCGGGACATTTTACTCT
+GGGACTTCATGGACACTTTCTTCAACCTGACCCTGAAGGAGATCCACTTCCTGAGCTGGGCTGCTGAATTCTGCCACAAC
+GTGAAATTCATTTTCAAAGGTGACGCCGATGTTTTTGTCAACGTTGAGAACATTGTTGATTTCCTCAAGAGACACGACCC
+CACTGAAGACCTCTTTGTTGGGGACATCATCTACAATGCCCGTCCCATCCGTGTGCAGAAGAGCAAATACTACATCCCAG
+AGACCATGTATGGGCTGAGCATCTACCCTGCCTATGCTGGAGGAGGAGGGTTTTTGCTGTCCAGCTGCACCATGAGGAAG
+CTCTCCAGGGCTTGCAGAGAGGTGGAGCTGTTCCCCATTGATGATGTCTTTTTGGGCATGTGCTTACAGAGAATCAACCT
+CAAGCCAATTTTACACGAAGGATTCAAGACCTTTGGCATTGTTAAGCCTTCTGCTGCCCCACACCTACAGACGTTTGATC
+CCTGTTTTTACAAAGATCTCATGGTAGTTCATAGCCTGAAAGTTGCTGAGATCTGGCTAATGTGGAACCTGCTCCACAGC
+CCAC
+
+...
+```
+
+### Heredity
+
+The heredity file `ZosteropsBPP_heredity.txt` below defines the heredity scalars for each locus. Mitochondrial loci have the scalar 0.25 and biparentally inherited nuclear loci have the scalar of 1.0. The scalars in the heredity file are in the the same order as the mtDNA and nuDNA alignments in the sequences file with the two mtDNA loci (COI and ND2) appearing first. Below is the heredity file for all BPP analyses.
+
+```         
+0.25
+0.25
+1
+1
+1
+1
+1
+1
+```
+
+### Taxon maps and guide trees
+
+The final data file needed for these analyses is an `imap` file saved in `txt` format that maps the taxon and/or population designations to individual samples. Individual samples in the `imap` file should match those in the *phylip* formatted sequence file. Four `imap` files will be needed for the analysis.
+
+- `ZosteropsBPPtip_imap.txt`
+
+- `ZosteropsBPPmid1_imap.txt`
+
+- `ZosteropsBPPmid2_imap.txt`
+
+- `ZosteropsBPProot_imap.txt`
+
+Codes in these files are designated for each taxon as follows.
+
+- Jp - *Z. japonicus*
+
+- Me - *Z. meyeni*
+
+- MoN - *Z. montanus* Northern Philippines including subspecies halconensis (Mindoro) and whiteheadi (Luzon)
+
+- MoS - *Z. montanus* Southern Philippines, Palawan, and Indonesia including subspecies *Z. montanus diuatae* (Mindanao), *Z. montanus vulcani* (Mindanao), *Z. montanus pectoralis* (Negros), *Z. montanus parkesi* (Palawan), *Z. montanus montanus* (Indonesia), and an unnamed *Z. montanus* population on the Philippine island of Panay.
+
+- Si - *Z. simplex* including populations on the island of Taiwan and Mainland Asia.
+
+### Trees
+
+#### TIP tree
+
+This topology is derived from the single nucleotide polymorphism (SNP) dataset analyzed in the Singular Value Decomposition Quartets (SVDQ) package (see **SVDQuartets and QAGE** section) and the Sanger sequencing dataset analyzed in BEAST2 (see **Star BEAST2** section). Branches are color coded here to match the corresponding density distributions in subsequent analyses. Each tree collapses taxa so BPP analyses may estimate 𝜃 and 𝜏 along each branch.
+
+```{r}
+#| label: TIP tree
+TIP <- read.tree(text = '((((Jp,Me),MoN),MoS),Si);')
+edge_colors <- c("#EEA2AD", "#1E90FF", "#FF8C00", "#D82632", 
+                 "#FED439", "#B66DFF", "#FA9C88", "#008600")
+plot(TIP, edge.color = edge_colors[1:length(TIP$edge)], 
+     edge.width = 4, label.offset = 0.1)
+nodes <- c("A", "B", "C", "D")
+nodelabels(nodes)
+edgelabels()
+```
+
+#### MID1 tree
+
+Collapses the *Z. japonicus* and *Z. meyeni* branches.
+
+```{r}
+#| label: MID1 tree
+MID1 <- read.tree(text = '(((JpMe,MoN),MoS),Si);')
+plot(MID1, edge.width = 4, label.offset = 0.1)
+```
+
+#### MID2 tree
+
+Collapses the *Z. japonicus*/*Z. meyeni* branch and *Z. montanus* from the Northern Philippines.
+
+```{r}
+#| label: MID2 tree
+MID2 <- read.tree(text = '((JpMeMoN,MoS),Si);')
+plot(MID2, edge.width = 4, label.offset = 0.1)
+```
+
+#### ROOT tree
+
+Collapses *Z. japonicus*, *Z. meyeni*, *Z. motanus* in the Northern Philippines, and *Z. montanus* in Indonesia and the Southern Philippines into a single branch connected to the outgroup (*Z. simplex*) by a single node.
+
+```{r}
+#| label: ROOT tree
+ROOT <- read.tree(text = '(JpMeMoNMoS,Si);')
+plot(ROOT, edge.width = 4, label.offset = 0.1)
+```
+
+## BPP control files
+
+Control files were created to run BPP analyses across a variety of models and prior distributions.
+
+### BPP A10 control files
+
+The BPP analyses designated the A runs conduct a species delimitation analysis on a fixed species tree. The species tree used for the A10 runs is the TIP tree with each taxon as a separate branch (*Z. japonicus*, *Z. meyeni*, *Z. montanus* from the Northern Philippines, *Z. montanus* from the Southern Philippines and Indonesia, and *Z. simplex*, see above description of associated tree files). Below is the `ctl` file for the first A series BPP run (A1). Several parameters on the control (`ctl`) files are edited to execute different runs including the $β_θ$ and $β_τ$ parameters for the inverse 𝛤 prior distribution, and the species delimitation model (0 or 1). The $β_θ$ and $β_τ$ parameters for the inverse 𝛤 prior distribution are edited at the *thetaprior* and *tauprior* lines, each of which is specified by two digits for 𝛼 and 𝛽, but only the 𝛽 value will be changed across runs. A list of the `ctl` files and the key parameters for each A series run are shown in the **BPP A10 runs** table in the **A10 results** section below. Note that beginning a line in the `ctl` file with an asterisk causes BPP to ignore that line. Adding and deleting asterisks in front of particular lines of commands is a convenient way to add or delete particular parameters.
+
+```         
+seed =  -1
+seqfile = ZosteropsBPP_JMMSseq.txt
+Imapfile = ZosteropsBPPtip_imap.txt
+outfile = ZosteropsBPP_A10_RUNA1.out.txt
+mcmcfile = ZosteropsBPP_A10_RUNA1.mcmc.txt
+
+* speciesdelimitation = 0 # fixed species tree
+* speciesdelimitation = 1 0 2    # speciesdelimitation algorithm0 and finetune(e)
+speciesdelimitation = 1 1 2 1 # speciesdelimitation algorithm1 finetune (a m)
+speciestree = 0 0.4 0.2 0.1   # speciestree pSlider ExpandRatio ShrinkRatio
+
+* speciesmodelprior = 1  # 0: uniform LH; 1:uniform rooted trees; 2: uniformSLH; 3: uniformSRooted
+
+species&tree = 5  Jp Me MoN MoS Si
+                  93 10 6 25 14
+                 ((((Jp, Me), MoN), MoS), Si);
+phase = 0    # 0: phased sequences, 1: unphased diploid sequences, in newest version this command is called phase
+usedata = 1    # 0: no data (prior); 1:seq like
+nloci = 8    # number of data sets in seqfile
+model = gtr
+alphaprior = 1 1 4
+cleandata = 1    # remove sites with ambiguity data (1:yes, 0:no)?
+
+thetaprior = 3 0.01 e  # invgamma(a, b) for theta
+tauprior = 3 0.002  # invgamma(a, b) for root tau & Dirichlet(a) for other tau's
+
+locusrate = 1 0 0 1 iid   # (0: No variation, 1: estimate, 2: from file)
+heredity = 2 ZosteropsBPP_heredity.txt   # (0: No variation, 1: estimate, 2: from file) & a_gamma b_gamma (if 1)
+threads = 8
+    
+finetune = 1: 8 0.01 0.001 0.01 0.01  # auto (0 or 1): MCMC step lengths, last two values are for lrht and phi which in this run are not estimated so those numbers are excluded, if I wanted to add those estimates I would need two additional finetune values
+
+print = 1 1 0 0   # MCMC samples, locusrate, heredityscalars Genetrees
+burnin = 10000
+sampfreq = 2
+nsample = 100000
+```
+
+### BPP A00 control files
+
+The BPP analyses designated the B, C, D, and E runs work from a fixed species tree without the BPP species delimitation analysis. For the B runs the $β_θ$ and $β_τ$ parameters for the inverse 𝛤 prior distribution are 0.001 and 0.004 respectively. For the C runs the $β_θ$ and $β_τ$ parameters are 0.002 and 0.004, for the D runs these values are 0.001 and 0.0005, and for the E runs these values are 0.002 and 0.0005. Running BPP independently for different, but reasonable, distributions of 𝜃 and 𝜏 is used to assess the sensitivity of our estimates to the priors. Note that for all the A00 runs (run series B-E) the *speciesdelimitation* selections are omitted by being preceded by an asterisk, as is the *speciesmodelprior* selection. Three replicate runs are done for each combination of 𝜃 and 𝜏 priors and each species tree (TIP, MID1, MID2, and ROOT, see above). Starting each `ctl` file with *seed = -1* creates a different random number seed for each replicate run. Independent runs for each species tree will be used to estimate 𝜃 and 𝜏 which will in turn be used to estimate the GDI for each branch (see description of GDI below). Below is an example of a B run control file. A list of the `ctl` files and the key parameters for each set of runs in the B-E series run are shown in the **BPP A00 runs** table in the **A00 results** section below.
+
+```         
+seed =  -1
+seqfile = ZosteropsBPP_JMMSseq.txt
+Imapfile = ZosteropsBPPtip_imap.txt
+outfile = ZosteropsBPP_A00_RUNB1.out.txt
+mcmcfile = ZosteropsBPP_A00_RUNB1.mcmc.txt
+
+speciesdelimitation = 0 # fixed species tree
+* speciesdelimitation = 1 0 2    # speciesdelimitation algorithm0 and finetune(e)
+* speciesdelimitation = 1 1 2 1 # speciesdelimitation algorithm1 finetune (a m)
+speciestree = 0 0.4 0.2 0.1   # speciestree pSlider ExpandRatio ShrinkRatio
+
+* speciesmodelprior = 1  # 0: uniform LH; 1:uniform rooted trees; 2: uniformSLH; 3: uniformSRooted
+
+species&tree = 5  Jp Me MoN MoS Si
+                  93 10 6 25 14
+                 ((((Jp, Me), MoN), MoS), Si);
+phase = 0    # 0: phased sequences, 1: unphased diploid sequences, in newest version this command is called phase
+usedata = 1    # 0: no data (prior); 1:seq like
+nloci = 8    # number of data sets in seqfile
+model = gtr
+alphaprior = 1 1 4
+cleandata = 1    # remove sites with ambiguity data (1:yes, 0:no)?
+
+thetaprior = 3 0.001 e  # invgamma(a, b) for theta
+tauprior = 3 0.004  # invgamma(a, b) for root tau & Dirichlet(a) for other tau's
+
+locusrate = 1 0 0 1 iid   # (0: No variation, 1: estimate, 2: from file)
+heredity = 2 ZosteropsBPP_heredity.txt   # (0: No variation, 1: estimate, 2: from file) & a_gamma b_gamma (if 1)
+threads = 8
+    
+finetune = 1: 8 0.01 0.001 0.01 0.01  # auto (0 or 1): MCMC step lengths, last two values are for lrht and phi which in this run are not estimated so those numbers are excluded, if I wanted to add those estimates I would need two additional finetune values
+
+print = 1 1 0 0   # MCMC samples, locusrate, heredityscalars Genetrees
+burnin = 10000
+sampfreq = 2
+nsample = 100000
+```
+
+## Genealogical diversity index (GDI)
+
+$2\tau/\theta_A$ is the population divergence time for population $A$ in coalescent units. One coalescent unit is equal to $2N_A$ generations where $N_A$ is the effective population size of $A$. $e^{(-2\tau/\theta_A)}$ is the probability that two sequences ($a_1$ and $a_2$) from population $A$ fail to coalesce before the divergence (𝜏) of $A$ from its sister lineage. The GDI is the complementary probability of $e^{(-2\tau/\theta_A)}$ and reflects the probability that $a_1$ and $a_2$ coalesce prior to (going backwards in time) the divergence between population $A$ and its sister lineage. GDI therefore may be calculated from 𝜃 and 𝜏 using the following equation [@jackson2016; @leaché2018].
+
+$$GDI = 1 - e^{(-2\tau/\theta_A)}$$
+
+The BPP A00 analyses will estimate 𝜃 and 𝜏 along each branch in a given tree and we then use those values to calculate the GDI for each branch.
+
+## Running BPP
+
+Upon [installing BPP v4.7.0](https://github.com/bpp/bpp/releases) a directory will be created containing a `bin` folder with the BPP application (on Mac OS that directory is `bpp-4.7.0-macos-aarch64`). To execute a BPP run copy the following needed files to this directory (in this example we will be running the B1 run, an A00 analysis with `ctl` file `ZosteropsA00_RUNB1.bpp.ctl)`.
+
+- `ZosteropsA00_RUNB1.bpp.ctl`
+
+- `ZosteropsBPP_JMMSseq.txt`
+
+- `ZosteropsBPP_heredity.txt`
+
+- `ZosteropsBPPtip_imap.txt`
+
+The only files that change between runs is the `ctl` file and the `imap` file.
+
+Navigate to the BPP directory with the `bin` folder containing the bpp program.
+
+In the terminal run the following command (make sure the needed files are in the working directory).
+
+```         
+bin/bpp --cfile ZosteropsA00_RUNB1.bpp.ctl
+```
+
+Upon completion multiple files will be generated by this analysis.
+
+- `FigTree.tre` This is a tree file generated with 𝜃, 𝜏, and 95% highest posterior density (HPD) for 𝜏 as branch lengths based on the tree topology given in the analysis.
+
+- Eight `sample.txt` files, one for each locus in the sequence file (`locus.[1-8].sample.txt`).
+
+- `SeedUsed` A text file recording the random number seed used for the run.
+
+- `ZosteropsBPP_A00_RUNB1.mcmc.txt` A text file containing the results from the MCMC chain.
+
+- `ZosteropsBPP_A00_RUNB1.out.txt` A text file summarizing the output of the run (for A10 runs this will include whether the analysis supported a split at each node along with the posterior probability of a split). For each run the name of the `mcmc` and `out` files will be specified by the `ctl` file.
+
+Repeat this process for each `ctl` file and for the A00 runs replicate each run three times. Once each run is complete, copy and organize the results to an appropriate directory.
+
+## A10 results
+
+### BPP A10 runs
+
+| BPP ctl file | Inverse 𝛤 prior distribution 𝛼 for 𝜃 and 𝜏 | Inverse 𝛤 distribution $\beta_\theta$ | Mean 𝜃 prior | Inverse 𝛤 distribution $\beta_\tau$ | Mean 𝜏 prior | Model | burnin | sample | nsample | species delimitation algorithm | Result | posterior |
+|----|----|----|----|----|----|----|----|----|----|----|----|----|
+| `ZosteropsA10_RUNA01.bpp.ctl` | 3 | 0.01 | 0.005 | 0.002 | 0.001 | GTR | 10000 | 2 | 100000 | 1 | 1111 | 1 |
+| `ZosteropsA10_RUNA02.bpp.ctl` | 3 | 0.02 | 0.01 | 0.002 | 0.001 | GTR | 10000 | 2 | 100000 | 1 | 1111 | 1 |
+| `ZosteropsA10_RUNA03.bpp.ctl` | 3 | 0.1 | 0.5 | 0.002 | 0.001 | GTR | 10000 | 2 | 100000 | 1 | 1111 | 1 |
+| `ZosteropsA10_RUNA04.bpp.ctl` | 3 | 0.01 | 0.005 | 0.0005 | 0.00025 | GTR | 10000 | 2 | 100000 | 1 | 1111 | 1 |
+| `ZosteropsA10_RUNA05.bpp.ctl` | 3 | 0.02 | 0.01 | 0.0005 | 0.00025 | GTR | 10000 | 2 | 100000 | 1 | 1111 | 1 |
+| `ZosteropsA10_RUNA06.bpp.ctl` | 3 | 0.1 | 0.5 | 0.0005 | 0.00025 | GTR | 10000 | 2 | 100000 | 1 | 1111 | 1 |
+| `ZosteropsA10_RUNA07.bpp.ctl` | 3 | 0.01 | 0.005 | 0.002 | 0.001 | GTR | 10000 | 2 | 100000 | 0 | 1111 | 1 |
+| `ZosteropsA10_RUNA08.bpp.ctl` | 3 | 0.02 | 0.01 | 0.002 | 0.001 | GTR | 10000 | 2 | 100000 | 0 | 1111 | 1 |
+| `ZosteropsA10_RUNA09.bpp.ctl` | 3 | 0.1 | 0.5 | 0.002 | 0.001 | GTR | 10000 | 2 | 100000 | 0 | 1111 | 1 |
+| `ZosteropsA10_RUNA10.bpp.ctl` | 3 | 0.01 | 0.005 | 0.0005 | 0.00025 | GTR | 10000 | 2 | 100000 | 0 | 1111 | 1 |
+| `ZosteropsA10_RUNA11.bpp.ctl` | 3 | 0.02 | 0.01 | 0.0005 | 0.00025 | GTR | 10000 | 2 | 100000 | 0 | 1111 | 1 |
+| `ZosteropsA10_RUNA12.bpp.ctl` | 3 | 0.1 | 0.5 | 0.0005 | 0.00025 | GTR | 10000 | 2 | 100000 | 0 | 1111 | 1 |
+| `ZosteropsA10_RUNA13.bpp.ctl` | 3 | 0.001 | 0.0005 | 0.004 | 0.002 | GTR | 10000 | 2 | 100000 | 0 | 1111 | 1 |
+| `ZosteropsA10_RUNA14.bpp.ctl` | 3 | 0.002 | 0.001 | 0.004 | 0.002 | GTR | 10000 | 2 | 100000 | 0 | 1111 | 1 |
+| `ZosteropsA10_RUNA15.bpp.ctl` | 3 | 0.001 | 0.0005 | 0.0005 | 0.00025 | GTR | 10000 | 2 | 100000 | 0 | 1111 | 1 |
+| `ZosteropsA10_RUNA16.bpp.ctl` | 3 | 0.002 | 0.001 | 0.0005 | 0.00025 | GTR | 10000 | 2 | 100000 | 0 | 1111 | 1 |
+
+### A10 species delimitation results
+
+In the A10 species delimitation analysis BPP returns a posterior probability for each node in the species tree provided, for this analysis the TIP tree in the file `ZosteropsBPPtip_imap.txt`. A result of 1 indicates a split at that node was supported and a 0 indicates that a lump was supported for the branches at that node. For all the A10 runs listed in the **BPP A10 runs** table above a split was supported at every node (1111, see tree below) with a posterior probability of 1.0.
+
+```{r}
+#| label: TIP tree A10 results
+TIP <- read.tree(text = '((((Jp,Me),MoN),MoS),Si);')
+edge_colors <- c("#EEA2AD", "#1E90FF", "#FF8C00", "#D82632", 
+                 "#FED439", "#B66DFF", "#FA9C88", "#008600")
+plot(TIP, edge.color = edge_colors[1:length(TIP$edge)], 
+     edge.width = 4, label.offset = 0.1)
+nodes <- c("1", "1", "1", "1")
+nodelabels(nodes)
+```
+
+## A00 GDI results
+
+### BPP A00 runs
+
+| BPP ctl file | Inverse 𝛤 prior distribution 𝛼 for 𝜃 and 𝜏 | Inverse 𝛤 distribution $\beta_\theta$ | Mean 𝜃 prior | Inverse 𝛤 distribution $\beta_\tau$ | Mean 𝜏 prior | Tree |
+|----|----|----|----|----|----|----|
+| `ZosteropsA00_RUNB1.bpp.ctl` | 3 | 0.001 | 0.0005 | 0.004 | 0.002 | TIP |
+| `ZosteropsA00_RUNB2.bpp.ctl` | 3 | 0.001 | 0.0005 | 0.004 | 0.002 | TIP |
+| `ZosteropsA00_RUNB3.bpp.ctl` | 3 | 0.001 | 0.0005 | 0.004 | 0.002 | TIP |
+| `ZosteropsA00_RUNB4.bpp.ctl` | 3 | 0.002 | 0.001 | 0.004 | 0.002 | TIP |
+| `ZosteropsA00_RUNB5.bpp.ctl` | 3 | 0.002 | 0.001 | 0.004 | 0.002 | TIP |
+| `ZosteropsA00_RUNB6.bpp.ctl` | 3 | 0.002 | 0.001 | 0.004 | 0.002 | TIP |
+| `ZosteropsA00_RUNB7.bpp.ctl` | 3 | 0.001 | 0.0005 | 0.0005 | 0.00025 | TIP |
+| `ZosteropsA00_RUNB8.bpp.ctl` | 3 | 0.001 | 0.0005 | 0.0005 | 0.00025 | TIP |
+| `ZosteropsA00_RUNB9.bpp.ctl` | 3 | 0.001 | 0.0005 | 0.0005 | 0.00025 | TIP |
+| `ZosteropsA00_RUNB10.bpp.ctl` | 3 | 0.002 | 0.001 | 0.0005 | 0.00025 | TIP |
+| `ZosteropsA00_RUNB11.bpp.ctl` | 3 | 0.002 | 0.001 | 0.0005 | 0.00025 | TIP |
+| `ZosteropsA00_RUNB12.bpp.ctl` | 3 | 0.002 | 0.001 | 0.0005 | 0.00025 | TIP |
+| `ZosteropsA00_RUNC1.bpp.ctl` | 3 | 0.001 | 0.0005 | 0.004 | 0.002 | MID1 |
+| `ZosteropsA00_RUNC2.bpp.ctl` | 3 | 0.001 | 0.0005 | 0.004 | 0.002 | MID1 |
+| `ZosteropsA00_RUNC3.bpp.ctl` | 3 | 0.001 | 0.0005 | 0.004 | 0.002 | MID1 |
+| `ZosteropsA00_RUNC4.bpp.ctl` | 3 | 0.002 | 0.001 | 0.004 | 0.002 | MID1 |
+| `ZosteropsA00_RUNC5.bpp.ctl` | 3 | 0.002 | 0.001 | 0.004 | 0.002 | MID1 |
+| `ZosteropsA00_RUNC6.bpp.ctl` | 3 | 0.002 | 0.001 | 0.004 | 0.002 | MID1 |
+| `ZosteropsA00_RUNC7.bpp.ctl` | 3 | 0.001 | 0.0005 | 0.0005 | 0.00025 | MID1 |
+| `ZosteropsA00_RUNC8.bpp.ctl` | 3 | 0.001 | 0.0005 | 0.0005 | 0.00025 | MID1 |
+| `ZosteropsA00_RUNC9.bpp.ctl` | 3 | 0.001 | 0.0005 | 0.0005 | 0.00025 | MID1 |
+| `ZosteropsA00_RUNC10.bpp.ctl` | 3 | 0.002 | 0.001 | 0.0005 | 0.00025 | MID1 |
+| `ZosteropsA00_RUNC11.bpp.ctl` | 3 | 0.002 | 0.001 | 0.0005 | 0.00025 | MID1 |
+| `ZosteropsA00_RUNC12.bpp.ctl` | 3 | 0.002 | 0.001 | 0.0005 | 0.00025 | MID1 |
+| `ZosteropsA00_RUND1.bpp.ctl` | 3 | 0.001 | 0.0005 | 0.004 | 0.002 | MID2 |
+| `ZosteropsA00_RUND2.bpp.ctl` | 3 | 0.001 | 0.0005 | 0.004 | 0.002 | MID2 |
+| `ZosteropsA00_RUND3.bpp.ctl` | 3 | 0.001 | 0.0005 | 0.004 | 0.002 | MID2 |
+| `ZosteropsA00_RUND4.bpp.ctl` | 3 | 0.002 | 0.001 | 0.004 | 0.002 | MID2 |
+| `ZosteropsA00_RUND5.bpp.ctl` | 3 | 0.002 | 0.001 | 0.004 | 0.002 | MID2 |
+| `ZosteropsA00_RUND6.bpp.ctl` | 3 | 0.002 | 0.001 | 0.004 | 0.002 | MID2 |
+| `ZosteropsA00_RUND7.bpp.ctl` | 3 | 0.001 | 0.0005 | 0.0005 | 0.00025 | MID2 |
+| `ZosteropsA00_RUND8.bpp.ctl` | 3 | 0.001 | 0.0005 | 0.0005 | 0.00025 | MID2 |
+| `ZosteropsA00_RUND9.bpp.ctl` | 3 | 0.001 | 0.0005 | 0.0005 | 0.00025 | MID2 |
+| `ZosteropsA00_RUND10.bpp.ctl` | 3 | 0.002 | 0.001 | 0.0005 | 0.00025 | MID2 |
+| `ZosteropsA00_RUND11.bpp.ctl` | 3 | 0.002 | 0.001 | 0.0005 | 0.00025 | MID2 |
+| `ZosteropsA00_RUNC12.bpp.ctl` | 3 | 0.002 | 0.001 | 0.0005 | 0.00025 | MID2 |
+| `ZosteropsA00_RUNE1.bpp.ctl` | 3 | 0.001 | 0.0005 | 0.004 | 0.002 | ROOT |
+| `ZosteropsA00_RUNE2.bpp.ctl` | 3 | 0.001 | 0.0005 | 0.004 | 0.002 | ROOT |
+| `ZosteropsA00_RUNE3.bpp.ctl` | 3 | 0.001 | 0.0005 | 0.004 | 0.002 | ROOT |
+| `ZosteropsA00_RUNE4.bpp.ctl` | 3 | 0.002 | 0.001 | 0.004 | 0.002 | ROOT |
+| `ZosteropsA00_RUNE5.bpp.ctl` | 3 | 0.002 | 0.001 | 0.004 | 0.002 | ROOT |
+| `ZosteropsA00_RUNE6.bpp.ctl` | 3 | 0.002 | 0.001 | 0.004 | 0.002 | ROOT |
+| `ZosteropsA00_RUNE7.bpp.ctl` | 3 | 0.001 | 0.0005 | 0.0005 | 0.00025 | ROOT |
+| `ZosteropsA00_RUNE8.bpp.ctl` | 3 | 0.001 | 0.0005 | 0.0005 | 0.00025 | ROOT |
+| `ZosteropsA00_RUNE9.bpp.ctl` | 3 | 0.001 | 0.0005 | 0.0005 | 0.00025 | ROOT |
+| `ZosteropsA00_RUNE10.bpp.ctl` | 3 | 0.002 | 0.001 | 0.0005 | 0.00025 | ROOT |
+| `ZosteropsA00_RUNE11.bpp.ctl` | 3 | 0.002 | 0.001 | 0.0005 | 0.00025 | ROOT |
+| `ZosteropsA00_RUNE12.bpp.ctl` | 3 | 0.002 | 0.001 | 0.0005 | 0.00025 | ROOT |
+
+### Color palette
+
+Set the color palette to be used in subsequent figures.
+
+```{r}
+#| label: Set the color palette
+#set color palette
+red<-"#D82632"
+yellow<-"#FED439"
+orange<-"#FF8C00"
+purple<-"#B66DFF"
+blue<-"#1E90FF"
+peach<-"#FA9C88"
+pink<-"#EEA2AD"
+green<-"#008600"
+
+```
+
+### Import MCMC data
+
+Import MCMC data from for the BPP runs with 𝛂 set at 3 and 𝛽 for the inverse 𝛤 prior distribution set at 0.001 and 0.004 for 𝜃 and 𝜏 respectively.
+
+```{r}
+#| Label: Import MCMC files from BPP runs Beta 0.001 and 0.004
+# A RUNS are BPP runs under the A10 conditions with species delimitation 
+# under a fixed tree.
+# B-E RUNS are BPP runs under the A00 conditions with no 
+# species delimitation and a fixed tree.
+# Each set of runs are done under three replicates, four imap files 
+# corresponding to different branches of the tree (tip, mid1, mid2, root), 
+# and four different combinations of theta and tau prior distributions.
+# Taxon codes for trees: Jp (Z. japonicus), Me (Z. meyeni), 
+# MoN (Northern Philippine Z. montanus on Luzon and Mindoro), 
+# MoS (Southern Philippine Z. montanus in the Visayas and Mindanao), 
+# Si (outgroup, Z. simplex on Mainland Asia and Taiwan)
+# Trees for .ctl files...
+# B RUNS Tip ((((Jp, Me), MoN), MoS), Si)
+# C RUNS Mid1 (((JpMe, MoN), MoS), Si)
+# D RUNS Mid2 ((JpMeMoN, MoS), Si)
+# E RUNS Root (JpMeMoNMoS, Si)
+# Beta values for Theta and Tau...
+# Z1 0.001 0.004  Z2 0.002 0.004  Z3 0.001 0.0005  Z4 0.002 0.0005
+# Tip B1-3 0.001 0.004 B4-6 0.002 0.004 B7-9 0.001 0.0005 B10-12 0.002 0.0005
+# Mid1 C1-3 0.001 0.004 C4-6 0.002 0.004 C7-9 0.001 0.0005 C10-12 0.002 0.0005
+# Mid2 D1-3 0.001 0.004 D4-6 0.002 0.004 D7-9 0.001 0.0005 D10-12 0.002 0.0005
+# Root E1-3 0.001 0.004 E4-6 0.002 0.004 E7-9 0.001 0.0005 E10-12 0.002 0.0005
+
+#import Zosterops MCMC B-E RUNS 1-3 Theta = 0.001 Tau = 0.004
+Z1tfilesB <- list.files(path = "Data/BPP/Z1ThetaTau", 
+                        pattern = "ZosteropsBPP_A00_RUNB[1-3].mcmc.txt", 
+                        full.names = TRUE)
+Z1tipB <- do.call(`rbind`,lapply(Z1tfilesB, read.table, header=T))
+
+Z1m1filesC <- list.files(path = "Data/BPP/Z1ThetaTau", 
+                         pattern = "ZosteropsBPP_A00_RUNC[1-3].mcmc.txt", 
+                         full.names = TRUE)
+Z1mid1C <- do.call(`rbind`,lapply(Z1m1filesC, read.table, header=T))
+
+Z1m2filesD <- list.files(path = "Data/BPP/Z1ThetaTau", 
+                         pattern = "ZosteropsBPP_A00_RUND[1-3].mcmc.txt", 
+                         full.names = TRUE)
+Z1mid2D <- do.call(`rbind`,lapply(Z1m2filesD, read.table, header=T))
+
+Z1rfilesE <- list.files(path = "Data/BPP/Z1ThetaTau", 
+                        pattern = "ZosteropsBPP_A00_RUNE[1-3].mcmc.txt", 
+                        full.names = TRUE)
+Z1rootE <- do.call(`rbind`,lapply(Z1rfilesE, read.table, header=T))
+```
+
+Import MCMC data from for the BPP runs with 𝛂 set at 3 and 𝛽 for the inverse 𝛤 prior distribution set at 0.002 and 0.004 for 𝜃 and 𝜏 respectively.
+
+```{r}
+#| label: Import MCMC files from BPP runs Beta 0.002 and 0.004
+#import Zosterops MCMC B-E RUNS 4-6 Theta = 0.002 Tau = 0.004
+Z2tfilesB <- list.files(path="Data/BPP/Z2ThetaTau", 
+                        pattern="ZosteropsBPP_A00_RUNB[4-6].mcmc.txt", 
+                        full.names = TRUE)
+Z2tipB <- do.call(`rbind`,lapply(Z2tfilesB, read.table, header=T))
+
+Z2m1filesC <- list.files(path="Data/BPP/Z2ThetaTau", 
+                         pattern="ZosteropsBPP_A00_RUNC[4-6].mcmc.tx", 
+                         full.names = TRUE)
+Z2mid1C <- do.call(`rbind`,lapply(Z2m1filesC, read.table, header=T))
+
+Z2m2filesD <- list.files(path="Data/BPP/Z2ThetaTau", 
+                         pattern="ZosteropsBPP_A00_RUND[4-6].mcmc.tx", 
+                         full.names = TRUE)
+Z2mid2D <- do.call(`rbind`,lapply(Z2m2filesD, read.table, header=T))
+
+Z2rfilesE <- list.files(path="Data/BPP/Z2ThetaTau", 
+                        pattern="ZosteropsBPP_A00_RUNE[4-6].mcmc.tx", 
+                        full.names = TRUE)
+Z2rootE <- do.call(`rbind`,lapply(Z2rfilesE, read.table, header=T))
+```
+
+Import MCMC data from for the BPP runs with 𝛂 set at 3 and 𝛽 for the inverse 𝛤 prior distribution set at 0.001 and 0.0005 for 𝜃 and 𝜏 respectively.
+
+```{r}
+#| label: Import MCMC files from BPP runs Beta 0.001 and 0.0005
+#import Zosterops MCMC B-E RUNS 7-9 Theta = 0.001 Tau = 0.0005
+Z3tfilesB <- list.files(path="Data/BPP/Z3ThetaTau", 
+                        pattern="ZosteropsBPP_A00_RUNB[7-9].mcmc.txt", 
+                        full.names = TRUE)
+Z3tipB <- do.call(`rbind`,lapply(Z3tfilesB, read.table, header=T))
+
+Z3m1filesC <- list.files(path="Data/BPP/Z3ThetaTau", 
+                         pattern="ZosteropsBPP_A00_RUNC[7-9].mcmc.txt", 
+                         full.names = TRUE)
+Z3mid1C <- do.call(`rbind`,lapply(Z3m1filesC, read.table, header=T))
+
+Z3m2filesD <- list.files(path="Data/BPP/Z3ThetaTau", 
+                         pattern="ZosteropsBPP_A00_RUND[7-9].mcmc.txt", 
+                         full.names = TRUE)
+Z3mid2D <- do.call(`rbind`,lapply(Z3m2filesD, read.table, header=T))
+
+Z3rfilesE <- list.files(path="Data/BPP/Z3ThetaTau", 
+                        pattern="ZosteropsBPP_A00_RUNE[7-9].mcmc.txt", 
+                        full.names = TRUE)
+Z3rootE <- do.call(`rbind`,lapply(Z3rfilesE, read.table, header=T))
+```
+
+Import MCMC data from for the BPP runs with 𝛂 set at 3 and 𝛽 for the inverse 𝛤 prior distribution set at 0.002 and 0.0005 for 𝜃 and 𝜏 respectively.
+
+```{r}
+#| label: Import MCMC files from BPP runs Beta 0.002 and 0.0005
+#import Zosterops MCMC B-E RUNS 10-12 Theta = 0.002 Tau = 0.0005
+Z4tfilesB <- list.files(path="Data/BPP/Z4ThetaTau", 
+                        pattern="ZosteropsBPP_A00_RUNB1[0-2].mcmc.txt", 
+                        full.names = TRUE)
+Z4tipB <- do.call(`rbind`,lapply(Z4tfilesB, read.table, header=T))
+
+Z4m1filesC <- list.files(path="Data/BPP/Z4ThetaTau", 
+                         pattern="ZosteropsBPP_A00_RUNC1[0-2].mcmc.txt", 
+                         full.names = TRUE)
+Z4mid1C <- do.call(`rbind`,lapply(Z4m1filesC, read.table, header=T))
+
+Z4m2filesD <- list.files(path="Data/BPP/Z4ThetaTau", 
+                         pattern="ZosteropsBPP_A00_RUND1[0-2].mcmc.txt", 
+                         full.names = TRUE)
+Z4mid2D <- do.call(`rbind`,lapply(Z4m2filesD, read.table, header=T))
+
+Z4rfilesE <- list.files(path="Data/BPP/Z4ThetaTau", 
+                        pattern="ZosteropsBPP_A00_RUNE1[0-2].mcmc.txt", 
+                        full.names = TRUE)
+Z4rootE <- do.call(`rbind`,lapply(Z4rfilesE, read.table, header=T))
+
+```
+
+### GDI calculations and density
+
+Generate density distribution for GDI from the BPP runs with 𝛂 set at 3 and 𝛽 for the inverse 𝛤 prior distribution set at 0.001 and 0.004 for 𝜃 and 𝜏 respectively.
+
+```{r}
+#| label: Calculate density distribution from BPP runs Beta 0.001 and 0.004
+#generate Zosterops GDI density Theta 0.001 Tau 0.004
+#TIP
+densityJpA <-density(1-exp(-2*Z1tipB$tau_9JpMe/Z1tipB$theta_1Jp))
+densityMeA <-density(1-exp(-2*Z1tipB$tau_9JpMe/Z1tipB$theta_2Me))
+#MID1
+densityJpMeA <- density(1-exp(-2*Z1mid1C$tau_7JpMeMoN/Z1mid1C$theta_1JpMe))
+densityMoNA <- density(1-exp(-2*Z1mid1C$tau_7JpMeMoN/Z1mid1C$theta_2MoN))
+#MID2
+densityJpMeMoNA <- density(1-exp(-2*Z1mid2D$tau_5JpMeMoNMoS/Z1mid2D$theta_1JpMeMoN))
+densityMoSA <- density(1-exp(-2*Z1mid2D$tau_5JpMeMoNMoS/Z1mid2D$theta_2MoS))
+#ROOT
+densityJpMeMoNMoSA <- density(1-exp(-2*Z1rootE$tau_3JpMeMoNMoSSi/Z1rootE$theta_1JpMeMoNMoS))
+densitySiA <- density(1-exp(-2*Z1rootE$tau_3JpMeMoNMoSSi/Z1rootE$theta_2Si))
+```
+
+Generate density distribution for GDI from the BPP runs with 𝛂 set at 3 and 𝛽 for the inverse 𝛤 prior distribution set at 0.002 and 0.004 for 𝜃 and 𝜏 respectively.
+
+```{r}
+#| label: Calculate density distribution from BPP runs Beta 0.002 and 0.004
+#generate Zosterops GDI density Theta 0.002 Tau 0.004
+#TIP
+densityJpB <-density(1-exp(-2*Z2tipB$tau_9JpMe/Z2tipB$theta_1Jp))
+densityMeB <-density(1-exp(-2*Z2tipB$tau_9JpMe/Z2tipB$theta_2Me))
+#MID1
+densityJpMeB <- density(1-exp(-2*Z2mid1C$tau_7JpMeMoN/Z2mid1C$theta_1JpMe))
+densityMoNB <- density(1-exp(-2*Z2mid1C$tau_7JpMeMoN/Z2mid1C$theta_2MoN))
+#MID2
+densityJpMeMoNB <- density(1-exp(-2*Z2mid2D$tau_5JpMeMoNMoS/Z2mid2D$theta_1JpMeMoN))
+densityMoSB <- density(1-exp(-2*Z2mid2D$tau_5JpMeMoNMoS/Z2mid2D$theta_2MoS))
+#ROOT
+densityJpMeMoNMoSB <- density(1-exp(-2*Z2rootE$tau_3JpMeMoNMoSSi/Z2rootE$theta_1JpMeMoNMoS))
+densitySiB <- density(1-exp(-2*Z2rootE$tau_3JpMeMoNMoSSi/Z2rootE$theta_2Si))
+```
+
+Generate density distribution for GDI from the BPP runs with 𝛂 set at 3 and 𝛽 for the inverse 𝛤 prior distribution set at 0.001 and 0.0005 for 𝜃 and 𝜏 respectively.
+
+```{r}
+#| label: Calculate density distribution from BPP runs Beta 0.001 and 0.0005
+#generate Zosterops GDI density Theta 0.001 Tau 0.0005
+#TIP
+densityJpC <-density(1-exp(-2*Z3tipB$tau_9JpMe/Z3tipB$theta_1Jp))
+densityMeC <-density(1-exp(-2*Z3tipB$tau_9JpMe/Z3tipB$theta_2Me))
+#MID1
+densityJpMeC <- density(1-exp(-2*Z3mid1C$tau_7JpMeMoN/Z3mid1C$theta_1JpMe))
+densityMoNC <- density(1-exp(-2*Z3mid1C$tau_7JpMeMoN/Z3mid1C$theta_2MoN))
+#MID2
+densityJpMeMoNC <- density(1-exp(-2*Z3mid2D$tau_5JpMeMoNMoS/Z3mid2D$theta_1JpMeMoN))
+densityMoSC <- density(1-exp(-2*Z3mid2D$tau_5JpMeMoNMoS/Z3mid2D$theta_2MoS))
+#ROOT
+densityJpMeMoNMoSC <- density(1-exp(-2*Z3rootE$tau_3JpMeMoNMoSSi/Z3rootE$theta_1JpMeMoNMoS))
+densitySiC <- density(1-exp(-2*Z3rootE$tau_3JpMeMoNMoSSi/Z3rootE$theta_2Si))
+```
+
+Generate density distribution for GDI from the BPP runs with 𝛂 set at 3 and 𝛽 for the inverse 𝛤 prior distribution set at 0.002 and 0.0005 for 𝜃 and 𝜏 respectively.
+
+```{r}
+#| label: Calculate density distribution from BPP runs Beta 0.002 and 0.0005
+#generate Zosterops GDI density Theta 0.002 Tau 0.0005
+#TIP
+densityJpD <-density(1-exp(-2*Z4tipB$tau_9JpMe/Z4tipB$theta_1Jp))
+densityMeD <-density(1-exp(-2*Z4tipB$tau_9JpMe/Z4tipB$theta_2Me))
+#MID1
+densityJpMeD <- density(1-exp(-2*Z4mid1C$tau_7JpMeMoN/Z4mid1C$theta_1JpMe))
+densityMoND <- density(1-exp(-2*Z4mid1C$tau_7JpMeMoN/Z4mid1C$theta_2MoN))
+#MID2
+densityJpMeMoND <- density(1-exp(-2*Z4mid2D$tau_5JpMeMoNMoS/Z4mid2D$theta_1JpMeMoN))
+densityMoSD <- density(1-exp(-2*Z4mid2D$tau_5JpMeMoNMoS/Z4mid2D$theta_2MoS))
+#ROOT
+densityJpMeMoNMoSD <- density(1-exp(-2*Z4rootE$tau_3JpMeMoNMoSSi/Z4rootE$theta_1JpMeMoNMoS))
+densitySiD <- density(1-exp(-2*Z4rootE$tau_3JpMeMoNMoSSi/Z4rootE$theta_2Si))
+```
+
+### 𝜃 estimates and density
+
+Generate density distributions for 𝜃 and the value of 𝜃 at the maximum density from the BPP runs with 𝛂 set at 3 and 𝛽 for the inverse 𝛤 prior distribution set at 0.001 and 0.004 for 𝜃 and 𝜏 respectively.
+
+```{r}
+#| label: Theta density distributions from BPP runs Beta 0.001 and 0.004
+#Theta estimates and density plots
+# Z1 Theta 0.001 Tau 0.004
+# Z. japonicus theta
+thetaZ1Jp <- density(Z1tipB$theta_1Jp)
+thetaZ1JpINDEX <- which.max(thetaZ1Jp$y)
+thetaZ1JpMAX <- thetaZ1Jp$x[thetaZ1JpINDEX]
+thetaZ1JpMAX
+# Z. meyeni theta
+thetaZ1Me <- density(Z1tipB$theta_2Me)
+thetaZ1MeINDEX <- which.max(thetaZ1Me$y)
+thetaZ1MeMAX <- thetaZ1Me$x[thetaZ1MeINDEX]
+thetaZ1MeMAX
+# Z. montanus Northern Philippines theta
+thetaZ1MoN <- density(Z1tipB$theta_3MoN)
+thetaZ1MoNINDEX <- which.max(thetaZ1MoN$y)
+thetaZ1MoNMAX <- thetaZ1MoN$x[thetaZ1MoNINDEX]
+thetaZ1MoNMAX
+# Z. montanus Southern Philippines theta
+thetaZ1MoS <- density(Z1tipB$theta_4MoS)
+thetaZ1MoSINDEX <- which.max(thetaZ1MoS$y)
+thetaZ1MoSMAX <- thetaZ1MoS$x[thetaZ1MoSINDEX]
+thetaZ1MoSMAX
+# Z. simplex theta
+thetaZ1Si <- density(Z1tipB$theta_5Si)
+thetaZ1SiINDEX <- which.max(thetaZ1Si$y)
+thetaZ1SiMAX <- thetaZ1Si$x[thetaZ1SiINDEX]
+thetaZ1SiMAX
+# Ancestral theta Z. japonicus and Z. meyeni
+thetaZ1JpMe <- density(Z1tipB$theta_9JpMe)
+thetaZ1JpMeINDEX <- which.max(thetaZ1JpMe$y)
+thetaZ1JpMeMAX <- thetaZ1JpMe$x[thetaZ1JpMeINDEX]
+thetaZ1JpMeMAX
+# Ancestral theta Z. japonicus, Z. meyeni, Z. montanus Northern Philippines
+thetaZ1JpMeMoN <- density(Z1tipB$theta_8JpMeMoN)
+thetaZ1JpMeMoNINDEX <- which.max(thetaZ1JpMeMoN$y)
+thetaZ1JpMeMoNMAX <- thetaZ1JpMeMoN$x[thetaZ1JpMeMoNINDEX]
+thetaZ1JpMeMoNMAX
+# Ancestral theta Z. japonicus, Z. meyeni, 
+# Z. montanus Northern Philippines, Z. montanus Southern Philippines
+thetaZ1JpMeMoNMoS <- density(Z1tipB$theta_7JpMeMoNMoS)
+thetaZ1JpMeMoNMoSINDEX <- which.max(thetaZ1JpMeMoNMoS$y)
+thetaZ1JpMeMoNMoSMAX <- thetaZ1JpMeMoNMoS$x[thetaZ1JpMeMoNMoSINDEX]
+thetaZ1JpMeMoNMoSMAX
+# Ancestral theta ALL
+thetaZ1JpMeMoNMoSSi <- density(Z1tipB$theta_6JpMeMoNMoSSi)
+thetaZ1JpMeMoNMoSSiINDEX <- which.max(thetaZ1JpMeMoNMoSSi$y)
+thetaZ1JpMeMoNMoSSiMAX <- thetaZ1JpMeMoNMoSSi$x[thetaZ1JpMeMoNMoSSiINDEX]
+thetaZ1JpMeMoNMoSSiMAX
+```
+
+Plot 𝜃 density distributions from the BPP runs with 𝛂 set at 3 and 𝛽 for the inverse 𝛤 prior distribution set at 0.001 and 0.004 for 𝜃 and 𝜏 respectively.
+
+```{r}
+#| label: Theta density distributions plots from BPP runs Beta 0.001 and 0.004
+# Z1 theta plots
+#| fig-height: 4
+#| fig-width: 8
+plot((thetaZ1Jp), 
+     xlim=c(0,0.02), ylim=c(0,3000), col=red, cex.lab=2.1, lwd=2, 
+     cex.main=2.0, main="a. \u03B8 = 0.001 \u03C4 = 0.004", xlab="\u03B8")
+lines (thetaZ1Me, lw=2, col=yellow)
+lines(thetaZ1MoN, lw=2, col=purple)
+lines(thetaZ1MoS, lw=2, col=peach)
+lines(thetaZ1Si, lw=2, col=green)
+lines(thetaZ1JpMe, lw=2, col=orange)
+lines(thetaZ1JpMeMoN, lw=2, col=blue)
+lines(thetaZ1JpMeMoNMoS, lw=2, col=pink)
+lines(thetaZ1JpMeMoNMoSSi, lw=2, col="grey50")
+legend("top", 10,legend=c("Z. japonicus", "Z. meyeni", 
+                          "Z. japonicus/meyeni", "Z. montanus N Philippines", 
+                          "Z. japonicus/meyeni/montanus N Philippines", 
+                          "Z. montanus S Philippines", 
+                          "Z. japonicus/meyeni/montanus", "Z. simplex"), 
+       col=c(red,yellow,orange,purple,blue,peach,pink, green), 
+       pch=15, cex=0.74, bty="n")
+```
+
+Generate density distributions for 𝜃 and the value of 𝜃 at the maximum density from the BPP runs with 𝛂 set at 3 and 𝛽 for the inverse 𝛤 prior distribution set at 0.002 and 0.004 for 𝜃 and 𝜏 respectively.
+
+```{r}
+#| label: Theta density distributions from BPP runs Beta 0.002 and 0.004
+# Z2 Theta 0.002 Tau 0.004
+# Z. japonicus theta
+thetaZ2Jp <- density(Z2tipB$theta_1Jp)
+thetaZ2JpINDEX <- which.max(thetaZ2Jp$y)
+thetaZ2JpMAX <- thetaZ2Jp$x[thetaZ2JpINDEX]
+thetaZ2JpMAX
+# Z. meyeni theta
+thetaZ2Me <- density(Z2tipB$theta_2Me)
+thetaZ2MeINDEX <- which.max(thetaZ2Me$y)
+thetaZ2MeMAX <- thetaZ2Me$x[thetaZ2MeINDEX]
+thetaZ2MeMAX
+# Z. montanus Northern Philippines theta
+thetaZ2MoN <- density(Z2tipB$theta_3MoN)
+thetaZ2MoNINDEX <- which.max(thetaZ2MoN$y)
+thetaZ2MoNMAX <- thetaZ2MoN$x[thetaZ2MoNINDEX]
+thetaZ2MoNMAX
+# Z. montanus Southern Philippines theta
+thetaZ2MoS <- density(Z2tipB$theta_4MoS)
+thetaZ2MoSINDEX <- which.max(thetaZ2MoS$y)
+thetaZ2MoSMAX <- thetaZ2MoS$x[thetaZ2MoSINDEX]
+thetaZ2MoSMAX
+# Z. simplex theta
+thetaZ2Si <- density(Z2tipB$theta_5Si)
+thetaZ2SiINDEX <- which.max(thetaZ2Si$y)
+thetaZ2SiMAX <- thetaZ2Si$x[thetaZ2SiINDEX]
+thetaZ2SiMAX
+# Ancestral theta Z. japonicus and Z. meyeni
+thetaZ2JpMe <- density(Z2tipB$theta_9JpMe)
+thetaZ2JpMeINDEX <- which.max(thetaZ2JpMe$y)
+thetaZ2JpMeMAX <- thetaZ2JpMe$x[thetaZ2JpMeINDEX]
+thetaZ2JpMeMAX
+# Ancestral theta Z. japonicus, Z. meyeni, Z. montanus Northern Philippines
+thetaZ2JpMeMoN <- density(Z2tipB$theta_8JpMeMoN)
+thetaZ2JpMeMoNINDEX <- which.max(thetaZ2JpMeMoN$y)
+thetaZ2JpMeMoNMAX <- thetaZ2JpMeMoN$x[thetaZ2JpMeMoNINDEX]
+thetaZ2JpMeMoNMAX
+# Ancestral theta Z. japonicus, Z. meyeni, 
+# Z. montanus Northern Philippines, Z. montanus Southern Philippines
+thetaZ2JpMeMoNMoS <- density(Z2tipB$theta_7JpMeMoNMoS)
+thetaZ2JpMeMoNMoSINDEX <- which.max(thetaZ2JpMeMoNMoS$y)
+thetaZ2JpMeMoNMoSMAX <- thetaZ2JpMeMoNMoS$x[thetaZ2JpMeMoNMoSINDEX]
+thetaZ2JpMeMoNMoSMAX
+# Ancestral theta ALL
+thetaZ2JpMeMoNMoSSi <- density(Z2tipB$theta_6JpMeMoNMoSSi)
+thetaZ2JpMeMoNMoSSiINDEX <- which.max(thetaZ2JpMeMoNMoSSi$y)
+thetaZ2JpMeMoNMoSSiMAX <- thetaZ2JpMeMoNMoSSi$x[thetaZ2JpMeMoNMoSSiINDEX]
+thetaZ2JpMeMoNMoSSiMAX
+```
+
+Plot 𝜃 density distributions from the BPP runs with 𝛂 set at 3 and 𝛽 for the inverse 𝛤 prior distribution set at 0.002 and 0.004 for 𝜃 and 𝜏 respectively.
+
+```{r}
+#| label: Theta density distribution plots from BPP runs Beta 0.002 and 0.004
+# Z2 theta plots
+#| fig-height: 4
+#| fig-width: 8
+plot((thetaZ2Jp), xlim=c(0,0.02), ylim=c(0,3000), col=red, 
+     cex.lab=2.1, lwd=2, cex.main=2.0, 
+     main="a. \u03B8 = 0.002 \u03C4 = 0.004", xlab="\u03B8")
+lines (thetaZ2Me, lw=2, col=yellow)
+lines(thetaZ2MoN, lw=2, col=purple)
+lines(thetaZ2MoS, lw=2, col=peach)
+lines(thetaZ2Si, lw=2, col=green)
+lines(thetaZ2JpMe, lw=2, col=orange)
+lines(thetaZ2JpMeMoN, lw=2, col=blue)
+lines(thetaZ2JpMeMoNMoS, lw=2, col=pink)
+lines(thetaZ2JpMeMoNMoSSi, lw=2, col="grey50")
+legend("top", 10,legend=c("Z. japonicus", "Z. meyeni", "Z. japonicus/meyeni", 
+                          "Z. montanus N Philippines", 
+                          "Z. japonicus/meyeni/montanus N Philippines", 
+                          "Z. montanus S Philippines", 
+                          "Z. japonicus/meyeni/montanus", 
+                          "Z. simplex"), 
+       col=c(red,yellow,orange,purple,blue,peach,pink, green), pch=15, 
+       cex=0.74, bty="n")
+```
+
+Generate density distributions for 𝜃 and the value of 𝜃 at the maximum density from the BPP runs with 𝛂 set at 3 and 𝛽 for the inverse 𝛤 prior distribution set at 0.001 and 0.0005 for 𝜃 and 𝜏 respectively.
+
+```{r}
+#| label: Theta density distributions from BPP runs Beta 0.001 and 0.0005
+# Z3 Theta 0.001 Tau 0.0005
+# Z. japonicus theta
+thetaZ3Jp <- density(Z3tipB$theta_1Jp)
+thetaZ3JpINDEX <- which.max(thetaZ3Jp$y)
+thetaZ3JpMAX <- thetaZ3Jp$x[thetaZ3JpINDEX]
+thetaZ3JpMAX
+# Z. meyeni theta
+thetaZ3Me <- density(Z3tipB$theta_2Me)
+thetaZ3MeINDEX <- which.max(thetaZ3Me$y)
+thetaZ3MeMAX <- thetaZ3Me$x[thetaZ3MeINDEX]
+thetaZ3MeMAX
+# Z. montanus Northern Philippines theta
+thetaZ3MoN <- density(Z3tipB$theta_3MoN)
+thetaZ3MoNINDEX <- which.max(thetaZ3MoN$y)
+thetaZ3MoNMAX <- thetaZ3MoN$x[thetaZ3MoNINDEX]
+thetaZ3MoNMAX
+# Z. montanus Southern Philippines theta
+thetaZ3MoS <- density(Z3tipB$theta_4MoS)
+thetaZ3MoSINDEX <- which.max(thetaZ3MoS$y)
+thetaZ3MoSMAX <- thetaZ3MoS$x[thetaZ3MoSINDEX]
+thetaZ3MoSMAX
+# Z. simplex theta
+thetaZ3Si <- density(Z3tipB$theta_5Si)
+thetaZ3SiINDEX <- which.max(thetaZ3Si$y)
+thetaZ3SiMAX <- thetaZ3Si$x[thetaZ3SiINDEX]
+thetaZ3SiMAX
+# Ancestral theta Z. japonicus and Z. meyeni
+thetaZ3JpMe <- density(Z3tipB$theta_9JpMe)
+thetaZ3JpMeINDEX <- which.max(thetaZ3JpMe$y)
+thetaZ3JpMeMAX <- thetaZ3JpMe$x[thetaZ3JpMeINDEX]
+thetaZ3JpMeMAX
+# Ancestral theta Z. japonicus, Z. meyeni, Z. montanus Northern Philippines
+thetaZ3JpMeMoN <- density(Z3tipB$theta_8JpMeMoN)
+thetaZ3JpMeMoNINDEX <- which.max(thetaZ3JpMeMoN$y)
+thetaZ3JpMeMoNMAX <- thetaZ3JpMeMoN$x[thetaZ3JpMeMoNINDEX]
+thetaZ3JpMeMoNMAX
+# Ancestral theta Z. japonicus, Z. meyeni, 
+# Z. montanus Northern Philippines, Z. montanus Southern Philippines
+thetaZ3JpMeMoNMoS <- density(Z3tipB$theta_7JpMeMoNMoS)
+thetaZ3JpMeMoNMoSINDEX <- which.max(thetaZ3JpMeMoNMoS$y)
+thetaZ3JpMeMoNMoSMAX <- thetaZ3JpMeMoNMoS$x[thetaZ3JpMeMoNMoSINDEX]
+thetaZ3JpMeMoNMoSMAX
+# Ancestral theta ALL
+thetaZ3JpMeMoNMoSSi <- density(Z3tipB$theta_6JpMeMoNMoSSi)
+thetaZ3JpMeMoNMoSSiINDEX <- which.max(thetaZ3JpMeMoNMoSSi$y)
+thetaZ3JpMeMoNMoSSiMAX <- thetaZ3JpMeMoNMoSSi$x[thetaZ3JpMeMoNMoSSiINDEX]
+thetaZ3JpMeMoNMoSSiMAX
+```
+
+Plot 𝜃 density distributions from the BPP runs with 𝛂 set at 3 and 𝛽 for the inverse 𝛤 prior distribution set at 0.001 and 0.0005 for 𝜃 and 𝜏 respectively.
+
+```{r}
+#| label: Theta density distribution plots from BPP runs Beta 0.001 and 0.0005
+#| fig-height: 4
+#| fig-width: 8
+# Z3 theta plots
+plot((thetaZ3Jp), xlim=c(0,0.02), ylim=c(0,3000), col=red, 
+     cex.lab=2.1, lwd=2, cex.main=2.0, 
+     main="a. \u03B8 = 0.001 \u03C4 = 0.0005", xlab="\u03B8")
+lines (thetaZ3Me, lw=2, col=yellow)
+lines(thetaZ3MoN, lw=2, col=purple)
+lines(thetaZ3MoS, lw=2, col=peach)
+lines(thetaZ3Si, lw=2, col=green)
+lines(thetaZ3JpMe, lw=2, col=orange)
+lines(thetaZ3JpMeMoN, lw=2, col=blue)
+lines(thetaZ3JpMeMoNMoS, lw=2, col=pink)
+lines(thetaZ3JpMeMoNMoSSi, lw=2, col="grey50")
+legend("top", 10,legend=c("Z. japonicus", "Z. meyeni", "Z. japonicus/meyeni", 
+                          "Z. montanus N Philippines", 
+                          "Z. japonicus/meyeni/montanus N Philippines", 
+                          "Z. montanus S Philippines", 
+                          "Z. japonicus/meyeni/montanus", "Z. simplex"), 
+       col=c(red,yellow,orange,purple,blue,peach,pink, green), 
+       pch=15, cex=0.74, bty="n")
+```
+
+Generate density distributions for 𝜃 and the value of 𝜃 at the maximum density from the BPP runs with 𝛂 set at 3 and 𝛽 for the inverse 𝛤 prior distribution set at 0.002 and 0.0005 for 𝜃 and 𝜏 respectively.
+
+```{r}
+#| label: Theta density distributions from BPP runs Beta 0.002 and 0.0005
+# Z4 Theta 0.002 Tau 0.0005
+# Z. japonicus theta
+thetaZ4Jp <- density(Z4tipB$theta_1Jp)
+thetaZ4JpINDEX <- which.max(thetaZ4Jp$y)
+thetaZ4JpMAX <- thetaZ4Jp$x[thetaZ4JpINDEX]
+thetaZ4JpMAX
+# Z. meyeni theta
+thetaZ4Me <- density(Z4tipB$theta_2Me)
+thetaZ4MeINDEX <- which.max(thetaZ4Me$y)
+thetaZ4MeMAX <- thetaZ4Me$x[thetaZ4MeINDEX]
+thetaZ4MeMAX
+# Z. montanus Northern Philippines theta
+thetaZ4MoN <- density(Z4tipB$theta_3MoN)
+thetaZ4MoNINDEX <- which.max(thetaZ4MoN$y)
+thetaZ4MoNMAX <- thetaZ4MoN$x[thetaZ4MoNINDEX]
+thetaZ4MoNMAX
+# Z. montanus Southern Philippines theta
+thetaZ4MoS <- density(Z4tipB$theta_4MoS)
+thetaZ4MoSINDEX <- which.max(thetaZ4MoS$y)
+thetaZ4MoSMAX <- thetaZ4MoS$x[thetaZ4MoSINDEX]
+thetaZ4MoSMAX
+# Z. simplex theta
+thetaZ4Si <- density(Z4tipB$theta_5Si)
+thetaZ4SiINDEX <- which.max(thetaZ4Si$y)
+thetaZ4SiMAX <- thetaZ4Si$x[thetaZ4SiINDEX]
+thetaZ4SiMAX
+# Ancestral theta Z. japonicus and Z. meyeni
+thetaZ4JpMe <- density(Z4tipB$theta_9JpMe)
+thetaZ4JpMeINDEX <- which.max(thetaZ4JpMe$y)
+thetaZ4JpMeMAX <- thetaZ4JpMe$x[thetaZ4JpMeINDEX]
+thetaZ4JpMeMAX
+# Ancestral theta Z. japonicus, Z. meyeni, Z. montanus Northern Philippines
+thetaZ4JpMeMoN <- density(Z4tipB$theta_8JpMeMoN)
+thetaZ4JpMeMoNINDEX <- which.max(thetaZ4JpMeMoN$y)
+thetaZ4JpMeMoNMAX <- thetaZ4JpMeMoN$x[thetaZ4JpMeMoNINDEX]
+thetaZ4JpMeMoNMAX
+# Ancestral theta Z. japonicus, Z. meyeni, 
+# Z. montanus Northern Philippines, Z. montanus Southern Philippines
+thetaZ4JpMeMoNMoS <- density(Z4tipB$theta_7JpMeMoNMoS)
+thetaZ4JpMeMoNMoSINDEX <- which.max(thetaZ4JpMeMoNMoS$y)
+thetaZ4JpMeMoNMoSMAX <- thetaZ4JpMeMoNMoS$x[thetaZ4JpMeMoNMoSINDEX]
+thetaZ4JpMeMoNMoSMAX
+# Ancestral theta ALL
+thetaZ4JpMeMoNMoSSi <- density(Z4tipB$theta_6JpMeMoNMoSSi)
+thetaZ4JpMeMoNMoSSiINDEX <- which.max(thetaZ4JpMeMoNMoSSi$y)
+thetaZ4JpMeMoNMoSSiMAX <- thetaZ4JpMeMoNMoSSi$x[thetaZ4JpMeMoNMoSSiINDEX]
+thetaZ4JpMeMoNMoSSiMAX
+```
+
+Plot 𝜃 density distributions from the BPP runs with 𝛂 set at 3 and 𝛽 for the inverse 𝛤 prior distribution set at 0.002 and 0.0005 for 𝜃 and 𝜏 respectively.
+
+```{r}
+#| label: Theta density distribution plots from BPP runs Beta 0.002 and 0.0005
+#| fig-height: 4
+#| fig-width: 8
+# Z4 theta plots
+plot((thetaZ4Jp), xlim=c(0,0.02), ylim=c(0,3000), col=red, 
+     cex.lab=2.1, lwd=2, cex.main=2.0, 
+     main="a. \u03B8 = 0.002 \u03C4 = 0.0005", xlab="\u03B8")
+lines (thetaZ4Me, lw=2, col=yellow)
+lines(thetaZ4MoN, lw=2, col=purple)
+lines(thetaZ4MoS, lw=2, col=peach)
+lines(thetaZ4Si, lw=2, col=green)
+lines(thetaZ4JpMe, lw=2, col=orange)
+lines(thetaZ4JpMeMoN, lw=2, col=blue)
+lines(thetaZ4JpMeMoNMoS, lw=2, col=pink)
+lines(thetaZ4JpMeMoNMoSSi, lw=2, col="grey50")
+legend("top", 10,legend=c("Z. japonicus", "Z. meyeni", "Z. japonicus/meyeni", 
+                          "Z. montanus N Philippines", 
+                          "Z. japonicus/meyeni/montanus N Philippines", 
+                          "Z. montanus S Philippines", 
+                          "Z. japonicus/meyeni/montanus", "Z. simplex"), 
+       col=c(red,yellow,orange,purple,blue,peach,pink, green), 
+       pch=15, cex=0.74, bty="n")
+```
+
+### GDI density plots
+
+Generate GDI density plots.
+
+```{r}
+#| label: GDI density plots
+#| fig-height: 8
+#| fig-width: 14
+#Generate gdi plots 
+par(mfrow=c(2,2), mar = c(4.5,5.6,3,3))
+
+plot((densityJpA), xlim=c(0,1), ylim=c(0,30), col=red, cex.lab=2.1, lwd=2, cex.main=2.0, main="b1. \u03B8 = 0.001 \u03C4 = 0.004", xlab="GDI")
+lines(densityMeA, lw=2, col=yellow)
+lines(densityJpMeA, lw=2, col=orange)
+lines(densityMoNA, lw=2, col=purple)
+lines(densityJpMeMoNA, lw=2, col=blue)
+lines(densityMoSA, lw=2, col=peach)
+lines(densityJpMeMoNMoSA, lw=2, col=pink)
+lines(densitySiA, lw=2, col=green)
+abline(v=0.2,col="grey50", lty=2)
+abline(v=0.7, col="grey50", lty=2)
+
+plot((densityJpA), xlim=c(0,1), ylim=c(0,30), col=red, cex.lab=2.1, lwd=2, cex.main=2.0, main="b2.  \u03B8=0.002 \u03C4=0.004", xlab="GDI")
+lines(densityMeB, lw=2, col=yellow)
+lines(densityJpMeB, lw=2, col=orange)
+lines(densityMoNB, lw=2, col=purple)
+lines(densityJpMeMoNB, lw=2, col=blue)
+lines(densityMoSB, lw=2, col=peach)
+lines(densityJpMeMoNMoSB, lw=2, col=pink)
+lines(densitySiB, lw=2, col=green)
+abline(v=0.2,col="grey50", lty=2)
+abline(v=0.7, col="grey50", lty=2)
+legend("right", 30,legend=c("Z. japonicus", "Z. meyeni", "Z. japonicus/meyeni", "Z. montanus N Philippines", "Z. japonicus/meyeni/montanus N Philippines", "Z. montanus S Philippines", "Z. japonicus/meyeni/montanus", "Z. simplex"), col=c(red,yellow,orange,purple,blue,peach,pink, green), pch=15, cex=1.2, bty="n")
+
+plot((densityJpA), xlim=c(0,1), ylim=c(0,30), col=red, cex.lab=2.1, lwd=2, cex.main=2.0, main="b3.  \u03B8 = 0.001 \u03C4 = 0.0005", xlab="GDI")
+lines(densityMeC, lw=2, col=yellow)
+lines(densityJpMeC, lw=2, col=orange)
+lines(densityMoNC, lw=2, col=purple)
+lines(densityJpMeMoNC, lw=2, col=blue)
+lines(densityMoSC, lw=2, col=peach)
+lines(densityJpMeMoNMoSC, lw=2, col=pink)
+lines(densitySiC, lw=2, col=green)
+abline(v=0.2,col="grey50", lty=2)
+abline(v=0.7, col="grey50", lty=2)
+
+plot((densityJpA), xlim=c(0,1), ylim=c(0,30), col=red, cex.lab=2.1, lwd=2, cex.main=2.0, main="b4.  \u03B8 = 0.002 \u03C4 = 0.0005", xlab="GDI")
+lines(densityMeD, lw=2, col=yellow)
+lines(densityJpMeD, lw=2, col=orange)
+lines(densityMoND, lw=2, col=purple)
+lines(densityJpMeMoND, lw=2, col=blue)
+lines(densityMoSD, lw=2, col=peach)
+lines(densityJpMeMoNMoSD, lw=2, col=pink)
+lines(densitySiD, lw=2, col=green)
+abline(v=0.2,col="grey50", lty=2)
+abline(v=0.7, col="grey50", lty=2)
+```

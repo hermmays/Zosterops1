@@ -1,0 +1,31 @@
+Tree taxa	Putative species	Constraint					
+japonicus	Z. japonicus	0	Delimited species 2	Delimited species 1	Delimited species 1	Delimited species 2	Delimited species 1
+alani1	Z. japonicus alani	0	Delimited species 2	Delimited species 1	Delimited species 1	Delimited species 2	Delimited species 1
+alani2	Z. japonicus alani	0	Delimited species 2	Delimited species 1	Delimited species 1	Delimited species 2	Delimited species 1
+alani3	Z. japonicus alani	0	Delimited species 2	Delimited species 1	Delimited species 1	Delimited species 2	Delimited species 1
+meyeni1	Z. meyeni	0	Delimited species 2	Delimited species 1	Delimited species 1	Delimited species 2	Delimited species 1
+meyeni2	Z. meyeni	0	Delimited species 2	Delimited species 1	Delimited species 1	Delimited species 2	Delimited species 1
+meyeni3	Z. meyeni	0	Delimited species 2	Delimited species 1	Delimited species 1	Delimited species 2	Delimited species 1
+montanus1	Z. montanus	0	Delimited species 2	Delimited species 1	Delimited species 1	Delimited species 2	Delimited species 1
+montanus2	Z. montanus	0	Delimited species 2	Delimited species 1	Delimited species 1	Delimited species 3	Delimited species 2
+montanus3	Z. montanus	0	Delimited species 2	Delimited species 1	Delimited species 1	Delimited species 3	Delimited species 2
+montanus4	Z. montanus	0	Delimited species 2	Delimited species 1	Delimited species 1	Delimited species 3	Delimited species 2
+montanus5	Z. montanus	0	Delimited species 2	Delimited species 1	Delimited species 1	Delimited species 3	Delimited species 2
+montanus6	Z. montanus	0	Delimited species 2	Delimited species 1	Delimited species 1	Delimited species 3	Delimited species 2
+montanus7	Z. montanus	0	Delimited species 2	Delimited species 1	Delimited species 1	Delimited species 3	Delimited species 2
+montanus8	Z. montanus	0	Delimited species 2	Delimited species 1	Delimited species 1	Delimited species 3	Delimited species 2
+simplex1	Z. simplex	1	Z. simplex	Z. simplex	Z. simplex	Z. simplex	Z. simplex
+simplex2	Z. simplex	1	Z. simplex	Z. simplex	Z. simplex	Z. simplex	Z. simplex
+simplex3	Z. simplex	1	Z. simplex	Z. simplex	Z. simplex	Z. simplex	Z. simplex
+erythro1	Z. erythropleurus	1	Z. erythropleurus	Z. erythropleurus	Z. erythropleurus	Z. erythropleurus	Z. erythropleurus
+erythro2	Z. erythropleurus	1	Z. erythropleurus	Z. erythropleurus	Z. erythropleurus	Z. erythropleurus	Z. erythropleurus
+everetti1	Z. everetti	1	Z. everetti	Z. everetti	Z. everetti	Z. everetti	Z. everetti
+everetti2	Z. everetti	1	Z. everetti	Z. everetti	Z. everetti	Z. everetti	Z. everetti
+everetti3	Z. everetti	1	Z. everetti	Z. everetti	Z. everetti	Z. everetti	Z. everetti
+nigrorum1	Z. nigrorum	0	Delimited species 1	Z. nigrorum	Z. everetti	Delimited species 1	Z. nigrorum
+nigrorum2	Z. nigrorum	1	Z. nigrorum	Z. nigrorum	Z. nigrorum	Z. nigrorum	Z. nigrorum
+nigrorum3	Z. nigrorum	1	Z. nigrorum	Z. nigrorum	Z. nigrorum	Z. nigrorum	Z. nigrorum
+nigrorum4	Z. nigrorum	1	Z. nigrorum	Z. nigrorum	Z. nigrorum	Z. nigrorum	Z. nigrorum
+nigrorum5	Z. nigrorum	0	Delimited species 2	Delimited species 1	Delimited species 1	Delimited species 3	Delimited species 3
+palpebro	Z. palpebrosus	1	Z. palpebrosus	Z. palpebrosus	Z. palpebrosus	Z. palpebrosus	Z. palpebrosus
+			0.1174	0.0901	0.0218	0.0133	0.0102

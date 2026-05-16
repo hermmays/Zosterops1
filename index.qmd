@@ -1,0 +1,61 @@
+---
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Title and authors"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+      - ZosteropsMaps.qmd
+      - Summary_Sanger.qmd
+      - Zosterops_StarBEAST2.qmd
+      - ZosteropsBPP.qmd
+      - ZosteropsSNPs_analysis.qmd
+      - Zosterops_SNPFst.qmd
+      - Zosterops_SVDQ.qmd
+      - ZosteropsMorphometrics.qmd
+
+editor: visual
+---
+
+# The not-so-great speciator: Systematics and species limits in the Asiatic white-eye complex (*Zosterops spp.*)
+
+![Bailey McKay with Zosterops japonicus japonicus on the island of Tsushima, Japan](images/7318251040_100da03202_o-02.jpg)
+
+## Authors
+
+[Herman L. Mays Jr.](https://www.monofilia.org)\*, Marshall University, USA
+
+Bailey D. McKay, American Museum of Natural History, USA
+
+Isao Nishiumi, National Museum of Nature and Science, Japan
+
+Cheng-Te Yao, Taiwan Biodiversity Research Institute, Taiwan
+
+Fa-Sheng Zou, Guangdong Academy of Sciences, China
+
+Madeline Boyd, Marshall University, USA
+
+Devon DeRaad, University of California Los Angeles, USA
+
+Ruey-Shing Lin, Taiwan Biodiversity Research Institute, Taiwan
+
+Kazuto Kawakami, Forestry an Forest Products Research Institute, Japan
+
+Chang-Hoe Kim, National Institute of Ecology, Republic of Korea
+
+Laura Kubatko, The Ohio State University, USA
+
+Robert Moyle, University of Kansas, USA
+
+\*Corresponding author email: maysh\@marshall.edu or maysher\@gmail.com
+
+## Quarto
+
+This is a Quarto website.
+
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.

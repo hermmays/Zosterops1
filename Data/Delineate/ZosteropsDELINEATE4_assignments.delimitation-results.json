@@ -1,0 +1,909 @@
+{
+    "lineages": [
+        "palpebro",
+        "montanus1",
+        "japonicus",
+        "alani3",
+        "alani1",
+        "alani2",
+        "meyeni1",
+        "meyeni2",
+        "meyeni3",
+        "montanus8",
+        "nigrorum5",
+        "montanus2",
+        "montanus3",
+        "montanus4",
+        "montanus5",
+        "montanus6",
+        "montanus7",
+        "simplex1",
+        "simplex2",
+        "simplex3",
+        "erythro1",
+        "erythro2",
+        "everetti1",
+        "everetti2",
+        "everetti3",
+        "nigrorum1",
+        "nigrorum4",
+        "nigrorum2",
+        "nigrorum3"
+    ],
+    "speciation_completion_rate": 0.7929697832859095,
+    "speciation_completion_rate_source": "estimated",
+    "speciation_completion_rate_estimate_lnl": -1.2111262865853456,
+    "speciation_completion_rate_estimation_initial": 0.013202358749198284,
+    "speciation_completion_rate_estimation_min": 1e-08,
+    "speciation_completion_rate_estimation_max": 13.202358749198284,
+    "lineage_tree_birth_rate": 1.3202358749198284,
+    "constrained_lineage_tree": "[&R] (palpebro:4.495118,((((meyeni1:1e-09,(meyeni2:1e-09,meyeni3:1e-09):1e-09):2.067387002,(simplex1:1.9e-05,(simplex2:1e-09,simplex3:1e-09):1.9e-05):2.067368):0.667965,(erythro1:7.2e-05,erythro2:7.2e-05):2.73528):1.424642,((everetti1:2.9e-05,(everetti2:1e-09,everetti3:1e-09):2.9e-05):0.920545,(nigrorum4:0.329469,(nigrorum2:0.329464,nigrorum3:0.329464):5e-06):0.591105):3.239421):0.335124);\n",
+    "species_constraints": {
+        "constrained_lineages": [
+            "meyeni1",
+            "meyeni2",
+            "meyeni3",
+            "simplex1",
+            "simplex2",
+            "simplex3",
+            "erythro1",
+            "erythro2",
+            "everetti1",
+            "everetti2",
+            "everetti3",
+            "nigrorum2",
+            "nigrorum3",
+            "nigrorum4",
+            "palpebro"
+        ],
+        "unconstrained_lineages": [
+            "japonicus",
+            "alani1",
+            "alani2",
+            "alani3",
+            "montanus1",
+            "montanus2",
+            "montanus3",
+            "montanus4",
+            "montanus5",
+            "montanus6",
+            "montanus7",
+            "montanus8",
+            "nigrorum1",
+            "nigrorum5"
+        ],
+        "lineage_species_map": {
+            "japonicus": "japonicus",
+            "alani1": "alani",
+            "alani2": "alani",
+            "alani3": "alani",
+            "meyeni1": "meyeni",
+            "meyeni2": "meyeni",
+            "meyeni3": "meyeni",
+            "montanus1": "montanus",
+            "montanus2": "montanus",
+            "montanus3": "montanus",
+            "montanus4": "montanus",
+            "montanus5": "montanus",
+            "montanus6": "montanus",
+            "montanus7": "montanus",
+            "montanus8": "montanus",
+            "simplex1": "simplex",
+            "simplex2": "simplex",
+            "simplex3": "simplex",
+            "erythro1": "erythropleurus",
+            "erythro2": "erythropleurus",
+            "everetti1": "everetti",
+            "everetti2": "everetti",
+            "everetti3": "everetti",
+            "nigrorum1": "nigrorum",
+            "nigrorum2": "nigrorum",
+            "nigrorum3": "nigrorum",
+            "nigrorum4": "nigrorum",
+            "nigrorum5": "nigrorum",
+            "palpebro": "palpebrosus"
+        },
+        "constrained_lineage_species_map": {
+            "meyeni1": "meyeni",
+            "meyeni2": "meyeni",
+            "meyeni3": "meyeni",
+            "simplex1": "simplex",
+            "simplex2": "simplex",
+            "simplex3": "simplex",
+            "erythro1": "erythropleurus",
+            "erythro2": "erythropleurus",
+            "everetti1": "everetti",
+            "everetti2": "everetti",
+            "everetti3": "everetti",
+            "nigrorum2": "nigrorum",
+            "nigrorum3": "nigrorum",
+            "nigrorum4": "nigrorum",
+            "palpebro": "palpebrosus"
+        },
+        "species_constrained_lineage_map": {
+            "meyeni": [
+                "meyeni1",
+                "meyeni2",
+                "meyeni3"
+            ],
+            "simplex": [
+                "simplex1",
+                "simplex2",
+                "simplex3"
+            ],
+            "erythropleurus": [
+                "erythro1",
+                "erythro2"
+            ],
+            "everetti": [
+                "everetti1",
+                "everetti2",
+                "everetti3"
+            ],
+            "nigrorum": [
+                "nigrorum2",
+                "nigrorum3",
+                "nigrorum4"
+            ],
+            "palpebrosus": [
+                "palpebro"
+            ]
+        }
+    },
+    "num_partitions": 5680619,
+    "num_partitions_in_confidence_interval": 9,
+    "report_mle_only": false,
+    "report_constrained_probability_threshold": null,
+    "report_constrained_cumulative_probability_threshold": 0.95,
+    "partitions": [
+        {
+            "lineage_species_name_map": {
+                "alani1": "meyeni",
+                "alani2": "meyeni",
+                "alani3": "meyeni",
+                "erythro1": "erythropleurus",
+                "erythro2": "erythropleurus",
+                "everetti1": "everetti",
+                "everetti2": "everetti",
+                "everetti3": "everetti",
+                "japonicus": "meyeni",
+                "meyeni1": "meyeni",
+                "meyeni2": "meyeni",
+                "meyeni3": "meyeni",
+                "montanus1": "meyeni",
+                "montanus2": "meyeni",
+                "montanus3": "meyeni",
+                "montanus4": "meyeni",
+                "montanus5": "meyeni",
+                "montanus6": "meyeni",
+                "montanus7": "meyeni",
+                "montanus8": "meyeni",
+                "nigrorum1": "DelineatedSp001",
+                "nigrorum2": "nigrorum",
+                "nigrorum3": "nigrorum",
+                "nigrorum4": "nigrorum",
+                "nigrorum5": "meyeni",
+                "palpebro": "palpebrosus",
+                "simplex1": "simplex",
+                "simplex2": "simplex",
+                "simplex3": "simplex"
+            },
+            "species_leafsets": {
+                "DelineatedSp001": [
+                    "nigrorum1"
+                ],
+                "erythropleurus": [
+                    "erythro1",
+                    "erythro2"
+                ],
+                "everetti": [
+                    "everetti2",
+                    "everetti3",
+                    "everetti1"
+                ],
+                "meyeni": [
+                    "montanus4",
+                    "montanus6",
+                    "montanus7",
+                    "alani3",
+                    "alani2",
+                    "montanus2",
+                    "meyeni3",
+                    "montanus5",
+                    "nigrorum5",
+                    "meyeni1",
+                    "montanus3",
+                    "montanus1",
+                    "meyeni2",
+                    "japonicus",
+                    "alani1",
+                    "montanus8"
+                ],
+                "nigrorum": [
+                    "nigrorum3",
+                    "nigrorum2",
+                    "nigrorum4"
+                ],
+                "palpebrosus": [
+                    "palpebro"
+                ],
+                "simplex": [
+                    "simplex3",
+                    "simplex1",
+                    "simplex2"
+                ]
+            },
+            "constrained_probability": 0.4185412176264745,
+            "constrained_cumulative_probability": 0.4185412176264745,
+            "is_in_confidence_interval": true,
+            "unconstrained_probability": 0.12466736214656403,
+            "unconstrained_cumulative_probability": 0.12466736214656403
+        },
+        {
+            "lineage_species_name_map": {
+                "alani1": "meyeni",
+                "alani2": "meyeni",
+                "alani3": "meyeni",
+                "erythro1": "erythropleurus",
+                "erythro2": "erythropleurus",
+                "everetti1": "everetti",
+                "everetti2": "everetti",
+                "everetti3": "everetti",
+                "japonicus": "meyeni",
+                "meyeni1": "meyeni",
+                "meyeni2": "meyeni",
+                "meyeni3": "meyeni",
+                "montanus1": "meyeni",
+                "montanus2": "meyeni",
+                "montanus3": "meyeni",
+                "montanus4": "meyeni",
+                "montanus5": "meyeni",
+                "montanus6": "meyeni",
+                "montanus7": "meyeni",
+                "montanus8": "meyeni",
+                "nigrorum1": "nigrorum",
+                "nigrorum2": "nigrorum",
+                "nigrorum3": "nigrorum",
+                "nigrorum4": "nigrorum",
+                "nigrorum5": "meyeni",
+                "palpebro": "palpebrosus",
+                "simplex1": "simplex",
+                "simplex2": "simplex",
+                "simplex3": "simplex"
+            },
+            "species_leafsets": {
+                "erythropleurus": [
+                    "erythro1",
+                    "erythro2"
+                ],
+                "everetti": [
+                    "everetti2",
+                    "everetti3",
+                    "everetti1"
+                ],
+                "meyeni": [
+                    "montanus4",
+                    "montanus6",
+                    "montanus7",
+                    "alani3",
+                    "alani2",
+                    "montanus2",
+                    "meyeni3",
+                    "montanus5",
+                    "nigrorum5",
+                    "meyeni1",
+                    "montanus3",
+                    "montanus1",
+                    "meyeni2",
+                    "japonicus",
+                    "alani1",
+                    "montanus8"
+                ],
+                "nigrorum": [
+                    "nigrorum3",
+                    "nigrorum2",
+                    "nigrorum1",
+                    "nigrorum4"
+                ],
+                "palpebrosus": [
+                    "palpebro"
+                ],
+                "simplex": [
+                    "simplex3",
+                    "simplex1",
+                    "simplex2"
+                ]
+            },
+            "constrained_probability": 0.27630610046369175,
+            "constrained_cumulative_probability": 0.6948473180901663,
+            "is_in_confidence_interval": true,
+            "unconstrained_probability": 0.08230098073770471,
+            "unconstrained_cumulative_probability": 0.20696834288426874
+        },
+        {
+            "lineage_species_name_map": {
+                "alani1": "meyeni",
+                "alani2": "meyeni",
+                "alani3": "meyeni",
+                "erythro1": "erythropleurus",
+                "erythro2": "erythropleurus",
+                "everetti1": "everetti",
+                "everetti2": "everetti",
+                "everetti3": "everetti",
+                "japonicus": "meyeni",
+                "meyeni1": "meyeni",
+                "meyeni2": "meyeni",
+                "meyeni3": "meyeni",
+                "montanus1": "meyeni",
+                "montanus2": "meyeni",
+                "montanus3": "meyeni",
+                "montanus4": "meyeni",
+                "montanus5": "meyeni",
+                "montanus6": "meyeni",
+                "montanus7": "meyeni",
+                "montanus8": "meyeni",
+                "nigrorum1": "everetti",
+                "nigrorum2": "nigrorum",
+                "nigrorum3": "nigrorum",
+                "nigrorum4": "nigrorum",
+                "nigrorum5": "meyeni",
+                "palpebro": "palpebrosus",
+                "simplex1": "simplex",
+                "simplex2": "simplex",
+                "simplex3": "simplex"
+            },
+            "species_leafsets": {
+                "erythropleurus": [
+                    "erythro1",
+                    "erythro2"
+                ],
+                "everetti": [
+                    "everetti2",
+                    "everetti3",
+                    "nigrorum1",
+                    "everetti1"
+                ],
+                "meyeni": [
+                    "montanus4",
+                    "montanus6",
+                    "montanus7",
+                    "alani3",
+                    "alani2",
+                    "montanus2",
+                    "meyeni3",
+                    "montanus5",
+                    "nigrorum5",
+                    "meyeni1",
+                    "montanus3",
+                    "montanus1",
+                    "meyeni2",
+                    "japonicus",
+                    "alani1",
+                    "montanus8"
+                ],
+                "nigrorum": [
+                    "nigrorum3",
+                    "nigrorum2",
+                    "nigrorum4"
+                ],
+                "palpebrosus": [
+                    "palpebro"
+                ],
+                "simplex": [
+                    "simplex3",
+                    "simplex1",
+                    "simplex2"
+                ]
+            },
+            "constrained_probability": 0.06429940744581154,
+            "constrained_cumulative_probability": 0.7591467255359778,
+            "is_in_confidence_interval": true,
+            "unconstrained_probability": 0.0191523252102027,
+            "unconstrained_cumulative_probability": 0.22612066809447146
+        },
+        {
+            "lineage_species_name_map": {
+                "alani1": "meyeni",
+                "alani2": "meyeni",
+                "alani3": "meyeni",
+                "erythro1": "erythropleurus",
+                "erythro2": "erythropleurus",
+                "everetti1": "everetti",
+                "everetti2": "everetti",
+                "everetti3": "everetti",
+                "japonicus": "meyeni",
+                "meyeni1": "meyeni",
+                "meyeni2": "meyeni",
+                "meyeni3": "meyeni",
+                "montanus1": "meyeni",
+                "montanus2": "DelineatedSp002",
+                "montanus3": "DelineatedSp002",
+                "montanus4": "DelineatedSp002",
+                "montanus5": "DelineatedSp002",
+                "montanus6": "DelineatedSp002",
+                "montanus7": "DelineatedSp002",
+                "montanus8": "DelineatedSp002",
+                "nigrorum1": "DelineatedSp001",
+                "nigrorum2": "nigrorum",
+                "nigrorum3": "nigrorum",
+                "nigrorum4": "nigrorum",
+                "nigrorum5": "DelineatedSp002",
+                "palpebro": "palpebrosus",
+                "simplex1": "simplex",
+                "simplex2": "simplex",
+                "simplex3": "simplex"
+            },
+            "species_leafsets": {
+                "DelineatedSp001": [
+                    "nigrorum1"
+                ],
+                "DelineatedSp002": [
+                    "montanus4",
+                    "montanus6",
+                    "montanus7",
+                    "montanus2",
+                    "nigrorum5",
+                    "montanus3",
+                    "montanus5",
+                    "montanus8"
+                ],
+                "erythropleurus": [
+                    "erythro1",
+                    "erythro2"
+                ],
+                "everetti": [
+                    "everetti2",
+                    "everetti3",
+                    "everetti1"
+                ],
+                "meyeni": [
+                    "alani3",
+                    "alani2",
+                    "meyeni3",
+                    "meyeni1",
+                    "montanus1",
+                    "meyeni2",
+                    "japonicus",
+                    "alani1"
+                ],
+                "nigrorum": [
+                    "nigrorum3",
+                    "nigrorum2",
+                    "nigrorum4"
+                ],
+                "palpebrosus": [
+                    "palpebro"
+                ],
+                "simplex": [
+                    "simplex3",
+                    "simplex1",
+                    "simplex2"
+                ]
+            },
+            "constrained_probability": 0.053116954322392225,
+            "constrained_cumulative_probability": 0.81226367985837,
+            "is_in_confidence_interval": true,
+            "unconstrained_probability": 0.01582150168670342,
+            "unconstrained_cumulative_probability": 0.24194216978117486
+        },
+        {
+            "lineage_species_name_map": {
+                "alani1": "meyeni",
+                "alani2": "meyeni",
+                "alani3": "meyeni",
+                "erythro1": "erythropleurus",
+                "erythro2": "erythropleurus",
+                "everetti1": "everetti",
+                "everetti2": "everetti",
+                "everetti3": "everetti",
+                "japonicus": "meyeni",
+                "meyeni1": "meyeni",
+                "meyeni2": "meyeni",
+                "meyeni3": "meyeni",
+                "montanus1": "meyeni",
+                "montanus2": "DelineatedSp001",
+                "montanus3": "DelineatedSp001",
+                "montanus4": "DelineatedSp001",
+                "montanus5": "DelineatedSp001",
+                "montanus6": "DelineatedSp001",
+                "montanus7": "DelineatedSp001",
+                "montanus8": "DelineatedSp001",
+                "nigrorum1": "nigrorum",
+                "nigrorum2": "nigrorum",
+                "nigrorum3": "nigrorum",
+                "nigrorum4": "nigrorum",
+                "nigrorum5": "DelineatedSp001",
+                "palpebro": "palpebrosus",
+                "simplex1": "simplex",
+                "simplex2": "simplex",
+                "simplex3": "simplex"
+            },
+            "species_leafsets": {
+                "DelineatedSp001": [
+                    "montanus4",
+                    "montanus6",
+                    "montanus7",
+                    "montanus2",
+                    "nigrorum5",
+                    "montanus3",
+                    "montanus5",
+                    "montanus8"
+                ],
+                "erythropleurus": [
+                    "erythro1",
+                    "erythro2"
+                ],
+                "everetti": [
+                    "everetti2",
+                    "everetti3",
+                    "everetti1"
+                ],
+                "meyeni": [
+                    "alani3",
+                    "alani2",
+                    "meyeni3",
+                    "meyeni1",
+                    "montanus1",
+                    "meyeni2",
+                    "japonicus",
+                    "alani1"
+                ],
+                "nigrorum": [
+                    "nigrorum3",
+                    "nigrorum2",
+                    "nigrorum1",
+                    "nigrorum4"
+                ],
+                "palpebrosus": [
+                    "palpebro"
+                ],
+                "simplex": [
+                    "simplex3",
+                    "simplex1",
+                    "simplex2"
+                ]
+            },
+            "constrained_probability": 0.03506605266600715,
+            "constrained_cumulative_probability": 0.8473297325243772,
+            "is_in_confidence_interval": true,
+            "unconstrained_probability": 0.010444831005067249,
+            "unconstrained_cumulative_probability": 0.2523870007862421
+        },
+        {
+            "lineage_species_name_map": {
+                "alani1": "meyeni",
+                "alani2": "meyeni",
+                "alani3": "meyeni",
+                "erythro1": "erythropleurus",
+                "erythro2": "erythropleurus",
+                "everetti1": "everetti",
+                "everetti2": "everetti",
+                "everetti3": "everetti",
+                "japonicus": "meyeni",
+                "meyeni1": "meyeni",
+                "meyeni2": "meyeni",
+                "meyeni3": "meyeni",
+                "montanus1": "meyeni",
+                "montanus2": "meyeni",
+                "montanus3": "meyeni",
+                "montanus4": "meyeni",
+                "montanus5": "meyeni",
+                "montanus6": "meyeni",
+                "montanus7": "meyeni",
+                "montanus8": "DelineatedSp002",
+                "nigrorum1": "DelineatedSp001",
+                "nigrorum2": "nigrorum",
+                "nigrorum3": "nigrorum",
+                "nigrorum4": "nigrorum",
+                "nigrorum5": "meyeni",
+                "palpebro": "palpebrosus",
+                "simplex1": "simplex",
+                "simplex2": "simplex",
+                "simplex3": "simplex"
+            },
+            "species_leafsets": {
+                "DelineatedSp001": [
+                    "nigrorum1"
+                ],
+                "DelineatedSp002": [
+                    "montanus8"
+                ],
+                "erythropleurus": [
+                    "erythro1",
+                    "erythro2"
+                ],
+                "everetti": [
+                    "everetti2",
+                    "everetti3",
+                    "everetti1"
+                ],
+                "meyeni": [
+                    "montanus4",
+                    "montanus6",
+                    "montanus7",
+                    "alani3",
+                    "alani2",
+                    "montanus2",
+                    "meyeni3",
+                    "montanus5",
+                    "nigrorum5",
+                    "meyeni1",
+                    "montanus3",
+                    "montanus1",
+                    "meyeni2",
+                    "japonicus",
+                    "alani1"
+                ],
+                "nigrorum": [
+                    "nigrorum3",
+                    "nigrorum2",
+                    "nigrorum4"
+                ],
+                "palpebrosus": [
+                    "palpebro"
+                ],
+                "simplex": [
+                    "simplex3",
+                    "simplex1",
+                    "simplex2"
+                ]
+            },
+            "constrained_probability": 0.03266743558310329,
+            "constrained_cumulative_probability": 0.8799971681074805,
+            "is_in_confidence_interval": true,
+            "unconstrained_probability": 0.009730375052028527,
+            "unconstrained_cumulative_probability": 0.26211737583827066
+        },
+        {
+            "lineage_species_name_map": {
+                "alani1": "meyeni",
+                "alani2": "meyeni",
+                "alani3": "meyeni",
+                "erythro1": "erythropleurus",
+                "erythro2": "erythropleurus",
+                "everetti1": "everetti",
+                "everetti2": "everetti",
+                "everetti3": "everetti",
+                "japonicus": "meyeni",
+                "meyeni1": "meyeni",
+                "meyeni2": "meyeni",
+                "meyeni3": "meyeni",
+                "montanus1": "meyeni",
+                "montanus2": "DelineatedSp002",
+                "montanus3": "DelineatedSp002",
+                "montanus4": "DelineatedSp002",
+                "montanus5": "DelineatedSp002",
+                "montanus6": "DelineatedSp002",
+                "montanus7": "DelineatedSp002",
+                "montanus8": "meyeni",
+                "nigrorum1": "DelineatedSp001",
+                "nigrorum2": "nigrorum",
+                "nigrorum3": "nigrorum",
+                "nigrorum4": "nigrorum",
+                "nigrorum5": "DelineatedSp002",
+                "palpebro": "palpebrosus",
+                "simplex1": "simplex",
+                "simplex2": "simplex",
+                "simplex3": "simplex"
+            },
+            "species_leafsets": {
+                "DelineatedSp001": [
+                    "nigrorum1"
+                ],
+                "DelineatedSp002": [
+                    "montanus4",
+                    "montanus6",
+                    "montanus7",
+                    "montanus2",
+                    "nigrorum5",
+                    "montanus3",
+                    "montanus5"
+                ],
+                "erythropleurus": [
+                    "erythro1",
+                    "erythro2"
+                ],
+                "everetti": [
+                    "everetti2",
+                    "everetti3",
+                    "everetti1"
+                ],
+                "meyeni": [
+                    "alani3",
+                    "alani2",
+                    "meyeni3",
+                    "meyeni1",
+                    "montanus1",
+                    "meyeni2",
+                    "japonicus",
+                    "alani1",
+                    "montanus8"
+                ],
+                "nigrorum": [
+                    "nigrorum3",
+                    "nigrorum2",
+                    "nigrorum4"
+                ],
+                "palpebrosus": [
+                    "palpebro"
+                ],
+                "simplex": [
+                    "simplex3",
+                    "simplex1",
+                    "simplex2"
+                ]
+            },
+            "constrained_probability": 0.03266600440606121,
+            "constrained_cumulative_probability": 0.9126631725135417,
+            "is_in_confidence_interval": true,
+            "unconstrained_probability": 0.00972994875932643,
+            "unconstrained_cumulative_probability": 0.2718473245975971
+        },
+        {
+            "lineage_species_name_map": {
+                "alani1": "meyeni",
+                "alani2": "meyeni",
+                "alani3": "meyeni",
+                "erythro1": "erythropleurus",
+                "erythro2": "erythropleurus",
+                "everetti1": "everetti",
+                "everetti2": "everetti",
+                "everetti3": "everetti",
+                "japonicus": "meyeni",
+                "meyeni1": "meyeni",
+                "meyeni2": "meyeni",
+                "meyeni3": "meyeni",
+                "montanus1": "meyeni",
+                "montanus2": "meyeni",
+                "montanus3": "meyeni",
+                "montanus4": "meyeni",
+                "montanus5": "meyeni",
+                "montanus6": "meyeni",
+                "montanus7": "meyeni",
+                "montanus8": "DelineatedSp001",
+                "nigrorum1": "nigrorum",
+                "nigrorum2": "nigrorum",
+                "nigrorum3": "nigrorum",
+                "nigrorum4": "nigrorum",
+                "nigrorum5": "meyeni",
+                "palpebro": "palpebrosus",
+                "simplex1": "simplex",
+                "simplex2": "simplex",
+                "simplex3": "simplex"
+            },
+            "species_leafsets": {
+                "DelineatedSp001": [
+                    "montanus8"
+                ],
+                "erythropleurus": [
+                    "erythro1",
+                    "erythro2"
+                ],
+                "everetti": [
+                    "everetti2",
+                    "everetti3",
+                    "everetti1"
+                ],
+                "meyeni": [
+                    "montanus4",
+                    "montanus6",
+                    "montanus7",
+                    "alani3",
+                    "alani2",
+                    "montanus2",
+                    "meyeni3",
+                    "montanus5",
+                    "nigrorum5",
+                    "meyeni1",
+                    "montanus3",
+                    "montanus1",
+                    "meyeni2",
+                    "japonicus",
+                    "alani1"
+                ],
+                "nigrorum": [
+                    "nigrorum3",
+                    "nigrorum2",
+                    "nigrorum1",
+                    "nigrorum4"
+                ],
+                "palpebrosus": [
+                    "palpebro"
+                ],
+                "simplex": [
+                    "simplex3",
+                    "simplex1",
+                    "simplex2"
+                ]
+            },
+            "constrained_probability": 0.021565884930768095,
+            "constrained_cumulative_probability": 0.9342290574443097,
+            "is_in_confidence_interval": true,
+            "unconstrained_probability": 0.006423649269053808,
+            "unconstrained_cumulative_probability": 0.2782709738666509
+        },
+        {
+            "lineage_species_name_map": {
+                "alani1": "meyeni",
+                "alani2": "meyeni",
+                "alani3": "meyeni",
+                "erythro1": "erythropleurus",
+                "erythro2": "erythropleurus",
+                "everetti1": "everetti",
+                "everetti2": "everetti",
+                "everetti3": "everetti",
+                "japonicus": "meyeni",
+                "meyeni1": "meyeni",
+                "meyeni2": "meyeni",
+                "meyeni3": "meyeni",
+                "montanus1": "meyeni",
+                "montanus2": "DelineatedSp001",
+                "montanus3": "DelineatedSp001",
+                "montanus4": "DelineatedSp001",
+                "montanus5": "DelineatedSp001",
+                "montanus6": "DelineatedSp001",
+                "montanus7": "DelineatedSp001",
+                "montanus8": "meyeni",
+                "nigrorum1": "nigrorum",
+                "nigrorum2": "nigrorum",
+                "nigrorum3": "nigrorum",
+                "nigrorum4": "nigrorum",
+                "nigrorum5": "DelineatedSp001",
+                "palpebro": "palpebrosus",
+                "simplex1": "simplex",
+                "simplex2": "simplex",
+                "simplex3": "simplex"
+            },
+            "species_leafsets": {
+                "DelineatedSp001": [
+                    "montanus4",
+                    "montanus6",
+                    "montanus7",
+                    "montanus2",
+                    "nigrorum5",
+                    "montanus3",
+                    "montanus5"
+                ],
+                "erythropleurus": [
+                    "erythro1",
+                    "erythro2"
+                ],
+                "everetti": [
+                    "everetti2",
+                    "everetti3",
+                    "everetti1"
+                ],
+                "meyeni": [
+                    "alani3",
+                    "alani2",
+                    "meyeni3",
+                    "meyeni1",
+                    "montanus1",
+                    "meyeni2",
+                    "japonicus",
+                    "alani1",
+                    "montanus8"
+                ],
+                "nigrorum": [
+                    "nigrorum3",
+                    "nigrorum2",
+                    "nigrorum1",
+                    "nigrorum4"
+                ],
+                "palpebrosus": [
+                    "palpebro"
+                ],
+                "simplex": [
+                    "simplex3",
+                    "simplex1",
+                    "simplex2"
+                ]
+            },
+            "constrained_probability": 0.02156494011833167,
+            "constrained_cumulative_probability": 0.9557939975626415,
+            "is_in_confidence_interval": true,
+            "unconstrained_probability": 0.006423367845697608,
+            "unconstrained_cumulative_probability": 0.2846943417123485
+        }
+    ]
+}
