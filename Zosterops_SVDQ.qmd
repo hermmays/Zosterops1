@@ -1,9 +1,6 @@
 ---
 title: "Species trees and delimitation with SVDQuartets, PICL, and DELINEATE"
-format:
-  html:
-    grid:
-      body-width: 1200px
+
 editor: visual
 bibliography: ZosteropsSVDQ.bib
 ---
@@ -15,6 +12,22 @@ Included here are phylogenetic analyses of East Asian Zosterops using the single
 ## Getting started
 
 Along with the software listed below we are using R version 4.4.2 and RStudio version 2024.09.1 for the analysis. Quarto version 1.6.39 for Mac OS was used to document the workflow. Set the working directory to one where the data files are accessible.
+
+## General methods summary
+
+### Species trees
+
+A species tree was produced from the SNP dataset using Singular Value Decomposition Quartets (SVDQuartets) [@chifman2014] implemented in PAUP\* v4.0 [@wilgenbusch2003] and Phylogenetic Inference with Composite Likelihood (PICL) [@swofford2023a; @kubatko2025; @kong2024]. The SNP file was converted to nexus format using the Python3 script *vcf2phylip* [@ortiz2019]. A taxon file was created to assign individual samples to narrowly defined groups assorted primarily by species, subspecies, and island of origin. Samples from *Z. palpebrosus* were defined as the outgroup taxon. SVDQuartets was run in PAUP\* using this taxon file and the nexus formatted SNP data by evaluating all quartets ('evalquartets = all') and 700 bootstrap replicates. A 50% majority rule consensus tree was then derived from the output trees using the 'contree' command in PAUP\*, saved, and visualized in *FigTree* (<http://tree.bio.ed.ac.uk/software/figtree/>).
+
+We conducted two estimates of branch lengths using PICL based on the tree topology determined from the SVDQuartets. Taxon designations for individual samples were assigned by a combination of taxonomy and geography, similar to prior analyses. For the first run *Z. japonicus* was split into *Z. japonicus alani* from the Ogasawara and Volcano Islands and a *Z. japonicus* group with the remaining subspecies, a northern Philippine group of *Z. montanus* that included the subspecies from Luzon and Mindoro, and another grouping the *Z. montanus parkesi* subspecies from Palawan. The remainder of the *Z. montanus* populations were split into *Z. montanus* from the Visayas, Camiguin South, and Mindanao and another group containing nominate *Z. montanus* subspecies samples from Sulawesi and Java. As in prior analyses *Z.nigrorum catarmanensis* (`Zni14341`) on Camiguin South was grouped with the central/southern Philippine *Z. montanus* samples. The remainder of the samples were grouped by species.
+
+For the second run taxon assignments were based on any population lineages from the SVDQuartets analysis with bootstrap values greater than 60%. Poorly supported lineages (\<60%) were collapsed, with two exceptions. *Z. japonicus stejnegeri* on Kozushima and Miyakejima in the Izu Islands exhibited bootstrap support greater than 60% but because these sister populations were deeply embedded in a group of very poorly supported lineages, all these continental island populations of *Z. japonicus*, along with those Izu Island populations of *Z. japonicus stejnegeri*, were collapsed into a single 'continental' *Z. japonicus* clade. Also, despite the mismatched *Z. nigrorum catarmanensis* sample resting within a poorly supported group along with the *Z. montanus* populations in the Visayas, we treated this sample as its own group to explore the taxonomic mismatch. The tree topology for this second PICL run was created by sequentially collapsing branches using the *ape* package in R.
+
+For both runs the parameters were the same except for the taxon/population assignments for the individual samples to determine branch lengths on more collapsed (run 1) and less collapsed (run 2) versions of the SVDQuartets consensus tree. The model parameter was set to indicate SNP data was being used and the 'Random_tree' and 'Tree_search' parameters were set to 0 to indicate the use of a predefined tree. 'Theta' was set to 0.035 and 'Num_iter' to 30,000. 100 bootstrap replicates were performed to obtain 95% confidence intervals associated with each split time.
+
+### Species delimitation
+
+We took the resulting species tree with the topology determined by SVDQuartets and branch lengths by run 2 of PICL and used this to test species hypotheses in *Delineate* [@sukumaran2021]. We conducted five independent runs of *Delineate* each with a different constraint schema. Because of a comparatively deep split between *Z. nigrorum nigrorum* on Panay and the other *Z. nigrorum* subspecies in this study, this lineage was left unconstrained in all five analyses. All of the lineages in the recently diverged *Z. japonicus*/*meyeni*/*montanus* clade, including the mismatched *Z. nigrorum catarmanesnis*, were left unconstrained in run 1. *Z. meyeni*, *Z. japonicus*, and the southern populations of *Z. montanus* were variously constrained in runs 2 -- 5. In run 2 only the southern Philippine and Indonesian *Z. montanus* within *Z. japonicus*/*meyeni*/*montanus* clade were constrained as a species lineage. In run 3 both the southern *Z. montanus* and *Z. meyeni* lineages were constrained. In run 4 only *Z. meyeni* was constrained. In run 5 only *Z. japonicus* was constrained (both the 'continental' *Z. japonicus* and *Z. japonicus alani*). For each of these runs the 'estimate partitions' command was run in *Delineate* with a nexus formatted version of the consensus tree from SVQuartets and PICL with branch lengths in coalescent units (2N~e~ generations) and a file designating the lineage assignments as either constrained (1) or unconstrained (0). For each run only those partitions contributing to 95% of the cumulative probability were reported.
 
 ### Data
 
