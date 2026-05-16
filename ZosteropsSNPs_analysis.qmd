@@ -1,11 +1,11 @@
 ---
 title: "Distance trees, PCA, UMAP, and DAPC analyses"
+
 format:
   html:
     fig-format: png
     fig-dpi: 700
-    grid:
-      body-width: 1200px
+    
 editor: visual
 bibliography: ZosteropsSNPanalysis.bib
 ---
@@ -89,7 +89,7 @@ ZJal005 japonicus_alani HAHAJIMA
 ZJal010 japonicus_alani ANEJIMA 
 ZJal011 japonicus_alani ANEJIMA 
 ZJal012 japonicus_alani ANEJIMA 
-ZJal020 japonicus_alani IWOJIMA 
+ZJal020 japonicus_alani IWOTO 
 ZJst007 japonicus KOZUSHIMA 
 ZJst009 japonicus KOZUSHIMA 
 ZJst010 japonicus KOZUSHIMA 
