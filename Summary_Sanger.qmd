@@ -17,14 +17,14 @@ We are using R version 4.4.2, RStudio version 2024.09.1 for the analysis. Quarto
 
 ### gDNA extraction
 
-Whole gDNA was isolated from either blood or tissue samples using a magnetic bead based protocol (University of Kansas) [@rohland2012] or standard phenol-chloroform-isoamyl alcohol (PCI) protocol followed by ethanol precipitation (Cincinnati Museum Center and Marshall University) and quantified by a Qubit dsDNA Assay.
+Whole genomic DNA (gDNA) was isolated from either blood or tissue samples using a magnetic bead based protocol (University of Kansas) [@rohland2012] or standard phenol-chloroform-isoamyl alcohol (PCI) protocol followed by ethanol precipitation (Cincinnati Museum Center and Marshall University) and quantified by a Qubit dsDNA Assay.
 
 ### PCR and Sanger sequencing
 
 159 individual samples underwent polymerase chain reactions (PCRs) and Sanger sequencing across eight loci including two mtDNA and six nuclear protein-coding exons (nuDNA). Common sequence tags, either CS1 (5′-ACACTGACGACATGGTTCTACA) in the forward direction or CS2 (5′-TACGGTAGCAGAGACTTGGTCT) in the reverse direction, were added to all the oligonucleotide sequences in this study [@moonsamy2013]. The addition of common 5′ tags allowed for CS1 and CS2 oligonucleotides to be utilized as sequencing primers for all amplicons across all loci. The NADH dehydrogenase subunit 2 (ND2) and cytochrome c oxidase subunit 1 (COI) were amplified using the primers L5216 and H6313 [@sorenson1999] and BIRDF1 and BIRDR2 [@hebert2004], respectively. Six nuDNA coding loci (B3GNT9, BIRC2, CCDC, GPRC6, LACTBL, and UBP38) were amplified using primers from Liu *et al.* [@liu2018]. A complete list of the oligonucleotide sequences used as PCR primers in this study are shown below.
 
 | Oligonucleotide name | 5′-CS tag + target sequence (5′ → 3′) | Locus description | Location/reference species | References |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | L5216-CS1 | ACACTGACGACATGGTTCTACAGGCCCATACCCCGRAAATG | NADH dehydrogenase subunit 2 (ND2) | mtDNA/avian | Sorenson et al. 1999 |
 | H6313-CS2 | TACGGTAGCAGAGACTTGGTCTACTCCTRTTTAAGGCTTTGAAGGC | NADH dehydrogenase subunit 2 (ND2) | mtDNA/avian | Sorenson et al. 1999 |
 | BIRDF1-CS1 | ACACTGACGACATGGTTCTACATTCTCCAACCACAAAGACATTGGCAC | Cytochrome c Oxidase Subunit 1 (COI) | mtDNA/avian | Hebert et al. 2004 |
