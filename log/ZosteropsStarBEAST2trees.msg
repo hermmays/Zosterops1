@@ -1,16 +1,3 @@
-========================================================================= 
-Log Path: ./log/ZosteropsStarBEAST2trees.log 
-Program Path: /Applications/quarto/share/rmd/rmd.R 
-Working Directory: /Users/maysh/Library/Mobile Documents/com~apple~CloudDocs/Marshall_University/Research/Zosterops/Kansas collaboration/Methods and Results/Zosterops Methods and Results 
-User Name: maysh 
-R Version: 4.4.2 (2024-10-31) 
-Machine: maysh-mac arm64 
-Operating System: Darwin 24.6.0 Darwin Kernel Version 24.6.0: Mon Jan 19 21:58:37 PST 2026; root:xnu-11417.140.69.708.3~1/RELEASE_ARM64_T8103 
-Base Packages: stats graphics grDevices datasets utils methods base 
-Other Packages: logr_1.3.8 common_1.1.3 
-Log Start Time: 2026-05-18 12:06:22.544855 
-========================================================================= 
-
 Error in FUN(X[[i]], ...) : Calls: .main ... <Anonymous> -> <Anonymous> -> cnd_signal -> signal_abort 
 Traceback: 
  [1] "27: stop(fallback)"                                                                                                             
@@ -80,10 +67,3 @@ Traceback:
 [65] "       params$handledLanguages, params$markdown)"                                                                               
 [66] "1: .main()"                                                                                                                     
 
-NOTE: Log Print Time:  2026-05-18 12:06:23.127109 
-NOTE: Elapsed Time: 0.490373134613037 secs 
-
-========================================================================= 
-Log End Time: 2026-05-18 12:06:23.240022 
-Log Elapsed Time: 0 00:00:00 
-========================================================================= 

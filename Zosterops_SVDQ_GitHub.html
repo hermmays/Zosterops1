@@ -163,7 +163,7 @@ div.csl-indent {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./ZosteropsSNPs_analysis.html"> 
-<span class="menu-text">Distance trees, PCA, UMAP, and DAPC analyses</span></a>
+<span class="menu-text">MSN, Distance trees, PCA, UMAP, and DAPC analyses</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./Zosterops_SNPFst.html"> 
@@ -199,8 +199,10 @@ div.csl-indent {
   <ul class="collapse">
   <li><a href="#species-trees" id="toc-species-trees" class="nav-link" data-scroll-target="#species-trees">Species trees</a></li>
   <li><a href="#species-delimitation" id="toc-species-delimitation" class="nav-link" data-scroll-target="#species-delimitation">Species delimitation</a></li>
+  </ul></li>
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
-  <li><a href="#software" id="toc-software" class="nav-link" data-scroll-target="#software">Software</a></li>
+  <li><a href="#software" id="toc-software" class="nav-link" data-scroll-target="#software">Software</a>
+  <ul class="collapse">
   <li><a href="#r-packages" id="toc-r-packages" class="nav-link" data-scroll-target="#r-packages">R packages</a></li>
   <li><a href="#data-files" id="toc-data-files" class="nav-link" data-scroll-target="#data-files">Data files</a></li>
   </ul></li>
@@ -270,12 +272,13 @@ div.csl-indent {
 <h3 class="anchored" data-anchor-id="species-delimitation">Species delimitation</h3>
 <p>We took the resulting species tree with the topology determined by SVDQuartets and branch lengths by run 2 of PICL and used this to test species hypotheses in <em>Delineate</em> <span class="citation" data-cites="sukumaran2021">(<a href="#ref-sukumaran2021" role="doc-biblioref">Sukumaran, Holder, and Knowles 2021</a>)</span>. We conducted five independent runs of <em>Delineate</em> each with a different constraint schema. Because of a comparatively deep split between <em>Z. nigrorum nigrorum</em> on Panay and the other <em>Z. nigrorum</em> subspecies in this study, this lineage was left unconstrained in all five analyses. All of the lineages in the recently diverged <em>Z. japonicus</em>/<em>meyeni</em>/<em>montanus</em> clade, including the mismatched <em>Z. nigrorum catarmanesnis</em>, were left unconstrained in run 1. <em>Z. meyeni</em>, <em>Z. japonicus</em>, and the southern populations of <em>Z. montanus</em> were variously constrained in runs 2 – 5. In run 2 only the southern Philippine and Indonesian <em>Z. montanus</em> within <em>Z. japonicus</em>/<em>meyeni</em>/<em>montanus</em> clade were constrained as a species lineage. In run 3 both the southern <em>Z. montanus</em> and <em>Z. meyeni</em> lineages were constrained. In run 4 only <em>Z. meyeni</em> was constrained. In run 5 only <em>Z. japonicus</em> was constrained (both the ‘continental’ <em>Z. japonicus</em> and <em>Z. japonicus alani</em>). For each of these runs the ‘estimate partitions’ command was run in <em>Delineate</em> with a nexus formatted version of the consensus tree from SVQuartets and PICL with branch lengths in coalescent units (2N<sub>e</sub> generations) and a file designating the lineage assignments as either constrained (1) or unconstrained (0). For each run only those partitions contributing to 95% of the cumulative probability were reported.</p>
 </section>
-<section id="data" class="level3">
-<h3 class="anchored" data-anchor-id="data">Data</h3>
-<p>The dataset used in these analyses is the <code>zost.filtered.snps.vcf</code> file. The filtered SNP data are in variant call format (VCF) (see DeRaad et al.&nbsp;2024 for details on creation of the ddRAD library, sequencing, and filtering the SNP dataset) <span class="citation" data-cites="deraad2024">(<a href="#ref-deraad2024" role="doc-biblioref">DeRaad et al. 2024</a>)</span>.</p>
 </section>
-<section id="software" class="level3">
-<h3 class="anchored" data-anchor-id="software">Software</h3>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>The dataset used in these analyses is the <code>zost.filtered.snps.vcf</code> file. The filtered SNP data are in variant call format (<code>vcf</code>) (see DeRaad et al.&nbsp;2024 for details on creation of the ddRAD library, sequencing, and filtering the SNP dataset) <span class="citation" data-cites="deraad2024">(<a href="#ref-deraad2024" role="doc-biblioref">DeRaad et al. 2024</a>)</span>.</p>
+</section>
+<section id="software" class="level2">
+<h2 class="anchored" data-anchor-id="software">Software</h2>
 <ul>
 <li><p><a href="https://github.com/edgardomortiz/vcf2phylip">vcf2phylip</a> - Python script to convert a <code>vcf</code> file to a <code>phy</code> or <code>nexus</code> formatted file <span class="citation" data-cites="ortiz2019">(<a href="#ref-ortiz2019" role="doc-biblioref">Ortiz 2019</a>)</span>.</p></li>
 <li><p><a href="https://paup.phylosolutions.com/">PAUP*4.0</a> - Phylogenetic Analyses Using Parsimony (PAUP) <span class="citation" data-cites="wilgenbusch2003">(<a href="#ref-wilgenbusch2003" role="doc-biblioref">Wilgenbusch and Swofford 2003</a>)</span>.</p></li>
@@ -284,7 +287,6 @@ div.csl-indent {
 <li><p><a href="https://beast.community/figtree">FigTree</a> - Software for editing and visualizing trees.</p></li>
 <li><p><a href="https://jeetsukumaran.github.io/delineate/">Delineate</a> - Species delimitation using the multipopulation or multispecies coalescent and explicit models of speciation from a tree with branch lengths <span class="citation" data-cites="sukumaran2021">(<a href="#ref-sukumaran2021" role="doc-biblioref">Sukumaran, Holder, and Knowles 2021</a>)</span>.</p></li>
 </ul>
-</section>
 <section id="r-packages" class="level3">
 <h3 class="anchored" data-anchor-id="r-packages">R packages</h3>
 <ul>
@@ -975,7 +977,7 @@ Time used = 15.51 sec (CPU time = 0.06 sec)</code></pre>
                              |   |                    /68-+
                          /92-+   |                    |   \---- japonicus alani ANEJIMA(12)
                          |   |   \---------96---------+
-                         |   |                        \-------- japonicus alani IWOJIMA(13)
+                         |   |                        \-------- japonicus alani IWOTO(13)
                          |   |
                          |   |                            /---- meyeni BATAN(46)
                          |   |                        /93-+
@@ -1137,7 +1139,7 @@ species tree analysis /SVDQ/FINAL SVDQ QAGE/ZosteropsPOPS_SVDQcontree.tre</code>
 <section id="cleaning-up-the-consensus-tree" class="level3">
 <h3 class="anchored" data-anchor-id="cleaning-up-the-consensus-tree">Cleaning up the consensus tree</h3>
 <p>Open the file <code>ZosteropsPOPS_SVDQcontree.tre</code> from the SVDQuartets consensus tree results in <a href="https://beast.community/figtree">FigTree</a> and edit as needed for readability and save as a <code>png</code> file. Below is the resulting consensus SVDQuartets tree based on the 50% majority rule method with bootstrap support shown at the nodes.</p>
-<p><img src="images/ZosteropsPOPS_SVDQcontree.png" class="img-fluid" width="1400"></p>
+<p><img src="images/clipboard-922363479.png" class="img-fluid"></p>
 </section>
 </section>
 <section id="picl" class="level2">
@@ -1167,7 +1169,7 @@ species tree analysis /SVDQ/FINAL SVDQ QAGE/ZosteropsPOPS_SVDQcontree.tre</code>
 <li><p><em>Zosterops montanus</em></p>
 <ul>
 <li><p><code>north</code> - <em>Z. montanus</em> from the Northern Philippine islands of Luzon and Mindoro.</p></li>
-<li><p><code>south</code> - <em>Z. montanus</em> from the Visayas in the central Philippines including the main islands of Negros, Panay, Cebu, Bohol, Leyte, and Samar and subspecies/populations from the southern most islands of the Philippines including the island of Mindanao. Included with the central and southern Philippine <em>Z. montanus</em> samples is a <em>Z. nigrorum</em> sample (<code>Zni14341</code>). This sample originating from the island of Camiguin Sur off the northern coast of Mindanao was initially assigned to the <em>Z. nigrorum</em> subspecies <em>catarmanensis</em> but in this study was found to cluster strongly with the central and southern Philippine populations of <em>Z. montanus</em> in both Sanger sequencing and SNP datasets.</p></li>
+<li><p><code>south</code> - <em>Z. montanus</em> from the Visayas in the central Philippines including the main islands of Negros, Panay, Cebu, Bohol, Leyte, and Samar and subspecies/populations from the southern most islands of the Philippines including the island of Mindanao. Included with the central and southern Philippine <em>Z. montanus</em> samples is a <em>Z. nigrorum</em> sample (<code>Zni14341</code>). This sample originating from the island of Camiguin South off the northern coast of Mindanao was initially assigned to the <em>Z. nigrorum</em> subspecies <em>catarmanensis</em> but in this study was found to cluster strongly with the central and southern Philippine populations of <em>Z. montanus</em> in both Sanger sequencing and SNP datasets.</p></li>
 <li><p><code>palawan</code> - Philippine <em>Z. montanus</em> <em>parkesi</em> population on the island of Palawan.</p></li>
 <li><p><code>indonesia</code> - <em>Z. montanus</em> <em>montanus</em> populations of the Indonesian archipelago represented in this study by samples from Java and Sulawesi.</p></li>
 </ul></li>
@@ -1494,23 +1496,23 @@ Attaching package: 'gt'</code></pre>
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the table</span></span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>results_table1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="mpoqnhhhag" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#mpoqnhhhag table {
+<div id="pypninxyaj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#pypninxyaj table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#mpoqnhhhag thead, #mpoqnhhhag tbody, #mpoqnhhhag tfoot, #mpoqnhhhag tr, #mpoqnhhhag td, #mpoqnhhhag th {
+#pypninxyaj thead, #pypninxyaj tbody, #pypninxyaj tfoot, #pypninxyaj tr, #pypninxyaj td, #pypninxyaj th {
   border-style: none;
 }
 
-#mpoqnhhhag p {
+#pypninxyaj p {
   margin: 0;
   padding: 0;
 }
 
-#mpoqnhhhag .gt_table {
+#pypninxyaj .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1536,12 +1538,12 @@ Attaching package: 'gt'</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#mpoqnhhhag .gt_caption {
+#pypninxyaj .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#mpoqnhhhag .gt_title {
+#pypninxyaj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1553,7 +1555,7 @@ Attaching package: 'gt'</code></pre>
   border-bottom-width: 0;
 }
 
-#mpoqnhhhag .gt_subtitle {
+#pypninxyaj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1565,7 +1567,7 @@ Attaching package: 'gt'</code></pre>
   border-top-width: 0;
 }
 
-#mpoqnhhhag .gt_heading {
+#pypninxyaj .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1577,13 +1579,13 @@ Attaching package: 'gt'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#mpoqnhhhag .gt_bottom_border {
+#pypninxyaj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#mpoqnhhhag .gt_col_headings {
+#pypninxyaj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1598,7 +1600,7 @@ Attaching package: 'gt'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#mpoqnhhhag .gt_col_heading {
+#pypninxyaj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1618,7 +1620,7 @@ Attaching package: 'gt'</code></pre>
   overflow-x: hidden;
 }
 
-#mpoqnhhhag .gt_column_spanner_outer {
+#pypninxyaj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1630,15 +1632,15 @@ Attaching package: 'gt'</code></pre>
   padding-right: 4px;
 }
 
-#mpoqnhhhag .gt_column_spanner_outer:first-child {
+#pypninxyaj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mpoqnhhhag .gt_column_spanner_outer:last-child {
+#pypninxyaj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mpoqnhhhag .gt_column_spanner {
+#pypninxyaj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1650,11 +1652,11 @@ Attaching package: 'gt'</code></pre>
   width: 100%;
 }
 
-#mpoqnhhhag .gt_spanner_row {
+#pypninxyaj .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#mpoqnhhhag .gt_group_heading {
+#pypninxyaj .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1680,7 +1682,7 @@ Attaching package: 'gt'</code></pre>
   text-align: left;
 }
 
-#mpoqnhhhag .gt_empty_group_heading {
+#pypninxyaj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1695,15 +1697,15 @@ Attaching package: 'gt'</code></pre>
   vertical-align: middle;
 }
 
-#mpoqnhhhag .gt_from_md > :first-child {
+#pypninxyaj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mpoqnhhhag .gt_from_md > :last-child {
+#pypninxyaj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mpoqnhhhag .gt_row {
+#pypninxyaj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1722,7 +1724,7 @@ Attaching package: 'gt'</code></pre>
   overflow-x: hidden;
 }
 
-#mpoqnhhhag .gt_stub {
+#pypninxyaj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1735,7 +1737,7 @@ Attaching package: 'gt'</code></pre>
   padding-right: 5px;
 }
 
-#mpoqnhhhag .gt_stub_row_group {
+#pypninxyaj .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1749,15 +1751,15 @@ Attaching package: 'gt'</code></pre>
   vertical-align: top;
 }
 
-#mpoqnhhhag .gt_row_group_first td {
+#pypninxyaj .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#mpoqnhhhag .gt_row_group_first th {
+#pypninxyaj .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#mpoqnhhhag .gt_summary_row {
+#pypninxyaj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1767,16 +1769,16 @@ Attaching package: 'gt'</code></pre>
   padding-right: 5px;
 }
 
-#mpoqnhhhag .gt_first_summary_row {
+#pypninxyaj .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#mpoqnhhhag .gt_first_summary_row.thick {
+#pypninxyaj .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#mpoqnhhhag .gt_last_summary_row {
+#pypninxyaj .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1786,7 +1788,7 @@ Attaching package: 'gt'</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#mpoqnhhhag .gt_grand_summary_row {
+#pypninxyaj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1796,7 +1798,7 @@ Attaching package: 'gt'</code></pre>
   padding-right: 5px;
 }
 
-#mpoqnhhhag .gt_first_grand_summary_row {
+#pypninxyaj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1806,7 +1808,7 @@ Attaching package: 'gt'</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#mpoqnhhhag .gt_last_grand_summary_row_top {
+#pypninxyaj .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1816,11 +1818,11 @@ Attaching package: 'gt'</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#mpoqnhhhag .gt_striped {
+#pypninxyaj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#mpoqnhhhag .gt_table_body {
+#pypninxyaj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1829,7 +1831,7 @@ Attaching package: 'gt'</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#mpoqnhhhag .gt_footnotes {
+#pypninxyaj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1843,7 +1845,7 @@ Attaching package: 'gt'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#mpoqnhhhag .gt_footnote {
+#pypninxyaj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1852,7 +1854,7 @@ Attaching package: 'gt'</code></pre>
   padding-right: 5px;
 }
 
-#mpoqnhhhag .gt_sourcenotes {
+#pypninxyaj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1866,7 +1868,7 @@ Attaching package: 'gt'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#mpoqnhhhag .gt_sourcenote {
+#pypninxyaj .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1874,72 +1876,72 @@ Attaching package: 'gt'</code></pre>
   padding-right: 5px;
 }
 
-#mpoqnhhhag .gt_left {
+#pypninxyaj .gt_left {
   text-align: left;
 }
 
-#mpoqnhhhag .gt_center {
+#pypninxyaj .gt_center {
   text-align: center;
 }
 
-#mpoqnhhhag .gt_right {
+#pypninxyaj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mpoqnhhhag .gt_font_normal {
+#pypninxyaj .gt_font_normal {
   font-weight: normal;
 }
 
-#mpoqnhhhag .gt_font_bold {
+#pypninxyaj .gt_font_bold {
   font-weight: bold;
 }
 
-#mpoqnhhhag .gt_font_italic {
+#pypninxyaj .gt_font_italic {
   font-style: italic;
 }
 
-#mpoqnhhhag .gt_super {
+#pypninxyaj .gt_super {
   font-size: 65%;
 }
 
-#mpoqnhhhag .gt_footnote_marks {
+#pypninxyaj .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#mpoqnhhhag .gt_asterisk {
+#pypninxyaj .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#mpoqnhhhag .gt_indent_1 {
+#pypninxyaj .gt_indent_1 {
   text-indent: 5px;
 }
 
-#mpoqnhhhag .gt_indent_2 {
+#pypninxyaj .gt_indent_2 {
   text-indent: 10px;
 }
 
-#mpoqnhhhag .gt_indent_3 {
+#pypninxyaj .gt_indent_3 {
   text-indent: 15px;
 }
 
-#mpoqnhhhag .gt_indent_4 {
+#pypninxyaj .gt_indent_4 {
   text-indent: 20px;
 }
 
-#mpoqnhhhag .gt_indent_5 {
+#pypninxyaj .gt_indent_5 {
   text-indent: 25px;
 }
 
-#mpoqnhhhag .katex-display {
+#pypninxyaj .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#mpoqnhhhag div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#pypninxyaj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2079,20 +2081,20 @@ Attaching package: 'gt'</code></pre>
 <ul>
 <li><p><code>erythro1</code> - <em>Z. erythropleurus</em> collected from the breeding range in the Russian Far East.</p></li>
 <li><p><code>erythro2</code> - <em>Z. erythropleurus</em> collected from the winter, non-breeding range in Vietnam.</p></li>
-<li><p><code>everetti1</code> - <em>Z. everetti basilanicus</em> from the island of Camiguin Sur off the north coast of Mindanao.</p></li>
+<li><p><code>everetti1</code> - <em>Z. everetti basilanicus</em> from the island of Camiguin South off the north coast of Mindanao.</p></li>
 <li><p><code>everetti2</code> - <em>Z. everetti basilanicus</em> from the Philippine island of Mindanao.</p></li>
 <li><p><code>everetti3</code> - <em>Z. everetti boholensis</em> from Philippine island of Samar.</p></li>
 <li><p><code>nigrorum1</code> - <em>Z. nigrorum nigrorum</em> from the Philippine island of Panay.</p></li>
-<li><p><code>nigrorum2</code> - <em>Z. nigrorum meyleri</em> from the Philippine island of Camiguin Norte off the north coast of Luzon.</p></li>
+<li><p><code>nigrorum2</code> - <em>Z. nigrorum meyleri</em> from the Philippine island of Camiguin North off the north coast of Luzon.</p></li>
 <li><p><code>nigrorum3</code> - <em>Z. nigrorum innominatus</em> from east-central Luzon.</p></li>
 <li><p><code>nigrorum4</code>- <em>Z. nigrorum luzonicus</em> from the south-east Luzon.</p></li>
-<li><p><code>nigrorum5</code> - <em>Z. nigrorum catarmanensis</em> from the Philippine island of Camiguin Sur off the north coast of Mindanao. This taxon is represented by a single sample (<code>Zni14341</code>) that is consistently mismatched in every analysis with the <em>Z. montanus</em> clade instead of with <em>Z. nigrorum</em>, usually allied with those populations from either the central or southern Philippines.</p></li>
+<li><p><code>nigrorum5</code> - <em>Z. nigrorum catarmanensis</em> from the Philippine island of Camiguin South off the north coast of Mindanao. This taxon is represented by a single sample (<code>Zni14341</code>) that is consistently mismatched in every analysis with the <em>Z. montanus</em> clade instead of with <em>Z. nigrorum</em>, usually allied with those populations from either the central or southern Philippines.</p></li>
 <li><p><code>palpebro</code> - <em>Z. palpebrosus</em> from Vietnam.</p></li>
 </ul></li>
 </ul>
 <p>Below is the full Zosterops topology from SVDQuartets. The next steps may seem overly tedious but it is good to carefully ensure the right branches are being collapsed. What follows is a step wise procedure for achieving this using the <code>ape</code> package. Only branches with bootstrap values below 60% are being collapsed with two exceptions.</p>
 <p>The <em>Z. japonicus stejnegeri</em> populations on the islands of Kozushima an Miyakejima are sister lineages with near 100% bootstrap support, but they are nested in a group of 15 other populations with extremely poor support. For this reason they were lumped into a single “continental” clade of <em>Z. japonicus</em> that includes all <em>Z. japonicus</em> populations except for the most far flung oceanic populations of <em>Z. japonicus alani</em> on the Ogasawara and Volcano Islands.</p>
-<p>Also, <em>Z. nigrorum catarmanensis</em> from the Philippine island of Camiguin Sur is strongly nested within a clade of <em>Z. montanus</em> from the central and southern Philippines. Within this clade however it is positioned with poor support (48%) with a branch containing <em>Z. montanus pectoralis</em> from Negros and an unnamed population of <em>Z. montanus</em> from Panay. Because of this unexpected mismatch we kept <em>Z. nigrorum catarmanensis</em> as distinct in the taxon assignments from populations of <em>Z. montanus</em>.</p>
+<p>Also, <em>Z. nigrorum catarmanensis</em> from the Philippine island of Camiguin South is strongly nested within a clade of <em>Z. montanus</em> from the central and southern Philippines. Within this clade however it is positioned with poor support (48%) with a branch containing <em>Z. montanus pectoralis</em> from Negros and an unnamed population of <em>Z. montanus</em> from Panay. Because of this unexpected mismatch we kept <em>Z. nigrorum catarmanensis</em> as distinct in the taxon assignments from populations of <em>Z. montanus</em>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>PICL_topology2 <span class="ot">&lt;-</span> <span class="fu">read.tree</span>(<span class="st">"Data/SVDQ/ZosteropsPOPS_SVDQtopology.tre"</span>)</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(PICL_topology2, <span class="at">label.offset =</span> <span class="fl">0.1</span>, <span class="at">cex =</span> <span class="fl">0.7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2272,7 +2274,7 @@ Attaching package: 'gt'</code></pre>
 </div>
 </div>
 </div>
-<p>The branch support for each of the popluations of <em>Z. everetti</em> and <em>Z. nigrorum</em> (minus the mismatched <em>Z. nigroum catarmanensis</em>, see above) were all &gt;60%. No collapsing occurred in this clade but instead each was simply renamed with a more convenient name for further analyses. <em>Z. everetti</em> <em>baslianicus</em> from Camiguin Sur and Mindanao were renamed <code>everetti1</code> and <code>everetti2</code>, respectively, and <em>Z. everetti boholensis</em> from Samar was renamed <code>everetti3</code>. The nominate <em>Z. nigrorum</em> subspecies on Panay was renamed <code>nigrorum1</code>, the <em>Z. nigrorum meyleri</em> subspecies on Camiguin Norte was renamed <code>nigrorum2</code>, <em>Z. nigrorum innominatus</em> was renamed <code>nigrorum3</code>, and <em>Z. nigrorum luzonicus</em> was renamed <code>nigrorum4</code>. The mismatched <em>Z. nigrorum catarmanensis</em> on Camiguin Sur was already renamed <code>nigrorum5</code> in a previous step. Finally, change the name of the <em>Z. palpebrosus</em> outgroup to <code>palpebro</code>.</p>
+<p>The branch support for each of the popluations of <em>Z. everetti</em> and <em>Z. nigrorum</em> (minus the mismatched <em>Z. nigroum catarmanensis</em>, see above) were all &gt;60%. No collapsing occurred in this clade but instead each was simply renamed with a more convenient name for further analyses. <em>Z. everetti</em> <em>baslianicus</em> from Camiguin South and Mindanao were renamed <code>everetti1</code> and <code>everetti2</code>, respectively, and <em>Z. everetti boholensis</em> from Samar was renamed <code>everetti3</code>. The nominate <em>Z. nigrorum</em> subspecies on Panay was renamed <code>nigrorum1</code>, the <em>Z. nigrorum meyleri</em> subspecies on Camiguin North was renamed <code>nigrorum2</code>, <em>Z. nigrorum innominatus</em> was renamed <code>nigrorum3</code>, and <em>Z. nigrorum luzonicus</em> was renamed <code>nigrorum4</code>. The mismatched <em>Z. nigrorum catarmanensis</em> on Camiguin South was already renamed <code>nigrorum5</code> in a previous step. Finally, change the name of the <em>Z. palpebrosus</em> outgroup to <code>palpebro</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rename the Z. everetti and Z. nigrorum clades and Z. palpebrosus. All the banches in this clade however have bootstrap support &gt;60 so no collapses in this clade. </span></span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -2621,23 +2623,23 @@ japonicus ZHISOL783</code></pre>
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the table</span></span>
 <span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>results_table2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="jnwmstnefi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#jnwmstnefi table {
+<div id="atxzxucerb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#atxzxucerb table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#jnwmstnefi thead, #jnwmstnefi tbody, #jnwmstnefi tfoot, #jnwmstnefi tr, #jnwmstnefi td, #jnwmstnefi th {
+#atxzxucerb thead, #atxzxucerb tbody, #atxzxucerb tfoot, #atxzxucerb tr, #atxzxucerb td, #atxzxucerb th {
   border-style: none;
 }
 
-#jnwmstnefi p {
+#atxzxucerb p {
   margin: 0;
   padding: 0;
 }
 
-#jnwmstnefi .gt_table {
+#atxzxucerb .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2663,12 +2665,12 @@ japonicus ZHISOL783</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#jnwmstnefi .gt_caption {
+#atxzxucerb .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#jnwmstnefi .gt_title {
+#atxzxucerb .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2680,7 +2682,7 @@ japonicus ZHISOL783</code></pre>
   border-bottom-width: 0;
 }
 
-#jnwmstnefi .gt_subtitle {
+#atxzxucerb .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2692,7 +2694,7 @@ japonicus ZHISOL783</code></pre>
   border-top-width: 0;
 }
 
-#jnwmstnefi .gt_heading {
+#atxzxucerb .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2704,13 +2706,13 @@ japonicus ZHISOL783</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#jnwmstnefi .gt_bottom_border {
+#atxzxucerb .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jnwmstnefi .gt_col_headings {
+#atxzxucerb .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2725,7 +2727,7 @@ japonicus ZHISOL783</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#jnwmstnefi .gt_col_heading {
+#atxzxucerb .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2745,7 +2747,7 @@ japonicus ZHISOL783</code></pre>
   overflow-x: hidden;
 }
 
-#jnwmstnefi .gt_column_spanner_outer {
+#atxzxucerb .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2757,15 +2759,15 @@ japonicus ZHISOL783</code></pre>
   padding-right: 4px;
 }
 
-#jnwmstnefi .gt_column_spanner_outer:first-child {
+#atxzxucerb .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jnwmstnefi .gt_column_spanner_outer:last-child {
+#atxzxucerb .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jnwmstnefi .gt_column_spanner {
+#atxzxucerb .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2777,11 +2779,11 @@ japonicus ZHISOL783</code></pre>
   width: 100%;
 }
 
-#jnwmstnefi .gt_spanner_row {
+#atxzxucerb .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#jnwmstnefi .gt_group_heading {
+#atxzxucerb .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2807,7 +2809,7 @@ japonicus ZHISOL783</code></pre>
   text-align: left;
 }
 
-#jnwmstnefi .gt_empty_group_heading {
+#atxzxucerb .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2822,15 +2824,15 @@ japonicus ZHISOL783</code></pre>
   vertical-align: middle;
 }
 
-#jnwmstnefi .gt_from_md > :first-child {
+#atxzxucerb .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jnwmstnefi .gt_from_md > :last-child {
+#atxzxucerb .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jnwmstnefi .gt_row {
+#atxzxucerb .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2849,7 +2851,7 @@ japonicus ZHISOL783</code></pre>
   overflow-x: hidden;
 }
 
-#jnwmstnefi .gt_stub {
+#atxzxucerb .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2862,7 +2864,7 @@ japonicus ZHISOL783</code></pre>
   padding-right: 5px;
 }
 
-#jnwmstnefi .gt_stub_row_group {
+#atxzxucerb .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2876,15 +2878,15 @@ japonicus ZHISOL783</code></pre>
   vertical-align: top;
 }
 
-#jnwmstnefi .gt_row_group_first td {
+#atxzxucerb .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#jnwmstnefi .gt_row_group_first th {
+#atxzxucerb .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#jnwmstnefi .gt_summary_row {
+#atxzxucerb .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2894,16 +2896,16 @@ japonicus ZHISOL783</code></pre>
   padding-right: 5px;
 }
 
-#jnwmstnefi .gt_first_summary_row {
+#atxzxucerb .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#jnwmstnefi .gt_first_summary_row.thick {
+#atxzxucerb .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#jnwmstnefi .gt_last_summary_row {
+#atxzxucerb .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2913,7 +2915,7 @@ japonicus ZHISOL783</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#jnwmstnefi .gt_grand_summary_row {
+#atxzxucerb .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2923,7 +2925,7 @@ japonicus ZHISOL783</code></pre>
   padding-right: 5px;
 }
 
-#jnwmstnefi .gt_first_grand_summary_row {
+#atxzxucerb .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2933,7 +2935,7 @@ japonicus ZHISOL783</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#jnwmstnefi .gt_last_grand_summary_row_top {
+#atxzxucerb .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2943,11 +2945,11 @@ japonicus ZHISOL783</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#jnwmstnefi .gt_striped {
+#atxzxucerb .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jnwmstnefi .gt_table_body {
+#atxzxucerb .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2956,7 +2958,7 @@ japonicus ZHISOL783</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#jnwmstnefi .gt_footnotes {
+#atxzxucerb .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2970,7 +2972,7 @@ japonicus ZHISOL783</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#jnwmstnefi .gt_footnote {
+#atxzxucerb .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2979,7 +2981,7 @@ japonicus ZHISOL783</code></pre>
   padding-right: 5px;
 }
 
-#jnwmstnefi .gt_sourcenotes {
+#atxzxucerb .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2993,7 +2995,7 @@ japonicus ZHISOL783</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#jnwmstnefi .gt_sourcenote {
+#atxzxucerb .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3001,72 +3003,72 @@ japonicus ZHISOL783</code></pre>
   padding-right: 5px;
 }
 
-#jnwmstnefi .gt_left {
+#atxzxucerb .gt_left {
   text-align: left;
 }
 
-#jnwmstnefi .gt_center {
+#atxzxucerb .gt_center {
   text-align: center;
 }
 
-#jnwmstnefi .gt_right {
+#atxzxucerb .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jnwmstnefi .gt_font_normal {
+#atxzxucerb .gt_font_normal {
   font-weight: normal;
 }
 
-#jnwmstnefi .gt_font_bold {
+#atxzxucerb .gt_font_bold {
   font-weight: bold;
 }
 
-#jnwmstnefi .gt_font_italic {
+#atxzxucerb .gt_font_italic {
   font-style: italic;
 }
 
-#jnwmstnefi .gt_super {
+#atxzxucerb .gt_super {
   font-size: 65%;
 }
 
-#jnwmstnefi .gt_footnote_marks {
+#atxzxucerb .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#jnwmstnefi .gt_asterisk {
+#atxzxucerb .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#jnwmstnefi .gt_indent_1 {
+#atxzxucerb .gt_indent_1 {
   text-indent: 5px;
 }
 
-#jnwmstnefi .gt_indent_2 {
+#atxzxucerb .gt_indent_2 {
   text-indent: 10px;
 }
 
-#jnwmstnefi .gt_indent_3 {
+#atxzxucerb .gt_indent_3 {
   text-indent: 15px;
 }
 
-#jnwmstnefi .gt_indent_4 {
+#atxzxucerb .gt_indent_4 {
   text-indent: 20px;
 }
 
-#jnwmstnefi .gt_indent_5 {
+#atxzxucerb .gt_indent_5 {
   text-indent: 25px;
 }
 
-#jnwmstnefi .katex-display {
+#atxzxucerb .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#jnwmstnefi div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#atxzxucerb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3605,23 +3607,23 @@ palpebro    palpebrosus 1</code></pre>
 <div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print and save the table</span></span>
 <span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>ZosteropsDELINEATE1_summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="ioispynzac" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ioispynzac table {
+<div id="krwteslbqv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#krwteslbqv table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ioispynzac thead, #ioispynzac tbody, #ioispynzac tfoot, #ioispynzac tr, #ioispynzac td, #ioispynzac th {
+#krwteslbqv thead, #krwteslbqv tbody, #krwteslbqv tfoot, #krwteslbqv tr, #krwteslbqv td, #krwteslbqv th {
   border-style: none;
 }
 
-#ioispynzac p {
+#krwteslbqv p {
   margin: 0;
   padding: 0;
 }
 
-#ioispynzac .gt_table {
+#krwteslbqv .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3647,12 +3649,12 @@ palpebro    palpebrosus 1</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#ioispynzac .gt_caption {
+#krwteslbqv .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ioispynzac .gt_title {
+#krwteslbqv .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3664,7 +3666,7 @@ palpebro    palpebrosus 1</code></pre>
   border-bottom-width: 0;
 }
 
-#ioispynzac .gt_subtitle {
+#krwteslbqv .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3676,7 +3678,7 @@ palpebro    palpebrosus 1</code></pre>
   border-top-width: 0;
 }
 
-#ioispynzac .gt_heading {
+#krwteslbqv .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3688,13 +3690,13 @@ palpebro    palpebrosus 1</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#ioispynzac .gt_bottom_border {
+#krwteslbqv .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ioispynzac .gt_col_headings {
+#krwteslbqv .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3709,7 +3711,7 @@ palpebro    palpebrosus 1</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#ioispynzac .gt_col_heading {
+#krwteslbqv .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3729,7 +3731,7 @@ palpebro    palpebrosus 1</code></pre>
   overflow-x: hidden;
 }
 
-#ioispynzac .gt_column_spanner_outer {
+#krwteslbqv .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3741,15 +3743,15 @@ palpebro    palpebrosus 1</code></pre>
   padding-right: 4px;
 }
 
-#ioispynzac .gt_column_spanner_outer:first-child {
+#krwteslbqv .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ioispynzac .gt_column_spanner_outer:last-child {
+#krwteslbqv .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ioispynzac .gt_column_spanner {
+#krwteslbqv .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3761,11 +3763,11 @@ palpebro    palpebrosus 1</code></pre>
   width: 100%;
 }
 
-#ioispynzac .gt_spanner_row {
+#krwteslbqv .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ioispynzac .gt_group_heading {
+#krwteslbqv .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3791,7 +3793,7 @@ palpebro    palpebrosus 1</code></pre>
   text-align: left;
 }
 
-#ioispynzac .gt_empty_group_heading {
+#krwteslbqv .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3806,15 +3808,15 @@ palpebro    palpebrosus 1</code></pre>
   vertical-align: middle;
 }
 
-#ioispynzac .gt_from_md > :first-child {
+#krwteslbqv .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ioispynzac .gt_from_md > :last-child {
+#krwteslbqv .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ioispynzac .gt_row {
+#krwteslbqv .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3833,7 +3835,7 @@ palpebro    palpebrosus 1</code></pre>
   overflow-x: hidden;
 }
 
-#ioispynzac .gt_stub {
+#krwteslbqv .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3846,7 +3848,7 @@ palpebro    palpebrosus 1</code></pre>
   padding-right: 5px;
 }
 
-#ioispynzac .gt_stub_row_group {
+#krwteslbqv .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3860,15 +3862,15 @@ palpebro    palpebrosus 1</code></pre>
   vertical-align: top;
 }
 
-#ioispynzac .gt_row_group_first td {
+#krwteslbqv .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ioispynzac .gt_row_group_first th {
+#krwteslbqv .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ioispynzac .gt_summary_row {
+#krwteslbqv .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3878,16 +3880,16 @@ palpebro    palpebrosus 1</code></pre>
   padding-right: 5px;
 }
 
-#ioispynzac .gt_first_summary_row {
+#krwteslbqv .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ioispynzac .gt_first_summary_row.thick {
+#krwteslbqv .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ioispynzac .gt_last_summary_row {
+#krwteslbqv .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3897,7 +3899,7 @@ palpebro    palpebrosus 1</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#ioispynzac .gt_grand_summary_row {
+#krwteslbqv .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3907,7 +3909,7 @@ palpebro    palpebrosus 1</code></pre>
   padding-right: 5px;
 }
 
-#ioispynzac .gt_first_grand_summary_row {
+#krwteslbqv .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3917,7 +3919,7 @@ palpebro    palpebrosus 1</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#ioispynzac .gt_last_grand_summary_row_top {
+#krwteslbqv .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3927,11 +3929,11 @@ palpebro    palpebrosus 1</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#ioispynzac .gt_striped {
+#krwteslbqv .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ioispynzac .gt_table_body {
+#krwteslbqv .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3940,7 +3942,7 @@ palpebro    palpebrosus 1</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#ioispynzac .gt_footnotes {
+#krwteslbqv .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3954,7 +3956,7 @@ palpebro    palpebrosus 1</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#ioispynzac .gt_footnote {
+#krwteslbqv .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3963,7 +3965,7 @@ palpebro    palpebrosus 1</code></pre>
   padding-right: 5px;
 }
 
-#ioispynzac .gt_sourcenotes {
+#krwteslbqv .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3977,7 +3979,7 @@ palpebro    palpebrosus 1</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#ioispynzac .gt_sourcenote {
+#krwteslbqv .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3985,72 +3987,72 @@ palpebro    palpebrosus 1</code></pre>
   padding-right: 5px;
 }
 
-#ioispynzac .gt_left {
+#krwteslbqv .gt_left {
   text-align: left;
 }
 
-#ioispynzac .gt_center {
+#krwteslbqv .gt_center {
   text-align: center;
 }
 
-#ioispynzac .gt_right {
+#krwteslbqv .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ioispynzac .gt_font_normal {
+#krwteslbqv .gt_font_normal {
   font-weight: normal;
 }
 
-#ioispynzac .gt_font_bold {
+#krwteslbqv .gt_font_bold {
   font-weight: bold;
 }
 
-#ioispynzac .gt_font_italic {
+#krwteslbqv .gt_font_italic {
   font-style: italic;
 }
 
-#ioispynzac .gt_super {
+#krwteslbqv .gt_super {
   font-size: 65%;
 }
 
-#ioispynzac .gt_footnote_marks {
+#krwteslbqv .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ioispynzac .gt_asterisk {
+#krwteslbqv .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ioispynzac .gt_indent_1 {
+#krwteslbqv .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ioispynzac .gt_indent_2 {
+#krwteslbqv .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ioispynzac .gt_indent_3 {
+#krwteslbqv .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ioispynzac .gt_indent_4 {
+#krwteslbqv .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ioispynzac .gt_indent_5 {
+#krwteslbqv .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ioispynzac .katex-display {
+#krwteslbqv .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ioispynzac div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#krwteslbqv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -4471,23 +4473,23 @@ palpebro    palpebrosus 1</code></pre>
 <div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print and save the table</span></span>
 <span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>ZosteropsDELINEATE2_summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="pgqwdzblhe" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#pgqwdzblhe table {
+<div id="qacncaviph" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qacncaviph table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#pgqwdzblhe thead, #pgqwdzblhe tbody, #pgqwdzblhe tfoot, #pgqwdzblhe tr, #pgqwdzblhe td, #pgqwdzblhe th {
+#qacncaviph thead, #qacncaviph tbody, #qacncaviph tfoot, #qacncaviph tr, #qacncaviph td, #qacncaviph th {
   border-style: none;
 }
 
-#pgqwdzblhe p {
+#qacncaviph p {
   margin: 0;
   padding: 0;
 }
 
-#pgqwdzblhe .gt_table {
+#qacncaviph .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4513,12 +4515,12 @@ palpebro    palpebrosus 1</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#pgqwdzblhe .gt_caption {
+#qacncaviph .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#pgqwdzblhe .gt_title {
+#qacncaviph .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4530,7 +4532,7 @@ palpebro    palpebrosus 1</code></pre>
   border-bottom-width: 0;
 }
 
-#pgqwdzblhe .gt_subtitle {
+#qacncaviph .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4542,7 +4544,7 @@ palpebro    palpebrosus 1</code></pre>
   border-top-width: 0;
 }
 
-#pgqwdzblhe .gt_heading {
+#qacncaviph .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4554,13 +4556,13 @@ palpebro    palpebrosus 1</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#pgqwdzblhe .gt_bottom_border {
+#qacncaviph .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#pgqwdzblhe .gt_col_headings {
+#qacncaviph .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4575,7 +4577,7 @@ palpebro    palpebrosus 1</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#pgqwdzblhe .gt_col_heading {
+#qacncaviph .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4595,7 +4597,7 @@ palpebro    palpebrosus 1</code></pre>
   overflow-x: hidden;
 }
 
-#pgqwdzblhe .gt_column_spanner_outer {
+#qacncaviph .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4607,15 +4609,15 @@ palpebro    palpebrosus 1</code></pre>
   padding-right: 4px;
 }
 
-#pgqwdzblhe .gt_column_spanner_outer:first-child {
+#qacncaviph .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#pgqwdzblhe .gt_column_spanner_outer:last-child {
+#qacncaviph .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#pgqwdzblhe .gt_column_spanner {
+#qacncaviph .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4627,11 +4629,11 @@ palpebro    palpebrosus 1</code></pre>
   width: 100%;
 }
 
-#pgqwdzblhe .gt_spanner_row {
+#qacncaviph .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#pgqwdzblhe .gt_group_heading {
+#qacncaviph .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4657,7 +4659,7 @@ palpebro    palpebrosus 1</code></pre>
   text-align: left;
 }
 
-#pgqwdzblhe .gt_empty_group_heading {
+#qacncaviph .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4672,15 +4674,15 @@ palpebro    palpebrosus 1</code></pre>
   vertical-align: middle;
 }
 
-#pgqwdzblhe .gt_from_md > :first-child {
+#qacncaviph .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#pgqwdzblhe .gt_from_md > :last-child {
+#qacncaviph .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#pgqwdzblhe .gt_row {
+#qacncaviph .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4699,7 +4701,7 @@ palpebro    palpebrosus 1</code></pre>
   overflow-x: hidden;
 }
 
-#pgqwdzblhe .gt_stub {
+#qacncaviph .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4712,7 +4714,7 @@ palpebro    palpebrosus 1</code></pre>
   padding-right: 5px;
 }
 
-#pgqwdzblhe .gt_stub_row_group {
+#qacncaviph .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4726,15 +4728,15 @@ palpebro    palpebrosus 1</code></pre>
   vertical-align: top;
 }
 
-#pgqwdzblhe .gt_row_group_first td {
+#qacncaviph .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#pgqwdzblhe .gt_row_group_first th {
+#qacncaviph .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#pgqwdzblhe .gt_summary_row {
+#qacncaviph .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4744,16 +4746,16 @@ palpebro    palpebrosus 1</code></pre>
   padding-right: 5px;
 }
 
-#pgqwdzblhe .gt_first_summary_row {
+#qacncaviph .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#pgqwdzblhe .gt_first_summary_row.thick {
+#qacncaviph .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#pgqwdzblhe .gt_last_summary_row {
+#qacncaviph .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4763,7 +4765,7 @@ palpebro    palpebrosus 1</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#pgqwdzblhe .gt_grand_summary_row {
+#qacncaviph .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4773,7 +4775,7 @@ palpebro    palpebrosus 1</code></pre>
   padding-right: 5px;
 }
 
-#pgqwdzblhe .gt_first_grand_summary_row {
+#qacncaviph .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4783,7 +4785,7 @@ palpebro    palpebrosus 1</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#pgqwdzblhe .gt_last_grand_summary_row_top {
+#qacncaviph .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4793,11 +4795,11 @@ palpebro    palpebrosus 1</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#pgqwdzblhe .gt_striped {
+#qacncaviph .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#pgqwdzblhe .gt_table_body {
+#qacncaviph .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4806,7 +4808,7 @@ palpebro    palpebrosus 1</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#pgqwdzblhe .gt_footnotes {
+#qacncaviph .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4820,7 +4822,7 @@ palpebro    palpebrosus 1</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#pgqwdzblhe .gt_footnote {
+#qacncaviph .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4829,7 +4831,7 @@ palpebro    palpebrosus 1</code></pre>
   padding-right: 5px;
 }
 
-#pgqwdzblhe .gt_sourcenotes {
+#qacncaviph .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4843,7 +4845,7 @@ palpebro    palpebrosus 1</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#pgqwdzblhe .gt_sourcenote {
+#qacncaviph .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4851,72 +4853,72 @@ palpebro    palpebrosus 1</code></pre>
   padding-right: 5px;
 }
 
-#pgqwdzblhe .gt_left {
+#qacncaviph .gt_left {
   text-align: left;
 }
 
-#pgqwdzblhe .gt_center {
+#qacncaviph .gt_center {
   text-align: center;
 }
 
-#pgqwdzblhe .gt_right {
+#qacncaviph .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#pgqwdzblhe .gt_font_normal {
+#qacncaviph .gt_font_normal {
   font-weight: normal;
 }
 
-#pgqwdzblhe .gt_font_bold {
+#qacncaviph .gt_font_bold {
   font-weight: bold;
 }
 
-#pgqwdzblhe .gt_font_italic {
+#qacncaviph .gt_font_italic {
   font-style: italic;
 }
 
-#pgqwdzblhe .gt_super {
+#qacncaviph .gt_super {
   font-size: 65%;
 }
 
-#pgqwdzblhe .gt_footnote_marks {
+#qacncaviph .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#pgqwdzblhe .gt_asterisk {
+#qacncaviph .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#pgqwdzblhe .gt_indent_1 {
+#qacncaviph .gt_indent_1 {
   text-indent: 5px;
 }
 
-#pgqwdzblhe .gt_indent_2 {
+#qacncaviph .gt_indent_2 {
   text-indent: 10px;
 }
 
-#pgqwdzblhe .gt_indent_3 {
+#qacncaviph .gt_indent_3 {
   text-indent: 15px;
 }
 
-#pgqwdzblhe .gt_indent_4 {
+#qacncaviph .gt_indent_4 {
   text-indent: 20px;
 }
 
-#pgqwdzblhe .gt_indent_5 {
+#qacncaviph .gt_indent_5 {
   text-indent: 25px;
 }
 
-#pgqwdzblhe .katex-display {
+#qacncaviph .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#pgqwdzblhe div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#qacncaviph div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -5337,23 +5339,23 @@ palpebro    palpebrosus 1</code></pre>
 <div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print and save the table</span></span>
 <span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a>ZosteropsDELINEATE3_summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="exwpttbviu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#exwpttbviu table {
+<div id="vzsiqkryvw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#vzsiqkryvw table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#exwpttbviu thead, #exwpttbviu tbody, #exwpttbviu tfoot, #exwpttbviu tr, #exwpttbviu td, #exwpttbviu th {
+#vzsiqkryvw thead, #vzsiqkryvw tbody, #vzsiqkryvw tfoot, #vzsiqkryvw tr, #vzsiqkryvw td, #vzsiqkryvw th {
   border-style: none;
 }
 
-#exwpttbviu p {
+#vzsiqkryvw p {
   margin: 0;
   padding: 0;
 }
 
-#exwpttbviu .gt_table {
+#vzsiqkryvw .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -5379,12 +5381,12 @@ palpebro    palpebrosus 1</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#exwpttbviu .gt_caption {
+#vzsiqkryvw .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#exwpttbviu .gt_title {
+#vzsiqkryvw .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -5396,7 +5398,7 @@ palpebro    palpebrosus 1</code></pre>
   border-bottom-width: 0;
 }
 
-#exwpttbviu .gt_subtitle {
+#vzsiqkryvw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -5408,7 +5410,7 @@ palpebro    palpebrosus 1</code></pre>
   border-top-width: 0;
 }
 
-#exwpttbviu .gt_heading {
+#vzsiqkryvw .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -5420,13 +5422,13 @@ palpebro    palpebrosus 1</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#exwpttbviu .gt_bottom_border {
+#vzsiqkryvw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#exwpttbviu .gt_col_headings {
+#vzsiqkryvw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5441,7 +5443,7 @@ palpebro    palpebrosus 1</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#exwpttbviu .gt_col_heading {
+#vzsiqkryvw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5461,7 +5463,7 @@ palpebro    palpebrosus 1</code></pre>
   overflow-x: hidden;
 }
 
-#exwpttbviu .gt_column_spanner_outer {
+#vzsiqkryvw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5473,15 +5475,15 @@ palpebro    palpebrosus 1</code></pre>
   padding-right: 4px;
 }
 
-#exwpttbviu .gt_column_spanner_outer:first-child {
+#vzsiqkryvw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#exwpttbviu .gt_column_spanner_outer:last-child {
+#vzsiqkryvw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#exwpttbviu .gt_column_spanner {
+#vzsiqkryvw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -5493,11 +5495,11 @@ palpebro    palpebrosus 1</code></pre>
   width: 100%;
 }
 
-#exwpttbviu .gt_spanner_row {
+#vzsiqkryvw .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#exwpttbviu .gt_group_heading {
+#vzsiqkryvw .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5523,7 +5525,7 @@ palpebro    palpebrosus 1</code></pre>
   text-align: left;
 }
 
-#exwpttbviu .gt_empty_group_heading {
+#vzsiqkryvw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -5538,15 +5540,15 @@ palpebro    palpebrosus 1</code></pre>
   vertical-align: middle;
 }
 
-#exwpttbviu .gt_from_md > :first-child {
+#vzsiqkryvw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#exwpttbviu .gt_from_md > :last-child {
+#vzsiqkryvw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#exwpttbviu .gt_row {
+#vzsiqkryvw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5565,7 +5567,7 @@ palpebro    palpebrosus 1</code></pre>
   overflow-x: hidden;
 }
 
-#exwpttbviu .gt_stub {
+#vzsiqkryvw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5578,7 +5580,7 @@ palpebro    palpebrosus 1</code></pre>
   padding-right: 5px;
 }
 
-#exwpttbviu .gt_stub_row_group {
+#vzsiqkryvw .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5592,15 +5594,15 @@ palpebro    palpebrosus 1</code></pre>
   vertical-align: top;
 }
 
-#exwpttbviu .gt_row_group_first td {
+#vzsiqkryvw .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#exwpttbviu .gt_row_group_first th {
+#vzsiqkryvw .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#exwpttbviu .gt_summary_row {
+#vzsiqkryvw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5610,16 +5612,16 @@ palpebro    palpebrosus 1</code></pre>
   padding-right: 5px;
 }
 
-#exwpttbviu .gt_first_summary_row {
+#vzsiqkryvw .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#exwpttbviu .gt_first_summary_row.thick {
+#vzsiqkryvw .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#exwpttbviu .gt_last_summary_row {
+#vzsiqkryvw .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5629,7 +5631,7 @@ palpebro    palpebrosus 1</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#exwpttbviu .gt_grand_summary_row {
+#vzsiqkryvw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5639,7 +5641,7 @@ palpebro    palpebrosus 1</code></pre>
   padding-right: 5px;
 }
 
-#exwpttbviu .gt_first_grand_summary_row {
+#vzsiqkryvw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5649,7 +5651,7 @@ palpebro    palpebrosus 1</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#exwpttbviu .gt_last_grand_summary_row_top {
+#vzsiqkryvw .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5659,11 +5661,11 @@ palpebro    palpebrosus 1</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#exwpttbviu .gt_striped {
+#vzsiqkryvw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#exwpttbviu .gt_table_body {
+#vzsiqkryvw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5672,7 +5674,7 @@ palpebro    palpebrosus 1</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#exwpttbviu .gt_footnotes {
+#vzsiqkryvw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5686,7 +5688,7 @@ palpebro    palpebrosus 1</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#exwpttbviu .gt_footnote {
+#vzsiqkryvw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -5695,7 +5697,7 @@ palpebro    palpebrosus 1</code></pre>
   padding-right: 5px;
 }
 
-#exwpttbviu .gt_sourcenotes {
+#vzsiqkryvw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5709,7 +5711,7 @@ palpebro    palpebrosus 1</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#exwpttbviu .gt_sourcenote {
+#vzsiqkryvw .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5717,72 +5719,72 @@ palpebro    palpebrosus 1</code></pre>
   padding-right: 5px;
 }
 
-#exwpttbviu .gt_left {
+#vzsiqkryvw .gt_left {
   text-align: left;
 }
 
-#exwpttbviu .gt_center {
+#vzsiqkryvw .gt_center {
   text-align: center;
 }
 
-#exwpttbviu .gt_right {
+#vzsiqkryvw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#exwpttbviu .gt_font_normal {
+#vzsiqkryvw .gt_font_normal {
   font-weight: normal;
 }
 
-#exwpttbviu .gt_font_bold {
+#vzsiqkryvw .gt_font_bold {
   font-weight: bold;
 }
 
-#exwpttbviu .gt_font_italic {
+#vzsiqkryvw .gt_font_italic {
   font-style: italic;
 }
 
-#exwpttbviu .gt_super {
+#vzsiqkryvw .gt_super {
   font-size: 65%;
 }
 
-#exwpttbviu .gt_footnote_marks {
+#vzsiqkryvw .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#exwpttbviu .gt_asterisk {
+#vzsiqkryvw .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#exwpttbviu .gt_indent_1 {
+#vzsiqkryvw .gt_indent_1 {
   text-indent: 5px;
 }
 
-#exwpttbviu .gt_indent_2 {
+#vzsiqkryvw .gt_indent_2 {
   text-indent: 10px;
 }
 
-#exwpttbviu .gt_indent_3 {
+#vzsiqkryvw .gt_indent_3 {
   text-indent: 15px;
 }
 
-#exwpttbviu .gt_indent_4 {
+#vzsiqkryvw .gt_indent_4 {
   text-indent: 20px;
 }
 
-#exwpttbviu .gt_indent_5 {
+#vzsiqkryvw .gt_indent_5 {
   text-indent: 25px;
 }
 
-#exwpttbviu .katex-display {
+#vzsiqkryvw .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#exwpttbviu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#vzsiqkryvw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -6203,23 +6205,23 @@ palpebro    palpebrosus 1</code></pre>
 <div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print and save the table</span></span>
 <span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a>ZosteropsDELINEATE4_summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="pzksvwpruy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#pzksvwpruy table {
+<div id="hpmjzzhdvb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hpmjzzhdvb table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#pzksvwpruy thead, #pzksvwpruy tbody, #pzksvwpruy tfoot, #pzksvwpruy tr, #pzksvwpruy td, #pzksvwpruy th {
+#hpmjzzhdvb thead, #hpmjzzhdvb tbody, #hpmjzzhdvb tfoot, #hpmjzzhdvb tr, #hpmjzzhdvb td, #hpmjzzhdvb th {
   border-style: none;
 }
 
-#pzksvwpruy p {
+#hpmjzzhdvb p {
   margin: 0;
   padding: 0;
 }
 
-#pzksvwpruy .gt_table {
+#hpmjzzhdvb .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -6245,12 +6247,12 @@ palpebro    palpebrosus 1</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#pzksvwpruy .gt_caption {
+#hpmjzzhdvb .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#pzksvwpruy .gt_title {
+#hpmjzzhdvb .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -6262,7 +6264,7 @@ palpebro    palpebrosus 1</code></pre>
   border-bottom-width: 0;
 }
 
-#pzksvwpruy .gt_subtitle {
+#hpmjzzhdvb .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -6274,7 +6276,7 @@ palpebro    palpebrosus 1</code></pre>
   border-top-width: 0;
 }
 
-#pzksvwpruy .gt_heading {
+#hpmjzzhdvb .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -6286,13 +6288,13 @@ palpebro    palpebrosus 1</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#pzksvwpruy .gt_bottom_border {
+#hpmjzzhdvb .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#pzksvwpruy .gt_col_headings {
+#hpmjzzhdvb .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6307,7 +6309,7 @@ palpebro    palpebrosus 1</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#pzksvwpruy .gt_col_heading {
+#hpmjzzhdvb .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6327,7 +6329,7 @@ palpebro    palpebrosus 1</code></pre>
   overflow-x: hidden;
 }
 
-#pzksvwpruy .gt_column_spanner_outer {
+#hpmjzzhdvb .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6339,15 +6341,15 @@ palpebro    palpebrosus 1</code></pre>
   padding-right: 4px;
 }
 
-#pzksvwpruy .gt_column_spanner_outer:first-child {
+#hpmjzzhdvb .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#pzksvwpruy .gt_column_spanner_outer:last-child {
+#hpmjzzhdvb .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#pzksvwpruy .gt_column_spanner {
+#hpmjzzhdvb .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -6359,11 +6361,11 @@ palpebro    palpebrosus 1</code></pre>
   width: 100%;
 }
 
-#pzksvwpruy .gt_spanner_row {
+#hpmjzzhdvb .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#pzksvwpruy .gt_group_heading {
+#hpmjzzhdvb .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6389,7 +6391,7 @@ palpebro    palpebrosus 1</code></pre>
   text-align: left;
 }
 
-#pzksvwpruy .gt_empty_group_heading {
+#hpmjzzhdvb .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -6404,15 +6406,15 @@ palpebro    palpebrosus 1</code></pre>
   vertical-align: middle;
 }
 
-#pzksvwpruy .gt_from_md > :first-child {
+#hpmjzzhdvb .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#pzksvwpruy .gt_from_md > :last-child {
+#hpmjzzhdvb .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#pzksvwpruy .gt_row {
+#hpmjzzhdvb .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6431,7 +6433,7 @@ palpebro    palpebrosus 1</code></pre>
   overflow-x: hidden;
 }
 
-#pzksvwpruy .gt_stub {
+#hpmjzzhdvb .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6444,7 +6446,7 @@ palpebro    palpebrosus 1</code></pre>
   padding-right: 5px;
 }
 
-#pzksvwpruy .gt_stub_row_group {
+#hpmjzzhdvb .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6458,15 +6460,15 @@ palpebro    palpebrosus 1</code></pre>
   vertical-align: top;
 }
 
-#pzksvwpruy .gt_row_group_first td {
+#hpmjzzhdvb .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#pzksvwpruy .gt_row_group_first th {
+#hpmjzzhdvb .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#pzksvwpruy .gt_summary_row {
+#hpmjzzhdvb .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6476,16 +6478,16 @@ palpebro    palpebrosus 1</code></pre>
   padding-right: 5px;
 }
 
-#pzksvwpruy .gt_first_summary_row {
+#hpmjzzhdvb .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#pzksvwpruy .gt_first_summary_row.thick {
+#hpmjzzhdvb .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#pzksvwpruy .gt_last_summary_row {
+#hpmjzzhdvb .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6495,7 +6497,7 @@ palpebro    palpebrosus 1</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#pzksvwpruy .gt_grand_summary_row {
+#hpmjzzhdvb .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6505,7 +6507,7 @@ palpebro    palpebrosus 1</code></pre>
   padding-right: 5px;
 }
 
-#pzksvwpruy .gt_first_grand_summary_row {
+#hpmjzzhdvb .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6515,7 +6517,7 @@ palpebro    palpebrosus 1</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#pzksvwpruy .gt_last_grand_summary_row_top {
+#hpmjzzhdvb .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6525,11 +6527,11 @@ palpebro    palpebrosus 1</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#pzksvwpruy .gt_striped {
+#hpmjzzhdvb .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#pzksvwpruy .gt_table_body {
+#hpmjzzhdvb .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6538,7 +6540,7 @@ palpebro    palpebrosus 1</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#pzksvwpruy .gt_footnotes {
+#hpmjzzhdvb .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6552,7 +6554,7 @@ palpebro    palpebrosus 1</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#pzksvwpruy .gt_footnote {
+#hpmjzzhdvb .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -6561,7 +6563,7 @@ palpebro    palpebrosus 1</code></pre>
   padding-right: 5px;
 }
 
-#pzksvwpruy .gt_sourcenotes {
+#hpmjzzhdvb .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6575,7 +6577,7 @@ palpebro    palpebrosus 1</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#pzksvwpruy .gt_sourcenote {
+#hpmjzzhdvb .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -6583,72 +6585,72 @@ palpebro    palpebrosus 1</code></pre>
   padding-right: 5px;
 }
 
-#pzksvwpruy .gt_left {
+#hpmjzzhdvb .gt_left {
   text-align: left;
 }
 
-#pzksvwpruy .gt_center {
+#hpmjzzhdvb .gt_center {
   text-align: center;
 }
 
-#pzksvwpruy .gt_right {
+#hpmjzzhdvb .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#pzksvwpruy .gt_font_normal {
+#hpmjzzhdvb .gt_font_normal {
   font-weight: normal;
 }
 
-#pzksvwpruy .gt_font_bold {
+#hpmjzzhdvb .gt_font_bold {
   font-weight: bold;
 }
 
-#pzksvwpruy .gt_font_italic {
+#hpmjzzhdvb .gt_font_italic {
   font-style: italic;
 }
 
-#pzksvwpruy .gt_super {
+#hpmjzzhdvb .gt_super {
   font-size: 65%;
 }
 
-#pzksvwpruy .gt_footnote_marks {
+#hpmjzzhdvb .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#pzksvwpruy .gt_asterisk {
+#hpmjzzhdvb .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#pzksvwpruy .gt_indent_1 {
+#hpmjzzhdvb .gt_indent_1 {
   text-indent: 5px;
 }
 
-#pzksvwpruy .gt_indent_2 {
+#hpmjzzhdvb .gt_indent_2 {
   text-indent: 10px;
 }
 
-#pzksvwpruy .gt_indent_3 {
+#hpmjzzhdvb .gt_indent_3 {
   text-indent: 15px;
 }
 
-#pzksvwpruy .gt_indent_4 {
+#hpmjzzhdvb .gt_indent_4 {
   text-indent: 20px;
 }
 
-#pzksvwpruy .gt_indent_5 {
+#hpmjzzhdvb .gt_indent_5 {
   text-indent: 25px;
 }
 
-#pzksvwpruy .katex-display {
+#hpmjzzhdvb .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#pzksvwpruy div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#hpmjzzhdvb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -7069,23 +7071,23 @@ palpebro    palpebrosus 1</code></pre>
 <div class="sourceCode cell-code" id="cb101"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print and save the table</span></span>
 <span id="cb101-2"><a href="#cb101-2" aria-hidden="true" tabindex="-1"></a>ZosteropsDELINEATE5_summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="rbwrytgipp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#rbwrytgipp table {
+<div id="ptjdjxevhk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ptjdjxevhk table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#rbwrytgipp thead, #rbwrytgipp tbody, #rbwrytgipp tfoot, #rbwrytgipp tr, #rbwrytgipp td, #rbwrytgipp th {
+#ptjdjxevhk thead, #ptjdjxevhk tbody, #ptjdjxevhk tfoot, #ptjdjxevhk tr, #ptjdjxevhk td, #ptjdjxevhk th {
   border-style: none;
 }
 
-#rbwrytgipp p {
+#ptjdjxevhk p {
   margin: 0;
   padding: 0;
 }
 
-#rbwrytgipp .gt_table {
+#ptjdjxevhk .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -7111,12 +7113,12 @@ palpebro    palpebrosus 1</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#rbwrytgipp .gt_caption {
+#ptjdjxevhk .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#rbwrytgipp .gt_title {
+#ptjdjxevhk .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -7128,7 +7130,7 @@ palpebro    palpebrosus 1</code></pre>
   border-bottom-width: 0;
 }
 
-#rbwrytgipp .gt_subtitle {
+#ptjdjxevhk .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -7140,7 +7142,7 @@ palpebro    palpebrosus 1</code></pre>
   border-top-width: 0;
 }
 
-#rbwrytgipp .gt_heading {
+#ptjdjxevhk .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -7152,13 +7154,13 @@ palpebro    palpebrosus 1</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#rbwrytgipp .gt_bottom_border {
+#ptjdjxevhk .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#rbwrytgipp .gt_col_headings {
+#ptjdjxevhk .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -7173,7 +7175,7 @@ palpebro    palpebrosus 1</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#rbwrytgipp .gt_col_heading {
+#ptjdjxevhk .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -7193,7 +7195,7 @@ palpebro    palpebrosus 1</code></pre>
   overflow-x: hidden;
 }
 
-#rbwrytgipp .gt_column_spanner_outer {
+#ptjdjxevhk .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -7205,15 +7207,15 @@ palpebro    palpebrosus 1</code></pre>
   padding-right: 4px;
 }
 
-#rbwrytgipp .gt_column_spanner_outer:first-child {
+#ptjdjxevhk .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#rbwrytgipp .gt_column_spanner_outer:last-child {
+#ptjdjxevhk .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#rbwrytgipp .gt_column_spanner {
+#ptjdjxevhk .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -7225,11 +7227,11 @@ palpebro    palpebrosus 1</code></pre>
   width: 100%;
 }
 
-#rbwrytgipp .gt_spanner_row {
+#ptjdjxevhk .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#rbwrytgipp .gt_group_heading {
+#ptjdjxevhk .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7255,7 +7257,7 @@ palpebro    palpebrosus 1</code></pre>
   text-align: left;
 }
 
-#rbwrytgipp .gt_empty_group_heading {
+#ptjdjxevhk .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -7270,15 +7272,15 @@ palpebro    palpebrosus 1</code></pre>
   vertical-align: middle;
 }
 
-#rbwrytgipp .gt_from_md > :first-child {
+#ptjdjxevhk .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#rbwrytgipp .gt_from_md > :last-child {
+#ptjdjxevhk .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#rbwrytgipp .gt_row {
+#ptjdjxevhk .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7297,7 +7299,7 @@ palpebro    palpebrosus 1</code></pre>
   overflow-x: hidden;
 }
 
-#rbwrytgipp .gt_stub {
+#ptjdjxevhk .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -7310,7 +7312,7 @@ palpebro    palpebrosus 1</code></pre>
   padding-right: 5px;
 }
 
-#rbwrytgipp .gt_stub_row_group {
+#ptjdjxevhk .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -7324,15 +7326,15 @@ palpebro    palpebrosus 1</code></pre>
   vertical-align: top;
 }
 
-#rbwrytgipp .gt_row_group_first td {
+#ptjdjxevhk .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#rbwrytgipp .gt_row_group_first th {
+#ptjdjxevhk .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#rbwrytgipp .gt_summary_row {
+#ptjdjxevhk .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -7342,16 +7344,16 @@ palpebro    palpebrosus 1</code></pre>
   padding-right: 5px;
 }
 
-#rbwrytgipp .gt_first_summary_row {
+#ptjdjxevhk .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#rbwrytgipp .gt_first_summary_row.thick {
+#ptjdjxevhk .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#rbwrytgipp .gt_last_summary_row {
+#ptjdjxevhk .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7361,7 +7363,7 @@ palpebro    palpebrosus 1</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#rbwrytgipp .gt_grand_summary_row {
+#ptjdjxevhk .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -7371,7 +7373,7 @@ palpebro    palpebrosus 1</code></pre>
   padding-right: 5px;
 }
 
-#rbwrytgipp .gt_first_grand_summary_row {
+#ptjdjxevhk .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7381,7 +7383,7 @@ palpebro    palpebrosus 1</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#rbwrytgipp .gt_last_grand_summary_row_top {
+#ptjdjxevhk .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -7391,11 +7393,11 @@ palpebro    palpebrosus 1</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#rbwrytgipp .gt_striped {
+#ptjdjxevhk .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#rbwrytgipp .gt_table_body {
+#ptjdjxevhk .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -7404,7 +7406,7 @@ palpebro    palpebrosus 1</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#rbwrytgipp .gt_footnotes {
+#ptjdjxevhk .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -7418,7 +7420,7 @@ palpebro    palpebrosus 1</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#rbwrytgipp .gt_footnote {
+#ptjdjxevhk .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -7427,7 +7429,7 @@ palpebro    palpebrosus 1</code></pre>
   padding-right: 5px;
 }
 
-#rbwrytgipp .gt_sourcenotes {
+#ptjdjxevhk .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -7441,7 +7443,7 @@ palpebro    palpebrosus 1</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#rbwrytgipp .gt_sourcenote {
+#ptjdjxevhk .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -7449,72 +7451,72 @@ palpebro    palpebrosus 1</code></pre>
   padding-right: 5px;
 }
 
-#rbwrytgipp .gt_left {
+#ptjdjxevhk .gt_left {
   text-align: left;
 }
 
-#rbwrytgipp .gt_center {
+#ptjdjxevhk .gt_center {
   text-align: center;
 }
 
-#rbwrytgipp .gt_right {
+#ptjdjxevhk .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#rbwrytgipp .gt_font_normal {
+#ptjdjxevhk .gt_font_normal {
   font-weight: normal;
 }
 
-#rbwrytgipp .gt_font_bold {
+#ptjdjxevhk .gt_font_bold {
   font-weight: bold;
 }
 
-#rbwrytgipp .gt_font_italic {
+#ptjdjxevhk .gt_font_italic {
   font-style: italic;
 }
 
-#rbwrytgipp .gt_super {
+#ptjdjxevhk .gt_super {
   font-size: 65%;
 }
 
-#rbwrytgipp .gt_footnote_marks {
+#ptjdjxevhk .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#rbwrytgipp .gt_asterisk {
+#ptjdjxevhk .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#rbwrytgipp .gt_indent_1 {
+#ptjdjxevhk .gt_indent_1 {
   text-indent: 5px;
 }
 
-#rbwrytgipp .gt_indent_2 {
+#ptjdjxevhk .gt_indent_2 {
   text-indent: 10px;
 }
 
-#rbwrytgipp .gt_indent_3 {
+#ptjdjxevhk .gt_indent_3 {
   text-indent: 15px;
 }
 
-#rbwrytgipp .gt_indent_4 {
+#ptjdjxevhk .gt_indent_4 {
   text-indent: 20px;
 }
 
-#rbwrytgipp .gt_indent_5 {
+#ptjdjxevhk .gt_indent_5 {
   text-indent: 25px;
 }
 
-#rbwrytgipp .katex-display {
+#ptjdjxevhk .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#rbwrytgipp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ptjdjxevhk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>

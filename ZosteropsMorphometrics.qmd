@@ -340,7 +340,7 @@ JAPO_PALP,39.66,5.02
 SIMP_PALP,39.09,0.94
 ```
 
-Correlation analysis using Spearman's ⍴ between pairwise comparisons for genetic and morphological distance was calculated as follows. A plot of morphological and genetic distances was produced and pairwise comparisons involving *Z. japonicus* were highlighted (black points and dashed line) from the remaining pairwise comparisons (open points and solid line).
+Correlation analysis using Spearman's ⍴ between pairwise comparisons for genetic and morphological distance was calculated as follows. A plot of morphological and genetic distances was produced and pairwise comparisons involving *Z. japonicus* were highlighted (black points) from the remaining pairwise comparisons (open points).
 
 ```{r}
 #| label: Spearman correlation between morphometric and genetic distances.

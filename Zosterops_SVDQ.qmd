@@ -113,7 +113,7 @@ begin sets;
         japonicus_japonicus_SHIKOKU : 24,
         japonicus_alani_HAHAJIMA : 26-28,
         japonicus_alani_ANEJIMA : 29-31,
-        japonicus_alani_IWOJIMA : 32,
+        japonicus_alani_IWOTO : 32,
         japonicus_stejnegeri_KOZUSHIMA : 33-35,
         japonicus_stejnegeri_MIYAKEJIMA : 36-38,
         japonicus_insularis_KAGOSHIMA: 39-40,
@@ -298,7 +298,7 @@ Tree from SVDQuartets analysis (also stored to tree buffer):
                             |   |    |                           /---+
                             |   |    |                           |   \----- japonicus alani ANEJIMA
                             |   |    \---------------------------+
-                            |   |                                \--------- japonicus alani IWOJIMA
+                            |   |                                \--------- japonicus alani IWOTO
                        /----+   |
                        |    |   |                                    /----- meyeni BATAN
                        |    |   |                                /---+
@@ -403,7 +403,7 @@ Bootstrap 50% majority-rule consensus tree
                                     |     |                            /-68--+
                               /-92--+     |                            |     \------ japonicus alani ANEJIMA(15)
                               |     |     \-------------96-------------+
-                              |     |                                  \------------ japonicus alani IWOJIMA(16)
+                              |     |                                  \------------ japonicus alani IWOTO(16)
                               |     |
                               |     |                                        /------ meyeni BATAN(30)
                               |     |                                  /-93--+
@@ -725,7 +725,7 @@ Strict consensus of 700 trees:
                                             |          |
                                             |          +----------- japonicus alani ANEJIMA
                                             |          |
-                                            |          +----------- japonicus alani IWOJIMA
+                                            |          +----------- japonicus alani IWOTO
                                             |          |
                                             |          +----------- japonicus stejnegeri KOZUSHIMA
                                             |          |
@@ -1031,7 +1031,7 @@ For the first PICL analysis we took the topology from SVDQ and collapsed populat
 
   - `japonicus` - All *Z. japonicus* subspecies and populations other than *Z. japonicus alani* in the Ogasawara and Volcano Islands. This taxon includes individual samples from the Korean Peninsula and adjacent islands of the East China Sea and Korean Strait, the main islands of the Japanese archipelago, the Ryukyu Islands, the Izu Islands, and the introduced population in the Hawaiian archipelago.
 
-  - `alani` - Populations of the *Z. japonicus alani* subspecies in the Ogasawara (Chichijima, Hahajima, Anejima, and Imotojima islands) and Volcano islands (Iwojima).
+  - `alani` - Populations of the *Z. japonicus alani* subspecies in the Ogasawara (Chichijima, Hahajima, Anejima, and Imotojima islands) and Volcano islands (Iwoto).
 
 - *Zosterops meyeni*
 
@@ -1364,7 +1364,7 @@ For the second PICL analysis we took the topology from SVDQuartets and collapsed
 
   - `alani2` - *Z. japonicus alani* from Anejima.
 
-  - `alani3` - The most geographically isolated population of *Z. japonicus alani* from the Volcano Island of Iwojima (Iōtō).
+  - `alani3` - The most geographically isolated population of *Z. japonicus alani* from the Volcano Island of Iwoto.
 
 - *Zosterops meyeni*
 
@@ -1477,7 +1477,7 @@ plot(PICL_topology2_collapsed1)
 
 ```
 
-Because all the *Z. japonicus alani* populations are supported \>60% simply rename each population as `alani1` for *Z. zosterops alani* from Hahajima, `alani2` for the population on Anejima, and `alani3` for the population on Iwojima (Iōtō). The same process will be performed for the *Z. meyeni* clade since those three populations are also relatively well supported on the SVQD tree. The *Z. meyeni* population form Lanyu will become `meyeni1`, the population of *Z. meyeni* on Sabtang will be renamed `meyeni2`, and the *Z. meyeni* population on Batan will now be `meyeni3`.
+Because all the *Z. japonicus alani* populations are supported \>60% simply rename each population as `alani1` for *Z. zosterops alani* from Hahajima, `alani2` for the population on Anejima, and `alani3` for the population on Iwoto. The same process will be performed for the *Z. meyeni* clade since those three populations are also relatively well supported on the SVQD tree. The *Z. meyeni* population form Lanyu will become `meyeni1`, the population of *Z. meyeni* on Sabtang will be renamed `meyeni2`, and the *Z. meyeni* population on Batan will now be `meyeni3`.
 
 ```{r}
 #| label: Rename the Zosterops japonicus alani and meyeni clades
@@ -1489,8 +1489,8 @@ Because all the *Z. japonicus alani* populations are supported \>60% simply rena
 PICL_topology2_collapsed1$tip.label[PICL_topology2_collapsed1$tip.label == "japonicus_alani_HAHAJIMA"] <- "alani1"
 # Change the name of the "japonicus_alani_ANEJIMA" tip to "alani2"
 PICL_topology2_collapsed1$tip.label[PICL_topology2_collapsed1$tip.label == "japonicus_alani_ANEJIMA"] <- "alani2"
-# Change the name of the "japonicus_alani_IWOJIMA" tip to "alani3"
-PICL_topology2_collapsed1$tip.label[PICL_topology2_collapsed1$tip.label == "japonicus_alani_IWOJIMA"] <- "alani3"
+# Change the name of the "japonicus_alani_IWOTO" tip to "alani3"
+PICL_topology2_collapsed1$tip.label[PICL_topology2_collapsed1$tip.label == "japonicus_alani_IWOTO"] <- "alani3"
 # The meyeni populations all ave strong support on the SVDQ tree (>90) so don't need further collapsing. 
 PICL_topology2_collapsed1$tip.label[PICL_topology2_collapsed1$tip.label == "meyeni_LANYU"] <- "meyeni1"
 PICL_topology2_collapsed1$tip.label[PICL_topology2_collapsed1$tip.label == "meyeni_SABTANG"] <- "meyeni2"
@@ -1841,7 +1841,7 @@ nodelabels(node_labels2[1:n_internal_nodes2],
 print(Zosterops2_outtree[[2]]$tip.label)
 
 # Choose the new names. 
-Zosterops2_outtree_species <- c("Z. palpebrosus", "Z. montanus NORTH", "Z. japonicus CONTINENTAL", "Z. japonicus alani IWOJIMA", "Z. japonicus alani HAHAJIMA", 
+Zosterops2_outtree_species <- c("Z. palpebrosus", "Z. montanus NORTH", "Z. japonicus CONTINENTAL", "Z. japonicus alani IWOTO", "Z. japonicus alani HAHAJIMA", 
                                 "Z. japonicus alani ANEJIMA", "Z. meyeni LANYU", "Z. meyeni SABTANG", "Z. meyeni BATAN", "Z. montanus parkesi", "Z. nigrorum catarmanensis",
                                 "Z. montanus PANAY", "Z. montanus pectoralis", "Z. montanus vulcani", "Z. montanus diuatae", "Z. montanus montanus SULAWESI", 
                                 "Z. montanus montanus JAVA", "Z. simplex SINGAPORE", "Z. simplex GUANGXI", "Z. simplex CHINA, TAIWAN, VIETNAM, USA", "Z. erythropleurus RUSSIA", 
@@ -2792,7 +2792,7 @@ ZSpeciesTreeCU_collapse3 <- c("Z. simplex CHINA, TAIWAN, VIETNAM, USA", "Z. simp
 ZSpeciesTreeCU_collapse4 <- c("Z. montanus montanus JAVA", "Z. montanus montanus SULAWESI", 
                               "Z. montanus diuatae", "Z. montanus vulcani", "Z. montanus pectoralis", 
                               "Z. montanus PANAY", "Z. montanus parkesi", "Z. montanus NORTH", 
-                            "Z. japonicus alani ANEJIMA", "Z. japonicus alani HAHAJIMA", "Z. japonicus alani IWOJIMA", 
+                            "Z. japonicus alani ANEJIMA", "Z. japonicus alani HAHAJIMA", "Z. japonicus alani IWOTO", 
                             "Z. meyeni BATAN", "Z. meyeni SABTANG", "Z. meyeni LANYU", 
                             "Z. nigrorum catarmanensis")
 ZSpeciesTreeCU_collapse5 <- c("Z. palpebrosus")
