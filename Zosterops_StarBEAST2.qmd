@@ -1,9 +1,6 @@
 ---
 title: "StarBEAST2"
-format:
-  html:
-    grid:
-      body-width: 1200px
+
 editor: visual
 bibliography: ZosteropsStarBEAST2.bib
 ---
@@ -122,8 +119,8 @@ ZJal012a    Zosterops japonicus alani ANEJIMA
 ZJal013a    Zosterops japonicus alani ANEJIMA
 ZJal014a    Zosterops japonicus alani ANEJIMA
 ZJal015a    Zosterops japonicus alani IMOTOJIMA
-ZJal016a    Zosterops japonicus alani IWOJIMA
-ZJal016b    Zosterops japonicus alani IWOJIMA
+ZJal016a    Zosterops japonicus alani IWOTO
+ZJal016b    Zosterops japonicus alani IWOTO
 ZJba001a    Zosterops meyeni LANYU
 ZJba002a    Zosterops meyeni LANYU
 ZJin001a    Zosterops japonicus insularis OSUMI
@@ -874,11 +871,11 @@ Open the TreeAnnotator application included with the BEAST2 download. Enter 10 f
 
 Consensus species tree from the A runs series of 20 replicate runs using all loci and the `Zosterops taxon sets A.txt` taxon set file. The tree is edited in [FigTree](https://beast.community/figtree) with posterior probability displayed at the nodes.
 
-![](images/Zosterops_speciestree_A_posterior.png){width="1200"}
+![](images/BEAST2_A_ALLLOCI_POSTERIOR.png)
 
 Consensus species tree from the A runs series of 20 replicate runs using all loci and the `Zosterops taxon sets A.txt` taxon set file. The tree is edited in [FigTree](https://beast.community/figtree) with 95% height displayed at the nodes and an axis in Ma.
 
-![](images/Zosterops_speciestree_A_95HPD.png){width="1200"}
+![](images/BEAST2_A_ALLLOCI_HPD.png)
 
 ### B Runs
 
