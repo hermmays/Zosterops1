@@ -1,9 +1,6 @@
 ---
 title: "BPP and GDI based species delimitation"
-format:
-  html:
-    grid:
-      body-width: 1200px
+
 editor: visual
 bibliography: ZosteropsBPP.bib
 ---
