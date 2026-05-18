@@ -1,9 +1,6 @@
 ---
 title: "Sanger sequencing summary statistics and trees"
-format:
-  html:
-    grid:
-      body-width: 1200px
+
 editor: visual
 bibliography: ZosteropsSangerSeqsRefs.bib
 ---
@@ -24,7 +21,7 @@ Whole gDNA was isolated from either blood or tissue samples using a magnetic bea
 
 ### PCR and Sanger sequencing
 
-159 individual samples underwent polymerase chain reactions (PCRs) and Sanger sequencing across eight loci including two mtDNA and six nuclear protein-coding exons (nuDNA). Common sequence tags, either CS1 (5′-ACACTGACGACATGGTTCTACA) in the forward direction or CS2 (5′-TACGGTAGCAGAGACTTGGTCT) in the reverse direction, were added to all the oligonucleotide sequences in this study [@moonsamy2013]. The addition of common 5′ tags allowed for CS1 and CS2 oligonucleotides to be utilized as sequencing primers for all amplicons across all loci. The NADH dehydrogenase subunit 2 (ND2) and cytochrome c oxidase subunit 1 (COI) were amplified using the primers L5216 and H6313 [@sorenson1999] and BIRDF1 and BIRDR2 [@hebert2004], respectively. Six nuDNA coding loci (B3GNT9, BIRC2, CCDC, GPRC6, LACTBL, and USP38) were amplified using primers from Liu *et al.* [@liu2018]. A complete list of the oligonucleotide sequences used as PCR primers in this study are shown below.
+159 individual samples underwent polymerase chain reactions (PCRs) and Sanger sequencing across eight loci including two mtDNA and six nuclear protein-coding exons (nuDNA). Common sequence tags, either CS1 (5′-ACACTGACGACATGGTTCTACA) in the forward direction or CS2 (5′-TACGGTAGCAGAGACTTGGTCT) in the reverse direction, were added to all the oligonucleotide sequences in this study [@moonsamy2013]. The addition of common 5′ tags allowed for CS1 and CS2 oligonucleotides to be utilized as sequencing primers for all amplicons across all loci. The NADH dehydrogenase subunit 2 (ND2) and cytochrome c oxidase subunit 1 (COI) were amplified using the primers L5216 and H6313 [@sorenson1999] and BIRDF1 and BIRDR2 [@hebert2004], respectively. Six nuDNA coding loci (B3GNT9, BIRC2, CCDC, GPRC6, LACTBL, and UBP38) were amplified using primers from Liu *et al.* [@liu2018]. A complete list of the oligonucleotide sequences used as PCR primers in this study are shown below.
 
 | Oligonucleotide name | 5′-CS tag + target sequence (5′ → 3′) | Locus description | Location/reference species | References |
 |----|----|----|----|----|
@@ -42,8 +39,8 @@ Whole gDNA was isolated from either blood or tissue samples using a magnetic bea
 | GPRC6R-CS2 | TACGGTAGCAGAGACTTGGTCTCAGGGATAAATACAATCCATGCT | G protein-coupled receptor, class C, group 6, member A | chromosome 3/*Taeniopygia guttata* | Liu et al. 2018 |
 | LACTBLF-CS1 | ACACTGACGACATGGTTCTACACCAGTGAGATGGAGGCAGAG | lactamase, beta-like 1 | chromosome 21/*Taeniopygia guttata* | Liu et al. 2018 |
 | LACTBLR-CS2 | TACGGTAGCAGAGACTTGGTCTATCCGCTCCCAGATGGC | lactamase, beta-like 1 | chromosome 21/*Taeniopygia guttata* | Liu et al. 2018 |
-| USP38F-CS1 | ACACTGACGACATGGTTCTACACCTGAGATCCTTAGTGGAGACAA | ubiquitin carboxyl-terminal hydrolase 38 | chromosome 4/*Taeniopygia guttata* | Liu et al. 2018 |
-| USP38R-CS2 | TACGGTAGCAGAGACTTGGTCTGCATCCATGAGGTCTTTTTGTAG | ubiquitin carboxyl-terminal hydrolase 38 | chromosome 4/*Taeniopygia guttata* | Liu et al. 2018 |
+| UBP38F-CS1 | ACACTGACGACATGGTTCTACACCTGAGATCCTTAGTGGAGACAA | ubiquitin carboxyl-terminal hydrolase 38 | chromosome 4/*Taeniopygia guttata* | Liu et al. 2018 |
+| UBP38R-CS2 | TACGGTAGCAGAGACTTGGTCTGCATCCATGAGGTCTTTTTGTAG | ubiquitin carboxyl-terminal hydrolase 38 | chromosome 4/*Taeniopygia guttata* | Liu et al. 2018 |
 
 PCRs were performed in 10μL reactions in a 96-well thermal cycler (Life Technologies) with commercial polymerase master mixes (either Fidelitaq™ Master Mix, Affymetrix/USB or AmpliTaq Gold™ 360 Master Mix, Applied Biosystems™) and forward and reverse primers (0.5 μmol L^−1^ each; Integrated DNA Technology) using a thermal profile of 94°C for 4 min followed by 30 cycles of 1 min at 94°C, 1 min at 50°C, and 2 min at 72°C, and then a final extension cycle for 10 min at 72°C. The same thermal profile was utilized for all PCRs across all loci. Primers and excess dNTPs were inactivated with ExoSAP-IT™ (Applied Biosystems™) following the manufacturer’s instructions. Sequencing reactions were performed on ExoSAP-IT^®^ treated PCR amplicons either in-house (Cincinnati Museum Center or Marshall University) using BigDye^®^ v3.1 Cycle Sequencing and BigDye Xterminator^®^ kits (Life Technologies) and separating on a 3130 Genetic Analyzer (Life Technologies) or by submitting for Sanger sequencing to Eurofins Genomics using their Prepaid Plate DNA kits. PCR amplicons were sequenced in both directions with primers based on the common sequence tags incorporated into all amplicons (CS1 and CS2).
 
@@ -75,7 +72,7 @@ The phasing procedure was repeated for the following nuDNA `fasta` alignments.
 
 - `LACTBL.fasta`
 
-- `USP38.fasta`
+- `UBP38.fasta`
 
 Subsequent analysis requires the following phased nuDNA alignments from the procedure described above.
 
@@ -93,7 +90,7 @@ Subsequent analysis requires the following phased nuDNA alignments from the proc
 
 - `LACTBL_phased.fasta`
 
-- `USP38_phased.fasta`
+- `UBP38_phased.fasta`
 
 ## Description of summary statistics and tree building procedure for a single locus
 
@@ -937,97 +934,97 @@ plot(mlLACTBLroot, show.node.label = TRUE, p = 50, type="p",
      main="Maximum Likelihood rooted on outgroup", cex = 3)
 ```
 
-### Ubiquitin carboxyl-terminal hydrolase 38 (USP38)
+### Ubiquitin carboxyl-terminal hydrolase 38 (UBP38)
 
 #### Load and visualize phased alignment
 
 ```{r}
-#| label: USP38 load phased alignment
+#| label: UBP38 load phased alignment
 #| fig-width: 30
 #| fig-height: 17
-#USP38
+#UBP38
 #Load FASTA alignment and check
-ZosteropsUSP38 <- read.dna("Data/Alignments/USP38_phased.fasta", 
+ZosteropsUBP38 <- read.dna("Data/Alignments/UBP38_phased.fasta", 
                            format = "fasta")
-ZosteropsUSP38
-checkAlignment(ZosteropsUSP38, check.gaps = FALSE, plot = TRUE, what = 1)
+ZosteropsUBP38
+checkAlignment(ZosteropsUBP38, check.gaps = FALSE, plot = TRUE, what = 1)
 ```
 
 Graph the Shannon index (H) per base and the number of bases in the alignment per site and show summary.
 
 ```{r}
-#| label: USP38 Shannon index, number of bases per site, and summary. 
-checkAlignment(ZosteropsUSP38, check.gaps = FALSE, plot = TRUE, what = 3)
-checkAlignment(ZosteropsUSP38, check.gaps = FALSE, plot = TRUE, what = 4)
-summaryUSP38 <- summary(ZosteropsUSP38)
+#| label: UBP38 Shannon index, number of bases per site, and summary. 
+checkAlignment(ZosteropsUBP38, check.gaps = FALSE, plot = TRUE, what = 3)
+checkAlignment(ZosteropsUBP38, check.gaps = FALSE, plot = TRUE, what = 4)
+summaryUBP38 <- summary(ZosteropsUBP38)
 ```
 
 #### Summary statistics
 
 ```{r}
-#| label: USP38 summary statistics
+#| label: UBP38 summary statistics
 # Nucleotide diversity
-ndUSP38 <- nuc.div(ZosteropsUSP38)
+ndUBP38 <- nuc.div(ZosteropsUBP38)
 # Number of haplotypes from phased DNA sequences (unique sequences) 
 # and hapotype diversity
-hapUSP38 <- haplotype(ZosteropsUSP38)
-NumberHapsUSP38 <- nrow(hapUSP38)
-hapdivUSP38 <- hap.div(ZosteropsUSP38)
+hapUBP38 <- haplotype(ZosteropsUBP38)
+NumberHapsUBP38 <- nrow(hapUBP38)
+hapdivUBP38 <- hap.div(ZosteropsUBP38)
 # An index of segregating sites and number of segregating sites 
-seg.sitesUSP38 <- seg.sites(ZosteropsUSP38)
-sUSP38 <- length(seg.sitesUSP38)
+seg.sitesUBP38 <- seg.sites(ZosteropsUBP38)
+sUBP38 <- length(seg.sitesUBP38)
 # Total length of all sequences (number of sequences x sequence length) 
 # and sequence length
-lengthUSP38total <- length(ZosteropsUSP38)
-seqlengthUSP38 <- ncol(hapUSP38)
+lengthUBP38total <- length(ZosteropsUBP38)
+seqlengthUBP38 <- ncol(hapUBP38)
 # Number of sequences calulated two ways, by divdiding the total length 
 # by the sequence length (calculation 1) and by extracting 
 # the length value from the summary (caclulation 2)
 # Confirm both calculations for number of sequences are the same
-NumberSequencesUSP381 <- lengthUSP38total/seqlengthUSP38
-SummaryUSP38length <- unlist(strsplit(summaryUSP38[1,1], split = ":", 
+NumberSequencesUBP381 <- lengthUBP38total/seqlengthUBP38
+SummaryUBP38length <- unlist(strsplit(summaryUBP38[1,1], split = ":", 
                                       fixed = TRUE))[2]
-NumberSequencesUSP382 <- as.numeric(SummaryUSP38length)
-all.equal(NumberSequencesUSP381, NumberSequencesUSP382)
+NumberSequencesUBP382 <- as.numeric(SummaryUBP38length)
+all.equal(NumberSequencesUBP381, NumberSequencesUBP382)
 # Calculate theta per sequence, theta per site, theta variance 
 # from the Watterson estimator based on number of segregating sites.
-ThetaUSP38perLocusW <- theta.s(sUSP38, NumberSequencesUSP381)
-ThetaUSP38perSiteW <- ThetaUSP38perLocusW/seqlengthUSP38
-ThetaUSP38perLocusVarW <- theta.s(sUSP38, NumberSequencesUSP381, 
+ThetaUBP38perLocusW <- theta.s(sUBP38, NumberSequencesUBP381)
+ThetaUBP38perSiteW <- ThetaUBP38perLocusW/seqlengthUBP38
+ThetaUBP38perLocusVarW <- theta.s(sUBP38, NumberSequencesUBP381, 
                                   variance = TRUE)
-ThetaUSP38perLocusVarW <- ThetaUSP38perLocusVarW[2]
+ThetaUBP38perLocusVarW <- ThetaUBP38perLocusVarW[2]
 # Tests for neutrality including Tajima's D and Ramos-Onsins and Roza's test
-tajimaUSP38 <- tajima.test(ZosteropsUSP38)
-R2USP38 <- R2.test(ZosteropsUSP38,B = 10000, 
-                   theta = ThetaUSP38perLocusW, plot = TRUE, quiet = FALSE)
+tajimaUBP38 <- tajima.test(ZosteropsUBP38)
+R2UBP38 <- R2.test(ZosteropsUBP38,B = 10000, 
+                   theta = ThetaUBP38perLocusW, plot = TRUE, quiet = FALSE)
 ```
 
 #### Trees
 
 ```{r}
-#| label: USP38 trees
+#| label: UBP38 trees
 #| fig-width: 60
 #| fig-height: 55
 #UPGMA and NJ trees
-dmUSP38 <- dist.ml(ZosteropsUSP38)
-UPGMAtreeUSP38 <- upgma(dmUSP38)
-NJtreeUSP38 <- NJ(dmUSP38)
-plot(UPGMAtreeUSP38, main = "UPGMA USP38", cex = 3)
-plot(NJtreeUSP38, "unrooted", main = "NJ USP38", cex = 3)
+dmUBP38 <- dist.ml(ZosteropsUBP38)
+UPGMAtreeUBP38 <- upgma(dmUBP38)
+NJtreeUBP38 <- NJ(dmUBP38)
+plot(UPGMAtreeUBP38, main = "UPGMA UBP38", cex = 3)
+plot(NJtreeUBP38, "unrooted", main = "NJ UBP38", cex = 3)
 #ML tree midpoint and outgroup rooted trees
-mtUSP38 <- modelTest(ZosteropsUSP38)
-fitUSP38 <- as.pml(mtUSP38, "AIC")
-fit_mtUSP38 <- pml_bb(mtUSP38, control = pml.control(trace = 0))
-fit_mtUSP38
-bsUSP38 <- bootstrap.pml(fit_mtUSP38, bs = 100, optNni = TRUE, 
+mtUBP38 <- modelTest(ZosteropsUBP38)
+fitUBP38 <- as.pml(mtUBP38, "AIC")
+fit_mtUBP38 <- pml_bb(mtUBP38, control = pml.control(trace = 0))
+fit_mtUBP38
+bsUBP38 <- bootstrap.pml(fit_mtUBP38, bs = 100, optNni = TRUE, 
                          control = pml.control(trace = 0))
-mlUSP38 <- plotBS(midpoint(fit_mtUSP38$tree), bsUSP38, 
+mlUBP38 <- plotBS(midpoint(fit_mtUBP38$tree), bsUBP38, 
                   show.node.label = TRUE, p = 50, type="p", 
                   main="Maximum likelihood midpoint rooted standard bootstrap", 
                   cex = 3)
-outgroupUSP38 <- c("ZAsu001a")
-mlUSP38root <- root(mlUSP38, outgroup = outgroupUSP38)
-plot(mlUSP38root, show.node.label = TRUE, p = 50, type="p", 
+outgroupUBP38 <- c("ZAsu001a")
+mlUBP38root <- root(mlUBP38, outgroup = outgroupUBP38)
+plot(mlUBP38root, show.node.label = TRUE, p = 50, type="p", 
      main="Maximum Likelihood rooted on outgroup", cex = 3)
 ```
 
@@ -1054,65 +1051,68 @@ Create the summary table from the population genetic parameters estimated for ea
 #| fig-height: 30
 #Create table from estimates across all loci.
 LocusNames <- c("COI","ND2", "B3GNT9", "BIRC2", 
-                "CCDC", "GPRC6", "LACTBL", "USP38")
+                "CCDC", "GPRC6", "LACTBL", "UBP38")
 LocusType <- c("mt", "mt", "nu", "nu", "nu", "nu", "nu", "nu")
+GenBank <- c("PZ392988-PZ393119", "PZ409047-PZ409189", "PZ409190-PZ409276", 
+             "PZ409277-PZ409364", "PZ409365-PZ409451", "PZ409452-PZ409538", 
+             "PZ409539-PZ409627", "PZ409628-PZ409718")
 NumberIndividuals <- c(NumberSequencesCOI1, NumberSequencesND21, 
                        NumberSequencesB3GNT91/2, NumberSequencesBIRC21/2, 
                        NumberSequencesCCDC1/2, NumberSequencesGPRC61/2, 
-                       NumberSequencesLACTBL1/2, NumberSequencesUSP381/2)
+                       NumberSequencesLACTBL1/2, NumberSequencesUBP381/2)
 NumberSequences <- c(NumberSequencesCOI1, NumberSequencesND21, 
                      NumberSequencesB3GNT91, NumberSequencesBIRC21, 
                      NumberSequencesCCDC1, NumberSequencesGPRC61, 
-                     NumberSequencesLACTBL1, NumberSequencesUSP381)
+                     NumberSequencesLACTBL1, NumberSequencesUBP381)
 SequenceLength <- c(seqlengthCOI, seqlengthND2, seqlengthB3GNT9, 
                     seqlengthBIRC2, seqlengthCCDC, seqlengthGPRC6, 
-                    seqlengthLACTBL, seqlengthUSP38)
-SegSites <- c(sCOI, sND2, sB3GNT9, sBIRC2, sCCDC, sGPRC6, sLACTBL, sUSP38)
+                    seqlengthLACTBL, seqlengthUBP38)
+SegSites <- c(sCOI, sND2, sB3GNT9, sBIRC2, sCCDC, sGPRC6, sLACTBL, sUBP38)
 NucleotideDiversity <- c(ndCOI, ndND2, ndB3GNT9, ndBIRC2, 
-                         ndCCDC, ndGPRC6, ndLACTBL, ndUSP38)
+                         ndCCDC, ndGPRC6, ndLACTBL, ndUBP38)
 NucleotideDiversity <- round(NucleotideDiversity, digits = 3)
 NumberHaplotypes <- c(NumberHapsCOI, NumberHapsND2, NumberHapsB3GNT9, 
                       NumberHapsBIRC2, NumberHapsCCDC, NumberHapsGPRC6, 
-                      NumberHapsLACTBL, NumberHapsUSP38)
+                      NumberHapsLACTBL, NumberHapsUBP38)
 HaplotypeDiversity <- c(hapdivCOI, hapdivND2, hapdivB3GNT9, hapdivBIRC2, 
-                        hapdivCCDC, hapdivGPRC6, hapdivLACTBL, hapdivUSP38)
+                        hapdivCCDC, hapdivGPRC6, hapdivLACTBL, hapdivUBP38)
 HaplotypeDiversity <- round(HaplotypeDiversity, digits = 2)
 ThetaWperLocus <- c(ThetaCOIperLocusW, ThetaND2perLocusW, 
                     ThetaB3GNT9perLocusW, ThetaBIRC2perLocusW, 
                     ThetaCCDCperLocusW, ThetaGPRC6perLocusW, 
-                    ThetaLACTBLperLocusW, ThetaUSP38perLocusW)
+                    ThetaLACTBLperLocusW, ThetaUBP38perLocusW)
 ThetaWperLocus <- round(ThetaWperLocus, digits = 2)
 ThetaWvariance <- c(ThetaND2perLocusVarW, ThetaND2perLocusVarW, 
                     ThetaB3GNT9perLocusVarW, ThetaBIRC2perLocusVarW, 
                     ThetaCCDCperLocusVarW, ThetaGPRC6perLocusVarW, 
-                    ThetaLACTBLperLocusVarW, ThetaUSP38perLocusVarW)
+                    ThetaLACTBLperLocusVarW, ThetaUBP38perLocusVarW)
 ThetaWvariance <- round(ThetaWvariance, digits = 2)
 ThetaWperSite <- c(ThetaCOIperSiteW, ThetaND2perSiteW, ThetaB3GNT9perSiteW, 
                    ThetaBIRC2perSiteW, ThetaCCDCperSiteW, ThetaGPRC6perSiteW, 
-                   ThetaLACTBLperSiteW, ThetaUSP38perSiteW)
+                   ThetaLACTBLperSiteW, ThetaUBP38perSiteW)
 ThetaWperSite <- round(ThetaWperSite, digits = 3)
 Tajima <- c(tajimaCOI$D,tajimaND2$D, tajimaB3GNT9$D, tajimaBIRC2$D, 
-            tajimaCCDC$D, tajimaGPRC6$D, tajimaLACTBL$D, tajimaUSP38$D)
+            tajimaCCDC$D, tajimaGPRC6$D, tajimaLACTBL$D, tajimaUBP38$D)
 Tajima <- round(Tajima, digits = 2)
 TajimaPValue <- c(tajimaCOI$Pval.normal,tajimaND2$Pval.normal, 
                   tajimaB3GNT9$Pval.normal, tajimaBIRC2$Pval.normal, 
                   tajimaCCDC$Pval.normal, tajimaGPRC6$Pval.normal, 
-                  tajimaLACTBL$Pval.normal, tajimaUSP38$Pval.normal)
+                  tajimaLACTBL$Pval.normal, tajimaUBP38$Pval.normal)
 TajimaPValue <- round(TajimaPValue, digits = 3)
 R2Test <- c(R2COI$R2, R2ND2$R2, R2B3GNT9$R2, R2BIRC2$R2, R2CCDC$R2, 
-            R2GPRC6$R2, R2LACTBL$R2, R2USP38$R2)
+            R2GPRC6$R2, R2LACTBL$R2, R2UBP38$R2)
 R2Test <- round(R2Test, digits = 2)
 R2TestPValue <- c(R2COI$P.val, R2ND2$P.val, R2B3GNT9$P.val, 
                   R2BIRC2$P.val, R2CCDC$P.val, R2GPRC6$P.val, 
-                  R2LACTBL$P.val, R2USP38$P.val)
+                  R2LACTBL$P.val, R2UBP38$P.val)
 R2TestPValue <- round(R2TestPValue, digits = 3)
-AllLociSummary <- data.frame(LocusNames, LocusType, NumberIndividuals, 
+AllLociSummary <- data.frame(LocusNames, LocusType, GenBank, NumberIndividuals, 
                              NumberSequences, SequenceLength, SegSites, 
                              NucleotideDiversity, NumberHaplotypes, 
                              HaplotypeDiversity, ThetaWperLocus, 
                              ThetaWvariance, ThetaWperSite, Tajima, 
                              TajimaPValue, R2Test, R2TestPValue)
-colnames(AllLociSummary) <- c("Locus", "Locus type", "Individuals", 
+colnames(AllLociSummary) <- c("Locus", "Locus type", "GenBank", "Individuals", 
                               "Number of sequences", "Length", 
                               "Segregating sites", "\u03C0", 
                               "Number of haplotypes", "Haplotype diversity", 
@@ -1124,19 +1124,20 @@ AllLociSummary
 # AllLociSummary %>%
 AllLociSummaryTable <- gt(AllLociSummary, auto_align = FALSE) %>%
   tab_footnote(footnote = md("Locus type denoted as mitochondrial (mt) 
-                             or nuclear protein coding (nu). For phased 
-                             nuclear DNA alignments the number of sequences 
-                             is 2x the number of individuals sequenced. 
-                             \u03C0 is per site nucleotide diversity. 
-                             Haplotype diversity calculated according to 
-                             Nei and Tajima (1981). \u03B8 per locus and 
-                             per locus variance in \u03B8 are estimated 
-                             from the number of segregating sites 
-                             (Watterson estimator). \u03B8 per site is 
-                             calculated by dividing the \u03B8 per locus 
-                             by the sequence length. Tajima's D and the 
-                             Ramos-Onsins and Rozas (R2) tests are used 
-                             to test for neutralilty and population growth, 
+                             or nuclear protein coding (nu). Sequential 
+                             GenBank accession numbers denoted for each 
+                             locus. For phased nuclear DNA alignments the 
+                             number of sequences is 2x the number of 
+                             individuals sequenced. \u03C0 is per site 
+                             nucleotide diversity. Haplotype diversity 
+                             calculated according to Nei and Tajima (1981). 
+                             \u03B8 per locus and per locus variance in 
+                             \u03B8 are estimated from the number of 
+                             segregating sites (Watterson estimator). 
+                             \u03B8 per site is calculated by dividing the 
+                             \u03B8 per locus by the sequence length. Tajima's 
+                             D and the Ramos-Onsins and Rozas (R2) tests are 
+                             used to test for neutralilty and population growth, 
                              repsectively, at each locus. Population genetic 
                              parameters for each locus were estimated in 
                              the pegas and ape R packages"))
