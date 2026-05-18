@@ -1,24 +1,4 @@
 ---
-project:
-  type: website
-  output-dir: docs
-
-website:
-  title: "Title and authors"
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
-      - ZosteropsMaps.qmd
-      - Summary_Sanger.qmd
-      - Zosterops_StarBEAST2.qmd
-      - ZosteropsBPP.qmd
-      - ZosteropsSNPs_analysis.qmd
-      - Zosterops_SNPFst.qmd
-      - Zosterops_SVDQ.qmd
-      - ZosteropsMorphometrics.qmd
-
 editor: visual
 ---
 
