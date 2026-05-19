@@ -1,0 +1,29 @@
+japonicus japonicus 
+alani1 Hahajima, Anejima
+alani2 Iwoto
+simplex1 Singapore
+simplex2 Guangxi
+simplex3 Guizhou, Guangdong, Los Angeles, Vietnam, Hunan, Taiwan
+meyeni1 Lanyu
+meyeni2 Sabtang
+meyeni3 Batan
+montanus1 Luzon, Mindoro
+montanus2 Visayas including Negros, Panay
+montanus3 Mindanao (vulcani, diuatae)
+montanus4 Sulawesi, Java
+montanus5 Palawan
+erythro1 Russia
+erythro2 Vietnam
+nigrorum1 Panay
+nigrorum2 Camiguin Norte, Luzon (innominatus)
+nigrorum3 Luzon (luzonicus)
+nigrorum4 Camiguin Sur
+everetti1 Camiguin Sur
+everetti2 Samar, Mindanao
+palpebro palpebrosus
+
+CHECK PRIOR RUNS TO SEE HOW Zmon20899 WAS TREATED. IT IS LISTED AS FROM MINDANAO (diuatae) BUT IN ZOSTEROPSPOPS4.txt tr TREATED AS BEING FROM NEGROS. CHANGED IN THIS FILE. REDO SVDQ TREES!!!
+
+THE PROBLEM IS THAT THE LAT LONG FOR THIS SAMPLE IS ON NEGROS!
+
+CHECKED KU CATALOG. Zmon20899 IS Z.m.pectoralis from Negros. This is how this sample was coded in the original SVDQ run. Whew! Good news. 

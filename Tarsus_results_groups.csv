@@ -1,0 +1,56 @@
+trait,group1,group2,p.value
+Tarsus,everetti,erythropleurus,0.00427
+Tarsus,japonicus CONTINENTAL,erythropleurus,5.7e-10
+Tarsus,japonicus CONTINENTAL,everetti,0.00496
+Tarsus,japonicus OCEANIC,erythropleurus,< 2e-16
+Tarsus,japonicus OCEANIC,everetti,< 2e-16
+Tarsus,japonicus OCEANIC,japonicus CONTINENTAL,3.3e-11
+Tarsus,meyeni,erythropleurus,1.6e-11
+Tarsus,meyeni,everetti,0.00023
+Tarsus,meyeni,japonicus CONTINENTAL,1.00000
+Tarsus,meyeni,japonicus OCEANIC,2.2e-08
+Tarsus,montanus NORTH,erythropleurus,0.68882
+Tarsus,montanus NORTH,everetti,1.00000
+Tarsus,montanus NORTH,japonicus CONTINENTAL,0.02656
+Tarsus,montanus NORTH,japonicus OCEANIC,< 2e-16
+Tarsus,montanus NORTH,meyeni,0.00276
+Tarsus,montanus SOUTH,erythropleurus,1.2e-05
+Tarsus,montanus SOUTH,everetti,1.00000
+Tarsus,montanus SOUTH,japonicus CONTINENTAL,0.04416
+Tarsus,montanus SOUTH,japonicus OCEANIC,< 2e-16
+Tarsus,montanus SOUTH,meyeni,0.00213
+Tarsus,montanus SOUTH,montanus NORTH,1.00000
+Tarsus,nigrorum,erythropleurus,0.16435
+Tarsus,nigrorum,everetti,1.00000
+Tarsus,nigrorum,japonicus CONTINENTAL,0.00030
+Tarsus,nigrorum,japonicus OCEANIC,< 2e-16
+Tarsus,nigrorum,meyeni,1.2e-05
+Tarsus,nigrorum,montanus NORTH,1.00000
+Tarsus,nigrorum,montanus SOUTH,1.00000
+Tarsus,nigrorum CS,erythropleurus,2.2e-12
+Tarsus,nigrorum CS,everetti,6.0e-06
+Tarsus,nigrorum CS,japonicus CONTINENTAL,1.00000
+Tarsus,nigrorum CS,japonicus OCEANIC,0.01455
+Tarsus,nigrorum CS,meyeni,1.00000
+Tarsus,nigrorum CS,montanus NORTH,6.2e-05
+Tarsus,nigrorum CS,montanus SOUTH,4.9e-05
+Tarsus,nigrorum CS,nigrorum,4.0e-07
+Tarsus,palpebrosus,erythropleurus,0.01482
+Tarsus,palpebrosus,everetti,4.5e-13
+Tarsus,palpebrosus,japonicus CONTINENTAL,< 2e-16
+Tarsus,palpebrosus,japonicus OCEANIC,< 2e-16
+Tarsus,palpebrosus,meyeni,< 2e-16
+Tarsus,palpebrosus,montanus NORTH,1.5e-06
+Tarsus,palpebrosus,montanus SOUTH,< 2e-16
+Tarsus,palpebrosus,nigrorum,1.0e-09
+Tarsus,palpebrosus,nigrorum CS,< 2e-16
+Tarsus,simplex,erythropleurus,1.00000
+Tarsus,simplex,everetti,0.19673
+Tarsus,simplex,japonicus CONTINENTAL,9.3e-08
+Tarsus,simplex,japonicus OCEANIC,< 2e-16
+Tarsus,simplex,meyeni,2.7e-09
+Tarsus,simplex,montanus NORTH,1.00000
+Tarsus,simplex,montanus SOUTH,0.00184
+Tarsus,simplex,nigrorum,1.00000
+Tarsus,simplex,nigrorum CS,2.2e-10
+Tarsus,simplex,palpebrosus,8.4e-05

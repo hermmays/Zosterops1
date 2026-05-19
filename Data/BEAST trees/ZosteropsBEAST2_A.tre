@@ -1,0 +1,156 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=54;
+	taxlabels
+	'Zosterops atrifrons surdus'
+	'Zosterops erythropleurus'
+	'Zosterops everetti basilanicus'
+	'Zosterops everetti boholensis'
+	'Zosterops japonicus alani ANEJIMA'
+	'Zosterops japonicus alani CHICHIJIMA'
+	'Zosterops japonicus alani HAHAJIMA'
+	'Zosterops japonicus alani IMOTOJIMA'
+	'Zosterops japonicus alani IWOJIMA'[&!name="Zosterops japonicus alani IWOTO"]
+	'Zosterops japonicus insularis OSUMI'
+	'Zosterops japonicus japonicus GEOJE'
+	'Zosterops japonicus japonicus HEUKSANDO'
+	'Zosterops japonicus japonicus HOKKAIDO'
+	'Zosterops japonicus japonicus HONSHU'
+	'Zosterops japonicus japonicus JEJU'
+	'Zosterops japonicus japonicus SHIKOKU'
+	'Zosterops japonicus japonicus TSUSHIMA'
+	'Zosterops japonicus loochoensis AMAMI'
+	'Zosterops japonicus loochoensis IRIOMOTE'
+	'Zosterops japonicus loochoensis ISHIGAKI'
+	'Zosterops japonicus loochoensis KIKAI'
+	'Zosterops japonicus loochoensis KUME'
+	'Zosterops japonicus loochoensis MIYAKO'
+	'Zosterops japonicus loochoensis OKINAWA'
+	'Zosterops japonicus loochoensis OKINOERABU'
+	'Zosterops japonicus loochoensis TOKUNO'
+	'Zosterops japonicus loochoensis YONAGUNI'
+	'Zosterops japonicus stejnegeri AOGASHIMA'
+	'Zosterops japonicus stejnegeri KOZUSHIMA'
+	'Zosterops japonicus stejnegeri MIYAKE'
+	'Zosterops japonicus stejnegeri NIIJIMA'
+	'Zosterops meyeni BATANES'
+	'Zosterops meyeni LANYU'
+	'Zosterops montanus PANAY'
+	'Zosterops montanus diuatae MINDANAO'
+	'Zosterops montanus halconensis MINDORO'
+	'Zosterops montanus montanus JAVA'
+	'Zosterops montanus montanus SULAWESI'
+	'Zosterops montanus parkesi PALAWAN'
+	'Zosterops montanus pectoralis NEGROS'
+	'Zosterops montanus vulcani MINDANAO'
+	'Zosterops montanus whiteheadi LUZON'
+	'Zosterops nigrorum catamanensis CAMIGUINSUR'
+	'Zosterops nigrorum innominatus LUZON'
+	'Zosterops nigrorum luzonicus LUZON'
+	'Zosterops nigrorum meyleri CAMIGUINNORTE'
+	'Zosterops nigrorum nigrorum PANAY'
+	'Zosterops simplex GUANGDONG'
+	'Zosterops simplex GUANGXI'
+	'Zosterops simplex MACAO'
+	'Zosterops simplex SICHUAN'
+	'Zosterops simplex SINGAPORE'
+	'Zosterops simplex TAIWAN'
+	'Zosterops simplex YUNNAN'
+;
+end;
+
+begin trees;
+	tree tree_1 = [&R] ((('Zosterops atrifrons surdus':1.397849,'Zosterops erythropleurus':1.397849):1.119709,((((('Zosterops everetti basilanicus':0.281844,'Zosterops everetti boholensis':0.281844):0.093229,'Zosterops montanus vulcani MINDANAO':0.375073):0.4104,(((((((('Zosterops japonicus alani ANEJIMA':0.170905,('Zosterops japonicus alani CHICHIJIMA':0.166657,('Zosterops japonicus alani HAHAJIMA':0.032976,'Zosterops japonicus alani IMOTOJIMA':0.032976):0.133681):0.004248):0.106674,'Zosterops japonicus alani IWOJIMA':0.277579):0.046122,('Zosterops japonicus stejnegeri AOGASHIMA':0.214605,('Zosterops japonicus stejnegeri MIYAKE':0.151317,'Zosterops japonicus stejnegeri NIIJIMA':0.151317):0.063288):0.109096):0.037792,((((((('Zosterops japonicus insularis OSUMI':0.12318,'Zosterops japonicus japonicus HEUKSANDO':0.12318):0.045026,'Zosterops japonicus stejnegeri KOZUSHIMA':0.168206):0.031801,('Zosterops japonicus japonicus HONSHU':0.142372,'Zosterops japonicus japonicus SHIKOKU':0.142372):0.057636):0.023009,('Zosterops japonicus japonicus GEOJE':0.20483,('Zosterops japonicus japonicus HOKKAIDO':0.17911,('Zosterops japonicus japonicus JEJU':0.081566,'Zosterops japonicus japonicus TSUSHIMA':0.081566):0.097544):0.02572):0.018187):0.038698,('Zosterops japonicus loochoensis KUME':0.185267,'Zosterops japonicus loochoensis OKINOERABU':0.185267):0.076448):0.013466,((((('Zosterops japonicus loochoensis IRIOMOTE':0.079952,'Zosterops japonicus loochoensis YONAGUNI':0.079952):0.041132,'Zosterops japonicus loochoensis ISHIGAKI':0.121084):0.050133,'Zosterops japonicus loochoensis OKINAWA':0.171217):0.013431,'Zosterops japonicus loochoensis MIYAKO':0.184648):0.0324,'Zosterops japonicus loochoensis TOKUNO':0.217048):0.058133):0.001315,('Zosterops japonicus loochoensis AMAMI':0.21779,'Zosterops japonicus loochoensis KIKAI':0.21779):0.058706):0.084998):0.109669,('Zosterops montanus halconensis MINDORO':0.089262,'Zosterops montanus whiteheadi LUZON':0.089262):0.381901):0.079058,('Zosterops montanus PANAY':0.402366,(('Zosterops montanus diuatae MINDANAO':0.322243,'Zosterops montanus pectoralis NEGROS':0.322243):0.059475,'Zosterops nigrorum catamanensis CAMIGUINSUR':0.381718):0.020647):0.147856):0.088578,(('Zosterops meyeni BATANES':0.180178,'Zosterops meyeni LANYU':0.180178):0.268882,'Zosterops montanus parkesi PALAWAN':0.44906):0.189739):0.058995,'Zosterops simplex MACAO':0.697795):0.087678):0.038503,('Zosterops montanus montanus JAVA':0.472848,'Zosterops montanus montanus SULAWESI':0.472848):0.351128):1.529752,((((('Zosterops simplex GUANGDONG':0.093588,'Zosterops simplex YUNNAN':0.093588):0.012755,'Zosterops simplex GUANGXI':0.106344):0.013783,'Zosterops simplex TAIWAN':0.120126):0.152096,'Zosterops simplex SINGAPORE':0.272223):1.800308,'Zosterops simplex SICHUAN':2.07253):0.281198):0.163829):0.575949,((('Zosterops nigrorum innominatus LUZON':0.224994,'Zosterops nigrorum meyleri CAMIGUINNORTE':0.224994):0.552005,'Zosterops nigrorum luzonicus LUZON':0.776999):1.146637,'Zosterops nigrorum nigrorum PANAY':1.923637):1.169869);
+end;
+
+begin figtree;
+	set appearance.backgroundColorAttribute="Default";
+	set appearance.backgroundColour=#ffffff;
+	set appearance.branchColorAttribute="User selection";
+	set appearance.branchColorGradient=false;
+	set appearance.branchLineWidth=1.0;
+	set appearance.branchMinLineWidth=0.0;
+	set appearance.branchWidthAttribute="Fixed";
+	set appearance.foregroundColour=#000000;
+	set appearance.hilightingGradient=false;
+	set appearance.selectionColour=#2d3680;
+	set branchLabels.colorAttribute="User selection";
+	set branchLabels.displayAttribute="Branch times";
+	set branchLabels.fontName="sansserif";
+	set branchLabels.fontSize=8;
+	set branchLabels.fontStyle=0;
+	set branchLabels.isShown=false;
+	set branchLabels.significantDigits=4;
+	set layout.expansion=0;
+	set layout.layoutType="RECTILINEAR";
+	set layout.zoom=0;
+	set legend.attribute=null;
+	set legend.fontSize=10.0;
+	set legend.isShown=false;
+	set legend.significantDigits=4;
+	set nodeBars.barWidth=4.0;
+	set nodeBars.displayAttribute=null;
+	set nodeBars.isShown=false;
+	set nodeLabels.colorAttribute="User selection";
+	set nodeLabels.displayAttribute="Node ages";
+	set nodeLabels.fontName="sansserif";
+	set nodeLabels.fontSize=8;
+	set nodeLabels.fontStyle=0;
+	set nodeLabels.isShown=false;
+	set nodeLabels.significantDigits=4;
+	set nodeShapeExternal.colourAttribute="User selection";
+	set nodeShapeExternal.isShown=false;
+	set nodeShapeExternal.minSize=10.0;
+	set nodeShapeExternal.scaleType=Width;
+	set nodeShapeExternal.shapeType=Circle;
+	set nodeShapeExternal.size=4.0;
+	set nodeShapeExternal.sizeAttribute="Fixed";
+	set nodeShapeInternal.colourAttribute="User selection";
+	set nodeShapeInternal.isShown=false;
+	set nodeShapeInternal.minSize=10.0;
+	set nodeShapeInternal.scaleType=Width;
+	set nodeShapeInternal.shapeType=Circle;
+	set nodeShapeInternal.size=4.0;
+	set nodeShapeInternal.sizeAttribute="Fixed";
+	set polarLayout.alignTipLabels=false;
+	set polarLayout.angularRange=0;
+	set polarLayout.rootAngle=0;
+	set polarLayout.rootLength=100;
+	set polarLayout.showRoot=true;
+	set radialLayout.spread=0.0;
+	set rectilinearLayout.alignTipLabels=false;
+	set rectilinearLayout.curvature=0;
+	set rectilinearLayout.rootLength=100;
+	set scale.offsetAge=0.0;
+	set scale.rootAge=1.0;
+	set scale.scaleFactor=1.0;
+	set scale.scaleRoot=false;
+	set scaleAxis.automaticScale=true;
+	set scaleAxis.fontSize=8.0;
+	set scaleAxis.isShown=false;
+	set scaleAxis.lineWidth=1.0;
+	set scaleAxis.majorTicks=1.0;
+	set scaleAxis.minorTicks=0.5;
+	set scaleAxis.origin=0.0;
+	set scaleAxis.reverseAxis=false;
+	set scaleAxis.showGrid=true;
+	set scaleBar.automaticScale=true;
+	set scaleBar.fontSize=10.0;
+	set scaleBar.isShown=true;
+	set scaleBar.lineWidth=1.0;
+	set scaleBar.scaleRange=0.0;
+	set tipLabels.colorAttribute="User selection";
+	set tipLabels.displayAttribute="Names";
+	set tipLabels.fontName="sansserif";
+	set tipLabels.fontSize=8;
+	set tipLabels.fontStyle=0;
+	set tipLabels.isShown=true;
+	set tipLabels.significantDigits=4;
+	set trees.order=false;
+	set trees.orderType="increasing";
+	set trees.rooting=false;
+	set trees.rootingType="User Selection";
+	set trees.transform=false;
+	set trees.transformType="cladogram";
+end;
+

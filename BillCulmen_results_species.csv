@@ -1,0 +1,29 @@
+trait,group1,group2,p.value
+BillCulmen,everetti,erythropleurus,0.07906
+BillCulmen,japonicus,erythropleurus,< 2e-16
+BillCulmen,japonicus,everetti,< 2e-16
+BillCulmen,meyeni,erythropleurus,1.3e-05
+BillCulmen,meyeni,everetti,0.12314
+BillCulmen,meyeni,japonicus,3.4e-08
+BillCulmen,montanus,erythropleurus,3.0e-05
+BillCulmen,montanus,everetti,1.00000
+BillCulmen,montanus,japonicus,< 2e-16
+BillCulmen,montanus,meyeni,1.00000
+BillCulmen,nigrorum,erythropleurus,0.19697
+BillCulmen,nigrorum,everetti,1.00000
+BillCulmen,nigrorum,japonicus,< 2e-16
+BillCulmen,nigrorum,meyeni,0.03896
+BillCulmen,nigrorum,montanus,0.30925
+BillCulmen,palpebrosus,erythropleurus,1.00000
+BillCulmen,palpebrosus,everetti,0.00040
+BillCulmen,palpebrosus,japonicus,< 2e-16
+BillCulmen,palpebrosus,meyeni,2.0e-08
+BillCulmen,palpebrosus,montanus,9.0e-09
+BillCulmen,palpebrosus,nigrorum,0.00129
+BillCulmen,simplex,erythropleurus,1.00000
+BillCulmen,simplex,everetti,0.00068
+BillCulmen,simplex,japonicus,< 2e-16
+BillCulmen,simplex,meyeni,2.6e-08
+BillCulmen,simplex,montanus,6.5e-09
+BillCulmen,simplex,nigrorum,0.00230
+BillCulmen,simplex,palpebrosus,1.00000
