@@ -1,5 +1,6 @@
 ---
 editor: visual
+knitr: true
 ---
 
 # The not-so-great speciator: Systematics and species limits in the Asiatic white-eye complex (*Zosterops spp.*)
@@ -33,6 +34,8 @@ Laura Kubatko, The Ohio State University, USA
 Robert Moyle, University of Kansas, USA
 
 \*Corresponding author email: maysh\@marshall.edu or maysher\@gmail.com
+
+*Last updated: `r format(Sys.time(), '%B %d, %Y %H:%M')`*
 
 ## Quarto
 
