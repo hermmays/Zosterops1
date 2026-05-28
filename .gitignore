@@ -1,0 +1,12 @@
+.env
+.Rprofile
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.DS_Store
+
+/.quarto/
+.positai
+.RDataTmp
+Data/VCF files/zost.filtered.snps.vcf

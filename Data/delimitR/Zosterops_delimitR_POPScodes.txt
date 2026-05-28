@@ -1,0 +1,12 @@
+japonicus	0
+alani	1
+meyeni	2
+montanusNORTH	3
+montanusPALAWAN	4
+montanusSOUTH	5
+simplex	6
+erythropleurus	7
+everetti	8
+nigrorumPANAY	9
+nigrorum	10
+palpebrosus	11
