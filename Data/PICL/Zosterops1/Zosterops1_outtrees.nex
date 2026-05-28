@@ -1,5 +1,0 @@
-#NEXUS
-begin trees;
-	tree tree_1 = [&R] (palpebro:0.139613,((erythro:0.083912,(simplex:0.061732,((north:0.0,(meyeni:0.0,(japonicus:0.0,alani:0.0):0.0):0.0):0.001856,(palawan:6.48E-4,(indonesia:0.0,south:0.0):6.48E-4):0.001208):0.059876):0.02218):0.045263,(everetti:0.027375,nigrorum:0.027375):0.1018):0.010438);
-	tree tree_2 = [&R] (palpebro:3.987004,((erythro:2.396326,(simplex:1.76291,((north:1.0E-6,(meyeni:0.0,(japonicus:0.0,alani:0.0):0.0):1.0E-6):0.052997,(palawan:0.018496,(indonesia:0.0,south:0.0):0.018496):0.034501):1.709913):0.633416):1.292588,(everetti:0.781763,nigrorum:0.781763):2.907152):0.298089);
-end;
