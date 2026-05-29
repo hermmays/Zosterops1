@@ -33,7 +33,7 @@ Laura Kubatko, The Ohio State University, USA
 
 Robert Moyle, University of Kansas, USA
 
-\*Corresponding author email: maysh\@marshall.edu or maysher\@gmail.com
+\*Corresponding author email: maysh\[at\]marshall.edu or maysher\[at\]gmail.com
 
 *Last updated: `r format(Sys.time(), '%B %d, %Y %H:%M')`*
 
