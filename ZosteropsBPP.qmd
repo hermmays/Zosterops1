@@ -1,8 +1,10 @@
 ---
 title: "BPP and GDI based species delimitation"
-
+format:
+  html:
+    grid:
+      body-width: 1200px
 editor: visual
-knitr: true
 bibliography: ZosteropsBPP.bib
 ---
 
@@ -1134,5 +1136,3 @@ lines(densitySiD, lw=2, col=green)
 abline(v=0.2,col="grey50", lty=2)
 abline(v=0.7, col="grey50", lty=2)
 ```
-
-*Last updated: `r format(Sys.time(), '%B %d, %Y %H:%M')`*

@@ -1,3 +1,8 @@
+Data/
+renv/library/
+renv/local/
+renv/staging/
+*_cache/
 .env
 .Rprofile
 .Rproj.user
@@ -9,4 +14,3 @@
 /.quarto/
 .positai
 .RDataTmp
-Data/VCF files/zost.filtered.snps.vcf
