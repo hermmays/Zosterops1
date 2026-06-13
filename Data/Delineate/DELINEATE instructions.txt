@@ -1,7 +1,0 @@
-Use the Anaconda app to create a new environment. Title the environment DELINEATE. Click the arrow button beside the newly created environment to open that environment in the terminal. 
-
-From the DELINEATE environment install with the following command. 
-
-python3 -m pip install -U git+https://github.com/jeetsukumaran/delineate.git
-
-This will install DELINEATE and all the needed dependencies. 
