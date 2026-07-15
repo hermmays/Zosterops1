@@ -14,11 +14,11 @@ What follows is our workflow for mapping the sampling localities for all the ind
 
 ## Getting started
 
-We are using R version 4.4.2, RStudio version 2024.09.1 for the analysis. Quarto version 1.6.39 for Mac OS was used to document the workflow. Set the working directory in RStudio to one where the `txt` file denoting the identity and sampling location of the samples are accessible.
+We are using R version 4.5.2, RStudio version 2026.5.1.225 for the analysis. Quarto version 1.6.39 was used to document the workflow.
 
 ## General methods summary
 
-Sampling included specimen vouchered tissue samples and museum archived blood sampling from individual banded birds in the field. Samples were sourced from the American Museum of Natural History (New York, NY, USA), Cincinnati Museum Center (Cincinnati, OH, USA), Field Museum of Natural History (Chicago, IL, USA), Institute of Zoology of the Guangdong Academy of Sciences (Guangzhou, People’s Republic of China), University of Kansas Biodiversity Institute and Natural History Museum (Lawrence, KS, USA), Natural History Museum of Los Angeles County (Los Angeles, CA, USA), National Museum of Nature and Science (Tokyo, Japan), Smithsonian National Museum of Natural History (Washington D.C., USA), and the University of Washington Burke Museum (Seattle, WA, USA). For the sake of clarity, we treat *Z. japonicus* and *Z. montanus* according to the former taxonomic arrangement (i.e., as separate species) as we test various species delimitation hypotheses. Our sampling includes multiple individuals within each of five out of the six recognized subspecies for *Z. japonicus* and seven out of the nine subspecies within *Z. montanus*, including sampling from all the recognized *Z. montanus* subspecies within the Philippines. A total of 208 genomic DNA (gDNA) samples were used in this study with 161 represented in the Sanger sequencing dataset, 124 represented in the filtered SNP dataset, and 77 samples overlapping both genetic datasets.
+Sampling included specimen vouchered tissue samples and museum archived blood sampling from individual banded birds in the field. Samples were sourced from the American Museum of Natural History (New York, NY, USA), Cincinnati Museum Center (Cincinnati, OH, USA), Field Museum of Natural History (Chicago, IL, USA), Institute of Zoology of the Guangdong Academy of Sciences (Guangzhou, People’s Republic of China), University of Kansas Biodiversity Institute and Natural History Museum (Lawrence, KS, USA), Natural History Museum of Los Angeles County (Los Angeles, CA, USA), National Museum of Nature and Science (Tokyo, Japan), Smithsonian National Museum of Natural History (Washington D.C., USA), and the University of Washington Burke Museum (Seattle, WA, USA). For the sake of clarity, we treat *Z. japonicus* and *Z. montanus* according to the former taxonomic arrangement (i.e., as separate species) as we test various species delimitation hypotheses. Our sampling includes multiple individuals within each of five out of the six recognized subspecies for *Z. japonicus* and seven out of the nine subspecies within *Z. montanus*, including sampling from all the recognized *Z. montanus* subspecies within the Philippines. A total of 207 genomic DNA (gDNA) samples were used in this study with 166 represented in the Sanger sequencing dataset, 124 represented in the filtered SNP dataset, and 83 samples overlapping both genetic datasets.
 
 Latitude and longitude were available for most of the vouchered museum specimens and where not available were estimated from the locality description using the BerkeleyMapper 2.0 (<https://www.gbif.org/tool/81294/berkeleymapper>) georeferencing tool. Maps showing approximate locations of individual samples were created using the R packages *ggplot2* [@ggplot2], *maps* [@maps], and *sf* [@sf].
 
@@ -42,7 +42,7 @@ ZJlo016 japonicus   MIYAKOJIMA  24.7916 125.3302
 ZJlo017 japonicus   IRIOMOTE    24.3301 123.8188
 ZJlo021 japonicus   TOKUNOSHIMA 27.7904 128.9668
 ZJlo022 japonicus   TOKUNOSHIMA 27.7904 128.9668
-ZJlo024 japonicus   YONAGUMI    24.4680 123.0045
+ZJlo024 japonicus   YONAGUNI    24.4680 123.0045
 ZJlo031 japonicus   KUMEJIMA    26.3504 126.7712
 ZJlo045 japonicus   AMAMI   28.3192 129.2765
 ZJlo046 japonicus   MIYAKOJIMA  24.8218 125.3137
@@ -62,12 +62,12 @@ ZJja014 japonicus   HONSHU  35.9086 139.6248
 ZJja016 japonicus   SHIKOKU 34.3708 133.9198
 ZJja030 japonicus   HEUKSANDO   34.6707 125.4196
 ZJal003 japonicus alani HAHAJIMA    26.6735 142.1541
-Zjal004 japonicus alani HAHAJIMA    26.6735 142.1541
+ZJal004 japonicus alani HAHAJIMA    26.6735 142.1541
 ZJal005 japonicus alani HAHAJIMA    26.6735 142.1541
 ZJal010 japonicus alani ANEJIMA 26.5506 142.1581
 ZJal011 japonicus alani ANEJIMA 26.5506 142.1581
 ZJal012 japonicus alani ANEJIMA 26.5506 142.1581
-ZJal020 japonicus alani IWOTO 24.7876 141.3156
+ZJal020 japonicus alani IWOTO   24.7876 141.3156
 ZJst007 japonicus   KOZUSHIMA   34.2055 139.1345
 ZJst009 japonicus   KOZUSHIMA   34.2055 139.1345
 ZJst010 japonicus   KOZUSHIMA   34.2055 139.1345
@@ -168,10 +168,9 @@ Additional samples appear in the Sanger sequencing dataset that are not included
 
 ```         
 SAMPLE  TAXON   LOCALE  LAT LONG
+ZAsu001 atrifrons surdus    SULAWESI    -1.6469 120.4358
+ZAsu002 atrifrons surdus    SULAWESI    -0.7435 123.0114
 ZEba001 everetti    MINDANAO    7.0189  125.4984
-ZEba002 everetti    MINDANAO    9.1925  124.7085
-ZEba003 everetti    MINDANAO    9.0740  125.6420
-ZEbo001 everetti    SAMAR   11.8280 125.2760
 ZERxx001    erythropleurus  RUSSIAb 42.9700 132.8900
 ZERxx003    erythropleurus  RUSSIAb 44.7500 132.7700
 ZJal001 japonicus alani HAHAJIMA    26.6735 142.1541
@@ -184,15 +183,12 @@ ZJal013 japonicus alani ANEJIMA 26.5506 142.1581
 ZJal014 japonicus alani ANEJIMA 26.5506 142.1581
 ZJal015 japonicus alani IMOTOJIMA   26.5587 142.2085
 ZJal016 japonicus alani IWOTO   24.7876 141.3156
-ZJal017 japonicus alani IWOTO   24.7876 141.3156
-ZJal018 japonicus alani IWOTO   24.7876 141.3156
-ZJal019 japonicus alani IWOTO   24.7876 141.3156
 ZJba001 meyeni  LANYU   22.0436 121.5484
 ZJba002 meyeni  LANYU   22.0436 121.5484
 ZJja006 japonicus   JEJU    33.4890 126.4983
 ZJja007 japonicus   JEJU    33.4890 126.4983
 ZJja008 japonicus   HONSHU  35.6388 139.7256
-ZJja011 japonicus   HUEKSANDO   34.6707 125.4196
+ZJja011 japonicus   HEUKSANDO   34.6707 125.4196
 ZJja015 japonicus   HONSHU  35.7263 139.7168
 ZJja017 japonicus   HONSHU  36.6024 137.6088
 ZJja018 japonicus   HOKKAIDO    42.9393 143.4477
@@ -204,7 +200,7 @@ ZJja026 japonicus   HONSHU  33.7030 135.3759
 ZJja031 japonicus   HONSHU  35.7032 139.6975
 ZJja032 japonicus   HONSHU  35.7032 139.6975
 ZJja034 japonicus   TSUSHIMA    34.4081 129.2860
-Zjja035 japonicus   TSUSHIMA    34.4081 129.2860
+ZJja035 japonicus   TSUSHIMA    34.4081 129.2860
 ZJlo001 japonicus alani CHICHIJIMA  27.0744 142.2178
 ZJlo002 japonicus alani CHICHIJIMA  27.0744 142.2178
 ZJlo003 japonicus alani CHICHIJIMA  27.0744 142.2178
@@ -255,15 +251,17 @@ ZMOxx007    montanus SOUTH  PANAY   11.4109 122.2881
 ZMOxx008    montanus SOUTH  PANAY   11.4109 122.2881
 ZMxx007 meyeni  LANYU   22.0093 121.5721
 ZMxx008 meyeni  LANYU   22.0093 121.5721
-ZPxx001 simplex SINGAPORE   1.3189  103.8512
-ZPxx002 simplex SINGAPORE   1.3521  103.8198
 ```
 
 ## Packages
 
-Set the working directory to one where the data files `ZosteropsPOPS4_LatLong.txt` and `Zosterops_SANGER_LatLong.txt` are accessible. Creating the sampling maps requires the following R packages.
+Set the working directory to one where the data files `ZosteropsPOPS4_LatLong.txt` and `ZosteropsPOPS_SANGER_LatLong.txt` are accessible. Creating the sampling maps requires the following R packages.
 
 - logr [@logr] Optional if you wish to create a log file for the analysis.
+
+- dplyr [@dplyr]
+
+- tidyverse [@tidyverse]
 
 - ggplot2 [@ggplot2]
 
@@ -278,9 +276,11 @@ Install the packages using the Tools/Install Packages selection from the RStudio
 library(logr)
 log_open(file_name = "ZosteropsMaps.log")
 #load in each library used for mapping
-library(ggplot2) #v3.4.1
-library(maps) #v3.4.1
-library(sf) #v1.0-12
+library(dplyr)
+library(tidyverse)
+library(ggplot2) #4.0.3
+library(maps) #v3.4.3
+library(sf) #v1.1-1
 ```
 
 ## Read and edit data: SNP sampling
@@ -300,7 +300,8 @@ Remove the samples from the introduced populations. Those samples are from Los A
 ```{r}
 #| label: Remove samples from introduced populations
 # Remove Los Angeles and Hawaii samples
-ZLocations_NATIVE <- ZLocations[-c(105,106,107,120,121,122,123,124),]
+ZLocations_NATIVE <- ZLocations %>% 
+  dplyr::filter(!LOCALE %in% c("LOSANGELES", "HAWAII"))
 ```
 
 ## Count individual samples per taxon: SNP sampling
@@ -423,10 +424,10 @@ ggplot()+
              position = position_jitter(h = 0.5, w = 0.5), pch=24, 
              color="black", alpha =0.5, show.legend=TRUE) +
   theme_classic()+
-  scale_fill_manual(values=c("#004949", "#DB6D00", "#D82632", 
-                             "#290AD8", "#FED439", "#B66DFF", 
-                             "#006DDB", "#FA9C88", "#924900", 
-                             "#7BA9CB", "#008600"))+
+  scale_fill_manual(values=c("#E6007E", "#004949", "#DB6D00", 
+                             "#D82632", "#290AD8", "#FED439", 
+                             "#B66DFF", "#006DDB", "#FA9C88", 
+                             "#924900", "#7BA9CB", "#008600"))+
   scale_size_continuous(range = c(3,6))+
   guides(fill = guide_legend(override.aes = list(size = 8), order=1, 
                              label.theme = element_text(face = "italic"), 
@@ -466,10 +467,10 @@ ggplot()+
              position = position_jitter(h = 0.1, w = 0.1), pch=24, 
              color="black", alpha =0.5, show.legend=FALSE) +
   theme_classic()+
-  scale_fill_manual(values=c("#004949", "#DB6D00", "#D82632", 
-                             "#290AD8", "#FED439", "#B66DFF", 
-                             "#006DDB", "#FA9C88", "#924900", 
-                             "#7BA9CB", "#008600"))+
+  scale_fill_manual(values=c("#E6007E", "#004949", "#DB6D00", 
+                             "#D82632", "#290AD8", "#FED439", 
+                             "#B66DFF", "#006DDB", "#FA9C88", 
+                             "#924900", "#7BA9CB", "#008600"))+
   scale_size_continuous(range = c(3,6))
 ```
 
@@ -505,10 +506,10 @@ ggplot()+
              position = position_jitter(h = 0.05, w = 0.05), pch=24, 
              color="black", alpha =0.5, show.legend=FALSE) +
   theme_classic()+
-  scale_fill_manual(values=c("#004949", "#DB6D00", "#D82632", 
-                             "#290AD8", "#FED439", "#B66DFF", 
-                             "#006DDB", "#FA9C88", "#924900", 
-                             "#7BA9CB", "#008600"))+
+  scale_fill_manual(values=c("#E6007E", "#004949", "#DB6D00", 
+                             "#D82632", "#290AD8", "#FED439", 
+                             "#B66DFF", "#006DDB", "#FA9C88", 
+                             "#924900", "#7BA9CB", "#008600"))+
   scale_size_continuous(range = c(3,6))
 ```
 
@@ -544,10 +545,10 @@ ggplot()+
              position = position_jitter(h = 0.2, w = 0.2), pch=24, 
              color="black", alpha =0.5, show.legend=FALSE) +
   theme_classic()+
-  scale_fill_manual(values=c("#004949", "#DB6D00", "#D82632", 
-                             "#290AD8", "#FED439", "#B66DFF", 
-                             "#006DDB", "#FA9C88", "#924900", 
-                             "#7BA9CB", "#008600"))+
+  scale_fill_manual(values=c("#E6007E", "#004949", "#DB6D00", 
+                             "#D82632", "#290AD8", "#FED439", 
+                             "#B66DFF", "#006DDB", "#FA9C88", 
+                             "#924900", "#7BA9CB", "#008600"))+
   scale_size_continuous(range = c(3,6))
 ```
 
