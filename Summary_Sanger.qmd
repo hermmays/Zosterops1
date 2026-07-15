@@ -12,7 +12,7 @@ What follows is our workflow for the general descriptive analysis of the Sanger 
 
 ## Getting started
 
-We are using R version 4.4.2, RStudio version 2024.09.1 for the analysis. Quarto version 1.6.39 for Mac OS was used to document the workflow. Set the working directory in RStudio to one where the necessary phased Sanger sequencing alignments and other data are accessible.
+We are using R version 4.5.2, RStudio version 2026.5.1.225 for the analysis. Quarto version 1.6.39 was used to document the workflow. Set the working directory in RStudio to one where the necessary phased Sanger sequencing alignments and other data are accessible.
 
 ## General methods summary
 
@@ -22,7 +22,7 @@ Whole genomic DNA (gDNA) was isolated from either blood or tissue samples using 
 
 ### PCR and Sanger sequencing
 
-161 individual samples underwent polymerase chain reactions (PCRs) and Sanger sequencing across eight loci including two mtDNA and six nuclear protein-coding exons (nuDNA). Common sequence tags, either CS1 (5′-ACACTGACGACATGGTTCTACA) in the forward direction or CS2 (5′-TACGGTAGCAGAGACTTGGTCT) in the reverse direction, were added to all the oligonucleotide sequences in this study [@moonsamy2013]. The addition of common 5′ tags allowed for CS1 and CS2 oligonucleotides to be utilized as sequencing primers for all amplicons across all loci. The NADH dehydrogenase subunit 2 (ND2) and cytochrome c oxidase subunit 1 (COI or COXI) were amplified using the primers L5216 and H6313 [@sorenson1999] and BIRDF1 and BIRDR2 [@hebert2004], respectively. Six nuDNA coding loci (B3GNT9, BIRC2, CCDC, GPRC6, LACTBL, and UBP38) were amplified using primers from Liu *et al.* [@liu2018]. A complete list of the oligonucleotide sequences used as PCR primers in this study are shown below.
+166 individual samples underwent polymerase chain reactions (PCRs) and Sanger sequencing across eight loci including two mtDNA and six nuclear protein-coding exons (nuDNA). Common sequence tags, either CS1 (5′-ACACTGACGACATGGTTCTACA) in the forward direction or CS2 (5′-TACGGTAGCAGAGACTTGGTCT) in the reverse direction, were added to all the oligonucleotide sequences in this study [@moonsamy2013]. The addition of common 5′ tags allowed for CS1 and CS2 oligonucleotides to be utilized as sequencing primers for all amplicons across all loci. The NADH dehydrogenase subunit 2 (ND2) and cytochrome c oxidase subunit 1 (COI or COXI) were amplified using the primers L5216 and H6313 [@sorenson1999] and BIRDF1 and BIRDR2 [@hebert2004], respectively. Six nuDNA coding loci (B3GNT9, BIRC2, CCDC, GPRC6, LACTBL, and UBP38) were amplified using primers from Liu *et al.* [@liu2018]. A complete list of the oligonucleotide sequences used as PCR primers in this study are shown below.
 
 | Oligonucleotide name | 5′-CS tag + target sequence (5′ → 3′) | Locus description | Location/reference species | References |
 |----|----|----|----|----|
@@ -45,7 +45,7 @@ Whole genomic DNA (gDNA) was isolated from either blood or tissue samples using 
 
 PCRs were performed in 10μL reactions in a 96-well thermal cycler (Life Technologies) with commercial polymerase master mixes (either Fidelitaq™ Master Mix, Affymetrix/USB or AmpliTaq Gold™ 360 Master Mix, Applied Biosystems™) and forward and reverse primers (0.5 μmol L^−1^ each; Integrated DNA Technology) using a thermal profile of 94°C for 4 min followed by 30 cycles of 1 min at 94°C, 1 min at 50°C, and 2 min at 72°C, and then a final extension cycle for 10 min at 72°C. The same thermal profile was utilized for all PCRs across all loci. Primers and excess dNTPs were inactivated with ExoSAP-IT™ (Applied Biosystems™) following the manufacturer’s instructions. Sequencing reactions were performed on ExoSAP-IT^®^ treated PCR amplicons either in-house (Cincinnati Museum Center or Marshall University) using BigDye^®^ v3.1 Cycle Sequencing and BigDye Xterminator^®^ kits (Life Technologies) and separating on a 3130 Genetic Analyzer (Life Technologies) or by submitting for Sanger sequencing to Eurofins Genomics using their Prepaid Plate DNA kits. PCR amplicons were sequenced in both directions with primers based on the common sequence tags incorporated into all amplicons (CS1 and CS2).
 
-Complementary strands were assembled and edited using either *Geneious* v8.1.4 or *Geneious* 8.1.9 (Biomatters, available from <http://www.geneious.com>) [@kearse2012]. Chromatograms were inspected and every variation was checked for authenticity. The phase of nuclear alleles was determined statistically using *Seqphase* [@flot2009] and *Phase* v2.1 [@stephens2001]. Phased nuclear haplotypes and mitochondrial haplotypes were aligned using *Geneious* (Biomatters). General descriptive statistics for Sanger sequenced loci including nucleotide diversity, haplotype diversity, segregating sites, q, Tajima’s D [@tajima1989], and the R~2~ test [@ramos-onsins2002] as well as substitution model tests and trees and networks (distance-based and maximum likelihood) for individual loci were generated using the R packages *ape* [@ape-2], *pegas* [@pegas-2], and *phangorn* [@phangorn-2]. R v4.4.2 was used throughout various analyses in this study (R Core Team, 2024).
+Complementary strands were assembled and edited using either *Geneious* v8.1.4 or *Geneious* 8.1.9 (Biomatters, available from <http://www.geneious.com>) [@kearse2012]. Chromatograms were inspected and every variation was checked for authenticity. The phase of nuclear alleles was determined statistically using *Seqphase* [@flot2009] and *Phase* v2.1 [@stephens2001]. Phased nuclear haplotypes and mitochondrial haplotypes were aligned using *Geneious* (Biomatters). General descriptive statistics for Sanger sequenced loci including nucleotide diversity, haplotype diversity, segregating sites, q, Tajima’s D [@tajima1989], and the R~2~ test [@ramos-onsins2002] as well as substitution model tests and trees and networks (distance-based and maximum likelihood) for individual loci were generated using the R packages *ape* [@ape], *pegas* [@pegas], and *phangorn* [@phangorn]. R v4.4.2 was used throughout various analyses in this study (R Core Team, 2024).
 
 ## Data files
 
@@ -97,7 +97,7 @@ Subsequent analysis requires the following phased nuDNA alignments from the proc
 
 ### Packages
 
-Begin the analysis by restarting the R session (Session/Restart R in RStudio), loading the initial package libraries, and starting a log of the analysis. Other package libraries will be loaded as needed in later blocks. The following R packages should be installed using the Tools/Install Packages feature in RStudio.
+Begin the analysis by restarting the R session (Session/Restart R in RStudio), loading the initial package libraries, and starting a log of the analysis. Other package libraries will be loaded as needed in later blocks. The following R packages should be installed using the Tools/Install Packages feature in RStudio. The `gt`, `dplyr`, and `webshot2` package libraries are used for creating a publication-quality summary table for all the loci.
 
 - logr [@logr] Optional if you wish to create a log file for the analysis.
 
@@ -120,6 +120,9 @@ log_open(file_name = "ZosteropsSangerSeqs.log")
 library(ape)
 library(pegas)
 library(phangorn)
+library(gt)
+library(dplyr)
+library(webshot2)
 ```
 
 ### Cytochrome c oxidase subunit I (COI)
@@ -277,7 +280,7 @@ ThetaCOIperSiteW <- ThetaCOIperLocusW/seqlengthCOI
 ThetaCOIperLocusVarW <- theta.s(sCOI, NumberSequencesCOI1, 
                                 variance = TRUE)
 ThetaCOIperLocusVarW <- ThetaCOIperLocusVarW[2]
-ThetaCOIk <- theta.k(n = 132, k = 52)
+ThetaCOIk <- theta.k(n = NumberSequencesCOI1, k = NumberHapsCOI)
 ThetaCOIperLocusW
 ThetaCOIperSiteW
 ThetaCOIperLocusVarW
@@ -1030,17 +1033,6 @@ plot(mlUBP38root, show.node.label = TRUE, p = 50, type="p",
 ```
 
 ## Summary table for all loci
-
-### Load libraries
-
-Create a table that summarizes the population genetic data across all loci. First, load the `gt`, `dplyr`, and `webshot2` package libraries.
-
-```{r}
-#| label: Load package libraries
-library(gt)
-library(dplyr)
-library(webshot2)
-```
 
 ### Create summary table
 
