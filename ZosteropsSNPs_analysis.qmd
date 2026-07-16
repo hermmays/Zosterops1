@@ -16,7 +16,7 @@ What follows is an analysis of the Zosterops single nucleotide polymorphism (SNP
 
 ## Getting started
 
-We are using R version 4.4.2, RStudio version 2024.09.1 for the analysis. Quarto version 1.6.39 for Mac OS was used to document the workflow. Set the working directory in RStudio to one where the `vcf.gz` zipped data file and a `txt` file denoting the identity of the samples are accessible.
+We are using R version 4.5.2, RStudio version 2026.05.1 for the analysis. Quarto version 1.6.39 for Mac OS was used to document the workflow. Set the working directory in RStudio to one where the `vcf.gz` zipped data file and a `txt` file denoting the identity of the samples are accessible.
 
 ## General methods summary
 
