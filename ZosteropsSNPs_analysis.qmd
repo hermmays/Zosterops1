@@ -64,7 +64,7 @@ ZJlo016 japonicus MIYAKOJIMA
 ZJlo017 japonicus IRIOMOTE 
 ZJlo021 japonicus TOKUNOSHIMA 
 ZJlo022 japonicus TOKUNOSHIMA 
-ZJlo024 japonicus YONAGUMI 
+ZJlo024 japonicus YONAGUNI 
 ZJlo031 japonicus KUMEJIMA 
 ZJlo045 japonicus AMAMI 
 ZJlo046 japonicus MIYAKOJIMA 
@@ -84,7 +84,7 @@ ZJja014 japonicus HONSHU
 ZJja016 japonicus SHIKOKU 
 ZJja030 japonicus HEUKSANDO 
 ZJal003 japonicus_alani HAHAJIMA 
-Zjal004 japonicus_alani HAHAJIMA 
+ZJal004 japonicus_alani HAHAJIMA 
 ZJal005 japonicus_alani HAHAJIMA 
 ZJal010 japonicus_alani ANEJIMA 
 ZJal011 japonicus_alani ANEJIMA 
@@ -475,7 +475,7 @@ Discriminant analysis of principal components (DAPC) is a multivariate method th
 DAPCseed = sample(1:999, 1)
 print(DAPCseed)
 set.seed(DAPCseed)
-system.time (ZosteropsSNPsDAPCpramx <- xvalDapc(tab(gl.ZosteropsSNPs, NA.method = "mean"), pop(gl.ZosteropsSNPs), n.pca = 1:50, n.rep = 100, parallel = "multicore", ncpus = 6L))
+system.time (ZosteropsSNPsDAPCpramx <- xvalDapc(tab(gl.ZosteropsSNPs, NA.method = "mean"), pop(gl.ZosteropsSNPs), n.pca = 1:50, n.rep = 100, parallel = "snow", ncpus = 6L))
 ```
 
 #### *a*-scores
@@ -559,6 +559,8 @@ for (n.pca in n.pca.values) {
   write.table(ZosteropsSNPsDAPCResults, file = paste("ZosteropsSNPsDAPCResults","_",n.pca,"PCs.txt"), row.names = FALSE, sep = "\t", quote = FALSE)
 }
 ```
+
+*Last updated: `r format(Sys.time(), '%B %d, %Y %H:%M')`*
 
 ## Close log
 
