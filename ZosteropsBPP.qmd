@@ -48,6 +48,9 @@ Three replicate runs were done for the A00 analyses for each of four combination
 Load the ape library before proceeding.
 
 ```{r}
+#| label: Libraries
+library(logr)
+log_open(file_name = "ZosteropsBPP.log")
 library(ape)
 ```
 
@@ -442,7 +445,7 @@ Repeat this process for each `ctl` file and for the A00 runs replicate each run 
 ### BPP A10 runs
 
 | BPP ctl file | Inverse 𝛤 prior distribution 𝛼 for 𝜃 and 𝜏 | Inverse 𝛤 distribution $\beta_\theta$ | Mean 𝜃 prior | Inverse 𝛤 distribution $\beta_\tau$ | Mean 𝜏 prior | Model | burnin | sample | nsample | species delimitation algorithm | Result | posterior |
-|----|----|----|----|----|----|----|----|----|----|----|----|----|
+|------|------|------|------|------|------|------|------|------|------|------|------|------|
 | `ZosteropsA10_RUNA01.bpp.ctl` | 3 | 0.01 | 0.005 | 0.002 | 0.001 | GTR | 10000 | 2 | 100000 | 1 | 1111 | 1 |
 | `ZosteropsA10_RUNA02.bpp.ctl` | 3 | 0.02 | 0.01 | 0.002 | 0.001 | GTR | 10000 | 2 | 100000 | 1 | 1111 | 1 |
 | `ZosteropsA10_RUNA03.bpp.ctl` | 3 | 0.1 | 0.5 | 0.002 | 0.001 | GTR | 10000 | 2 | 100000 | 1 | 1111 | 1 |
@@ -480,7 +483,7 @@ nodelabels(nodes)
 ### BPP A00 runs
 
 | BPP ctl file | Inverse 𝛤 prior distribution 𝛼 for 𝜃 and 𝜏 | Inverse 𝛤 distribution $\beta_\theta$ | Mean 𝜃 prior | Inverse 𝛤 distribution $\beta_\tau$ | Mean 𝜏 prior | Tree |
-|----|----|----|----|----|----|----|
+|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
 | `ZosteropsA00_RUNB1.bpp.ctl` | 3 | 0.001 | 0.0005 | 0.004 | 0.002 | TIP |
 | `ZosteropsA00_RUNB2.bpp.ctl` | 3 | 0.001 | 0.0005 | 0.004 | 0.002 | TIP |
 | `ZosteropsA00_RUNB3.bpp.ctl` | 3 | 0.001 | 0.0005 | 0.004 | 0.002 | TIP |
@@ -553,7 +556,7 @@ green<-"#008600"
 Import MCMC data from for the BPP runs with 𝛂 set at 3 and 𝛽 for the inverse 𝛤 prior distribution set at 0.001 and 0.004 for 𝜃 and 𝜏 respectively.
 
 ```{r}
-#| Label: Import MCMC files from BPP runs Beta 0.001 and 0.004
+#| label: Import MCMC files from BPP runs Beta 0.001 and 0.004
 # A RUNS are BPP runs under the A10 conditions with species delimitation 
 # under a fixed tree.
 # B-E RUNS are BPP runs under the A00 conditions with no 
@@ -610,17 +613,17 @@ Z2tfilesB <- list.files(path="Data/BPP/Z2ThetaTau",
 Z2tipB <- do.call(`rbind`,lapply(Z2tfilesB, read.table, header=T))
 
 Z2m1filesC <- list.files(path="Data/BPP/Z2ThetaTau", 
-                         pattern="ZosteropsBPP_A00_RUNC[4-6].mcmc.tx", 
+                         pattern="ZosteropsBPP_A00_RUNC[4-6].mcmc.txt", 
                          full.names = TRUE)
 Z2mid1C <- do.call(`rbind`,lapply(Z2m1filesC, read.table, header=T))
 
 Z2m2filesD <- list.files(path="Data/BPP/Z2ThetaTau", 
-                         pattern="ZosteropsBPP_A00_RUND[4-6].mcmc.tx", 
+                         pattern="ZosteropsBPP_A00_RUND[4-6].mcmc.txt", 
                          full.names = TRUE)
 Z2mid2D <- do.call(`rbind`,lapply(Z2m2filesD, read.table, header=T))
 
 Z2rfilesE <- list.files(path="Data/BPP/Z2ThetaTau", 
-                        pattern="ZosteropsBPP_A00_RUNE[4-6].mcmc.tx", 
+                        pattern="ZosteropsBPP_A00_RUNE[4-6].mcmc.txt", 
                         full.names = TRUE)
 Z2rootE <- do.call(`rbind`,lapply(Z2rfilesE, read.table, header=T))
 ```
@@ -1102,7 +1105,7 @@ lines(densitySiA, lw=2, col=green)
 abline(v=0.2,col="grey50", lty=2)
 abline(v=0.7, col="grey50", lty=2)
 
-plot((densityJpA), xlim=c(0,1), ylim=c(0,30), col=red, cex.lab=2.1, lwd=2, cex.main=2.0, main="b2.  \u03B8=0.002 \u03C4=0.004", xlab="GDI")
+plot((densityJpB), xlim=c(0,1), ylim=c(0,30), col=red, cex.lab=2.1, lwd=2, cex.main=2.0, main="b2.  \u03B8=0.002 \u03C4=0.004", xlab="GDI")
 lines(densityMeB, lw=2, col=yellow)
 lines(densityJpMeB, lw=2, col=orange)
 lines(densityMoNB, lw=2, col=purple)
@@ -1114,7 +1117,7 @@ abline(v=0.2,col="grey50", lty=2)
 abline(v=0.7, col="grey50", lty=2)
 legend("right", 30,legend=c("Z. japonicus", "Z. meyeni", "Z. japonicus/meyeni", "Z. montanus N Philippines", "Z. japonicus/meyeni/montanus N Philippines", "Z. montanus S Philippines", "Z. japonicus/meyeni/montanus", "Z. simplex"), col=c(red,yellow,orange,purple,blue,peach,pink, green), pch=15, cex=1.2, bty="n")
 
-plot((densityJpA), xlim=c(0,1), ylim=c(0,30), col=red, cex.lab=2.1, lwd=2, cex.main=2.0, main="b3.  \u03B8 = 0.001 \u03C4 = 0.0005", xlab="GDI")
+plot((densityJpC), xlim=c(0,1), ylim=c(0,30), col=red, cex.lab=2.1, lwd=2, cex.main=2.0, main="b3.  \u03B8 = 0.001 \u03C4 = 0.0005", xlab="GDI")
 lines(densityMeC, lw=2, col=yellow)
 lines(densityJpMeC, lw=2, col=orange)
 lines(densityMoNC, lw=2, col=purple)
@@ -1125,7 +1128,7 @@ lines(densitySiC, lw=2, col=green)
 abline(v=0.2,col="grey50", lty=2)
 abline(v=0.7, col="grey50", lty=2)
 
-plot((densityJpA), xlim=c(0,1), ylim=c(0,30), col=red, cex.lab=2.1, lwd=2, cex.main=2.0, main="b4.  \u03B8 = 0.002 \u03C4 = 0.0005", xlab="GDI")
+plot((densityJpD), xlim=c(0,1), ylim=c(0,30), col=red, cex.lab=2.1, lwd=2, cex.main=2.0, main="b4.  \u03B8 = 0.002 \u03C4 = 0.0005", xlab="GDI")
 lines(densityMeD, lw=2, col=yellow)
 lines(densityJpMeD, lw=2, col=orange)
 lines(densityMoND, lw=2, col=purple)
@@ -1135,4 +1138,15 @@ lines(densityJpMeMoNMoSD, lw=2, col=pink)
 lines(densitySiD, lw=2, col=green)
 abline(v=0.2,col="grey50", lty=2)
 abline(v=0.7, col="grey50", lty=2)
+```
+
+*Last updated: `r format(Sys.time(), '%B %d, %Y %H:%M')`*
+
+## Close log
+
+Close the log file.
+
+```{r}
+#| label: Close log file
+log_close()
 ```
