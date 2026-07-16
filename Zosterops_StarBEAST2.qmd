@@ -14,7 +14,7 @@ What follows is our workflow for the StarBEAST2 [@ogilvie2017] analysis for Zost
 
 ## Getting started
 
-We are using BEAST v2.7.4 for the analysis [@bouckaert2019; @bouckaert2014; @drummond2012; @drummond2007]. Quarto version 1.6.39 for Mac OS was used to document the workflow.
+We are using BEAST v2.7.4 for the analysis [@bouckaert2019; @bouckaert2014; @drummond2012; @drummond2007]. Quarto version 1.6.39 was used to document the workflow.
 
 ## General methods summary
 
@@ -40,13 +40,15 @@ Subsequent analysis requires the following `fasta` files including the mtDNA ali
 
 - `LACTBL_phased.fasta`
 
-- `USP38_phased.fasta`
+- `UBP38_phased.fasta`
 
 Below are the taxon set files required for these analyses.
 
 - `Zosterops taxon sets A.txt`
 
 - `Zosterops taxon sets B.txt`
+
+- `Zosterops taxon sets mtDNA.txt`
 
 ## Software and packages
 

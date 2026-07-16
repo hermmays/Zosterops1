@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.38">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -55,10 +55,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-b663525e4b92bb903b2199e2d401bf36.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-7769afed099671942048613264fad678.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-ea1d98a65a8968bac684f5c214f1a1a1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -217,7 +217,7 @@ div.csl-indent {
 </section>
 <section id="getting-started" class="level2">
 <h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
-<p>We are using BEAST v2.7.4 for the analysis <span class="citation" data-cites="bouckaert2019 bouckaert2014 drummond2012 drummond2007">(<a href="#ref-bouckaert2019" role="doc-biblioref">R. Bouckaert et al. 2019</a>, <a href="#ref-bouckaert2014" role="doc-biblioref">2014</a>; <a href="#ref-drummond2012" role="doc-biblioref">Alexei J. Drummond et al. 2012</a>; <a href="#ref-drummond2007" role="doc-biblioref">Alexei J. Drummond and Rambaut 2007</a>)</span>. Quarto version 1.6.39 for Mac OS was used to document the workflow.</p>
+<p>We are using BEAST v2.7.4 for the analysis <span class="citation" data-cites="bouckaert2019 bouckaert2014 drummond2012 drummond2007">(<a href="#ref-bouckaert2019" role="doc-biblioref">R. Bouckaert et al. 2019</a>, <a href="#ref-bouckaert2014" role="doc-biblioref">2014</a>; <a href="#ref-drummond2012" role="doc-biblioref">Alexei J. Drummond et al. 2012</a>; <a href="#ref-drummond2007" role="doc-biblioref">Alexei J. Drummond and Rambaut 2007</a>)</span>. Quarto version 1.6.39 was used to document the workflow.</p>
 </section>
 <section id="general-methods-summary" class="level2">
 <h2 class="anchored" data-anchor-id="general-methods-summary">General methods summary</h2>
@@ -225,8 +225,8 @@ div.csl-indent {
 </section>
 <section id="data-files" class="level2">
 <h2 class="anchored" data-anchor-id="data-files">Data files</h2>
-<p>This analysis requires the mitochondrial DNA (mtDNA) alignments and the phased nuclear coding DNA (nuDNA) alignments from the Sanger sequenced loci. The protocol for phasing the nuDNA alignments may be found in the <a href="https://hermmays.github.io/Zosterops1/Summary_Sanger.html"><strong>Sanger sequencing summary statistics and trees</strong></a> section. In addition a taxon set file will be required to assign individual samples to their taxon and/or population of origin.</p>
-<p>Subsequent analysis requires the following <code>fasta</code> files including the mtDNA alignments and the phased nuDNA alignments from the procedure described in the <a href="https://hermmays.github.io/Zosterops1/Summary_Sanger.html"><strong>Sanger sequencing summary statistics and trees</strong></a> section.</p>
+<p>This analysis requires the mitochondrial DNA (mtDNA) alignments and the phased nuclear coding DNA (nuDNA) alignments from the Sanger sequenced loci. The protocol for phasing the nuDNA alignments may be found in the <strong>Sanger sequencing summary statistics and trees</strong> section. In addition a taxon set file will be required to assign individual samples to their taxon and/or population of origin.</p>
+<p>Subsequent analysis requires the following <code>fasta</code> files including the mtDNA alignments and the phased nuDNA alignments from the procedure described in the <strong>Sanger sequencing summary statistics and trees</strong> section.</p>
 <ul>
 <li><p><code>COI.fasta</code></p></li>
 <li><p><code>ND2.fasta</code></p></li>
@@ -235,19 +235,20 @@ div.csl-indent {
 <li><p><code>CCDC_phased.fasta</code></p></li>
 <li><p><code>GPRC6_phased.fasta</code></p></li>
 <li><p><code>LACTBL_phased.fasta</code></p></li>
-<li><p><code>USP38_phased.fasta</code></p></li>
+<li><p><code>UBP38_phased.fasta</code></p></li>
 </ul>
 <p>Below are the taxon set files required for these analyses.</p>
 <ul>
 <li><p><code>Zosterops taxon sets A.txt</code></p></li>
 <li><p><code>Zosterops taxon sets B.txt</code></p></li>
+<li><p><code>Zosterops taxon sets mtDNA.txt</code></p></li>
 </ul>
 </section>
 <section id="software-and-packages" class="level2">
 <h2 class="anchored" data-anchor-id="software-and-packages">Software and packages</h2>
-<p>BEAST2 software is available <a href="https://www.beast2.org/">here</a>. This analysis was conducted on a prior version of BEAST2 (v2.7.4 available <a href="https://github.com/CompEvol/beast2/releases">here</a>) but nearly identical results were achieved using the most recent version of BEAST2 (v2.7.7 as of the writing of this protocol). BEAUTi2 allows for package management and a graphical user interface (GUI) to generate the <code>xml</code> files needed to run BEAST2 analyses. The programs <em>LogCombiner</em> and <em>TreeAnnotator</em> are also included with the BEAST2 install and will be needed to process the results of the MCMC runs. In addition, the program <a href="https://beast.community/tracer">Tracer</a> will be required to assess the results of an MCMC run and <a href="https://beast.community/figtree">FigTree</a> to edit and visualize species trees produced by BEAST2. Below is a summary of the needed software for this analysis and links to downloads.</p>
+<p>BEAST2 software is available <a href="https://www.beast2.org/">here</a>. This analysis was conducted on a prior version of BEAST2 (v2.7.4 available <a href="https://github.com/CompEvol/beast2/releases">here</a>) but nearly identical results were achieved using the most recent version of BEAST2 (v2.7.7 as of the writing of this protocol). BEAUTi2 is the tool available with BEAST2 that allows for package management and a graphical user interface (GUI) to generate the <code>xml</code> files needed to run analyses. The programs LogCombiner and TreeAnnotator are also included with the BEAST2 install and will be needed to process the results of the MCMC runs. In addition, the program <a href="https://beast.community/tracer">Tracer</a> will be required to assess the results of an MCMC run and <a href="https://beast.community/figtree">FigTree</a> to edit and visualize species trees produced by BEAST2. Below is a summary of the needed software for this analysis and links to downloads.</p>
 <ul>
-<li><p><a href="https://github.com/CompEvol/beast2/releases">BEAST2 v2.7.4</a> <span class="citation" data-cites="bouckaert2019">(<a href="#ref-bouckaert2019" role="doc-biblioref">R. Bouckaert et al. 2019</a>)</span> This install will include BEAST2, BEAUTi2, <em>LogCombiner</em>, and <em>TreeAnnotator</em>.</p></li>
+<li><p><a href="https://github.com/CompEvol/beast2/releases">BEAST2 v2.7.4</a> <span class="citation" data-cites="bouckaert2019">(<a href="#ref-bouckaert2019" role="doc-biblioref">R. Bouckaert et al. 2019</a>)</span> This install will include BEAST2, BEAUTi2, LogCombiner, and TreeAnnotator.</p></li>
 <li><p><a href="https://beast.community/tracer">Tracer</a> <span class="citation" data-cites="rambaut2018">(<a href="#ref-rambaut2018" role="doc-biblioref">Rambaut et al. 2018</a>)</span></p></li>
 <li><p><a href="https://beast.community/figtree">FigTree</a></p></li>
 </ul>
@@ -262,7 +263,7 @@ div.csl-indent {
 <p>After installing the needed packages restart BEAUTi2. From the <strong>File</strong> menu select <strong>Template</strong> and then <strong>StarBeast2</strong>. The StarBEAST2 template should display nine tabs titled as follows; <strong>Partitions</strong>, <strong>Taxon Sets</strong>, <strong>Tip Dates</strong>, <strong>Gene Ploidy</strong>, <strong>Population Model</strong>, <strong>Site Model</strong>, <strong>Clock Model</strong>, <strong>Priors</strong>, and <strong>MCMC</strong>.</p>
 <section id="partitions" class="level3">
 <h3 class="anchored" data-anchor-id="partitions">Partitions</h3>
-<p>Sequence alignments will be added to the <code>xml</code> file in the <strong>Partitions</strong> tab. This can be done by either clicking the <strong>+</strong> button at the bottom of the tab and selecting <strong>Import Alignment</strong> from the subsequent menu options or by simply dragging the <code>fasta</code> file for each alignment into the <strong>Partitions</strong> tab. After specifying that an alignment is being imported select <strong>nucleotide</strong> when asked by BEAUTi2 to <strong>Choose the datatype</strong>. For each locus the correct number of taxa, sites, and data type should be listed. For each the file name will be used as the name BEAST2 uses for that particular locus. Also each locus should have a <strong>Site Model</strong>, <strong>Clock Model</strong>, and <strong>Tree</strong> unique to that alignment and with the same name. The <strong>Partition</strong> tab should look like this when completed.</p>
+<p>Sequence alignments will be added to the <code>xml</code> file in the <strong>Partitions</strong> tab. This can be done by either clicking the <strong>+</strong> button at the bottom of the tab and selecting <strong>Import Alignment</strong> from the subsequent menu options or by simply dragging the <code>fasta</code> file for each alignment into the <strong>Partitions</strong> tab. After specifying that an alignment is being imported select <strong>nucleotide</strong> when asked by BEAUTi2 to “Choose the datatype”. For each locus the correct number of taxa, sites, and data type should be listed. For each the file name will be used as the name BEAST2 uses for that particular locus. Also each locus should have a <strong>Site Model</strong>, <strong>Clock Model</strong>, and <strong>Tree</strong> unique to that alignment and with the same name. The <strong>Partition</strong> tab should look like this when completed.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/Screen Shot 2024-12-11 at 10.58.51 AM.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="630"></p>
@@ -271,7 +272,7 @@ div.csl-indent {
 </section>
 <section id="taxon-sets" class="level3">
 <h3 class="anchored" data-anchor-id="taxon-sets">Taxon sets</h3>
-<p>For the mtDNA alignments each individual sample has only a single sequence while there are two sequences for the diploid nuDNA alignments. The two phased sequences for each diploid individual sample should be labeled a and b (i.e., ZJja004a and ZJja004b are the two phased sequences for sample ZJja004). The a and b suffixes were automatically added to sample names for the phased sequences in PHASE 2.1.1 (see <a href="https://hermmays.github.io/Zosterops1/Summary_Sanger.html"><strong>Sanger sequencing summary statistics and trees</strong></a>). For consistency an <em>a</em> suffix was manually added to the sample name for each sequence in the mtDNA alignments to prevent a third sample name from appearing for each sample with both mtDNA and nuDNA sequences in the <strong>Taxon sets</strong> tab.</p>
+<p>For the mtDNA alignments each individual sample has only a single sequence while there are two sequences for the diploid nuDNA alignments. The two phased sequences for each diploid individual sample should be labeled <em>a</em> and <em>b</em> (i.e.&nbsp;ZJja004a and ZJja004b are the two phased sequences for sample ZJja004). The <em>a</em> and <em>b</em> suffixes were automatically added to sample names for the phased sequences in PHASE 2.1.1 (see <strong>Sanger sequencing summary statistics and trees</strong>). For consistency an <em>a</em> suffix was manually added to the sample name for each sequence in the mtDNA alignments to prevent a third sample name from appearing for each sample with both mtDNA and nuDNA sequences in the <strong>Taxon sets</strong> tab.</p>
 <p>Some project numbers do not necessarily reflect the taxonomic origin of the individual samples. For example, samples ZJlo001 - ZJlo005 appear based on their project number designations to be <em>Zosterops japonicus loochoensis</em> but these project numbers were assigned in error before realizing they originated on the island of Chichijima outside the range of <em>Z. japonicus loochoensis</em>. For the Ogasawara Islands the subspecies designation for <em>Z. japonicus</em> is uncertain with some suspicion that these birds are subspecies hybrids between <em>Z. japonicus stejnegeri</em> in the Izu Islands and <em>Z. japonicus alani</em> in the Ogasawara/Volcano Islands. For our purposes we assigned birds in the Ogasawara and Volcano Islands the taxonomic designation <em>Z. japonicus alani</em> and birds in the Izu Islands <em>Z. japonicus stejnegeri</em> with the realization that gene flow may be occurring throughout these oceanic islands.</p>
 <p>Click the <strong>Taxon sets</strong> tab. A list of sample names corresponding to the sequences in the alignments should appear in the <strong>Taxon</strong> column. For each sample a designation could be manually entered into the <strong>Species/Population</strong> column (time consuming) or automatically filled from a taxon sets file. To automatically add information on taxon assignment and/or population of origin click the <strong>Guess</strong> button at the bottom of the tab. Another window will open. Select the radio button corresponding to the <strong>read from file</strong> and the corresponding <strong>Browse</strong> button to select the appropriate taxon sets file. Click the <strong>Show options</strong> button and select <strong>txt</strong> to allow for the selection of <code>txt</code> files as taxon set entries. For the first set of BEAST2 runs samples were grouped by taxon (species and subspecies) and geography (island or island group) according to the <code>Zosterops taxon sets A.txt</code> file. This file is tab delimited and contains no headers and two columns with the identifying string for each individual sequence and the associated taxon and locality data as follows.</p>
 <pre><code>ZAsu001a    Zosterops atrifrons surdus
@@ -313,8 +314,8 @@ ZJal012a    Zosterops japonicus alani ANEJIMA
 ZJal013a    Zosterops japonicus alani ANEJIMA
 ZJal014a    Zosterops japonicus alani ANEJIMA
 ZJal015a    Zosterops japonicus alani IMOTOJIMA
-ZJal016a    Zosterops japonicus alani IWOTO
-ZJal016b    Zosterops japonicus alani IWOTO
+ZJal016a    Zosterops japonicus alani IWOJIMA
+ZJal016b    Zosterops japonicus alani IWOJIMA
 ZJba001a    Zosterops meyeni LANYU
 ZJba002a    Zosterops meyeni LANYU
 ZJin001a    Zosterops japonicus insularis OSUMI
@@ -538,7 +539,7 @@ ZPxx001a    Zosterops simplex SINGAPORE
 ZPxx001b    Zosterops simplex SINGAPORE
 ZPxx002a    Zosterops simplex SINGAPORE
 ZPxx002b    Zosterops simplex SINGAPORE</code></pre>
-<p>The file <code>Zosterops taxon sets B.txt</code> contains the same list of individual samples as the <code>Zosterops taxon sets A.txt</code> file but with samples collapsed according to taxon. There is no locality information in this file except for the samples of <em>Z. montanus</em> collected on the island of Panay and <em>Z. simplex</em> from Singapore. This file appears as follows.</p>
+<p>The file <code>Zosterops taxon sets B.txt</code> contains the same list of individual samples as the <code>Zosterops taxon sets A.txt</code> file but with samples collapsed according to taxon. There is no locality information in this file except for the samples of <em>Z. montanus</em> collected on the island of Panay. This file appears as follows.</p>
 <pre><code>ZAsu001a    Zosterops atrifrons surdus
 ZAsu001b    Zosterops atrifrons surdus
 ZAsu002a    Zosterops atrifrons surdus
@@ -803,7 +804,7 @@ ZPxx001a    Zosterops simplex SINGAPORE
 ZPxx001b    Zosterops simplex SINGAPORE
 ZPxx002a    Zosterops simplex SINGAPORE
 ZPxx002b    Zosterops simplex SINGAPORE</code></pre>
-<p><code>Zosterops taxon sets mtDNA.txt</code> is a third taxon sets file that is limited to samples from the mtDNA alignments (COI and ND2). This file includes both taxon and locality data but note that for each haploid mtDNA sample there are no identifiers with the b suffix.</p>
+<p><code>Zosterops taxon sets mtDNA.txt</code> is a third taxon sets file that is limited to samples from the mtDNA alignments (COI and ND2). This file includes both taxon and locality data but note that for each haploid mtDNA sample there are no identifiers with the <em>b</em> suffix.</p>
 <pre><code>ZAsu001a    Zosterops atrifrons surdus
 ZAsu002a    Zosterops atrifrons surdus
 ZEba001a    Zosterops everetti basilanicus
@@ -989,7 +990,7 @@ ZPxx002a    Zosterops simplex SINGAPORE</code></pre>
 </section>
 <section id="site-model" class="level3">
 <h3 class="anchored" data-anchor-id="site-model">Site Model</h3>
-<p>Substitution models for each unlinked locus are set in the <strong>Site Model</strong> tab. For each locus use <a href="https://github.com/BEAST2-Dev/bModelTest">bModelTest</a> to estimate the best substitution model. If the bModelTest package (see [<strong>Software and Packages</strong>] section above) was installed then this option should be available in BEAUTi2 in the drop-down at the top of the <strong>Site Model</strong> tab as the <strong>BEAST Model Test</strong> option. For each locus select <strong>BEAST Model Test</strong> from the drop-down and for <strong>Mutation Rate</strong> click the <strong>estimate</strong> box. Mutation rates among loci are estimated relative to one another so leave the <strong>Mutation Rate</strong> at 1.0 for each locus. Repeat this process for each locus.</p>
+<p>Substitution models for each unlinked locus are set in the <strong>Site Model</strong> tab. For each locus use <a href="https://github.com/BEAST2-Dev/bModelTest">bModelTest</a> to estimate the best substitution model. If the bModelTest package (see <strong>Software and Packages</strong> section above) was installed then this option should be available in BEAUTi2 in the drop-down at the top of the <strong>Site Model</strong> tab as the <strong>BEAST Model Test</strong> option. For each locus select <strong>BEAST Model Test</strong> from the drop-down and for <strong>Mutation Rate</strong> click the <strong>estimate</strong> box. Mutation rates among loci are estimated relative to one another so leave the <strong>Mutation Rate</strong> at 1.0 for each locus. Repeat this process for each locus.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/Screen Shot 2024-12-11 at 11.00.07 AM.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="630"></p>
@@ -1026,7 +1027,7 @@ ZPxx002a    Zosterops simplex SINGAPORE</code></pre>
 <section id="save-xml-file" class="level3">
 <h3 class="anchored" data-anchor-id="save-xml-file">Save xml file</h3>
 <p>All the needed parameters for the <code>xml</code> file are now completed. Save the file by selecting <strong>File</strong> from the top bar in BEAUTi2 and <strong>Save as</strong>.</p>
-<p>Replicate multiple independent runs in three groups. Group A uses the <code>Zosterops taxon sets A.txt</code> file in the <code>xml</code> setup with both taxon and island information to define the individual samples. Group B also uses both taxon and island information in the BEAUTi2 <strong>Taxon sets</strong> tab during the <code>xml</code> setup but employs the <code>Zosterops taxon sets mtDNA.txt</code> file to define the individual samples. Group A <code>xml</code> files include all loci in the <strong>Partitions</strong> tab. Group B <code>xml</code> files include only the two mtDNA loci (COI and ND2) in the <strong>Partitions</strong> tab. Group C runs include all loci in the <strong>Partitions</strong> tab but use the <code>Zosterops taxon sets B.txt</code> file to define the samples by taxon (mostly) and collapsing populations across multiple localities into the same taxonomic group.</p>
+<p>Replicate multiple independent runs in three groups. Group A uses the <code>Zosterops taxon sets A.txt</code> file in the <code>xml</code> setup with both taxon and island information to define the individual samples. Group B also uses both taxon and island information in the BEAUTi2 <strong>Taxon sets</strong> tab during the <code>xml</code> setup but employs the <code>Zosterops taxon sets mtDNA.txt</code> file to define the individual samples. Group A <code>xml</code> files include all loci in the <strong>Partitions</strong> tab. Group B <code>xml</code> files include only the two mtDNA loci (COI and ND2) in the <strong>Partitions</strong> tab. Group C runs include all loci in the <strong>Partitions</strong> tab but use the <code>Zosterops taxon sets B.txt</code> file to define the samples by taxon only, collapsing populations across multiple localities into the same taxonomic group.</p>
 <p>Create a working directory for each run labeled appropriately (A1-20; B1-20; C1-20). Create one <code>xml</code> file for each of these groups and duplicate that file 20 times changing the file name to create a sequential series of <code>xml</code> files from 1 -20 (A1-A20 for Group A, B1-B20 for Group B, and C1-C20 for group C).</p>
 <p>Names for <code>xml</code> files for the first runs in each group are as follows. ‘STARBEAST274’ denotes the version of StarBEAST2 used and BMT denotes that these runs use bModelTest for the site model selection.</p>
 <p><code>Zosterops_STARBEAST274BMT_A1.xml</code></p>
@@ -1066,9 +1067,9 @@ ZPxx002a    Zosterops simplex SINGAPORE</code></pre>
 <section id="a-runs" class="level3">
 <h3 class="anchored" data-anchor-id="a-runs">A Runs</h3>
 <p>Consensus species tree from the A runs series of 20 replicate runs using all loci and the <code>Zosterops taxon sets A.txt</code> taxon set file. The tree is edited in <a href="https://beast.community/figtree">FigTree</a> with posterior probability displayed at the nodes.</p>
-<p><img src="images/BEAST2_A_ALLLOCI_POSTERIOR.png" class="img-fluid"></p>
+<p><img src="images/Zosterops_speciestree_A_posterior.png" class="img-fluid" width="1200"></p>
 <p>Consensus species tree from the A runs series of 20 replicate runs using all loci and the <code>Zosterops taxon sets A.txt</code> taxon set file. The tree is edited in <a href="https://beast.community/figtree">FigTree</a> with 95% height displayed at the nodes and an axis in Ma.</p>
-<p><img src="images/BEAST2_A_ALLLOCI_HPD.png" class="img-fluid"></p>
+<p><img src="images/Zosterops_speciestree_A_95HPD.png" class="img-fluid" width="1200"></p>
 </section>
 <section id="b-runs" class="level3">
 <h3 class="anchored" data-anchor-id="b-runs">B Runs</h3>
@@ -1083,7 +1084,6 @@ ZPxx002a    Zosterops simplex SINGAPORE</code></pre>
 <p><img src="images/Zosterops_speciestree_C_posterior.png" class="img-fluid" width="1200"></p>
 <p>Consensus species tree from the C runs series of 20 replicate runs using all loci and the <code>Zosterops taxon sets B.txt</code> taxon set file limited primarily to taxon designations. The tree is edited in <a href="https://beast.community/figtree">FigTree</a> with 95% height displayed at the nodes and an axis in Ma.</p>
 <p><img src="images/Zosterops_speciestree_C_95HPD.png" class="img-fluid" width="1200"></p>
-<p><em>Last updated: May 28, 2026 14:57</em></p>
 
 
 
