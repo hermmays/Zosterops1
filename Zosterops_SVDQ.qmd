@@ -14,7 +14,7 @@ Included here are phylogenetic analyses of East Asian Zosterops using the single
 
 ## Getting started
 
-Along with the software listed below we are using R version 4.4.2 and RStudio version 2024.09.1 for the analysis. Quarto version 1.6.39 for Mac OS was used to document the workflow. Set the working directory to one where the data files are accessible.
+Along with the software listed below we are using R version 4.5.2 and RStudio version 2026.05.1 for the analysis. Quarto version 1.6.39 was used to document the workflow. Set the working directory to one where the data files are accessible.
 
 ### Data
 
@@ -35,6 +35,8 @@ The dataset used in these analyses is the `zost.filtered.snps.vcf` file. The fil
 - [Delineate](https://jeetsukumaran.github.io/delineate/) - Species delimitation using the multipopulation or multispecies coalescent and explicit models of speciation from a tree with branch lengths [@sukumaran2021].
 
 ### R packages
+
+- logr - Optional if the user wants to create a log file for the run [@logr].
 
 - ape - For visualizing and manipulating trees [@ape].
 
@@ -1056,7 +1058,16 @@ Because run 1 is using a significantly collapsed tree with few taxa it can easil
 
 ```{r}
 #| label: Tree topology for run Zosterops1
+# Load libraries and create a log file.
+library(logr) # Optional create a log file.
+log_open(file_name = "Zosterops_SVDQ.log")
 library(ape)
+library(dplyr)
+library(gt)
+library(tidyr)
+library(webshot2)
+options(webshot2.chrome = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome")
+
 # Define the Newick string
 topology <- "((((((((japonicus:0.1,alani:0.1):0.1,meyeni:0.2):0.1,north:0.3):0.1,((indonesia:0.1,south:0.1):0.1,palawan:0.2):0.2):0.1,simplex:0.5):0.1,erythro:0.6):0.1,(everetti:0.4,nigrorum:0.4):0.3):0.1,palpebro:0.8);"
 # Read the tree from the Newick string
@@ -1157,7 +1168,7 @@ south ZMOvu002
 south ZMOvu003
 south ZMOvu004
 south ZMOvu005
-south ZMOmo001
+indonesia ZMOmo001
 palawan ZMOpa001
 palawan ZMOpa002
 nigrorum ZNni001
@@ -1257,12 +1268,6 @@ Finally calculate the 95% confidence intervals for each node (speciation or spli
 
 ```{r}
 #| label: Confidence intervals for speciation times for Zosterops run 1.
-# Load necessary libraries
-library(dplyr)
-library(gt)
-library(tidyr)
-library(webshot2)
-options(webshot2.chrome = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome")
 
 # Read the text file
 PICLbootstraps1 <- read.table('Data/PICL/Zosterops1/boot.dat', header = FALSE)
@@ -2830,4 +2835,15 @@ bd(fit.bdMU)
 fit.bdCU <- birthdeath(ZosteropsSpeciesTreeCU)
 fit.bdCU
 bd(fit.bdCU)
+```
+
+*Last updated: `r format(Sys.time(), '%B %d, %Y %H:%M')`*
+
+## Close log
+
+End the log.
+
+```{r}
+#| label: End log file. 
+log_close()
 ```
