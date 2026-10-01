@@ -16,7 +16,7 @@ Included here is are analyses of morphological phenotypes in East Asian Zosterop
 
 ## Getting started
 
-We are using R version 4.4.2, RStudio version 2024.09.1 for the analysis. Quarto version 1.6.39 for Mac OS was used to document the workflow. Set the working directory in RStudio to one where the `Zosterops_linear_measurements.csv` data file is accessible.
+We are using R version 4.5.2 and RStudio version 2026.05.1 for the analysis. Quarto version 1.6.39 for Mac OS was used to document the workflow. Set the working directory in RStudio to one where the `Zosterops_linear_measurements.csv` data file is accessible.
 
 ### Packages
 
@@ -43,6 +43,8 @@ Load the package libraries.
 ```{r}
 #| label: Load package libraries. 
 # Load necessary libraries
+library(logr) # Optional create a log file.
+log_open(file_name = "ZosteropsMorphometrics.log")
 library(ggplot2)
 library(dplyr)
 library(tidyr)
@@ -67,7 +69,8 @@ Morphological data for this analysis is in the comma delimited file titled `Zost
 ```{r}
 #| label: Load data from .csv file.
 # Import data from CSV file
-ZosteropsMorph <- read.csv('./Data/Morphometrics/Zosterops_linear_measurements2.csv')
+ZosteropsMorph <- read.csv('./Data/Morphometrics/Zosterops_linear_measurements2.csv') %>%
+  rename(species = Species)
 summary(ZosteropsMorph)
 ```
 
@@ -595,4 +598,15 @@ WILCOX_table_BillWidth
 WILCOX_table_Tarsus
 WILCOX_table_Wing
 WILCOX_table_Tail
+```
+
+*Last updated: `r format(Sys.time(), '%B %d, %Y %H:%M')`*
+
+## Close log
+
+End the log.
+
+```{r}
+#| label: End log file. 
+log_close()
 ```

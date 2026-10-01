@@ -38,6 +38,8 @@ Set the working directory to one where the SNP data file `zost.filtered.snps.vcf
 
 - dartR.base [@dartR.base]
 
+- ggnewscale [@ggnewscale]
+
 Restart R in the Session/Restart R drop-down in R Studio and create a `log` file for the analysis (optional).
 
 ```{r}
@@ -57,6 +59,8 @@ library(adegenet)
 library(StAMPP)
 library(maps)
 library(sf)
+library(dartR.base)
+library(ggnewscale)
 ```
 
 ### Data files
@@ -481,12 +485,13 @@ Conduct a compliance check using the `gl.compliance.check` function in `dartR` o
 
 ```{r}
 #| label: Estimate fixed differences among groups
-library(dartR.base)
+# Workaround: dartR.base 1.0.7 does not find adegenet's as.matrix() method for genlight objects
+as.matrix.genlight <- function(x, ...) adegenet::as.matrix(x, ...)
 ZosteropsGENfdiff <- gl.compliance.check(ZosteropsGENfdiff)
 gl.fixed.diff(ZosteropsGENfdiff, test = TRUE)
 ```
 
-### Estimate Fst and Nei's distance
+## Estimate Fst and Nei's distance
 
 Generate the Fst and Nei's distance estimates from the Zosterops genlight object (`ZosteropsGEN`).
 
@@ -712,6 +717,111 @@ ggplot()+
   geom_segment(aes(x = 139, y = 28, xend = 144, yend = 30), linetype = "dashed", size = 1, color = "red") +
   geom_text(aes(x = 144, y = 29, label = "0.0041"), size = 3) +
   theme_classic()
+```
+
+### Combined Fst and Nei's distance
+
+Combined Fst and Nei's distance figure with combined groupings. These data are more precise given the groupings have larger sample sizes and are used for the main figure of the text while the more subdivided scheme appears in the appendix with cautions regarding small sample size for some groups.
+
+#### Combined group assignments
+
+Populations from the `ZosteropsPOPS_distance.txt` assignment file were merged into the following broader groups, and F~ST~ and Nei's distance were re-estimated for these groups rather than averaged from the subdivided estimates. Sample sizes (number of individuals in the filtered SNP dataset) are given in parentheses.
+
+- *Zosterops japonicus*
+
+  - `japonicus continental` (27) The Korean Peninsula and the main islands and Ryukyu archipelago of Japan, combining `japonicusKOREA` (8), `japonicusJAPAN` (4), `japonicusRYUKYUn` (2), `japonicusRYUKYUc` (9), and `japonicusRYUKYUs` (4).
+
+  - `japonicus Izu` (6) *Z. japonicus stejnegeri* from the Izu Islands (`japonicusIZU`).
+
+  - `japonicus Ogasawara` (7) *Z. japonicus alani* from the Ogasawara and Volcano Islands (`japonicusOGASAWARA`).
+
+- *Zosterops meyeni*
+
+  - `meyeni` (12) Lanyu and the Batan Islands, combining `meyeniBATAN` (8) and `meyeniLANYU` (4).
+
+- *Zosterops montanus*
+
+  - `montanus N Philippines` (6) Luzon and Mindoro (`montanusNORTH`).
+
+  - `montanus S Philippines` (15) The Visayas and Mindanao, combining `montanusVISAYAS` (9) and `montanusMINDANAO` (6). As in the subdivided analysis, this group includes the sample from Camiguin South (`Zni14341`) originally assigned to *Z. nigrorum catarmanensis*.
+
+- Other taxa
+
+  - `everetti` (3) *Z. everetti* (unchanged).
+
+  - `nigrorum` (4) *Z. nigrorum*, excluding the Camiguin South sample (unchanged).
+
+  - `simplex` (21) *Z. simplex* from Taiwan and mainland Asia (`simplexASIA`).
+
+The following groups were excluded from the combined analysis: the introduced populations in Hawaii (`japonicusHAWAII`) and North America (`simplexNA`), groups with very small samples (`montanusPALAWAN`, 2; `montanusINDONESIA`, 3), and the outgroup taxa `erythropleurus` and `palpebrosus`.
+
+```{r}
+#| label: Fst / Nei's D for combined groups (main-text figure)
+#| fig-width: 7.5
+#| fig-height: 6.5
+
+# ---- Combine populations into larger groups ----
+combine <- c(
+  japonicusJAPAN   = "japonicus continental", japonicusKOREA   = "japonicus continental",
+  japonicusRYUKYUn = "japonicus continental", japonicusRYUKYUc = "japonicus continental",
+  japonicusRYUKYUs = "japonicus continental",
+  japonicusIZU = "japonicus Izu", japonicusOGASAWARA = "japonicus Ogasawara",
+  meyeniBATAN = "meyeni", meyeniLANYU = "meyeni",
+  montanusNORTH = "montanus N Philippines",
+  montanusVISAYAS = "montanus S Philippines", montanusMINDANAO = "montanus S Philippines",
+  simplexASIA = "simplex", everetti = "everetti", nigrorum = "nigrorum")
+# Groups not listed (japonicusHAWAII, montanusPALAWAN, montanusINDONESIA, simplexNA,
+# erythropleurus, palpebrosus) are excluded
+
+# Axis order matches the subdivided (Appendix) heatmap
+ord <- c("japonicus continental", "japonicus Izu", "japonicus Ogasawara", "meyeni",
+         "montanus N Philippines", "montanus S Philippines", "simplex",
+         "everetti", "nigrorum")
+
+newpop  <- combine[as.character(pop(ZosteropsGEN))]
+GENcomb <- ZosteropsGEN[!is.na(newpop)]
+pop(GENcomb) <- factor(newpop[!is.na(newpop)], levels = ord)
+print(table(pop(GENcomb)))               # check group sizes
+
+# ---- Re-estimate Fst and Nei's D for the combined groups ----
+FSTcomb <- stamppFst(GENcomb, nboots = 100, percent = 95, nclusters = 4)
+fst <- as.matrix(FSTcomb$Fsts)
+fst[upper.tri(fst)] <- t(fst)[upper.tri(fst)]
+nei <- as.matrix(stamppNeisD(GENcomb, pop = TRUE))
+dimnames(nei) <- list(rownames(nei), rownames(nei))
+stopifnot(setequal(ord, rownames(fst)), setequal(ord, rownames(nei)))
+
+fst <- fst[ord, ord]; nei <- nei[ord, ord]
+n   <- as.vector(table(pop(GENcomb))[ord])
+lab <- paste0(ord, " (", n, ")")          # axis labels with sample sizes
+
+# ---- Build cells: i = row (bottom -> top), j = column (left -> right) ----
+idx <- expand.grid(i = seq_along(ord), j = seq_along(ord))
+cells <- data.frame(X = factor(lab[idx$j], levels = lab),
+                    Y = factor(lab[idx$i], levels = lab),
+                    i = idx$i, j = idx$j,
+                    FST = fst[cbind(idx$i, idx$j)],
+                    NEI = nei[cbind(idx$i, idx$j)])
+
+# ---- Plot: Fst above the diagonal (upper left), Nei's D below (lower right) ----
+ggplot() +
+  geom_tile(data = subset(cells, i > j), aes(X, Y, fill = FST), colour = "white") +
+  geom_text(data = subset(cells, i > j), aes(X, Y, label = sprintf("%.2f", FST)), size = 3.2) +
+  scale_fill_gradient(low = "white", high = "red", limits = c(0, NA),
+                      name = expression(F[ST])) +
+  new_scale_fill() +
+  geom_tile(data = subset(cells, i < j), aes(X, Y, fill = NEI), colour = "white") +
+  geom_text(data = subset(cells, i < j), aes(X, Y, label = sprintf("%.3f", NEI)), size = 3.2) +
+  scale_fill_gradient(low = "white", high = "red", limits = c(0, NA),
+                      name = "Nei's D") +
+  geom_tile(data = subset(cells, i == j), aes(X, Y), fill = "grey55", colour = "white") +
+  coord_equal() +
+  scale_x_discrete(limits = lab) +        # pin both axes to the same order
+  scale_y_discrete(limits = lab) +
+  labs(x = NULL, y = NULL) +
+  theme_minimal(base_size = 12) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        panel.grid = element_blank())
 ```
 
 *Last updated: `r format(Sys.time(), '%B %d, %Y %H:%M')`*

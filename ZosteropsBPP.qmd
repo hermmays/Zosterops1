@@ -445,7 +445,7 @@ Repeat this process for each `ctl` file and for the A00 runs replicate each run 
 ### BPP A10 runs
 
 | BPP ctl file | Inverse 𝛤 prior distribution 𝛼 for 𝜃 and 𝜏 | Inverse 𝛤 distribution $\beta_\theta$ | Mean 𝜃 prior | Inverse 𝛤 distribution $\beta_\tau$ | Mean 𝜏 prior | Model | burnin | sample | nsample | species delimitation algorithm | Result | posterior |
-|------|------|------|------|------|------|------|------|------|------|------|------|------|
+|----|----|----|----|----|----|----|----|----|----|----|----|----|
 | `ZosteropsA10_RUNA01.bpp.ctl` | 3 | 0.01 | 0.005 | 0.002 | 0.001 | GTR | 10000 | 2 | 100000 | 1 | 1111 | 1 |
 | `ZosteropsA10_RUNA02.bpp.ctl` | 3 | 0.02 | 0.01 | 0.002 | 0.001 | GTR | 10000 | 2 | 100000 | 1 | 1111 | 1 |
 | `ZosteropsA10_RUNA03.bpp.ctl` | 3 | 0.1 | 0.5 | 0.002 | 0.001 | GTR | 10000 | 2 | 100000 | 1 | 1111 | 1 |
@@ -483,7 +483,7 @@ nodelabels(nodes)
 ### BPP A00 runs
 
 | BPP ctl file | Inverse 𝛤 prior distribution 𝛼 for 𝜃 and 𝜏 | Inverse 𝛤 distribution $\beta_\theta$ | Mean 𝜃 prior | Inverse 𝛤 distribution $\beta_\tau$ | Mean 𝜏 prior | Tree |
-|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
+|----|----|----|----|----|----|----|
 | `ZosteropsA00_RUNB1.bpp.ctl` | 3 | 0.001 | 0.0005 | 0.004 | 0.002 | TIP |
 | `ZosteropsA00_RUNB2.bpp.ctl` | 3 | 0.001 | 0.0005 | 0.004 | 0.002 | TIP |
 | `ZosteropsA00_RUNB3.bpp.ctl` | 3 | 0.001 | 0.0005 | 0.004 | 0.002 | TIP |
@@ -1085,7 +1085,31 @@ legend("top", 10,legend=c("Z. japonicus", "Z. meyeni", "Z. japonicus/meyeni",
 
 ### GDI density plots
 
-Generate GDI density plots.
+GDI density plot with 𝛽 for the inverse 𝛤 prior distribution set at 0.001 and 0.004 for 𝜃 and 𝜏 respectively.
+
+```{r}
+#| label: GDI density plot, beta-theta 0.001 beta-tau 0.004
+#| fig-width: 8
+#| fig-height: 7
+par(mar = c(5.5, 5.5, 4, 2))            # room for the larger axis labels
+
+plot(densityJpA, xlim = c(0, 1), ylim = c(0, 30),
+     col = red, lwd = 3,
+     main = expression(beta[theta] == 0.001 ~ ~ beta[tau] == 0.004),
+     xlab = "GDI", ylab = "Density",
+     cex.main = 2.0, cex.lab = 2.1,
+     cex.axis = 1.6)                     # larger axis numbers
+lines(densityMeA,            lwd = 3, col = yellow)
+lines(densityJpMeA,          lwd = 3, col = orange)
+lines(densityMoNA,           lwd = 3, col = purple)
+lines(densityJpMeMoNA,       lwd = 3, col = blue)
+lines(densityMoSA,           lwd = 3, col = peach)
+lines(densityJpMeMoNMoSA,    lwd = 3, col = pink)
+lines(densitySiA,            lwd = 3, col = green)
+abline(v = c(0.2, 0.7), col = "grey50", lty = 2, lwd = 2)
+```
+
+Generate GDI density plots across all prior settings in a single figure.
 
 ```{r}
 #| label: GDI density plots
