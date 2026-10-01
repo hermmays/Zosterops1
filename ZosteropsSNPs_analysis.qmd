@@ -216,6 +216,10 @@ Begin the analysis by restarting the R session (Session/Restart R in RStudio), l
 
 - tidyr [@tidyr]
 
+- ggrepel [@ggrepel]
+
+- patchwork [@patchwork]
+
 ```{r}
 #| label: Load libraries
 library(logr)
@@ -233,6 +237,8 @@ library(plotly)
 library(htmlwidgets)
 library(ggplot2)
 library(tidyr)
+library(ggrepel)
+library(patchwork)
 ```
 
 ## VCF file
@@ -285,6 +291,35 @@ ColorPal_CUSTOM <- c("#004949", "#DB6D00", "#D82632", "#290AD8", "#FED439",
                      "#7BA9CB", "#008600")
 ```
 
+## Label settings for figures
+
+Define common label settings across multiple figures.
+
+```{r}
+#| label: Group labels for figures
+grp_codes <- c("erythropleurus", "everetti", "japonicus", "japonicus_alani", "meyeni",
+               "montanus_NORTH", "montanus_PALAWAN", "montanus_SOUTH",
+               "nigrorum", "palpebrosus", "simplex")
+pal <- setNames(ColorPal_CUSTOM, grp_codes)
+
+# One-line labels (PCA legend): species italic, geography roman
+lab_legend <- c(erythropleurus = "italic('Z. erythropleurus')", everetti = "italic('Z. everetti')",
+                japonicus = "italic('Z. japonicus')", japonicus_alani = "italic('Z. japonicus alani')",
+                meyeni = "italic('Z. meyeni')",
+                montanus_NORTH = "italic('Z. montanus')~'N. Philippines'",
+                montanus_PALAWAN = "italic('Z. montanus')~'Palawan'",
+                montanus_SOUTH = "italic('Z. montanus')~'S. Philippines'",
+                nigrorum = "italic('Z. nigrorum')", palpebrosus = "italic('Z. palpebrosus')",
+                simplex = "italic('Z. simplex')")
+# Two-line labels (DAPC bar headers)
+lab_strip <- lab_legend
+lab_strip[c("japonicus_alani", "montanus_NORTH", "montanus_PALAWAN", "montanus_SOUTH")] <-
+  c("atop(italic('Z. japonicus'), italic('alani'))",
+    "atop(italic('Z. montanus'), 'N. Philippines')",
+    "atop(italic('Z. montanus'), 'Palawan')",
+    "atop(italic('Z. montanus'), 'S. Philippines')")
+```
+
 ## Minimum spanning network (MSN)
 
 Create a minimum spanning network (MSN). Export the figure as either a `pdf` or `png` file using the export function in RStudio. Beginning here we will set a different random seed for each operation where a seed is required. Setting `inds` to some set of characters not in the dataset (in this instance just a blank space) and `nodelab` to some arbitrarily large number in `plot_poppr_msn` will leave blank points on the network. Removing these arguments will result in each point on the network labeled with the corresponding sample name.
@@ -320,6 +355,8 @@ title(xlab = "Genetic distance (proportion of loci that are different)", cex.lab
 ```
 
 ## Principal component analysis (PCA)
+
+### PCA and 2 and 3 PC plots
 
 Conduct a principal component analysis (PCA) on the `gl.ZosteropsSNPs` object. Graph the percent of variance explained by each principal component (PC) and create two PC plots; one plot with PC1 and PC2 and a three-dimensional plot with PC1, PC2, and PC3.
 
@@ -365,6 +402,8 @@ PC3Dplot
 ZosteropsSNPs_PCA_VARexp[1:5]
 ```
 
+### Centroids
+
 Calculate the centroids for each group based on the first three principal components and the pairwise Euclidean distances between each pair of groups.
 
 ```{r}
@@ -405,6 +444,62 @@ Zosterops_PCAcentroids_plot <- ggplot(Zosterops_PCAdf, aes(x = PC1, y = PC2, col
 
 # Display the plot
 print(Zosterops_PCAcentroids_plot)
+```
+
+### PCA plots with ellipses
+
+Two PCA plots withe ellipses. One plot shows all populations and the other focuses on the *Z. japonicus*/*meyeni*/*montanus* clade.
+
+```{r}
+#| label: PCA with 95 percent ellipses (Fig. 4)
+#| fig-width: 16
+#| fig-height: 7
+
+# Camiguin South sample (received as Z. nigrorum catarmanensis): keeps its nigrorum label,
+# is labelled on the plot, and is left out of the nigrorum ellipse calculation.
+flag_id    <- "Zni14341"
+flag_label <- "KU110362"
+
+pca_plot <- function(pca, gl, min_n = 4) {
+  ve <- 100 * pca$eig / sum(pca$eig)
+  df <- data.frame(PC1 = pca$scores[, 1], PC2 = pca$scores[, 2],
+                   Group = factor(as.character(pop(gl)), levels = grp_codes),
+                   ID = indNames(gl))
+  n_ell <- table(df$Group[df$ID != flag_id])
+  ell <- df[df$ID != flag_id & df$Group %in% names(n_ell)[n_ell >= min_n], ]  # ellipse needs >= 4 points
+  lab <- df[df$ID == flag_id, ]
+  ggplot(df, aes(PC1, PC2)) +
+    geom_hline(yintercept = 0, colour = "grey70", linewidth = 0.3) +
+    geom_vline(xintercept = 0, colour = "grey70", linewidth = 0.3) +
+    stat_ellipse(data = ell, aes(colour = Group), type = "norm", level = 0.95, linewidth = 0.7) +
+    geom_point(aes(fill = Group), shape = 21, size = 3, colour = "black", stroke = 0.3) +
+    geom_text_repel(data = lab, aes(label = flag_label), size = 4, box.padding = 1.2,
+                    min.segment.length = 0, segment.colour = "grey30") +
+    scale_fill_manual(values = pal, drop = TRUE, name = NULL,
+                      labels = function(b) parse(text = lab_legend[b])) +
+    scale_colour_manual(values = pal, guide = "none") +
+    labs(x = sprintf("PC1 (%.1f%%)", ve[1]), y = sprintf("PC2 (%.1f%%)", ve[2])) +
+    theme_minimal(base_size = 13) +
+    theme(legend.text = element_text(hjust = 0))
+}
+
+# a. All taxa (existing PCA)
+PCA_all_plot <- pca_plot(ZosteropsSNPsPCA, gl.ZosteropsSNPs)
+
+# b. Focal clade only, PCA re-run; the Camiguin South sample is added explicitly
+focal <- c("japonicus", "japonicus_alani", "meyeni",
+           "montanus_NORTH", "montanus_PALAWAN", "montanus_SOUTH")
+keep <- as.character(pop(gl.ZosteropsSNPs)) %in% focal | indNames(gl.ZosteropsSNPs) == flag_id
+gl.focal <- gl.ZosteropsSNPs[keep]
+pop(gl.focal) <- droplevels(pop(gl.focal))
+ZosteropsFocalPCA <- glPca(gl.focal, nf = 5)
+PCA_focal_plot <- pca_plot(ZosteropsFocalPCA, gl.focal) + theme(legend.position = "none")
+
+Fig4_PCA <- PCA_all_plot + PCA_focal_plot
+Fig4_PCA
+
+ggsave("Zosterops_PCA_ellipses.tiff", Fig4_PCA, width = 16, height = 7, dpi = 600, compression = "lzw", bg = "white")
+ggsave("Zosterops_PCA_ellipses.pdf",  Fig4_PCA, width = 16, height = 7)   # for Illustrator
 ```
 
 Export both the two principal components and three principal components plots (`PC2Dplot` and `PC3Dplot`) as html widgets.
@@ -539,7 +634,7 @@ for (n.pca in n.pca.values) {
   ZosteropsSNPsDAPC <- dapc(gl.ZosteropsSNPs, n.pca = n.pca, n.da = nPop(gl.ZosteropsSNPs)-1)
   ZosteropsSNPsDAPC_contributions <- loadingplot(ZosteropsSNPsDAPC$var.contr, axis = 2, thres = 0.0025, lab.jitter = 1)
   DAPCscatter <- scatter(ZosteropsSNPsDAPC, col = ColorPal_CUSTOM, cex = 3, legend = TRUE, clabel = F, posi.leg = "bottomleft", scree.pca = TRUE,
-          posi.pca = "topright", cleg = 0.75)
+                         posi.pca = "topright", cleg = 0.75)
   DAPCscatter
   ZosteropsSNPsDAPCResults <- as.data.frame(ZosteropsSNPsDAPC$posterior)
   ZosteropsSNPsDAPCResults$pop <- pop(gl.ZosteropsSNPs)
@@ -549,13 +644,18 @@ for (n.pca in n.pca.values) {
   nPCAtitle <- paste(n.pca, "principal components")
   print(nPCAtitle)
   colnames(ZosteropsSNPsDAPCResults) <- c("Original_Pop","Sample","Assigned_Pop","Posterior_membership_probability")
-  DAPCbar <- ggplot(ZosteropsSNPsDAPCResults, aes(x=Sample, y=Posterior_membership_probability, fill=Assigned_Pop))
-  DAPCbar <-  DAPCbar + geom_bar(stat='identity') 
-  DAPCbar <-  DAPCbar + ggtitle(nPCAtitle)
-  DAPCbar <-  DAPCbar + scale_fill_manual(values = ColorPal_CUSTOM) 
-  DAPCbar <-  DAPCbar + facet_grid(~Original_Pop, scales = "free")
-  DAPCbar <-  DAPCbar + theme(axis.text.x = element_text(angle = 90, hjust = 1, size = 8))
+  DAPCbar <- ggplot(ZosteropsSNPsDAPCResults,
+                    aes(x = Sample, y = Posterior_membership_probability, fill = Assigned_Pop)) +
+    geom_col(width = 0.85) +
+    scale_fill_manual(values = pal, guide = "none") +
+    facet_grid(~ Original_Pop, scales = "free_x",
+               labeller = as_labeller(lab_strip, label_parsed)) +
+    labs(x = NULL, y = "Posterior membership probability", title = nPCAtitle) +
+    theme_minimal(base_size = 12) +
+    theme(axis.text.x = element_blank(), panel.grid = element_blank(),
+          strip.text = element_text(size = 10), panel.spacing.x = unit(4, "pt"))
   print(DAPCbar)
+  ggsave(paste0("ZosteropsDAPCbar_", n.pca, "PCs.pdf"), DAPCbar, width = 14, height = 4.5)
   write.table(ZosteropsSNPsDAPCResults, file = paste("ZosteropsSNPsDAPCResults","_",n.pca,"PCs.txt"), row.names = FALSE, sep = "\t", quote = FALSE)
 }
 ```
