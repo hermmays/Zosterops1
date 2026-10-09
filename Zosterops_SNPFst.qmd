@@ -485,8 +485,9 @@ Conduct a compliance check using the `gl.compliance.check` function in `dartR` o
 
 ```{r}
 #| label: Estimate fixed differences among groups
-# Workaround: dartR.base 1.0.7 does not find adegenet's as.matrix() method for genlight objects
-as.matrix.genlight <- function(x, ...) adegenet::as.matrix(x, ...)
+# Workaround: R's inherits() cache can record the dartR class without its genlight superclass,
+# which breaks gl.compliance.check(). Refresh the cache entry before calling dartR functions.
+.cache_class("dartR", methods::extends("dartR"))
 ZosteropsGENfdiff <- gl.compliance.check(ZosteropsGENfdiff)
 gl.fixed.diff(ZosteropsGENfdiff, test = TRUE)
 ```
@@ -822,6 +823,78 @@ ggplot() +
   theme_minimal(base_size = 12) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1),
         panel.grid = element_blank())
+```
+
+### Sensitivity of F~ST~ and Nei's distance to sample size
+
+Sample sizes differ widely among the combined groups (3–27 individuals). Nei's D (Nei 1972), as computed in StAMPP, has no small-sample correction and is biased upward when few individuals are sampled, while Weir & Cockerham's F~ST~ corrects for sample size but becomes more variable. To check whether the patterns in the combined heatmap depend on sample size, we repeatedly subsampled every combined group to the same number of individuals (n = 4 and n = 3; 100 replicates each) and recalculated pairwise F~ST~ and Nei's D. At n = 4, *Z. everetti* (n = 3) is omitted. At n = 3, all groups are compared at equal sample size.
+
+```{r}
+#| label: Rarefaction of Fst and Neis D
+#| cache: true
+set.seed(20261008)
+nrep  <- 100
+sizes <- c(4, 3)
+grp_all <- as.character(pop(GENcomb))
+lev     <- levels(pop(GENcomb))
+
+# Helper: one row per pair from a StAMPP Fst matrix (lower triangle) and a Nei's D matrix
+pair_values <- function(f, d, groups) {
+  pr <- t(combn(groups, 2))
+  data.frame(A = pr[, 1], B = pr[, 2],
+             Fst = mapply(function(a, b) ifelse(is.na(f[a, b]), f[b, a], f[a, b]), pr[, 1], pr[, 2]),
+             Nei = d[cbind(pr[, 1], pr[, 2])],
+             row.names = NULL)
+}
+
+# Full-sample values
+f_full <- as.matrix(stamppFst(GENcomb, nboots = 0, nclusters = 1))
+d_full <- as.matrix(stamppNeisD(GENcomb, pop = TRUE)); dimnames(d_full) <- list(rownames(d_full), rownames(d_full))
+full <- pair_values(f_full, d_full, lev)
+
+# Rarefied values
+rare <- do.call(rbind, lapply(sizes, function(k) {
+  keep <- intersect(lev, names(which(table(grp_all) >= k)))
+  do.call(rbind, lapply(seq_len(nrep), function(r) {
+    idx <- unlist(lapply(keep, function(g) sample(which(grp_all == g), k)))
+    sub <- GENcomb[idx]
+    pop(sub) <- factor(as.character(pop(sub)), levels = keep)
+    f <- as.matrix(stamppFst(sub, nboots = 0, nclusters = 1))
+    d <- as.matrix(stamppNeisD(sub, pop = TRUE)); dimnames(d) <- list(rownames(d), rownames(d))
+    cbind(n = k, rep = r, pair_values(f, d, keep))
+  }))
+}))
+
+# Summarize: mean and 95% interval across replicates
+summ <- aggregate(cbind(Fst, Nei) ~ n + A + B, data = rare,
+                  FUN = function(x) c(mean = mean(x), lo = unname(quantile(x, 0.025)), hi = unname(quantile(x, 0.975))))
+summ <- do.call(data.frame, summ)
+wide <- Reduce(function(x, y) merge(x, y, by = c("A", "B"), all.x = TRUE),
+               list(setNames(full, c("A", "B", "Fst_full", "Nei_full")),
+                    setNames(subset(summ, n == 4)[, -1], c("A", "B", paste0(c("Fst_", "Fst_", "Fst_", "Nei_", "Nei_", "Nei_"), c("n4", "n4_lo", "n4_hi", "n4", "n4_lo", "n4_hi")))),
+                    setNames(subset(summ, n == 3)[, -1], c("A", "B", paste0(c("Fst_", "Fst_", "Fst_", "Nei_", "Nei_", "Nei_"), c("n3", "n3_lo", "n3_hi", "n3", "n3_lo", "n3_hi"))))))
+wide <- wide[order(match(wide$A, lev), match(wide$B, lev)), ]
+write.csv(wide, "Fst_NeisD_rarefaction.csv", row.names = FALSE)
+
+knitr::kable(transform(wide[, c("A", "B", "Fst_full", "Fst_n4", "Fst_n3", "Nei_full", "Nei_n4", "Nei_n3")],
+                       Fst_full = round(Fst_full, 3), Fst_n4 = round(Fst_n4, 3), Fst_n3 = round(Fst_n3, 3),
+                       Nei_full = round(Nei_full, 4), Nei_n4 = round(Nei_n4, 4), Nei_n3 = round(Nei_n3, 4)),
+             col.names = c("Group A", "Group B", "F~ST~ full", "F~ST~ n=4", "F~ST~ n=3",
+                           "Nei's D full", "Nei's D n=4", "Nei's D n=3"),
+             caption = "Pairwise F~ST~ and Nei's D with full samples and with all groups subsampled to n = 4 and n = 3 (means of 100 replicates; 95% intervals in Fst_NeisD_rarefaction.csv).")
+```
+
+```{r}
+#| label: Rarefaction plot of Neis D
+#| fig-width: 6
+#| fig-height: 5
+ggplot(wide, aes(x = Nei_full, y = Nei_n3)) +
+  geom_abline(slope = 1, intercept = 0, linetype = "dashed", colour = "grey50") +
+  geom_errorbar(aes(ymin = Nei_n3_lo, ymax = Nei_n3_hi), width = 0, colour = "grey60") +
+  geom_point(size = 2) +
+  scale_x_log10() + scale_y_log10() +
+  labs(x = "Nei's D, full samples", y = "Nei's D, all groups at n = 3 (mean, 95% interval)") +
+  theme_minimal(base_size = 12)
 ```
 
 *Last updated: `r format(Sys.time(), '%B %d, %Y %H:%M')`*
